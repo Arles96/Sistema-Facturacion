@@ -1,6 +1,8 @@
 package Frames;
 
 import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Toolkit;
 
 /**
  *
@@ -13,7 +15,14 @@ public class Home extends javax.swing.JFrame {
      */
     public Home() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        this.setMinimumSize(new Dimension(Toolkit.getDefaultToolkit().getScreenSize().width / 2,
+                Toolkit.getDefaultToolkit().getScreenSize().height / 2));
+        this.setMaximumSize(Toolkit.getDefaultToolkit().getScreenSize());
+        this.pack();
+        
     }
+    
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -50,7 +59,7 @@ public class Home extends javax.swing.JFrame {
         );
         panelDisplayLayout.setVerticalGroup(
             panelDisplayLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 184, Short.MAX_VALUE)
+            .addGap(0, 291, Short.MAX_VALUE)
         );
 
         panelRecent.setBackground(new java.awt.Color(0, 204, 0));
@@ -72,7 +81,7 @@ public class Home extends javax.swing.JFrame {
         panelStatusBar.setLayout(panelStatusBarLayout);
         panelStatusBarLayout.setHorizontalGroup(
             panelStatusBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 458, Short.MAX_VALUE)
+            .addGap(0, 822, Short.MAX_VALUE)
         );
         panelStatusBarLayout.setVerticalGroup(
             panelStatusBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
