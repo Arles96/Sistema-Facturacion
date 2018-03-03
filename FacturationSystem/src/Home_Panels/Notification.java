@@ -4,12 +4,12 @@ package Home_Panels;
  *
  * @author CJ
  */
-public class Recent extends javax.swing.JPanel {
+public class Notification extends javax.swing.JPanel {
 
     /**
      * Creates new form Recent
      */
-    public Recent() {
+    public Notification() {
         initComponents();
         
     }

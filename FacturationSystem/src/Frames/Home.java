@@ -15,23 +15,25 @@ public class Home extends javax.swing.JFrame {
      */
     public Home() {
         initComponents();
-        this.setLocationRelativeTo(null);
         this.setMinimumSize(new Dimension(Toolkit.getDefaultToolkit().getScreenSize().width / 2,
                 Toolkit.getDefaultToolkit().getScreenSize().height / 2));
         this.setMaximumSize(Toolkit.getDefaultToolkit().getScreenSize());
+        this.setPreferredSize(new Dimension(Toolkit.getDefaultToolkit().getScreenSize().width / 2,
+                Toolkit.getDefaultToolkit().getScreenSize().height / 2));
         this.pack();
-        
+        this.setLocationRelativeTo(null);
+
     }
-    
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         panelAccount = new Common_Panels.Account();
+        panelNotification = new Home_Panels.Notification();
         panelDisplay = new Home_Panels.Display();
-        panelRecent = new Home_Panels.Recent();
         panelStatusBar = new Common_Panels.StatusBar();
+        jButton1 = new javax.swing.JButton();
         panelToolBar = new Common_Panels.ToolBar();
 
         panelAccount.setBackground(new java.awt.Color(102, 0, 102));
@@ -49,43 +51,45 @@ public class Home extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        panelNotification.setBackground(new java.awt.Color(0, 255, 51));
+
         panelDisplay.setBackground(new java.awt.Color(255, 153, 0));
 
         javax.swing.GroupLayout panelDisplayLayout = new javax.swing.GroupLayout(panelDisplay);
         panelDisplay.setLayout(panelDisplayLayout);
         panelDisplayLayout.setHorizontalGroup(
             panelDisplayLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 828, Short.MAX_VALUE)
         );
         panelDisplayLayout.setVerticalGroup(
             panelDisplayLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 291, Short.MAX_VALUE)
-        );
-
-        panelRecent.setBackground(new java.awt.Color(0, 204, 0));
-
-        javax.swing.GroupLayout panelRecentLayout = new javax.swing.GroupLayout(panelRecent);
-        panelRecent.setLayout(panelRecentLayout);
-        panelRecentLayout.setHorizontalGroup(
-            panelRecentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 152, Short.MAX_VALUE)
-        );
-        panelRecentLayout.setVerticalGroup(
-            panelRecentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 193, Short.MAX_VALUE)
         );
 
         panelStatusBar.setBackground(new java.awt.Color(102, 102, 102));
+
+        jButton1.setText("jButton1");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelStatusBarLayout = new javax.swing.GroupLayout(panelStatusBar);
         panelStatusBar.setLayout(panelStatusBarLayout);
         panelStatusBarLayout.setHorizontalGroup(
             panelStatusBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 822, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelStatusBarLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addGap(192, 192, 192))
         );
         panelStatusBarLayout.setVerticalGroup(
             panelStatusBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelStatusBarLayout.createSequentialGroup()
+                .addContainerGap(35, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addGap(33, 33, 33))
         );
 
         panelToolBar.setBackground(new java.awt.Color(0, 153, 204));
@@ -106,7 +110,7 @@ public class Home extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(panelRecent, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(panelNotification, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(panelStatusBar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -121,11 +125,17 @@ public class Home extends javax.swing.JFrame {
                 .addComponent(panelDisplay, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(0, 0, 0)
                 .addComponent(panelStatusBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addComponent(panelRecent, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(panelNotification, javax.swing.GroupLayout.DEFAULT_SIZE, 393, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        setVisible(false);
+        workSheet = new WorkSheet();
+        workSheet.main(new String[]{""});
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -163,38 +173,23 @@ public class Home extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private Common_Panels.Account panelAccount;
     private Home_Panels.Display panelDisplay;
-    private Home_Panels.Recent panelRecent;
+    private Home_Panels.Notification panelNotification;
     private Common_Panels.StatusBar panelStatusBar;
     private Common_Panels.ToolBar panelToolBar;
     // End of variables declaration//GEN-END:variables
 
 // EXTRA COMPONENTS
-    /**
-     * Colores de los páneles.
-     */
-    public Color colorRecent;
-    public Color colorDisplay;
-    public Color colorToolBar;
-    public Color colorStatusBar;
-    public Color colorAccount;
+    public WorkSheet workSheet;
 
-    /**
-     * Cambia el color de los páneles, dependiendo de la combinación selecta.
-     *
-     * @param R Recent
-     * @param D Display
-     * @param T ToolBar
-     * @param S StatusBar
-     * @param A Account
-     */
-    private void changeColor(Color R, Color D, Color T, Color S, Color A) {
-        panelRecent.setBackground(colorRecent = R);
-        panelDisplay.setBackground(colorDisplay = D);
-        panelToolBar.setBackground(colorToolBar = T);
-        panelStatusBar.setBackground(colorStatusBar = S);
-        panelAccount.setBackground(colorAccount = A);
+    private void changeColor(Color N, Color D, Color T, Color S, Color A) {
+        panelNotification.setBackground(N);
+        panelDisplay.setBackground(D);
+        panelToolBar.setBackground(T);
+        panelStatusBar.setBackground(S);
+        panelAccount.setBackground(A);
     }
 
     private void initExtraComponents() {
