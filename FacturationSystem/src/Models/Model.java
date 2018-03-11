@@ -26,15 +26,15 @@ public abstract class  Model {
     
     /**
      * Metodo para insertar una tupla. 
-     * @param array: Arreglo donde contendra los datos correspondientes para la inserccion
+     * @param entity: La entidad correspondiente
     */
-    public abstract void insert(Object [] array);
+    public abstract void insert(Object  entity);
     
     /**
      * Metodo para actualizar los datos de una tupla
-     * @param array: donde contendra los datos que se actualizaran
+     * @param entity: donde contendra los datos que se actualizaran
      */
-    public abstract void update(Object[] array);
+    public abstract void update(Object entity);
     
     /**
      * Metodo para eliminar una tupla.
