@@ -4,6 +4,6 @@ package Entities;
  *
  * @author CJ
  */
-public class Puchases_Control {
+public class Purchases_Control {
 
 }

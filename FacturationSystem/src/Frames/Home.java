@@ -22,7 +22,9 @@ public class Home extends javax.swing.JFrame {
                 Toolkit.getDefaultToolkit().getScreenSize().height / 2));
         this.pack();
         this.setLocationRelativeTo(null);
-
+        this.setVisible(false);
+        workSheet = new WorkSheet();
+        workSheet.main(new String[]{""});
     }
 
     @SuppressWarnings("unchecked")

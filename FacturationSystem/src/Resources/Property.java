@@ -1,5 +1,6 @@
-package Common_Panels;
+package Resources;
 
+import Common_Panels.Account;
 import java.io.Serializable;
 import java.util.Arrays;
 
@@ -25,14 +26,22 @@ public class Property implements Serializable {
      * Paleta de colores EAST.
      */
     public static final int EAST[][] = {{222, 50, 59}, {55, 63, 66}, {240, 242, 247}, {74, 217, 217}, {54, 177, 191}};
+    /**
+     * Paleta establecida.
+     */
     private int mix[][];
     /**
      * Define si ya se ha establecido una configuración previa.
      */
     public static boolean logged;
+    /**
+     * Usuario conectado.
+     */
+    private Account account;
 
-    public Property(int mix[][]) {
+    public Property(int mix[][], Account account) {
         this.mix = mix;
+        this.account = account;
     }
 
     public int[][] getMix() {
@@ -46,6 +55,14 @@ public class Property implements Serializable {
     @Override
     public String toString() {
         return "Property{" + Arrays.deepToString(mix) + '}';
+    }
+
+    public Account getAccount() {
+        return account;
+    }
+
+    public void setAccount(Account account) {
+        this.account = account;
     }
 
 }

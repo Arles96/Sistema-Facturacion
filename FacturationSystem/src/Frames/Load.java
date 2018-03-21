@@ -1,6 +1,6 @@
 package Frames;
 
-import Common_Panels.Property;
+import Resources.Property;
 import java.awt.Color;
 import java.awt.Toolkit;
 import java.io.FileInputStream;
@@ -269,7 +269,7 @@ public class Load extends javax.swing.JFrame {
     private void updateProperties() {
         try {
             ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(".properties.pty"));
-            property = new Property(Property.FIBER);
+            property = new Property(Property.FIBER, null);
             property.logged = false;
             out.writeObject(property);
             out.close();
@@ -278,7 +278,6 @@ public class Load extends javax.swing.JFrame {
         }
         System.out.println("LOAD: Update Properties");
     }
-
 
     /**
      * Hilo para la barra de progreso. // DEBO CREAR BANDERA PARA QUE DEJE DE
