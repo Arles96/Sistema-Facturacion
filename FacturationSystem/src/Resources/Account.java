@@ -44,6 +44,7 @@ public class Account implements Serializable {
         this.user = user;
         this.email = email;
         this.picture = picture;
+        this.enable = false;
     }
 
     // ACCESORES
@@ -87,4 +88,10 @@ public class Account implements Serializable {
         this.enable = enable;
     }
 
+    @Override
+    public String toString() {
+        return "Account{" + "password=" + password + ", user=" + user + ", email=" + email + ", picture=" + picture + ", enable=" + enable + '}';
+    }
+
+    
 }

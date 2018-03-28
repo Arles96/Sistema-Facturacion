@@ -1,8 +1,6 @@
 package Resources;
 
-import Common_Panels.Account;
 import java.io.Serializable;
-import java.util.Arrays;
 
 /**
  *
@@ -52,17 +50,17 @@ public class Property implements Serializable {
         this.mix = mix;
     }
 
-    @Override
-    public String toString() {
-        return "Property{" + Arrays.deepToString(mix) + '}';
-    }
-
     public Account getAccount() {
         return account;
     }
 
     public void setAccount(Account account) {
         this.account = account;
+    }
+
+    @Override
+    public String toString() {
+        return "Property{" + "mix=" + mix + ", account=" + account + '}';
     }
 
 }

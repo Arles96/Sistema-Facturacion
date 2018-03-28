@@ -1,7 +1,9 @@
 package Frames;
 
+import Resources.Account;
 import Resources.Property;
 import java.awt.Color;
+import java.awt.Image;
 import java.awt.Toolkit;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -33,7 +35,7 @@ public class Load extends javax.swing.JFrame {
             System.out.println("ERROR_LOADPROPERTIES");
             updateProperties();
         }
-        System.out.println(property);
+        //System.out.println(property);
     }
 
     @SuppressWarnings("unchecked")
@@ -50,6 +52,7 @@ public class Load extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(244, 83, 88));
+        setIconImage(getIconImage());
         setUndecorated(true);
         setResizable(false);
 
@@ -66,13 +69,13 @@ public class Load extends javax.swing.JFrame {
         });
 
         Logo.setBackground(new java.awt.Color(204, 255, 0));
-        Logo.setText("LOGO");
+        Logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICO/100px/icons8_Connect_Develop_100px.png"))); // NOI18N
 
         Tittle.setBackground(new java.awt.Color(244, 83, 88));
         Tittle.setFont(new java.awt.Font("Dialog", 1, 48)); // NOI18N
         Tittle.setForeground(new java.awt.Color(243, 242, 237));
         Tittle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Tittle.setText("LOAD");
+        Tittle.setText("Bienvenido");
 
         Progress.setFont(new java.awt.Font("Dialog", 1, 48)); // NOI18N
         Progress.setForeground(new java.awt.Color(243, 242, 237));
@@ -81,7 +84,7 @@ public class Load extends javax.swing.JFrame {
 
         Info.setForeground(new java.awt.Color(243, 242, 237));
         Info.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Info.setText("Informe de la operación ejecutándose...");
+        Info.setText("Protocolos de inicio ejecutándose...");
 
         Minimize.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         Minimize.setForeground(new java.awt.Color(243, 242, 237));
@@ -108,43 +111,44 @@ public class Load extends javax.swing.JFrame {
         BoardLayout.setHorizontalGroup(
             BoardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(BoardLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Logo)
+                .addGap(125, 125, 125)
+                .addComponent(Minimize, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Close, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10))
+            .addGroup(BoardLayout.createSequentialGroup()
                 .addGroup(BoardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(BoardLayout.createSequentialGroup()
-                        .addGap(160, 160, 160)
-                        .addComponent(Tittle))
                     .addGroup(BoardLayout.createSequentialGroup()
                         .addGap(60, 60, 60)
                         .addComponent(Progress, javax.swing.GroupLayout.PREFERRED_SIZE, 321, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(BoardLayout.createSequentialGroup()
                         .addGap(50, 50, 50)
-                        .addComponent(Info, javax.swing.GroupLayout.PREFERRED_SIZE, 344, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(38, 47, Short.MAX_VALUE))
-            .addGroup(BoardLayout.createSequentialGroup()
-                .addGap(181, 181, 181)
-                .addComponent(Logo, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Minimize, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Close, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10))
+                        .addComponent(Info, javax.swing.GroupLayout.PREFERRED_SIZE, 344, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(BoardLayout.createSequentialGroup()
+                        .addGap(86, 86, 86)
+                        .addComponent(Tittle)))
+                .addContainerGap(47, Short.MAX_VALUE))
         );
         BoardLayout.setVerticalGroup(
             BoardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(BoardLayout.createSequentialGroup()
                 .addGroup(BoardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(BoardLayout.createSequentialGroup()
-                        .addGap(12, 12, 12)
-                        .addComponent(Logo, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(BoardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(Minimize)
-                        .addComponent(Close)))
-                .addGap(2, 2, 2)
+                        .addGroup(BoardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Minimize)
+                            .addComponent(Close))
+                        .addGap(83, 83, 83))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BoardLayout.createSequentialGroup()
+                        .addComponent(Logo, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                 .addComponent(Tittle)
                 .addGap(8, 8, 8)
                 .addComponent(Progress, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(32, 32, 32)
                 .addComponent(Info, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addContainerGap(27, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -244,7 +248,7 @@ public class Load extends javax.swing.JFrame {
      * Punto y pulsado en frame.
      */
     private int y_Pressed;
-    public Home home;
+    public WorkSheet workSheet;
     private boolean allLoaded;
 
     /**
@@ -269,7 +273,7 @@ public class Load extends javax.swing.JFrame {
     private void updateProperties() {
         try {
             ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(".properties.pty"));
-            property = new Property(Property.FIBER, null);
+            property = new Property(Property.FIBER, new Account("pass", "user", "email", null));
             property.logged = false;
             out.writeObject(property);
             out.close();
@@ -277,6 +281,7 @@ public class Load extends javax.swing.JFrame {
             System.out.println("ERROR_UPDATEPROPERTIES");
         }
         System.out.println("LOAD: Update Properties");
+        this.allLoaded = true;
     }
 
     /**
@@ -308,9 +313,13 @@ public class Load extends javax.swing.JFrame {
              * Abre el programa principal.
              */
             load.setVisible(false);
-            home = new Home();
-            home.main(new String[]{""});
+            WorkSheet.main(new String[]{""}, property);
         }
     }
 
+    @Override
+    public Image getIconImage() {
+        Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("ICO/100px/icons8_Connect_Develop_100px.png"));
+        return retValue;
+    }
 }

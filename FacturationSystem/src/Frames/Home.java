@@ -23,8 +23,6 @@ public class Home extends javax.swing.JFrame {
         this.pack();
         this.setLocationRelativeTo(null);
         this.setVisible(false);
-        workSheet = new WorkSheet();
-        workSheet.main(new String[]{""});
     }
 
     @SuppressWarnings("unchecked")
@@ -135,8 +133,6 @@ public class Home extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         setVisible(false);
-        workSheet = new WorkSheet();
-        workSheet.main(new String[]{""});
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
