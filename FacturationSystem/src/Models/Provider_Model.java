@@ -15,12 +15,12 @@ import java.util.logging.Logger;
  *
  * @author Diego
  */
-public class Provider_Model extends Model{
+public class Provider_Model extends Model {
 
     @Override
     public void insert(Object entity) {
         super.connect();
-        Provider provider = (Provider)entity;
+        Provider provider = (Provider) entity;
         try {
             PreparedStatement st = connect.prepareStatement("INSERT INTO PROVEEDOR(rtn_proveedor , nombre , direccion "
                     + ",correo , telefono) values(? ,? , ?,?,?)");
@@ -34,19 +34,42 @@ public class Provider_Model extends Model{
             Logger.getLogger(Provider_Model.class.getName()).log(Level.SEVERE, null, ex);
         }
         super.close();
-        
-        
-        
     }
 
     @Override
     public void update(Object entity) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        super.connect();
+        Provider provider = (Provider) entity;
+        try {
+            PreparedStatement st = connect.prepareStatement("UPDATE Proveedor SET nombre = ? , direccion =? , correo =?  , telefono =? "
+                    + " where rtn_proveedor =?");
+            st.setString(1, provider.getName());
+            st.setString(2, provider.getAddress());
+            st.setString(3, provider.getEmail());
+            st.setString(4, provider.getCellphone());
+            st.setString(5, provider.getRtn_provider());
+            st.execute();
+        } catch (SQLException ex) {
+            Logger.getLogger(Provider_Model.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        super.close();
     }
 
     @Override
     public void delete(Object id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        super.connect();
+        String idrtn = (String) id;
+        System.out.println(id);
+        try {
+            PreparedStatement st = connect.prepareStatement("DELETE FROM Proveedor "
+                    + "WHERE rtn_proveedor = ?");
+            st.setString(1, idrtn);
+            st.execute();
+        } catch (SQLException ex) {
+            Logger.getLogger(Provider_Model.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        super.close();
+
     }
-    
+
 }
