@@ -24,14 +24,11 @@ public class Account extends javax.swing.JPanel {
         labelUser.setForeground(new java.awt.Color(255, 255, 255));
         labelUser.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelUser.setText("Usuario");
+        labelUser.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         labelPicture.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelPicture.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICO/60px/icons8_Customer_60px.png"))); // NOI18N
-        labelPicture.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                labelPictureMouseClicked(evt);
-            }
-        });
+        labelPicture.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -54,10 +51,6 @@ public class Account extends javax.swing.JPanel {
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
-
-    private void labelPictureMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelPictureMouseClicked
-        System.out.println("Hey");
-    }//GEN-LAST:event_labelPictureMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

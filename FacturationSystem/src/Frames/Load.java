@@ -273,7 +273,7 @@ public class Load extends javax.swing.JFrame {
     private void updateProperties() {
         try {
             ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(".properties.pty"));
-            property = new Property(Property.FIBER, new Account("pass", "user", "email", null));
+            property = new Property(Property.FIBER, new Account());
             property.logged = false;
             out.writeObject(property);
             out.close();
@@ -317,6 +317,12 @@ public class Load extends javax.swing.JFrame {
         }
     }
 
+    /**
+     *
+     * Establece ícono de ventana
+     *
+     * @return Ícono
+     */
     @Override
     public Image getIconImage() {
         Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("ICO/100px/icons8_Connect_Develop_100px.png"));
