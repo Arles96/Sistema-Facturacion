@@ -7,6 +7,7 @@ import java.awt.Image;
 import java.awt.Toolkit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -164,15 +165,23 @@ public class UserJoin extends javax.swing.JFrame {
 
     private void labelBackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelBackMouseClicked
         this.dispose();
-        workSheet.setVisible(true);
+        userLogin.setVisible(true);
     }//GEN-LAST:event_labelBackMouseClicked
 
     private void labelDoneMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelDoneMouseClicked
+        System.out.println(property);
         if (!errorUser.isVisible() && !errorPasswordR.isVisible() && !errorEmail.isVisible()
                 && !user.getText().isEmpty() && !password.getText().isEmpty() && !passwordR.getText().isEmpty() && !email.getText().isEmpty()) {
-            property.setAccount(new Account(password.getText(), user.getText(), "email", null));
-            this.dispose();
-            workSheet.setVisible(true);
+            this.setAlwaysOnTop(false);
+
+            if (property.contains(user.getText()) > -1) {
+                JOptionPane.showMessageDialog(null, "Usuario ya existente", "Colición", 0);
+                errorUser.setVisible(true);
+            } else if (property.ADMIN.equals(JOptionPane.showInputDialog(null, "Código de Administrador", "Confirmar", 1) + "")) {
+                property.getAccountList().add(new Account(password.getText(), user.getText(), email.getText(), null));
+                this.dispose();
+                userLogin.setVisible(true);
+            }
         }
     }//GEN-LAST:event_labelDoneMouseClicked
 
@@ -199,17 +208,18 @@ public class UserJoin extends javax.swing.JFrame {
         Pattern p = Pattern.compile("^\\s|^\\d|\\s|\\W");
         Matcher m = p.matcher(email.getText());
         if (!m.find()) {
-                
+
         }
     }//GEN-LAST:event_emailKeyReleased
 
     /**
      * @param args the command line arguments
      * @param properties
+     * @param login
      */
     public static void main(String args[], Property properties, UserLogin login) {
         property = properties;
-        workSheet = login;
+        userLogin = login;
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -271,7 +281,7 @@ public class UserJoin extends javax.swing.JFrame {
     /**
      * Frame de trabajo.
      */
-    private static UserLogin workSheet;
+    private static UserLogin userLogin;
 
     /**
      *

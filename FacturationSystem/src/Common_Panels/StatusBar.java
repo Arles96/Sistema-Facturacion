@@ -1,7 +1,6 @@
 package Common_Panels;
 
 import Resources.Property;
-import com.toedter.calendar.JCalendar;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -165,7 +164,7 @@ public class StatusBar extends javax.swing.JPanel {
             do {
                 setRuntime();
                 try {
-                    Thread.sleep(1000);
+                    Thread.sleep(999);
                 } catch (Exception e) {
                     System.out.println("StatusBar_Thread");
                 }

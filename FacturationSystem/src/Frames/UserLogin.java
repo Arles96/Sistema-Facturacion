@@ -191,10 +191,14 @@ public class UserLogin extends javax.swing.JFrame {
 
     private void labelDoneMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelDoneMouseClicked
         if (!errorUser.isVisible() && !user.getText().isEmpty() && !password.getText().isEmpty()) {
-            property.setAccount(new Account(password.getText(), user.getText(), "email", null));
-            workSheet.getStatusBar1().refresh();
-            this.dispose();
-            workSheet.setVisible(true);
+            int index;
+            if ((index = property.contains(user.getText())) > -1) {
+                if (property.getAccountList().get(index).getPassword().equals(password.getText())) {
+                    workSheet.getStatusBar1().refresh();
+                    this.dispose();
+                    workSheet.setVisible(true);
+                }
+            }
         }
     }//GEN-LAST:event_labelDoneMouseClicked
 
@@ -218,6 +222,7 @@ public class UserLogin extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      * @param properties
+     * @param work
      */
     public static void main(String args[], Property properties, WorkSheet work) {
         property = properties;

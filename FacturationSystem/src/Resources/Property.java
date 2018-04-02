@@ -1,6 +1,7 @@
 package Resources;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 /**
  *
@@ -33,13 +34,24 @@ public class Property implements Serializable {
      */
     public static boolean logged;
     /**
+     * Código de administrador.
+     */
+    public final String ADMIN;
+    /**
+     * Lista de Usuarios.
+     */
+    private ArrayList<Account> accountList;
+    /**
      * Usuario conectado.
      */
     private Account account;
 
     public Property(int mix[][], Account account) {
+        //this.ADMIN = "03jK9In42yr4i17fj7CY";
+        this.ADMIN = " ";
         this.mix = mix;
         this.account = account;
+        accountList = new ArrayList();
     }
 
     public int[][] getMix() {
@@ -58,9 +70,34 @@ public class Property implements Serializable {
         this.account = account;
     }
 
+    public ArrayList<Account> getAccountList() {
+        return accountList;
+    }
+
+    public void setAccountList(ArrayList<Account> accountList) {
+        this.accountList = accountList;
+    }
+
     @Override
     public String toString() {
         return "Property{" + "mix=" + mix + ", account=" + account + '}';
+    }
+
+    public int contains(Object o) {
+        if (o instanceof Account) {
+            for (int i = 0; i < accountList.size(); i++) {
+                if (((Account) o).getUser().equals(accountList.get(i).getUser())) {
+                    return i;
+                }
+            }
+        } else if (o instanceof String) {
+            for (int i = 0; i < accountList.size(); i++) {
+                if (o.equals(accountList.get(i).getUser())) {
+                    return i;
+                }
+            }
+        }
+        return -1;
     }
 
 }

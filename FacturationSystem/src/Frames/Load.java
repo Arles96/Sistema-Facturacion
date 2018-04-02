@@ -33,7 +33,7 @@ public class Load extends javax.swing.JFrame {
             loadProperties();
         } catch (Exception e) {
             System.out.println("ERROR_LOADPROPERTIES");
-            updateProperties();
+            setProperties();
         }
         //System.out.println(property);
     }
@@ -256,7 +256,7 @@ public class Load extends javax.swing.JFrame {
      */
     private void loadProperties() throws Exception {
         this.allLoaded = false;
-        Progress_Thread progress = new Progress_Thread();
+        Progress_Thread progress = new Progress_Thread(this);
         progress.load = this;
         Thread thread = new Thread(progress);
         thread.start();
@@ -270,11 +270,23 @@ public class Load extends javax.swing.JFrame {
     /**
      * Sobrescribe las propiedades generales.
      */
-    private void updateProperties() {
+    public void setProperties() {
         try {
             ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(".properties.pty"));
             property = new Property(Property.FIBER, new Account());
             property.logged = false;
+            out.writeObject(property);
+            out.close();
+        } catch (Exception e) {
+            System.out.println("ERROR_SETPROPERTIES");
+        }
+        System.out.println("LOAD: Set Properties");
+        this.allLoaded = true;
+    }
+
+    public void updateProperties() {
+        try {
+            ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(".properties.pty"));
             out.writeObject(property);
             out.close();
         } catch (Exception e) {
@@ -289,6 +301,10 @@ public class Load extends javax.swing.JFrame {
      * HACERLO HASTA QUE TERMINE LA CARGA DE TODOS LOS ARCHIVOS.
      */
     public class Progress_Thread implements Runnable {
+
+        public Progress_Thread(Load load) {
+            this.load = load;
+        }
 
         public Load load;
 
@@ -313,7 +329,7 @@ public class Load extends javax.swing.JFrame {
              * Abre el programa principal.
              */
             load.setVisible(false);
-            WorkSheet.main(new String[]{""}, property);
+            WorkSheet.main(new String[]{""}, property, load);
         }
     }
 

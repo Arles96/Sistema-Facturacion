@@ -2,13 +2,14 @@ package Resources;
 
 import java.awt.Image;
 import java.io.Serializable;
+import java.util.Objects;
 
 /**
  * Objeto contenedor de los datos de acceso del usuario.
  *
  * @author CJ
  */
-public class Account implements Serializable {
+public class Account implements Serializable, Comparable<Object> {
 
     /**
      * Contraseña del usuario.
@@ -93,5 +94,49 @@ public class Account implements Serializable {
         return "Account{" + "password=" + password + ", user=" + user + ", email=" + email + ", picture=" + picture + ", enable=" + enable + '}';
     }
 
-    
+    /**
+     *
+     * @param o
+     * @return
+     */
+    @Override
+    public boolean equals(Object o) {
+        if (o instanceof Account) {
+            if (((Account) o).getUser().equals(this.user)) {
+                return true;
+            }
+        } else if (o instanceof String) {
+            if (o.equals(this.user)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 89 * hash + Objects.hashCode(this.user);
+        return hash;
+    }
+
+    /**
+     *
+     * @param t
+     * @return
+     */
+    @Override
+    public int compareTo(Object t) {
+        if (t instanceof Account) {
+            if (((Account) t).getUser().equals(this.user)) {
+                return 0;
+            }
+        } else if (t instanceof String) {
+            if (t.equals(this.user)) {
+                return 0;
+            }
+        }
+        return 1;
+    }
+
 }
