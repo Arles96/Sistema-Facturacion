@@ -194,6 +194,10 @@ public class UserLogin extends javax.swing.JFrame {
             int index;
             if ((index = property.contains(user.getText())) > -1) {
                 if (property.getAccountList().get(index).getPassword().equals(password.getText())) {
+                    property.setAccount(property.getAccountList().get(index));
+                    property.setLogged(true);
+                    workSheet.getItemLogout().setEnabled(true);
+                    workSheet.getItemLogin().setEnabled(false);
                     workSheet.getStatusBar1().refresh();
                     this.dispose();
                     workSheet.setVisible(true);
@@ -306,6 +310,14 @@ public class UserLogin extends javax.swing.JFrame {
 
     public void setProperty(Property property) {
         this.property = property;
+    }
+
+    public static WorkSheet getWorkSheet() {
+        return workSheet;
+    }
+
+    public static void setWorkSheet(WorkSheet workSheet) {
+        UserLogin.workSheet = workSheet;
     }
 
     private boolean Validate(String text) {

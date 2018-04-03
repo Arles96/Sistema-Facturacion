@@ -66,6 +66,8 @@ public class Desk extends javax.swing.JPanel {
         jLabel17 = new javax.swing.JLabel();
         panelProductos = new javax.swing.JPanel();
         jLabel18 = new javax.swing.JLabel();
+        panelUser = new javax.swing.JPanel();
+        jLabel19 = new javax.swing.JLabel();
         FirstPlane = new javax.swing.JPanel();
         labelBack = new javax.swing.JLabel();
         internalPanel = new javax.swing.JPanel();
@@ -212,6 +214,28 @@ public class Desk extends javax.swing.JPanel {
             .addGroup(panelProductosLayout.createSequentialGroup()
                 .addComponent(jLabel18)
                 .addGap(0, 475, Short.MAX_VALUE))
+        );
+
+        jLabel19.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel19.setText("CAJA");
+
+        javax.swing.GroupLayout panelUserLayout = new javax.swing.GroupLayout(panelUser);
+        panelUser.setLayout(panelUserLayout);
+        panelUserLayout.setHorizontalGroup(
+            panelUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelUserLayout.createSequentialGroup()
+                .addContainerGap(193, Short.MAX_VALUE)
+                .addComponent(jLabel19)
+                .addContainerGap(211, Short.MAX_VALUE))
+        );
+        panelUserLayout.setVerticalGroup(
+            panelUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelUserLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel19)
+                .addContainerGap(473, Short.MAX_VALUE))
         );
 
         labelBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICO/40px/icons8_Back_40px_1.png"))); // NOI18N
@@ -526,82 +550,103 @@ public class Desk extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void pCajaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pCajaMouseClicked
-        if (property.getAccount().isEnable()) {
-        this.buttonClicked = true;
-        workSheet.getPanelStatistics().setVisible(false);
-        workSheet.getAccount().setVisible(false);
-        workSheet.getPanelClose().setVisible(false);
-        labelBack.setVisible(true);
-        // Oculto el panel Principal
-        // Muestro panel interno (panelCaja)
-        internalPanel.setVisible(false);
-        panelCaja.setVisible(true);
-        }
-    }//GEN-LAST:event_pCajaMouseClicked
-
-    private void pClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pClientesMouseClicked
-        if (property.getAccount().isEnable()) {
-        this.buttonClicked = true;
-        workSheet.getPanelStatistics().setVisible(false);
-        workSheet.getAccount().setVisible(false);
-        workSheet.getPanelClose().setVisible(false);
-        labelBack.setVisible(true);
-        // Oculto el panel Principal
-        // Muestro panel interno (panelClientes)
-        internalPanel.setVisible(false);
-        panelClientes.setVisible(true);
-        }
-    }//GEN-LAST:event_pClientesMouseClicked
-
-    private void pCVMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pCVMouseClicked
-        if (property.getAccount().isEnable()) {
-        this.buttonClicked = true;
-        workSheet.getPanelStatistics().setVisible(false);
-        workSheet.getAccount().setVisible(false);
-        workSheet.getPanelClose().setVisible(false);
-        labelBack.setVisible(true);
-        // Oculto el panel Principal
-        // Muestro panel interno (panelCV)
-        internalPanel.setVisible(false);
-        panelCV.setVisible(true);
-        }
-    }//GEN-LAST:event_pCVMouseClicked
-
-    private void pEmpleadosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pEmpleadosMouseClicked
-        if (property.getAccount().isEnable()) {
-        this.buttonClicked = true;
-        workSheet.getPanelStatistics().setVisible(false);
-        workSheet.getAccount().setVisible(false);
-        workSheet.getPanelClose().setVisible(false);
-        labelBack.setVisible(true);
-        // Oculto el panel Principal
-        // Muestro panel interno (panelEmpleados)
-        internalPanel.setVisible(false);
-        panelEmpleados.setVisible(true);
-        }
-    }//GEN-LAST:event_pEmpleadosMouseClicked
-
-    private void pAjustesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pAjustesMouseClicked
-        if (property.getAccount().isEnable()) {
-        this.buttonClicked = true;
-        workSheet.getPanelStatistics().setVisible(false);
-        workSheet.getAccount().setVisible(false);
-        workSheet.getPanelClose().setVisible(false);
-        labelBack.setVisible(true);
-        // Oculto el panel Principal
-        // Muestro panel interno (panelAjustes)
-        internalPanel.setVisible(false);
-        panelAjustes.setVisible(true);
-        }
-    }//GEN-LAST:event_pAjustesMouseClicked
-
-    private void pProductosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pProductosMouseClicked
-        if (property.getAccount().isEnable()) {
+    public void AccountMouseClicked() {
+        if (property.isLogged()) {
             this.buttonClicked = true;
             workSheet.getPanelStatistics().setVisible(false);
             workSheet.getAccount().setVisible(false);
             workSheet.getPanelClose().setVisible(false);
+            workSheet.getStatusBar1().setInfo("Principal/User/");
+            labelBack.setVisible(true);
+            // Oculto el panel Principal
+            // Muestro panel interno (panelCaja)
+            internalPanel.setVisible(false);
+            panelUser.setVisible(true);
+        }
+    }
+
+    private void pCajaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pCajaMouseClicked
+        if (property.isLogged()) {
+            this.buttonClicked = true;
+            workSheet.getPanelStatistics().setVisible(false);
+            workSheet.getAccount().setVisible(false);
+            workSheet.getPanelClose().setVisible(false);
+            workSheet.getStatusBar1().setInfo("Principal/Caja/");
+            labelBack.setVisible(true);
+            // Oculto el panel Principal
+            // Muestro panel interno (panelCaja)
+            internalPanel.setVisible(false);
+            panelCaja.setVisible(true);
+        }
+    }//GEN-LAST:event_pCajaMouseClicked
+
+    private void pClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pClientesMouseClicked
+        if (property.isLogged()) {
+            this.buttonClicked = true;
+            workSheet.getPanelStatistics().setVisible(false);
+            workSheet.getAccount().setVisible(false);
+            workSheet.getPanelClose().setVisible(false);
+            workSheet.getStatusBar1().setInfo("Principal/Clientes/");
+            labelBack.setVisible(true);
+            // Oculto el panel Principal
+            // Muestro panel interno (panelClientes)
+            internalPanel.setVisible(false);
+            panelClientes.setVisible(true);
+        }
+    }//GEN-LAST:event_pClientesMouseClicked
+
+    private void pCVMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pCVMouseClicked
+        if (property.isLogged()) {
+            this.buttonClicked = true;
+            workSheet.getPanelStatistics().setVisible(false);
+            workSheet.getAccount().setVisible(false);
+            workSheet.getPanelClose().setVisible(false);
+            workSheet.getStatusBar1().setInfo("Principal/Compra-Venta/");
+            labelBack.setVisible(true);
+            // Oculto el panel Principal
+            // Muestro panel interno (panelCV)
+            internalPanel.setVisible(false);
+            panelCV.setVisible(true);
+        }
+    }//GEN-LAST:event_pCVMouseClicked
+
+    private void pEmpleadosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pEmpleadosMouseClicked
+        if (property.isLogged()) {
+            this.buttonClicked = true;
+            workSheet.getPanelStatistics().setVisible(false);
+            workSheet.getAccount().setVisible(false);
+            workSheet.getPanelClose().setVisible(false);
+            workSheet.getStatusBar1().setInfo("Principal/Empleados/");
+            labelBack.setVisible(true);
+            // Oculto el panel Principal
+            // Muestro panel interno (panelEmpleados)
+            internalPanel.setVisible(false);
+            panelEmpleados.setVisible(true);
+        }
+    }//GEN-LAST:event_pEmpleadosMouseClicked
+
+    private void pAjustesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pAjustesMouseClicked
+        if (property.isLogged()) {
+            this.buttonClicked = true;
+            workSheet.getPanelStatistics().setVisible(false);
+            workSheet.getAccount().setVisible(false);
+            workSheet.getPanelClose().setVisible(false);
+            workSheet.getStatusBar1().setInfo("Principal/Ajustes/");
+            labelBack.setVisible(true);
+            // Oculto el panel Principal
+            // Muestro panel interno (panelAjustes)
+            internalPanel.setVisible(false);
+            panelAjustes.setVisible(true);
+        }
+    }//GEN-LAST:event_pAjustesMouseClicked
+
+    private void pProductosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pProductosMouseClicked
+        if (property.isLogged()) {
+            this.buttonClicked = true;
+            workSheet.getPanelStatistics().setVisible(false);
+            workSheet.getAccount().setVisible(false);
+            workSheet.getPanelClose().setVisible(false);
+            workSheet.getStatusBar1().setInfo("Principal/Productos/");
             labelBack.setVisible(true);
             // Oculto el panel Principal
             // Muestro panel interno (panelProductos)
@@ -626,6 +671,7 @@ public class Desk extends javax.swing.JPanel {
                 workSheet.getPanelStatistics().setVisible(true);
                 workSheet.getAccount().setVisible(true);
                 workSheet.getPanelClose().setVisible(true);
+                workSheet.getStatusBar1().setInfo("Principal/");
                 labelBack.setVisible(false);
             }
         }
@@ -645,6 +691,7 @@ public class Desk extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -666,6 +713,7 @@ public class Desk extends javax.swing.JPanel {
     private javax.swing.JPanel panelClientes;
     private javax.swing.JPanel panelEmpleados;
     private javax.swing.JPanel panelProductos;
+    private javax.swing.JPanel panelUser;
     // End of variables declaration//GEN-END:variables
     // Variables
     /**
@@ -738,5 +786,5 @@ public class Desk extends javax.swing.JPanel {
     public void logout() {
         labelBackMouseClicked(null);
     }
-    
+
 }

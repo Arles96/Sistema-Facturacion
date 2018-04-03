@@ -9,6 +9,7 @@ import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 
 /**
@@ -269,16 +270,14 @@ public class WorkSheet extends javax.swing.JFrame {
     }//GEN-LAST:event_itemCloseActionPerformed
 
     private void newSession() {
+        for (int i = 0; i < property.getAccountList().size(); i++) {
+            System.out.println(property.getAccountList().get(i));
+        }
         try {
-            if (property.getAccount().isEnable() == false) {
+            if (property.isLogged() == false) {
                 closeSession();
                 UserLogin.main(new String[]{""}, property, this);
                 this.setVisible(false);
-            }
-            property.getAccount().setEnable(true);
-            if (property.getAccount().isEnable()) {
-                itemLogout.setEnabled(true);
-                itemLogin.setEnabled(false);
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -290,11 +289,16 @@ public class WorkSheet extends javax.swing.JFrame {
     }//GEN-LAST:event_itemLoginActionPerformed
 
     private void accountMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_accountMouseClicked
-        newSession();
+        if (property.isLogged() == false) {
+            newSession();
+        } else {
+            desk1.AccountMouseClicked();
+        }
     }//GEN-LAST:event_accountMouseClicked
 
     private void closeSession() {
         property.setAccount(new Account());
+        property.setLogged(false);
         statusBar1.refresh();
         itemLogout.setEnabled(false);
         itemLogin.setEnabled(true);
@@ -410,6 +414,22 @@ public class WorkSheet extends javax.swing.JFrame {
 
     public void setPanelClose(JPanel panelClose) {
         this.panelClose = panelClose;
+    }
+
+    public JMenuItem getItemLogin() {
+        return itemLogin;
+    }
+
+    public void setItemLogin(JMenuItem itemLogin) {
+        this.itemLogin = itemLogin;
+    }
+
+    public JMenuItem getItemLogout() {
+        return itemLogout;
+    }
+
+    public void setItemLogout(JMenuItem itemLogout) {
+        this.itemLogout = itemLogout;
     }
 
     public Common_Panels.Account getAccount() {

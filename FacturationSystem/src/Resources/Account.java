@@ -16,6 +16,10 @@ public class Account implements Serializable, Comparable<Object> {
      */
     private String password;
     /**
+     * Nivel del usuario.
+     */
+    private int level;
+    /**
      * Nombre del usuario.
      */
     private String user;
@@ -23,29 +27,23 @@ public class Account implements Serializable, Comparable<Object> {
      * Correo electrónico del usuario.
      */
     private String email;
-    /**
-     * Imagen de perfil del usuario.
-     */
-    private Image picture;
+
     /**
      * Define si la cuenta está conectada en ese momento.
      */
-    private boolean enable;
-
+//    private boolean enable;
     public Account() {
         this.password = "";
         this.user = "";
         this.email = "";
-        this.picture = null;
-        this.enable = false;
+        this.level = 0;
     }
 
-    public Account(String password, String user, String email, Image picture) {
+    public Account(String password, String user, String email, int level) {
         this.password = password;
         this.user = user;
         this.email = email;
-        this.picture = picture;
-        this.enable = false;
+        this.level = level;
     }
 
     // ACCESORES
@@ -73,25 +71,9 @@ public class Account implements Serializable, Comparable<Object> {
         this.email = email;
     }
 
-    public Image getPicture() {
-        return picture;
-    }
-
-    public void setPicture(Image picture) {
-        this.picture = picture;
-    }
-
-    public boolean isEnable() {
-        return enable;
-    }
-
-    public void setEnable(boolean enable) {
-        this.enable = enable;
-    }
-
     @Override
     public String toString() {
-        return "Account{" + "password=" + password + ", user=" + user + ", email=" + email + ", picture=" + picture + ", enable=" + enable + '}';
+        return "Account{" + "password=" + password + ", level=" + level + ", user=" + user + ", email=" + email + '}';
     }
 
     /**

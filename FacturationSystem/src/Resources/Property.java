@@ -34,24 +34,38 @@ public class Property implements Serializable {
      */
     public static boolean logged;
     /**
-     * Código de administrador.
+     * Código de creación.
      */
-    public final String ADMIN;
+    public final String CREATE_KEY;
     /**
-     * Lista de Usuarios.
+     * Código de Administrador.
      */
     private ArrayList<Account> accountList;
+    /**
+     * Usuario Administradores.
+     */
+    private ArrayList<Account> adminList;
     /**
      * Usuario conectado.
      */
     private Account account;
 
     public Property(int mix[][], Account account) {
-        //this.ADMIN = "03jK9In42yr4i17fj7CY";
-        this.ADMIN = " ";
+        //this.CREATE_KEY = "03jK9In42yr4i17fj7CY";
+        this.CREATE_KEY = " ";
         this.mix = mix;
         this.account = account;
         accountList = new ArrayList();
+        adminList = new ArrayList();
+        accountList.add(account);
+    }
+
+    public ArrayList<Account> getAdminList() {
+        return adminList;
+    }
+
+    public void setAdminList(ArrayList<Account> adminList) {
+        this.adminList = adminList;
     }
 
     public int[][] getMix() {
@@ -78,6 +92,14 @@ public class Property implements Serializable {
         this.accountList = accountList;
     }
 
+    public static boolean isLogged() {
+        return logged;
+    }
+
+    public static void setLogged(boolean logged) {
+        Property.logged = logged;
+    }
+
     @Override
     public String toString() {
         return "Property{" + "mix=" + mix + ", account=" + account + '}';
@@ -93,6 +115,23 @@ public class Property implements Serializable {
         } else if (o instanceof String) {
             for (int i = 0; i < accountList.size(); i++) {
                 if (o.equals(accountList.get(i).getUser())) {
+                    return i;
+                }
+            }
+        }
+        return -1;
+    }
+
+    public int adminKey(Object o) {
+        if (o instanceof Account) {
+            for (int i = 0; i < accountList.size(); i++) {
+                if (((Account) o).getPassword().equals(accountList.get(i).getPassword())) {
+                    return i;
+                }
+            }
+        } else if (o instanceof String) {
+            for (int i = 0; i < accountList.size(); i++) {
+                if (o.equals(accountList.get(i).getPassword())) {
                     return i;
                 }
             }
