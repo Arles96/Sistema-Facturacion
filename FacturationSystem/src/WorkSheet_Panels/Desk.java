@@ -68,6 +68,8 @@ public class Desk extends javax.swing.JPanel {
         jLabel18 = new javax.swing.JLabel();
         panelUser = new javax.swing.JPanel();
         jLabel19 = new javax.swing.JLabel();
+        panelStatistics = new javax.swing.JPanel();
+        jLabel20 = new javax.swing.JLabel();
         FirstPlane = new javax.swing.JPanel();
         labelBack = new javax.swing.JLabel();
         internalPanel = new javax.swing.JPanel();
@@ -235,6 +237,28 @@ public class Desk extends javax.swing.JPanel {
             .addGroup(panelUserLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel19)
+                .addContainerGap(473, Short.MAX_VALUE))
+        );
+
+        jLabel20.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel20.setText("CAJA");
+
+        javax.swing.GroupLayout panelStatisticsLayout = new javax.swing.GroupLayout(panelStatistics);
+        panelStatistics.setLayout(panelStatisticsLayout);
+        panelStatisticsLayout.setHorizontalGroup(
+            panelStatisticsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelStatisticsLayout.createSequentialGroup()
+                .addContainerGap(193, Short.MAX_VALUE)
+                .addComponent(jLabel20)
+                .addContainerGap(211, Short.MAX_VALUE))
+        );
+        panelStatisticsLayout.setVerticalGroup(
+            panelStatisticsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelStatisticsLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel20)
                 .addContainerGap(473, Short.MAX_VALUE))
         );
 
@@ -550,16 +574,31 @@ public class Desk extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    public void StatisticsMouseClicked() {
+        if (property.isLogged()) {
+            this.buttonClicked = true;
+            workSheet.getPanelStatistics().setVisible(false);
+            workSheet.getAccount().setVisible(false);
+            workSheet.getPanelClose().setVisible(false);
+            workSheet.getStatusBar1().setInfo("Principal/Estadísticas/");
+            labelBack.setVisible(true);
+            // Oculto el panel Principal
+            // Muestro panel interno (panelStatistics)
+            internalPanel.setVisible(false);
+            panelStatistics.setVisible(true);
+        }
+    }
+
     public void AccountMouseClicked() {
         if (property.isLogged()) {
             this.buttonClicked = true;
             workSheet.getPanelStatistics().setVisible(false);
             workSheet.getAccount().setVisible(false);
             workSheet.getPanelClose().setVisible(false);
-            workSheet.getStatusBar1().setInfo("Principal/User/");
+            workSheet.getStatusBar1().setInfo("Principal/Usuario/");
             labelBack.setVisible(true);
             // Oculto el panel Principal
-            // Muestro panel interno (panelCaja)
+            // Muestro panel interno (panelUser)
             internalPanel.setVisible(false);
             panelUser.setVisible(true);
         }
@@ -693,6 +732,7 @@ public class Desk extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -713,6 +753,7 @@ public class Desk extends javax.swing.JPanel {
     private javax.swing.JPanel panelClientes;
     private javax.swing.JPanel panelEmpleados;
     private javax.swing.JPanel panelProductos;
+    private javax.swing.JPanel panelStatistics;
     private javax.swing.JPanel panelUser;
     // End of variables declaration//GEN-END:variables
     // Variables

@@ -125,6 +125,12 @@ public class WorkSheet extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        panelStatistics.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                panelStatisticsMouseClicked(evt);
+            }
+        });
+
         jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICO/100px/icons8_Training_100px_1.png"))); // NOI18N
         jLabel17.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel17.setDebugGraphicsOptions(javax.swing.DebugGraphics.BUFFERED_OPTION);
@@ -143,9 +149,9 @@ public class WorkSheet extends javax.swing.JFrame {
             .addGroup(panelStatisticsLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel17)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelStatisticsLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap()
                 .addComponent(jLabel8)
                 .addGap(20, 20, 20))
         );
@@ -153,7 +159,7 @@ public class WorkSheet extends javax.swing.JFrame {
             panelStatisticsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelStatisticsLayout.createSequentialGroup()
                 .addComponent(jLabel17)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                .addGap(0, 0, 0)
                 .addComponent(jLabel8))
         );
 
@@ -314,6 +320,10 @@ public class WorkSheet extends javax.swing.JFrame {
             panelStatistics.setVisible(false);
         }
     }//GEN-LAST:event_desk1PropertyChange
+
+    private void panelStatisticsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelStatisticsMouseClicked
+        desk1.StatisticsMouseClicked();
+    }//GEN-LAST:event_panelStatisticsMouseClicked
 
     /**
      * @param args the command line arguments
