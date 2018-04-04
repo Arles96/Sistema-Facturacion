@@ -77,8 +77,6 @@ public class Desk extends javax.swing.JPanel {
         jLabel15 = new javax.swing.JLabel();
         panelAjustes = new javax.swing.JPanel();
         jLabel17 = new javax.swing.JLabel();
-        panelProductos = new javax.swing.JPanel();
-        jLabel18 = new javax.swing.JLabel();
         panelStatistics = new javax.swing.JPanel();
         jLabel20 = new javax.swing.JLabel();
         panelUser = new javax.swing.JPanel();
@@ -112,8 +110,13 @@ public class Desk extends javax.swing.JPanel {
         jPanel1 = new javax.swing.JPanel();
         Admin_user_edit = new javax.swing.JTextField();
         jLabel22 = new javax.swing.JLabel();
-        FirstPlane = new javax.swing.JPanel();
-        labelBack = new javax.swing.JLabel();
+        panelEmpleados = new javax.swing.JPanel();
+        Employee_TabbedPane = new javax.swing.JTabbedPane();
+        Employee_SP = new javax.swing.JScrollPane();
+        Employee_SP_panel = new javax.swing.JPanel();
+        jLabel30 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        Employee_Table = new javax.swing.JTable();
         internalPanel = new javax.swing.JPanel();
         pCaja = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
@@ -133,13 +136,15 @@ public class Desk extends javax.swing.JPanel {
         pProductos = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
-        panelEmpleados = new javax.swing.JPanel();
-        Employee_TabbedPane = new javax.swing.JTabbedPane();
-        User_SPAdminstrar1 = new javax.swing.JScrollPane();
-        User_SPAdministrar_panel1 = new javax.swing.JPanel();
-        jLabel30 = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        Employee_Table = new javax.swing.JTable();
+        FirstPlane = new javax.swing.JPanel();
+        labelBack = new javax.swing.JLabel();
+        panelProductos = new javax.swing.JPanel();
+        Product_TabbedPane = new javax.swing.JTabbedPane();
+        Product_SP = new javax.swing.JScrollPane();
+        Product_SP_panel = new javax.swing.JPanel();
+        jLabel31 = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        Product_Table = new javax.swing.JTable();
 
         jLabel6.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
@@ -224,26 +229,6 @@ public class Desk extends javax.swing.JPanel {
                 .addGap(28, 28, 28)
                 .addComponent(jLabel17)
                 .addContainerGap(447, Short.MAX_VALUE))
-        );
-
-        jLabel18.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        jLabel18.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel18.setText("Productos");
-
-        javax.swing.GroupLayout panelProductosLayout = new javax.swing.GroupLayout(panelProductos);
-        panelProductos.setLayout(panelProductosLayout);
-        panelProductosLayout.setHorizontalGroup(
-            panelProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelProductosLayout.createSequentialGroup()
-                .addGap(90, 90, 90)
-                .addComponent(jLabel18)
-                .addContainerGap(65, Short.MAX_VALUE))
-        );
-        panelProductosLayout.setVerticalGroup(
-            panelProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelProductosLayout.createSequentialGroup()
-                .addComponent(jLabel18)
-                .addGap(0, 475, Short.MAX_VALUE))
         );
 
         jLabel20.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
@@ -492,6 +477,7 @@ public class Desk extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        Admin_User_Table.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         Admin_User_Table.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Admin_User_TableMouseClicked(evt);
@@ -608,13 +594,92 @@ public class Desk extends javax.swing.JPanel {
             .addComponent(User_TabbedPane, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 474, Short.MAX_VALUE)
         );
 
-        labelBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICO/40px/icons8_Back_40px_1.png"))); // NOI18N
-        labelBack.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        labelBack.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                labelBackMouseClicked(evt);
+        Employee_TabbedPane.setTabLayoutPolicy(javax.swing.JTabbedPane.SCROLL_TAB_LAYOUT);
+        Employee_TabbedPane.setTabPlacement(javax.swing.JTabbedPane.LEFT);
+        Employee_TabbedPane.setToolTipText("");
+        Employee_TabbedPane.setAutoscrolls(true);
+        Employee_TabbedPane.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        Employee_TabbedPane.setDoubleBuffered(true);
+        Employee_TabbedPane.setFocusCycleRoot(true);
+        Employee_TabbedPane.setFocusTraversalPolicyProvider(true);
+        Employee_TabbedPane.setOpaque(true);
+        Employee_TabbedPane.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                Employee_TabbedPaneStateChanged(evt);
             }
         });
+
+        jLabel30.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
+        jLabel30.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel30.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel30.setText("Listado de Empleados");
+
+        jScrollPane2.setOpaque(false);
+
+        Employee_Table.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Usuario", "Correo", "Cargo"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Employee_Table.setDebugGraphicsOptions(javax.swing.DebugGraphics.BUFFERED_OPTION);
+        Employee_Table.setDropMode(javax.swing.DropMode.INSERT_COLS);
+        Employee_Table.setEditingColumn(-1);
+        Employee_Table.setEditingRow(-1);
+        Employee_Table.setOpaque(false);
+        Employee_Table.setRowSelectionAllowed(false);
+        Employee_Table.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        Employee_Table.setUpdateSelectionOnSort(false);
+        Employee_Table.setVerifyInputWhenFocusTarget(false);
+        jScrollPane2.setViewportView(Employee_Table);
+
+        javax.swing.GroupLayout Employee_SP_panelLayout = new javax.swing.GroupLayout(Employee_SP_panel);
+        Employee_SP_panel.setLayout(Employee_SP_panelLayout);
+        Employee_SP_panelLayout.setHorizontalGroup(
+            Employee_SP_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Employee_SP_panelLayout.createSequentialGroup()
+                .addGap(12, 12, 12)
+                .addGroup(Employee_SP_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 674, Short.MAX_VALUE)
+                    .addGroup(Employee_SP_panelLayout.createSequentialGroup()
+                        .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 427, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addGap(19, 19, 19))
+        );
+        Employee_SP_panelLayout.setVerticalGroup(
+            Employee_SP_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Employee_SP_panelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel30)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 341, Short.MAX_VALUE)
+                .addGap(79, 79, 79))
+        );
+
+        Employee_SP.setViewportView(Employee_SP_panel);
+
+        Employee_TabbedPane.addTab("Listado", Employee_SP);
+
+        javax.swing.GroupLayout panelEmpleadosLayout = new javax.swing.GroupLayout(panelEmpleados);
+        panelEmpleados.setLayout(panelEmpleadosLayout);
+        panelEmpleadosLayout.setHorizontalGroup(
+            panelEmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Employee_TabbedPane, javax.swing.GroupLayout.DEFAULT_SIZE, 767, Short.MAX_VALUE)
+        );
+        panelEmpleadosLayout.setVerticalGroup(
+            panelEmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Employee_TabbedPane)
+        );
 
         pCaja.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -889,28 +954,37 @@ public class Desk extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        Employee_TabbedPane.setTabLayoutPolicy(javax.swing.JTabbedPane.SCROLL_TAB_LAYOUT);
-        Employee_TabbedPane.setTabPlacement(javax.swing.JTabbedPane.LEFT);
-        Employee_TabbedPane.setToolTipText("");
-        Employee_TabbedPane.setAutoscrolls(true);
-        Employee_TabbedPane.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        Employee_TabbedPane.setDoubleBuffered(true);
-        Employee_TabbedPane.setFocusCycleRoot(true);
-        Employee_TabbedPane.setFocusTraversalPolicyProvider(true);
-        Employee_TabbedPane.addChangeListener(new javax.swing.event.ChangeListener() {
-            public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                Employee_TabbedPaneStateChanged(evt);
+        labelBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICO/40px/icons8_Back_40px_1.png"))); // NOI18N
+        labelBack.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        labelBack.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                labelBackMouseClicked(evt);
             }
         });
 
-        User_SPAdministrar_panel1.setOpaque(false);
+        Product_TabbedPane.setTabLayoutPolicy(javax.swing.JTabbedPane.SCROLL_TAB_LAYOUT);
+        Product_TabbedPane.setTabPlacement(javax.swing.JTabbedPane.LEFT);
+        Product_TabbedPane.setToolTipText("");
+        Product_TabbedPane.setAutoscrolls(true);
+        Product_TabbedPane.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        Product_TabbedPane.setDoubleBuffered(true);
+        Product_TabbedPane.setFocusCycleRoot(true);
+        Product_TabbedPane.setFocusTraversalPolicyProvider(true);
+        Product_TabbedPane.setOpaque(true);
+        Product_TabbedPane.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                Product_TabbedPaneStateChanged(evt);
+            }
+        });
 
-        jLabel30.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
-        jLabel30.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel30.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel30.setText("Listado de Empleados");
+        jLabel31.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
+        jLabel31.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel31.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel31.setText("Listado de Productos");
 
-        Employee_Table.setModel(new javax.swing.table.DefaultTableModel(
+        jScrollPane3.setOpaque(false);
+
+        Product_Table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -918,71 +992,61 @@ public class Desk extends javax.swing.JPanel {
                 "Usuario", "Correo", "Cargo"
             }
         ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class
-            };
             boolean[] canEdit = new boolean [] {
                 false, false, false
             };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
-        Employee_Table.setDropMode(javax.swing.DropMode.ON);
-        Employee_Table.setOpaque(false);
-        Employee_Table.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Employee_TableMouseClicked(evt);
-            }
-        });
-        Employee_Table.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                Employee_TableKeyTyped(evt);
-            }
-        });
-        jScrollPane2.setViewportView(Employee_Table);
+        Product_Table.setDebugGraphicsOptions(javax.swing.DebugGraphics.BUFFERED_OPTION);
+        Product_Table.setDropMode(javax.swing.DropMode.INSERT_COLS);
+        Product_Table.setEditingColumn(-1);
+        Product_Table.setEditingRow(-1);
+        Product_Table.setOpaque(false);
+        Product_Table.setRowSelectionAllowed(false);
+        Product_Table.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        Product_Table.setUpdateSelectionOnSort(false);
+        Product_Table.setVerifyInputWhenFocusTarget(false);
+        jScrollPane3.setViewportView(Product_Table);
 
-        javax.swing.GroupLayout User_SPAdministrar_panel1Layout = new javax.swing.GroupLayout(User_SPAdministrar_panel1);
-        User_SPAdministrar_panel1.setLayout(User_SPAdministrar_panel1Layout);
-        User_SPAdministrar_panel1Layout.setHorizontalGroup(
-            User_SPAdministrar_panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(User_SPAdministrar_panel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout Product_SP_panelLayout = new javax.swing.GroupLayout(Product_SP_panel);
+        Product_SP_panel.setLayout(Product_SP_panelLayout);
+        Product_SP_panelLayout.setHorizontalGroup(
+            Product_SP_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Product_SP_panelLayout.createSequentialGroup()
                 .addGap(12, 12, 12)
-                .addGroup(User_SPAdministrar_panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2)
-                    .addGroup(User_SPAdministrar_panel1Layout.createSequentialGroup()
-                        .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 427, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addGap(19, 19, 19))
+                .addGroup(Product_SP_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 627, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 427, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(85, Short.MAX_VALUE))
         );
-        User_SPAdministrar_panel1Layout.setVerticalGroup(
-            User_SPAdministrar_panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(User_SPAdministrar_panel1Layout.createSequentialGroup()
+        Product_SP_panelLayout.setVerticalGroup(
+            Product_SP_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Product_SP_panelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel30)
+                .addComponent(jLabel31)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(162, Short.MAX_VALUE))
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(94, Short.MAX_VALUE))
         );
 
-        User_SPAdminstrar1.setViewportView(User_SPAdministrar_panel1);
+        Product_SP.setViewportView(Product_SP_panel);
 
-        Employee_TabbedPane.addTab("Listado", User_SPAdminstrar1);
+        Product_TabbedPane.addTab("Listado", Product_SP);
 
-        javax.swing.GroupLayout panelEmpleadosLayout = new javax.swing.GroupLayout(panelEmpleados);
-        panelEmpleados.setLayout(panelEmpleadosLayout);
-        panelEmpleadosLayout.setHorizontalGroup(
-            panelEmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Employee_TabbedPane, javax.swing.GroupLayout.DEFAULT_SIZE, 767, Short.MAX_VALUE)
+        javax.swing.GroupLayout panelProductosLayout = new javax.swing.GroupLayout(panelProductos);
+        panelProductos.setLayout(panelProductosLayout);
+        panelProductosLayout.setHorizontalGroup(
+            panelProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Product_TabbedPane)
         );
-        panelEmpleadosLayout.setVerticalGroup(
-            panelEmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Employee_TabbedPane, javax.swing.GroupLayout.DEFAULT_SIZE, 418, Short.MAX_VALUE)
+        panelProductosLayout.setVerticalGroup(
+            panelProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelProductosLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(Product_TabbedPane, javax.swing.GroupLayout.DEFAULT_SIZE, 480, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout FirstPlaneLayout = new javax.swing.GroupLayout(FirstPlane);
@@ -992,13 +1056,8 @@ public class Desk extends javax.swing.JPanel {
             .addGroup(FirstPlaneLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(labelBack)
-                .addContainerGap(721, Short.MAX_VALUE))
-            .addComponent(panelEmpleados, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(FirstPlaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(FirstPlaneLayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(internalPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addContainerGap()))
+                .addContainerGap(753, Short.MAX_VALUE))
+            .addComponent(panelProductos, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         FirstPlaneLayout.setVerticalGroup(
             FirstPlaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1006,12 +1065,7 @@ public class Desk extends javax.swing.JPanel {
                 .addGap(6, 6, 6)
                 .addComponent(labelBack)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(panelEmpleados, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(FirstPlaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(FirstPlaneLayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(internalPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addContainerGap()))
+                .addComponent(panelProductos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -1316,25 +1370,25 @@ public class Desk extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_Employee_TabbedPaneStateChanged
 
-    private void Employee_TableKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Employee_TableKeyTyped
+    private void Product_TabbedPaneStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_Product_TabbedPaneStateChanged
         // TODO add your handling code here:
-    }//GEN-LAST:event_Employee_TableKeyTyped
-
-    private void Employee_TableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Employee_TableMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Employee_TableMouseClicked
+    }//GEN-LAST:event_Product_TabbedPaneStateChanged
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable Admin_User_Table;
     private javax.swing.JTextField Admin_user_edit;
+    private javax.swing.JScrollPane Employee_SP;
+    private javax.swing.JPanel Employee_SP_panel;
     private javax.swing.JTabbedPane Employee_TabbedPane;
     private javax.swing.JTable Employee_Table;
     private javax.swing.JPanel FirstPlane;
+    private javax.swing.JScrollPane Product_SP;
+    private javax.swing.JPanel Product_SP_panel;
+    private javax.swing.JTabbedPane Product_TabbedPane;
+    private javax.swing.JTable Product_Table;
     private javax.swing.JPanel User_SPAdministrar_panel;
-    private javax.swing.JPanel User_SPAdministrar_panel1;
     private javax.swing.JScrollPane User_SPAdminstrar;
-    private javax.swing.JScrollPane User_SPAdminstrar1;
     private javax.swing.JScrollPane User_SPGeneral;
     private javax.swing.JPanel User_SPGeneral_panel;
     private javax.swing.JTabbedPane User_TabbedPane;
@@ -1352,7 +1406,6 @@ public class Desk extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
@@ -1363,6 +1416,7 @@ public class Desk extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -1372,6 +1426,7 @@ public class Desk extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JLabel labelBack;
     private javax.swing.JLabel labelCancel;
     private javax.swing.JLabel labelDone;
@@ -1467,6 +1522,9 @@ public class Desk extends javax.swing.JPanel {
             User_SPAdministrar_panel.setBackground(this.getBackground());
             User_SPGeneral.setBackground(this.getBackground());
             User_SPGeneral_panel.setBackground(this.getBackground());
+            Employee_SP.setBackground(this.getBackground());
+            Employee_SP_panel.setBackground(this.getBackground());
+            Employee_TabbedPane.setBackground(this.getBackground());
         } catch (Exception e) {
         }
     }
@@ -1520,7 +1578,21 @@ public class Desk extends javax.swing.JPanel {
     }
 
     private void Admin_User_refreshTable() {
-        DefaultTableModel model = (DefaultTableModel) new DefaultTableModel(new Object[]{"Usuario", "Administrador"}, 0);
+        DefaultTableModel model = new javax.swing.table.DefaultTableModel(
+                new Object[][]{},
+                new String[]{
+                    "Usuario", "Administrador"
+                }
+        ) {
+            boolean[] canEdit = new boolean[]{
+                false, false
+            };
+
+            @Override
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit[columnIndex];
+            }
+        };
         property.getAccountList().forEach((accountRow) -> {
             boolean level = false;
             if (accountRow.getLevel() == 1) {
@@ -1532,7 +1604,47 @@ public class Desk extends javax.swing.JPanel {
     }
 
     private void Employee_refreshTable() {
-        DefaultTableModel model = (DefaultTableModel) new DefaultTableModel(new Object[]{"Usuario", "Correo", "Cargo"}, 0);
+        DefaultTableModel model = new javax.swing.table.DefaultTableModel(
+                new Object[][]{},
+                new String[]{
+                    "Usuario", "Correo", "Cargo"
+                }
+        ) {
+            boolean[] canEdit = new boolean[]{
+                false, false, false
+            };
+
+            @Override
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit[columnIndex];
+            }
+        };
+        property.getAccountList().forEach((accountRow) -> {
+            if (accountRow.getLevel() == 1) {
+                model.addRow(new Object[]{accountRow.getUser(), accountRow.getEmail(), "Administrador"});
+            } else {
+                model.addRow(new Object[]{accountRow.getUser(), accountRow.getEmail(), "Empleado"});
+            }
+        });
+        Employee_Table.setModel(model);
+    }
+
+    private void Prooduct_refreshTable() {
+        DefaultTableModel model = new javax.swing.table.DefaultTableModel(
+                new Object[][]{},
+                new String[]{
+                    "Usuario", "Correo", "Cargo"
+                }
+        ) {
+            boolean[] canEdit = new boolean[]{
+                false, false, false
+            };
+
+            @Override
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit[columnIndex];
+            }
+        };
         property.getAccountList().forEach((accountRow) -> {
             if (accountRow.getLevel() == 1) {
                 model.addRow(new Object[]{accountRow.getUser(), accountRow.getEmail(), "Administrador"});
