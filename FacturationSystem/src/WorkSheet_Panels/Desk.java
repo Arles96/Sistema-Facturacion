@@ -1528,7 +1528,6 @@ public class Desk extends javax.swing.JPanel {
             }
             model.addRow(new Object[]{accountRow.getUser(), level});
         });
-        Admin_User_Table.
         Admin_User_Table.setModel(model);
     }
 
