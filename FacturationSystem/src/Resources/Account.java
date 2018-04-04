@@ -71,6 +71,16 @@ public class Account implements Serializable, Comparable<Object> {
         this.email = email;
     }
 
+    public int getLevel() {
+        return level;
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
+    }
+
+    
+    
     @Override
     public String toString() {
         return "Account{" + "password=" + password + ", level=" + level + ", user=" + user + ", email=" + email + '}';

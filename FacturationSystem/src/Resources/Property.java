@@ -2,6 +2,7 @@ package Resources;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  *
@@ -16,7 +17,7 @@ public class Property implements Serializable {
     /**
      * Paleta de colores FIBER.
      */
-    public static final int FIBER[][] = {{244, 83, 88}, {88, 89, 83}, {63, 168, 176}, {243, 242, 237}, {216, 106, 107}};
+    public static final int FIBER[][] = {{244, 83, 88}, {88, 89, 83}, {242, 194, 136}, {243, 242, 237}, {216, 106, 107}};
     /**
      * Paleta de colores SELFIE.
      */
@@ -102,7 +103,7 @@ public class Property implements Serializable {
 
     @Override
     public String toString() {
-        return "Property{" + "mix=" + mix + ", account=" + account + '}';
+        return "Property{" + "mix=" + Arrays.deepToString(mix) + ", account=" + account + '}';
     }
 
     public int contains(Object o) {
