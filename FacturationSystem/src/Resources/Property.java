@@ -50,6 +50,10 @@ public class Property implements Serializable {
      * Usuario conectado.
      */
     private Account account;
+    /**
+     * Último Id de Usuario añadido.
+     */
+    private int lastId;
 
     public Property(int mix[][], Account account) {
         //this.CREATE_KEY = "03jK9In42yr4i17fj7CY";
@@ -101,6 +105,14 @@ public class Property implements Serializable {
         Property.logged = logged;
     }
 
+    public int getLastId() {
+        return lastId;
+    }
+
+    public void setLastId(int lastId) {
+        this.lastId = lastId;
+    }
+
     @Override
     public String toString() {
         return "Property{" + "mix=" + Arrays.deepToString(mix) + ", account=" + account + '}';
@@ -109,13 +121,13 @@ public class Property implements Serializable {
     public int contains(Object o) {
         if (o instanceof Account) {
             for (int i = 0; i < accountList.size(); i++) {
-                if (((Account) o).getUser().equals(accountList.get(i).getUser())) {
+                if (((Account) o).getName().equals(accountList.get(i).getName())) {
                     return i;
                 }
             }
         } else if (o instanceof String) {
             for (int i = 0; i < accountList.size(); i++) {
-                if (o.equals(accountList.get(i).getUser())) {
+                if (o.equals(accountList.get(i).getName())) {
                     return i;
                 }
             }

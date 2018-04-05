@@ -63,6 +63,7 @@ public class Desk extends javax.swing.JPanel {
         panelUser.setSize(internalPanel.getSize());
         panelUser.setLocation(labelBack.getY() + 8, labelBack.getX() + 8);
         Admin_user_edit.setVisible(false);
+        errorPhone.setVisible(false);
     }
 
     @SuppressWarnings("unchecked")
@@ -100,6 +101,11 @@ public class Desk extends javax.swing.JPanel {
         labelCancel = new javax.swing.JLabel();
         passwordCurrent = new javax.swing.JPasswordField();
         jLabel25 = new javax.swing.JLabel();
+        phone = new javax.swing.JTextField();
+        jLabel27 = new javax.swing.JLabel();
+        errorPhone = new javax.swing.JLabel();
+        ID = new javax.swing.JTextField();
+        jLabel28 = new javax.swing.JLabel();
         User_SPAdminstrar = new javax.swing.JScrollPane();
         User_SPAdministrar_panel = new javax.swing.JPanel();
         jLabel26 = new javax.swing.JLabel();
@@ -353,6 +359,29 @@ public class Desk extends javax.swing.JPanel {
         jLabel25.setForeground(new java.awt.Color(255, 255, 255));
         jLabel25.setText("Contraseña Actual");
 
+        phone.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                phoneKeyReleased(evt);
+            }
+        });
+
+        jLabel27.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel27.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel27.setText("Teléfono");
+
+        errorPhone.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICO/40px/icons8_Delete_Row_40px.png"))); // NOI18N
+
+        ID.setEditable(false);
+        ID.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                IDKeyReleased(evt);
+            }
+        });
+
+        jLabel28.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel28.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel28.setText("ID");
+
         javax.swing.GroupLayout User_SPGeneral_panelLayout = new javax.swing.GroupLayout(User_SPGeneral_panel);
         User_SPGeneral_panel.setLayout(User_SPGeneral_panelLayout);
         User_SPGeneral_panelLayout.setHorizontalGroup(
@@ -362,44 +391,63 @@ public class Desk extends javax.swing.JPanel {
                 .addGroup(User_SPGeneral_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(User_SPGeneral_panelLayout.createSequentialGroup()
                         .addGroup(User_SPGeneral_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(ID, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(User_SPGeneral_panelLayout.createSequentialGroup()
-                                .addGroup(User_SPGeneral_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(email, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(User_SPGeneral_panelLayout.createSequentialGroup()
-                                        .addGap(2, 2, 2)
-                                        .addComponent(jLabel23)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(errorEmail))
-                            .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(labelPassword)
-                            .addGroup(User_SPGeneral_panelLayout.createSequentialGroup()
-                                .addGroup(User_SPGeneral_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(user, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel19))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(errorUser))
-                            .addGroup(User_SPGeneral_panelLayout.createSequentialGroup()
-                                .addGroup(User_SPGeneral_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(passwordR, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(labelPasswordR))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(errorPasswordR))
-                            .addComponent(passwordCurrent, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel25))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(2, 2, 2)
+                                .addComponent(jLabel28)))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(User_SPGeneral_panelLayout.createSequentialGroup()
                         .addGroup(User_SPGeneral_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(labelCancel)
-                            .addComponent(labelEdit)
-                            .addComponent(labelDone)))
-                    .addComponent(jLabel24))
-                .addContainerGap(295, Short.MAX_VALUE))
+                            .addComponent(jLabel24)
+                            .addGroup(User_SPGeneral_panelLayout.createSequentialGroup()
+                                .addGroup(User_SPGeneral_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(labelPassword)
+                                    .addGroup(User_SPGeneral_panelLayout.createSequentialGroup()
+                                        .addGroup(User_SPGeneral_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(passwordR, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(labelPasswordR))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(errorPasswordR))
+                                    .addComponent(passwordCurrent, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel25)
+                                    .addGroup(User_SPGeneral_panelLayout.createSequentialGroup()
+                                        .addGroup(User_SPGeneral_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(phone, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGroup(User_SPGeneral_panelLayout.createSequentialGroup()
+                                                .addGap(2, 2, 2)
+                                                .addComponent(jLabel27))
+                                            .addComponent(user, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jLabel19))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(User_SPGeneral_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(errorPhone)
+                                            .addComponent(errorUser)))
+                                    .addGroup(User_SPGeneral_panelLayout.createSequentialGroup()
+                                        .addGroup(User_SPGeneral_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(email, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGroup(User_SPGeneral_panelLayout.createSequentialGroup()
+                                                .addGap(2, 2, 2)
+                                                .addComponent(jLabel23)))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(errorEmail)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(User_SPGeneral_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(labelCancel)
+                                    .addComponent(labelEdit)
+                                    .addComponent(labelDone))))
+                        .addContainerGap(295, Short.MAX_VALUE))))
         );
         User_SPGeneral_panelLayout.setVerticalGroup(
             User_SPGeneral_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, User_SPGeneral_panelLayout.createSequentialGroup()
                 .addGap(15, 15, 15)
                 .addComponent(jLabel24)
-                .addGap(18, 18, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel28)
+                .addGap(0, 0, 0)
+                .addComponent(ID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(User_SPGeneral_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(User_SPGeneral_panelLayout.createSequentialGroup()
                         .addGroup(User_SPGeneral_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -407,34 +455,47 @@ public class Desk extends javax.swing.JPanel {
                                 .addComponent(jLabel19)
                                 .addGap(1, 1, 1)
                                 .addComponent(user, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(0, 7, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, User_SPGeneral_panelLayout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(errorUser)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(User_SPGeneral_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(User_SPGeneral_panelLayout.createSequentialGroup()
+                                .addComponent(jLabel27)
+                                .addGap(0, 0, 0)
+                                .addComponent(phone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, User_SPGeneral_panelLayout.createSequentialGroup()
+                                .addComponent(errorPhone)
+                                .addGap(18, 18, 18)))
+                        .addGroup(User_SPGeneral_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(User_SPGeneral_panelLayout.createSequentialGroup()
                                 .addComponent(jLabel23)
                                 .addGap(0, 0, 0)
                                 .addComponent(email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(User_SPGeneral_panelLayout.createSequentialGroup()
-                                .addGap(12, 12, 12)
-                                .addComponent(errorUser)
-                                .addGap(31, 31, 31)
+                                .addGap(11, 11, 11)
                                 .addComponent(errorEmail)))
-                        .addGap(18, 19, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel25)
                         .addGap(0, 0, 0)
                         .addComponent(passwordCurrent, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(labelPassword)
                         .addGap(1, 1, 1)
                         .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(User_SPGeneral_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(User_SPGeneral_panelLayout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
                                 .addComponent(labelPasswordR)
                                 .addGap(0, 0, 0)
                                 .addComponent(passwordR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap(173, Short.MAX_VALUE))
+                                .addContainerGap(178, Short.MAX_VALUE))
                             .addGroup(User_SPGeneral_panelLayout.createSequentialGroup()
                                 .addGap(21, 21, 21)
                                 .addComponent(errorPasswordR)
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                .addContainerGap(165, Short.MAX_VALUE))))
                     .addGroup(User_SPGeneral_panelLayout.createSequentialGroup()
                         .addGap(12, 12, 12)
                         .addComponent(labelEdit)
@@ -1040,7 +1101,7 @@ public class Desk extends javax.swing.JPanel {
         panelProductos.setLayout(panelProductosLayout);
         panelProductosLayout.setHorizontalGroup(
             panelProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Product_TabbedPane)
+            .addComponent(Product_TabbedPane, javax.swing.GroupLayout.DEFAULT_SIZE, 726, Short.MAX_VALUE)
         );
         panelProductosLayout.setVerticalGroup(
             panelProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1310,7 +1371,7 @@ public class Desk extends javax.swing.JPanel {
     }//GEN-LAST:event_Admin_user_editKeyReleased
 
     private void Admin_User_TableKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Admin_User_TableKeyTyped
-        Admin_user_edit.setText(property.getAccountList().get(Admin_User_Table.getSelectedRow()).getUser());
+        Admin_user_edit.setText(property.getAccountList().get(Admin_User_Table.getSelectedRow()).getName());
         if (property.getAccountList().get(Admin_User_Table.getSelectedRow()).getLevel() == 0) {
             buttomAdministrator.setSelected(false);
         } else {
@@ -1319,7 +1380,7 @@ public class Desk extends javax.swing.JPanel {
     }//GEN-LAST:event_Admin_User_TableKeyTyped
 
     private void Admin_User_TableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Admin_User_TableMouseClicked
-        Admin_user_edit.setText(property.getAccountList().get(Admin_User_Table.getSelectedRow()).getUser());
+        Admin_user_edit.setText(property.getAccountList().get(Admin_User_Table.getSelectedRow()).getName());
         if (property.getAccountList().get(Admin_User_Table.getSelectedRow()).getLevel() == 0) {
             buttomAdministrator.setSelected(false);
         } else {
@@ -1374,6 +1435,14 @@ public class Desk extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_Product_TabbedPaneStateChanged
 
+    private void phoneKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_phoneKeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_phoneKeyReleased
+
+    private void IDKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_IDKeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_IDKeyReleased
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable Admin_User_Table;
@@ -1383,6 +1452,7 @@ public class Desk extends javax.swing.JPanel {
     private javax.swing.JTabbedPane Employee_TabbedPane;
     private javax.swing.JTable Employee_Table;
     private javax.swing.JPanel FirstPlane;
+    private javax.swing.JTextField ID;
     private javax.swing.JScrollPane Product_SP;
     private javax.swing.JPanel Product_SP_panel;
     private javax.swing.JTabbedPane Product_TabbedPane;
@@ -1396,6 +1466,7 @@ public class Desk extends javax.swing.JPanel {
     private javax.swing.JTextField email;
     private javax.swing.JLabel errorEmail;
     private javax.swing.JLabel errorPasswordR;
+    private javax.swing.JLabel errorPhone;
     private javax.swing.JLabel errorUser;
     private javax.swing.JPanel internalPanel;
     private javax.swing.JLabel jLabel1;
@@ -1414,6 +1485,8 @@ public class Desk extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
@@ -1451,6 +1524,7 @@ public class Desk extends javax.swing.JPanel {
     private javax.swing.JPasswordField password;
     private javax.swing.JPasswordField passwordCurrent;
     private javax.swing.JPasswordField passwordR;
+    private javax.swing.JTextField phone;
     private javax.swing.JTextField user;
     // End of variables declaration//GEN-END:variables
     // Variables
@@ -1550,10 +1624,13 @@ public class Desk extends javax.swing.JPanel {
         labelPasswordR.setVisible(false);
         password.setVisible(false);
         passwordR.setVisible(false);
+        ID.setText(property.getAccount().getID() + "");
+        phone.setText(property.getAccount().getPhone());
         passwordCurrent.setText(property.getAccount().getPassword());
         email.setText(property.getAccount().getEmail());
-        user.setText(property.getAccount().getUser());
+        user.setText(property.getAccount().getName());
         email.setEditable(false);
+        phone.setEditable(false);
         user.setEditable(false);
         passwordCurrent.setEditable(false);
         //passwordCurrent.setLocation(passwordCurrent.getY(), user.getX());
@@ -1571,9 +1648,10 @@ public class Desk extends javax.swing.JPanel {
         password.setText("");
         passwordR.setText("");
         email.setText(property.getAccount().getEmail());
-        user.setText(property.getAccount().getUser());
+        user.setText(property.getAccount().getName());
         email.setEditable(true);
         user.setEditable(true);
+        phone.setEditable(true);
         passwordCurrent.setEditable(true);
     }
 
@@ -1598,7 +1676,7 @@ public class Desk extends javax.swing.JPanel {
             if (accountRow.getLevel() == 1) {
                 level = true;
             }
-            model.addRow(new Object[]{accountRow.getUser(), level});
+            model.addRow(new Object[]{accountRow.getName(), level});
         });
         Admin_User_Table.setModel(model);
     }
@@ -1621,9 +1699,9 @@ public class Desk extends javax.swing.JPanel {
         };
         property.getAccountList().forEach((accountRow) -> {
             if (accountRow.getLevel() == 1) {
-                model.addRow(new Object[]{accountRow.getUser(), accountRow.getEmail(), "Administrador"});
+                model.addRow(new Object[]{accountRow.getName(), accountRow.getEmail(), "Administrador"});
             } else {
-                model.addRow(new Object[]{accountRow.getUser(), accountRow.getEmail(), "Empleado"});
+                model.addRow(new Object[]{accountRow.getName(), accountRow.getEmail(), "Empleado"});
             }
         });
         Employee_Table.setModel(model);
@@ -1647,9 +1725,9 @@ public class Desk extends javax.swing.JPanel {
         };
         property.getAccountList().forEach((accountRow) -> {
             if (accountRow.getLevel() == 1) {
-                model.addRow(new Object[]{accountRow.getUser(), accountRow.getEmail(), "Administrador"});
+                model.addRow(new Object[]{accountRow.getName(), accountRow.getEmail(), "Administrador"});
             } else {
-                model.addRow(new Object[]{accountRow.getUser(), accountRow.getEmail(), "Empleado"});
+                model.addRow(new Object[]{accountRow.getName(), accountRow.getEmail(), "Empleado"});
             }
         });
         Employee_Table.setModel(model);

@@ -142,7 +142,7 @@ public class StatusBar extends javax.swing.JPanel {
     }
 
     private void setUser() {
-        labelUser.setText("Usuario: " + property.getAccount().getUser());
+        labelUser.setText("Usuario: " + property.getAccount().getName());
     }
 
     public void setInfo(String info) {

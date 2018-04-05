@@ -190,7 +190,8 @@ public class UserJoin extends javax.swing.JFrame {
                 if (buttomAdministrator.isSelected() == true) {
                     level = 1;
                 }
-                property.getAccountList().add(new Account(password.getText(), user.getText(), email.getText(), level));
+                property.getAccountList().add(new Account(password.getText(), level, user.getText(), email.getText(), property.getLastId(), ""));
+                property.setLastId(property.getLastId() + 1);
                 if (level == 1) {
                     property.getAdminList().add(property.getAccountList().get(property.getAccountList().size() - 1));
                 }

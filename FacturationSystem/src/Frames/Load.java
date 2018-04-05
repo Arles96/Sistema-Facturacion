@@ -273,7 +273,8 @@ public class Load extends javax.swing.JFrame {
     public void createProperties() {
         try {
             ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(".properties.pty"));
-            property = new Property(Property.FIBER, new Account("password", "user", "email", 1));
+            property = new Property(Property.FIBER, new Account("a", 1, "a", "email", 0, "91919191"));
+            property.setLastId(property.getLastId() + 1);
             property.getAdminList().add(property.getAccount());
             property.logged = false;
             out.writeObject(property);
