@@ -1,5 +1,6 @@
 package Resources;
 
+import Entities.Inventory;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -39,11 +40,15 @@ public class Property implements Serializable {
      */
     public final String CREATE_KEY;
     /**
-     * Código de Administrador.
+     * Lista de Usuarios. (Temporal -> BD)
      */
     private ArrayList<Account> accountList;
     /**
-     * Usuario Administradores.
+     * Lista de productos. (Temporal -> BD)
+     */
+    private ArrayList<Inventory> productList;
+    /**
+     * Lista de Usuario Administradores.
      */
     private ArrayList<Account> adminList;
     /**
@@ -53,16 +58,23 @@ public class Property implements Serializable {
     /**
      * Último Id de Usuario añadido.
      */
-    private int lastId;
+    private int lastUserId;
+    /**
+     * Último Id de Producto añadido.
+     */
+    private int lastProductId;
 
     public Property(int mix[][], Account account) {
         //this.CREATE_KEY = "03jK9In42yr4i17fj7CY";
         this.CREATE_KEY = " ";
         this.mix = mix;
         this.account = account;
+        productList = new ArrayList();
         accountList = new ArrayList();
         adminList = new ArrayList();
         accountList.add(account);
+        lastProductId = 0;
+        lastUserId = 0;
     }
 
     public ArrayList<Account> getAdminList() {
@@ -105,20 +117,37 @@ public class Property implements Serializable {
         Property.logged = logged;
     }
 
-    public int getLastId() {
-        return lastId;
+    public int getLastUserId() {
+        return lastUserId;
     }
 
-    public void setLastId(int lastId) {
-        this.lastId = lastId;
+    public void setLastUserId(int lastUserId) {
+        this.lastUserId = lastUserId;
     }
 
+    public ArrayList<Inventory> getProductList() {
+        return productList;
+    }
+
+    public void setProductList(ArrayList<Inventory> productList) {
+        this.productList = productList;
+    }
+
+    public int getLastProductId() {
+        return lastProductId;
+    }
+
+    public void setLastProductId(int lastProductId) {
+        this.lastProductId = lastProductId;
+    }
+
+    
     @Override
     public String toString() {
         return "Property{" + "mix=" + Arrays.deepToString(mix) + ", account=" + account + '}';
     }
 
-    public int contains(Object o) {
+    public int containsAccount(Object o) {
         if (o instanceof Account) {
             for (int i = 0; i < accountList.size(); i++) {
                 if (((Account) o).getName().equals(accountList.get(i).getName())) {

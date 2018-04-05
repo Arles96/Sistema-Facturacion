@@ -1,10 +1,12 @@
 package Entities;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Dario
  */
-public class User {
+public class User implements Serializable {
 
     protected String ID;
     protected String name;

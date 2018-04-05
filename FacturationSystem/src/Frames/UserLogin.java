@@ -192,7 +192,7 @@ public class UserLogin extends javax.swing.JFrame {
     private void labelDoneMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelDoneMouseClicked
         if (!errorUser.isVisible() && !user.getText().isEmpty() && !password.getText().isEmpty()) {
             int index;
-            if ((index = property.contains(user.getText())) > -1) {
+            if ((index = property.containsAccount(user.getText())) > -1) {
                 if (property.getAccountList().get(index).getPassword().equals(password.getText())) {
                     property.setAccount(property.getAccountList().get(index));
                     property.setLogged(true);

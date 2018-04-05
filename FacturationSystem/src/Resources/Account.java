@@ -1,7 +1,6 @@
 package Resources;
 
 import Entities.User;
-import java.awt.Image;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -17,6 +16,8 @@ public class Account extends User implements Serializable, Comparable<Object> {
         this.name = "";
         this.email = "";
         this.level = 0;
+        this.ID = "-1";
+        this.password = "";
     }
 
     public Account(String password, int level, String user, String email, int ID, String phone) {
@@ -33,11 +34,13 @@ public class Account extends User implements Serializable, Comparable<Object> {
         this.name = user;
         this.email = email;
         this.level = level;
+        this.ID = "-1";
+        this.password = "";
     }
 
     @Override
     public String toString() {
-        return "Account{" + "password=" + password + ", level=" + level + ", user=" + name + ", email=" + email + '}';
+        return "Account{" + "user=" + name + ", ID=" + ID + ", password=" + password + ", level=" + level + ", email=" + email + ", phone=" + phone + '}';
     }
 
     public int getID_int() {

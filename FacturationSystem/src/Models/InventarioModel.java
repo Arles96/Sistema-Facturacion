@@ -29,7 +29,7 @@ public class InventarioModel extends Model {
             st.setString(8, inv.getTipo());
             st.setString(9, "" + inv.getImpuesto());
             st.setString(10, "" + inv.getPrecioUnidad());
-            st.setString(11, inv.getNombreProcto());
+            st.setString(11, inv.getNombreProducto());
             
             st.execute();
         }catch(Exception ex){
@@ -52,7 +52,7 @@ public class InventarioModel extends Model {
             st.setString(7, inv.getTipo());
             st.setString(8, "" + inv.getImpuesto());
             st.setString(9, "" + inv.getPrecioUnidad());
-            st.setString(10, inv.getNombreProcto());
+            st.setString(10, inv.getNombreProducto());
             st.setString(11, "" + inv.getIdProducto());
             
             st.execute();

@@ -182,7 +182,7 @@ public class UserJoin extends javax.swing.JFrame {
         if (!errorUser.isVisible() && !errorPasswordR.isVisible() && !errorEmail.isVisible()
                 && !user.getText().isEmpty() && !password.getText().isEmpty() && !passwordR.getText().isEmpty() && !email.getText().isEmpty()) {
             this.setAlwaysOnTop(false);
-            if (property.contains(user.getText()) > -1) {
+            if (property.containsAccount(user.getText()) > -1) {
                 JOptionPane.showMessageDialog(null, "Usuario ya existente", "Colición", 0);
                 errorUser.setVisible(true);
             } else if (property.CREATE_KEY.equals(JOptionPane.showInputDialog(null, "Código de Administrador", "Confirmar", 1) + "")) {
@@ -190,8 +190,8 @@ public class UserJoin extends javax.swing.JFrame {
                 if (buttomAdministrator.isSelected() == true) {
                     level = 1;
                 }
-                property.getAccountList().add(new Account(password.getText(), level, user.getText(), email.getText(), property.getLastId(), ""));
-                property.setLastId(property.getLastId() + 1);
+                property.getAccountList().add(new Account(password.getText(), level, user.getText(), email.getText(), property.getLastUserId(), ""));
+                property.setLastUserId(property.getLastUserId() + 1);
                 if (level == 1) {
                     property.getAdminList().add(property.getAccountList().get(property.getAccountList().size() - 1));
                 }

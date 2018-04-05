@@ -274,7 +274,7 @@ public class Load extends javax.swing.JFrame {
         try {
             ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(".properties.pty"));
             property = new Property(Property.FIBER, new Account("a", 1, "a", "email", 0, "91919191"));
-            property.setLastId(property.getLastId() + 1);
+            property.setLastUserId(property.getLastUserId() + 1);
             property.getAdminList().add(property.getAccount());
             property.logged = false;
             out.writeObject(property);
