@@ -1624,7 +1624,7 @@ public class Desk extends javax.swing.JPanel {
         labelPasswordR.setVisible(false);
         password.setVisible(false);
         passwordR.setVisible(false);
-        ID.setText(property.getAccount().getID() + "");
+        ID.setText(property.getAccount().getID());
         phone.setText(property.getAccount().getPhone());
         passwordCurrent.setText(property.getAccount().getPassword());
         email.setText(property.getAccount().getEmail());
