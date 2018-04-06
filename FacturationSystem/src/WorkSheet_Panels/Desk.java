@@ -40,7 +40,6 @@ public class Desk extends javax.swing.JPanel {
             Client_Dialog_Select.pack();
             Provider_Dialog_Select.setLocationRelativeTo(null);
             Provider_Dialog_Select.pack();
-            pAjustes.setBackground(this.getBackground());
             pCV.setBackground(this.getBackground());
             pCaja.setBackground(this.getBackground());
             pClientes.setBackground(this.getBackground());
@@ -94,8 +93,6 @@ public class Desk extends javax.swing.JPanel {
 
         panelCaja = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
-        panelCV = new javax.swing.JPanel();
-        jLabel15 = new javax.swing.JLabel();
         panelAjustes = new javax.swing.JPanel();
         jLabel17 = new javax.swing.JLabel();
         panelStatistics = new javax.swing.JPanel();
@@ -319,7 +316,6 @@ public class Desk extends javax.swing.JPanel {
         Provider_Dialog_Select_Table = new javax.swing.JTable();
         Provider_Dialog_labelSelect = new javax.swing.JLabel();
         FirstPlane = new javax.swing.JPanel();
-        labelBack = new javax.swing.JLabel();
         internalPanel = new javax.swing.JPanel();
         pCaja = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
@@ -333,15 +329,30 @@ public class Desk extends javax.swing.JPanel {
         pEmpleados = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        pAjustes = new javax.swing.JPanel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
         pProductos = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         pProveedores = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
+        panelCV = new javax.swing.JPanel();
+        CV_TabbedPane = new javax.swing.JTabbedPane();
+        Compras_SP = new javax.swing.JScrollPane();
+        Compras_SP_panel = new javax.swing.JPanel();
+        jLabel35 = new javax.swing.JLabel();
+        jScrollPane9 = new javax.swing.JScrollPane();
+        Compras_Table = new javax.swing.JTable();
+        Ventas_SP = new javax.swing.JScrollPane();
+        Ventas_SP_panel = new javax.swing.JPanel();
+        jLabel36 = new javax.swing.JLabel();
+        jScrollPane10 = new javax.swing.JScrollPane();
+        Ventas_Table = new javax.swing.JTable();
+        Pagos_SP = new javax.swing.JScrollPane();
+        Pagos_SP_panel = new javax.swing.JPanel();
+        jLabel37 = new javax.swing.JLabel();
+        jScrollPane11 = new javax.swing.JScrollPane();
+        Pagos_Table = new javax.swing.JTable();
+        labelBack = new javax.swing.JLabel();
 
         jLabel6.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
@@ -363,27 +374,6 @@ public class Desk extends javax.swing.JPanel {
                 .addContainerGap()
                 .addComponent(jLabel6)
                 .addContainerGap(473, Short.MAX_VALUE))
-        );
-
-        jLabel15.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        jLabel15.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel15.setText("Compras / Ventas");
-
-        javax.swing.GroupLayout panelCVLayout = new javax.swing.GroupLayout(panelCV);
-        panelCV.setLayout(panelCVLayout);
-        panelCVLayout.setHorizontalGroup(
-            panelCVLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelCVLayout.createSequentialGroup()
-                .addGap(42, 42, 42)
-                .addComponent(jLabel15)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        panelCVLayout.setVerticalGroup(
-            panelCVLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelCVLayout.createSequentialGroup()
-                .addGap(432, 432, 432)
-                .addComponent(jLabel15)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jLabel17.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
@@ -2580,7 +2570,7 @@ public class Desk extends javax.swing.JPanel {
         Provider_Dialog_Panel.setLayout(Provider_Dialog_PanelLayout);
         Provider_Dialog_PanelLayout.setHorizontalGroup(
             Provider_Dialog_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Provider_Dialog_PanelLayout.createSequentialGroup()
+            .addGroup(Provider_Dialog_PanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(Provider_Dialog_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 659, Short.MAX_VALUE)
@@ -2588,12 +2578,12 @@ public class Desk extends javax.swing.JPanel {
                         .addComponent(Provider_Select_labelBack)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel71)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(Provider_Dialog_PanelLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(Provider_Dialog_labelSelect)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addGroup(Provider_Dialog_PanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Provider_Dialog_labelSelect)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         Provider_Dialog_PanelLayout.setVerticalGroup(
             Provider_Dialog_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2621,14 +2611,6 @@ public class Desk extends javax.swing.JPanel {
             Provider_Dialog_SelectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(Provider_Dialog_Panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-
-        labelBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICO/40px/icons8_Back_40px_1.png"))); // NOI18N
-        labelBack.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        labelBack.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                labelBackMouseClicked(evt);
-            }
-        });
 
         pCaja.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -2660,7 +2642,7 @@ public class Desk extends javax.swing.JPanel {
         );
         pCajaLayout.setVerticalGroup(
             pCajaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 134, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
             .addGroup(pCajaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(pCajaLayout.createSequentialGroup()
                     .addContainerGap()
@@ -2717,7 +2699,7 @@ public class Desk extends javax.swing.JPanel {
         });
 
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setText("Compras / Ventas");
+        jLabel10.setText("Compras / Ventas / Pagos");
         jLabel10.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICO/100px/icons8_Handshake_100px.png"))); // NOI18N
@@ -2727,25 +2709,23 @@ public class Desk extends javax.swing.JPanel {
         pCV.setLayout(pCVLayout);
         pCVLayout.setHorizontalGroup(
             pCVLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 119, Short.MAX_VALUE)
-            .addGroup(pCVLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(pCVLayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addGroup(pCVLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addContainerGap()))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pCVLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel10)
+                .addContainerGap())
+            .addGroup(pCVLayout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         pCVLayout.setVerticalGroup(
             pCVLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 134, Short.MAX_VALUE)
-            .addGroup(pCVLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(pCVLayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(jLabel3)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(jLabel10)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+            .addGroup(pCVLayout.createSequentialGroup()
+                .addGap(9, 9, 9)
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel10)
+                .addContainerGap())
         );
 
         pEmpleados.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -2788,46 +2768,6 @@ public class Desk extends javax.swing.JPanel {
                     .addComponent(jLabel5)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                     .addComponent(jLabel9)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-        );
-
-        pAjustes.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                pAjustesMouseClicked(evt);
-            }
-        });
-
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("Ajustes");
-        jLabel8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICO/100px/icons8_Settings_100px.png"))); // NOI18N
-        jLabel13.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-        javax.swing.GroupLayout pAjustesLayout = new javax.swing.GroupLayout(pAjustes);
-        pAjustes.setLayout(pAjustesLayout);
-        pAjustesLayout.setHorizontalGroup(
-            pAjustesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 119, Short.MAX_VALUE)
-            .addGroup(pAjustesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(pAjustesLayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addGroup(pAjustesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel13)
-                        .addGroup(pAjustesLayout.createSequentialGroup()
-                            .addGap(29, 29, 29)
-                            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addContainerGap(13, Short.MAX_VALUE)))
-        );
-        pAjustesLayout.setVerticalGroup(
-            pAjustesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 134, Short.MAX_VALUE)
-            .addGroup(pAjustesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(pAjustesLayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(jLabel13)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(jLabel8)
                     .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
@@ -2917,39 +2857,280 @@ public class Desk extends javax.swing.JPanel {
         internalPanelLayout.setHorizontalGroup(
             internalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(internalPanelLayout.createSequentialGroup()
-                .addContainerGap(106, Short.MAX_VALUE)
-                .addGroup(internalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(pCaja, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(pCV, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(pAjustes, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 134, Short.MAX_VALUE)
+                .addContainerGap(86, Short.MAX_VALUE)
+                .addGroup(internalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(internalPanelLayout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(pProveedores, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(pCV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(internalPanelLayout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addComponent(pCaja, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 112, Short.MAX_VALUE)
                 .addGroup(internalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(pEmpleados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(internalPanelLayout.createSequentialGroup()
-                        .addComponent(pClientes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 108, Short.MAX_VALUE)
-                        .addComponent(pProveedores, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(pClientes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(pProductos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(92, Short.MAX_VALUE))
+                .addContainerGap(101, Short.MAX_VALUE))
         );
         internalPanelLayout.setVerticalGroup(
             internalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(internalPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(internalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(pClientes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(pCaja, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(pProveedores, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                .addGroup(internalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(pClientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(pCaja, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(internalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(pEmpleados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(pCV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(internalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(pAjustes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(pProductos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(14, Short.MAX_VALUE))
+                    .addComponent(pProductos, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pProveedores, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        CV_TabbedPane.setTabLayoutPolicy(javax.swing.JTabbedPane.SCROLL_TAB_LAYOUT);
+        CV_TabbedPane.setTabPlacement(javax.swing.JTabbedPane.LEFT);
+        CV_TabbedPane.setToolTipText("");
+        CV_TabbedPane.setAutoscrolls(true);
+        CV_TabbedPane.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        CV_TabbedPane.setDoubleBuffered(true);
+        CV_TabbedPane.setFocusCycleRoot(true);
+        CV_TabbedPane.setFocusTraversalPolicyProvider(true);
+        CV_TabbedPane.setOpaque(true);
+        CV_TabbedPane.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                CV_TabbedPaneStateChanged(evt);
+            }
+        });
+
+        jLabel35.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
+        jLabel35.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel35.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel35.setText("Listado de Compras");
+
+        jScrollPane9.setOpaque(false);
+
+        Compras_Table.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "ID", "RTN Proveedor", "CAI", "Número de documentos fiscales", "Subtotal compra", "Fecha"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Float.class, java.lang.Object.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Compras_Table.setDebugGraphicsOptions(javax.swing.DebugGraphics.BUFFERED_OPTION);
+        Compras_Table.setDropMode(javax.swing.DropMode.INSERT_COLS);
+        Compras_Table.setEditingColumn(-1);
+        Compras_Table.setEditingRow(-1);
+        Compras_Table.setOpaque(false);
+        Compras_Table.setRowSelectionAllowed(false);
+        Compras_Table.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        Compras_Table.setUpdateSelectionOnSort(false);
+        Compras_Table.setVerifyInputWhenFocusTarget(false);
+        jScrollPane9.setViewportView(Compras_Table);
+
+        javax.swing.GroupLayout Compras_SP_panelLayout = new javax.swing.GroupLayout(Compras_SP_panel);
+        Compras_SP_panel.setLayout(Compras_SP_panelLayout);
+        Compras_SP_panelLayout.setHorizontalGroup(
+            Compras_SP_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Compras_SP_panelLayout.createSequentialGroup()
+                .addGap(12, 12, 12)
+                .addGroup(Compras_SP_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Compras_SP_panelLayout.createSequentialGroup()
+                        .addComponent(jLabel35)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(Compras_SP_panelLayout.createSequentialGroup()
+                        .addComponent(jScrollPane9, javax.swing.GroupLayout.DEFAULT_SIZE, 721, Short.MAX_VALUE)
+                        .addGap(19, 19, 19))))
+        );
+        Compras_SP_panelLayout.setVerticalGroup(
+            Compras_SP_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Compras_SP_panelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel35)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane9, javax.swing.GroupLayout.DEFAULT_SIZE, 397, Short.MAX_VALUE)
+                .addGap(23, 23, 23))
+        );
+
+        Compras_SP.setViewportView(Compras_SP_panel);
+
+        CV_TabbedPane.addTab("Compras", Compras_SP);
+
+        jLabel36.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
+        jLabel36.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel36.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel36.setText("Listado de Ventas");
+
+        jScrollPane10.setOpaque(false);
+
+        Ventas_Table.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "ID", "Ingreso exento", "Ingreso gravado", "Impuesto", "Fecha"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.Float.class, java.lang.Float.class, java.lang.Float.class, java.lang.Object.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Ventas_Table.setDebugGraphicsOptions(javax.swing.DebugGraphics.BUFFERED_OPTION);
+        Ventas_Table.setDropMode(javax.swing.DropMode.INSERT_COLS);
+        Ventas_Table.setEditingColumn(-1);
+        Ventas_Table.setEditingRow(-1);
+        Ventas_Table.setOpaque(false);
+        Ventas_Table.setRowSelectionAllowed(false);
+        Ventas_Table.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        Ventas_Table.setUpdateSelectionOnSort(false);
+        Ventas_Table.setVerifyInputWhenFocusTarget(false);
+        jScrollPane10.setViewportView(Ventas_Table);
+
+        javax.swing.GroupLayout Ventas_SP_panelLayout = new javax.swing.GroupLayout(Ventas_SP_panel);
+        Ventas_SP_panel.setLayout(Ventas_SP_panelLayout);
+        Ventas_SP_panelLayout.setHorizontalGroup(
+            Ventas_SP_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Ventas_SP_panelLayout.createSequentialGroup()
+                .addGap(12, 12, 12)
+                .addGroup(Ventas_SP_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Ventas_SP_panelLayout.createSequentialGroup()
+                        .addComponent(jScrollPane10, javax.swing.GroupLayout.DEFAULT_SIZE, 721, Short.MAX_VALUE)
+                        .addGap(19, 19, 19))
+                    .addGroup(Ventas_SP_panelLayout.createSequentialGroup()
+                        .addComponent(jLabel36)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+        );
+        Ventas_SP_panelLayout.setVerticalGroup(
+            Ventas_SP_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Ventas_SP_panelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel36)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane10, javax.swing.GroupLayout.DEFAULT_SIZE, 399, Short.MAX_VALUE)
+                .addGap(21, 21, 21))
+        );
+
+        Ventas_SP.setViewportView(Ventas_SP_panel);
+
+        CV_TabbedPane.addTab("Ventas", Ventas_SP);
+
+        jLabel37.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
+        jLabel37.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel37.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel37.setText("Listado de Pagos");
+
+        jScrollPane11.setOpaque(false);
+
+        Pagos_Table.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "ID", "Número crédito", "Abono", "Correo"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.Integer.class, java.lang.Float.class, java.lang.Object.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Pagos_Table.setDebugGraphicsOptions(javax.swing.DebugGraphics.BUFFERED_OPTION);
+        Pagos_Table.setDropMode(javax.swing.DropMode.INSERT_COLS);
+        Pagos_Table.setEditingColumn(-1);
+        Pagos_Table.setEditingRow(-1);
+        Pagos_Table.setOpaque(false);
+        Pagos_Table.setRowSelectionAllowed(false);
+        Pagos_Table.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        Pagos_Table.setUpdateSelectionOnSort(false);
+        Pagos_Table.setVerifyInputWhenFocusTarget(false);
+        jScrollPane11.setViewportView(Pagos_Table);
+
+        javax.swing.GroupLayout Pagos_SP_panelLayout = new javax.swing.GroupLayout(Pagos_SP_panel);
+        Pagos_SP_panel.setLayout(Pagos_SP_panelLayout);
+        Pagos_SP_panelLayout.setHorizontalGroup(
+            Pagos_SP_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Pagos_SP_panelLayout.createSequentialGroup()
+                .addGap(12, 12, 12)
+                .addGroup(Pagos_SP_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Pagos_SP_panelLayout.createSequentialGroup()
+                        .addComponent(jScrollPane11, javax.swing.GroupLayout.DEFAULT_SIZE, 721, Short.MAX_VALUE)
+                        .addGap(19, 19, 19))
+                    .addGroup(Pagos_SP_panelLayout.createSequentialGroup()
+                        .addComponent(jLabel37)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+        );
+        Pagos_SP_panelLayout.setVerticalGroup(
+            Pagos_SP_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Pagos_SP_panelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel37)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane11, javax.swing.GroupLayout.DEFAULT_SIZE, 398, Short.MAX_VALUE)
+                .addGap(9, 9, 9))
+        );
+
+        Pagos_SP.setViewportView(Pagos_SP_panel);
+
+        CV_TabbedPane.addTab("Pagos", Pagos_SP);
+
+        javax.swing.GroupLayout panelCVLayout = new javax.swing.GroupLayout(panelCV);
+        panelCV.setLayout(panelCVLayout);
+        panelCVLayout.setHorizontalGroup(
+            panelCVLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(CV_TabbedPane)
+        );
+        panelCVLayout.setVerticalGroup(
+            panelCVLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(CV_TabbedPane, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 458, Short.MAX_VALUE)
+        );
+
+        labelBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICO/40px/icons8_Back_40px_1.png"))); // NOI18N
+        labelBack.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        labelBack.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                labelBackMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout FirstPlaneLayout = new javax.swing.GroupLayout(FirstPlane);
         FirstPlane.setLayout(FirstPlaneLayout);
@@ -2958,7 +3139,8 @@ public class Desk extends javax.swing.JPanel {
             .addGroup(FirstPlaneLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(labelBack)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(791, Short.MAX_VALUE))
+            .addComponent(panelCV, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(FirstPlaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(FirstPlaneLayout.createSequentialGroup()
                     .addContainerGap()
@@ -2968,14 +3150,15 @@ public class Desk extends javax.swing.JPanel {
         FirstPlaneLayout.setVerticalGroup(
             FirstPlaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(FirstPlaneLayout.createSequentialGroup()
-                .addGap(6, 6, 6)
+                .addContainerGap()
                 .addComponent(labelBack)
-                .addContainerGap(510, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(panelCV, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(FirstPlaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(FirstPlaneLayout.createSequentialGroup()
-                    .addGap(26, 26, 26)
+                    .addContainerGap()
                     .addComponent(internalPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGap(26, 26, 26)))
+                    .addContainerGap()))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -3088,21 +3271,6 @@ public class Desk extends javax.swing.JPanel {
             panelEmpleados.setVisible(true);
         }
     }//GEN-LAST:event_pEmpleadosMouseClicked
-
-    private void pAjustesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pAjustesMouseClicked
-        if (property.isLogged()) {
-            this.buttonClicked = true;
-            workSheet.getPanelStatistics().setVisible(false);
-            workSheet.getAccount().setVisible(false);
-            workSheet.getPanelClose().setVisible(false);
-            workSheet.getStatusBar1().setInfo("Principal/Ajustes/");
-            labelBack.setVisible(true);
-            // Oculto el panel Principal
-            // Muestro panel interno (panelAjustes)
-            internalPanel.setVisible(false);
-            panelAjustes.setVisible(true);
-        }
-    }//GEN-LAST:event_pAjustesMouseClicked
 
     private void pProductosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pProductosMouseClicked
         if (property.isLogged()) {
@@ -3733,6 +3901,31 @@ public class Desk extends javax.swing.JPanel {
             Provider_Edit_RTN.setEnabled(true);
         }
     }//GEN-LAST:event_Provider_Dialog_labelSelectMouseClicked
+
+    private void CV_TabbedPaneStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_CV_TabbedPaneStateChanged
+        try {
+
+            switch (CV_TabbedPane.getSelectedIndex()) {
+                case 0: {
+                    Purchases_refreshTable();
+                    break;
+                }
+                case 1: {
+                    Sells_refreshTable();
+                    break;
+                }
+                case 2: {
+                    Pays_refreshTable();
+                    break;
+                }
+                default: {
+                    break;
+                }
+            }
+        } catch (Exception e) {
+        }
+
+    }//GEN-LAST:event_CV_TabbedPaneStateChanged
     /**
      *
      * Establece ícono de ventana
@@ -3747,6 +3940,7 @@ public class Desk extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable Admin_User_Table;
     private javax.swing.JTextField Admin_user_edit;
+    private javax.swing.JTabbedPane CV_TabbedPane;
     private javax.swing.JTextField Client_Add_City;
     private javax.swing.JTextField Client_Add_Department;
     private javax.swing.JTextField Client_Add_Email;
@@ -3793,12 +3987,18 @@ public class Desk extends javax.swing.JPanel {
     private javax.swing.JPanel Client_SP_ListPanel;
     private javax.swing.JLabel Client_Select_labelBack;
     private javax.swing.JTabbedPane Client_TabbedPane;
+    private javax.swing.JScrollPane Compras_SP;
+    private javax.swing.JPanel Compras_SP_panel;
+    private javax.swing.JTable Compras_Table;
     private javax.swing.JScrollPane Employee_SP;
     private javax.swing.JPanel Employee_SP_panel;
     private javax.swing.JTabbedPane Employee_TabbedPane;
     private javax.swing.JTable Employee_Table;
     private javax.swing.JPanel FirstPlane;
     private javax.swing.JTextField ID;
+    private javax.swing.JScrollPane Pagos_SP;
+    private javax.swing.JPanel Pagos_SP_panel;
+    private javax.swing.JTable Pagos_Table;
     private javax.swing.JSpinner Product_Add_CantBox;
     private javax.swing.JSpinner Product_Add_CantU;
     private com.toedter.calendar.JDateChooser Product_Add_Date;
@@ -3870,6 +4070,9 @@ public class Desk extends javax.swing.JPanel {
     private javax.swing.JScrollPane User_SPGeneral;
     private javax.swing.JPanel User_SPGeneral_panel;
     private javax.swing.JTabbedPane User_TabbedPane;
+    private javax.swing.JScrollPane Ventas_SP;
+    private javax.swing.JPanel Ventas_SP_panel;
+    private javax.swing.JTable Ventas_Table;
     private javax.swing.JRadioButton buttomAdministrator;
     private javax.swing.JTextField email;
     private javax.swing.JLabel errorEmail;
@@ -3887,9 +4090,7 @@ public class Desk extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel114;
     private javax.swing.JLabel jLabel115;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel19;
@@ -3908,6 +4109,9 @@ public class Desk extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
@@ -3944,7 +4148,6 @@ public class Desk extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel75;
     private javax.swing.JLabel jLabel77;
     private javax.swing.JLabel jLabel78;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel82;
     private javax.swing.JLabel jLabel83;
     private javax.swing.JLabel jLabel9;
@@ -3960,6 +4163,8 @@ public class Desk extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel99;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane10;
+    private javax.swing.JScrollPane jScrollPane11;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
@@ -3967,6 +4172,7 @@ public class Desk extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
+    private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JLabel labelBack;
     private javax.swing.JLabel labelCancel;
     private javax.swing.JLabel labelDone;
@@ -3974,7 +4180,6 @@ public class Desk extends javax.swing.JPanel {
     private javax.swing.JLabel labelEdit;
     private javax.swing.JLabel labelPassword;
     private javax.swing.JLabel labelPasswordR;
-    private javax.swing.JPanel pAjustes;
     private javax.swing.JPanel pCV;
     private javax.swing.JPanel pCaja;
     private javax.swing.JPanel pClientes;
@@ -4062,7 +4267,6 @@ public class Desk extends javax.swing.JPanel {
     public void setBackground(Color color) {
         super.setBackground(color); //To change body of generated methods, choose Tools | Templates.
         try {
-            pAjustes.setBackground(this.getBackground());
             pCV.setBackground(this.getBackground());
             pCaja.setBackground(this.getBackground());
             pClientes.setBackground(this.getBackground());
@@ -4112,7 +4316,13 @@ public class Desk extends javax.swing.JPanel {
             Provider_Add_SP.setBackground(this.getBackground());
             Provider_Dialog_Select.setBackground(this.getBackground());
             Provider_Dialog_Panel.setBackground(this.getBackground());
-
+            CV_TabbedPane.setBackground(this.getBackground());
+            Compras_SP.setBackground(this.getBackground());
+            Compras_SP_panel.setBackground(this.getBackground());
+            Ventas_SP.setBackground(this.getBackground());
+            Ventas_SP_panel.setBackground(this.getBackground());
+            Pagos_SP.setBackground(this.getBackground());
+            Pagos_SP_panel.setBackground(this.getBackground());
         } catch (Exception e) {
         }
     }
@@ -4442,6 +4652,99 @@ public class Desk extends javax.swing.JPanel {
         Provider_Edit_Phone.setText(property.getProviderList().get(i).getCellphone());
         Provider_Edit_Address.setText(property.getProviderList().get(i).getAddress());
         Provider_Edit_RTN.setText(property.getProviderList().get(i).getRtn_provider());
+    }
+
+    private void Purchases_refreshTable() {
+        DefaultTableModel model = new javax.swing.table.DefaultTableModel(
+                new Object[][]{},
+                new String[]{
+                    "ID", "RTN Proveedor", "CAI", "Número de documentos fiscales", "Subtotal compra", "Fecha"
+                }
+        ) {
+            Class[] types = new Class[]{
+                java.lang.Integer.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Float.class, java.lang.Object.class
+            };
+            boolean[] canEdit = new boolean[]{
+                false, false, false, false, false, false
+            };
+
+            @Override
+            public Class getColumnClass(int columnIndex) {
+                return types[columnIndex];
+            }
+
+            @Override
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit[columnIndex];
+            }
+        };
+        property.getPurchaseList().forEach((p) -> {
+            model.addRow(new Object[]{p.getProviderRTN(), p.getCAI(), p.getFiscalDocumentNumber(), p.getPurchasesSubtotal(), p.getPurchaseID(), p.getPurchaseDate()});
+
+        });
+        Compras_Table.setModel(model);
+    }
+
+    private void Sells_refreshTable() {
+        DefaultTableModel model = new javax.swing.table.DefaultTableModel(
+                new Object[][]{},
+                new String[]{
+                    "ID", "Ingreso exento", "Ingreso gravado", "Impuesto", "Fecha"
+                }
+        ) {
+            Class[] types = new Class[]{
+                java.lang.Integer.class, java.lang.Float.class, java.lang.Float.class, java.lang.Float.class, java.lang.Object.class
+            };
+            boolean[] canEdit = new boolean[]{
+                false, false, false, false, false
+            };
+
+            @Override
+            public Class getColumnClass(int columnIndex) {
+                return types[columnIndex];
+            }
+
+            @Override
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit[columnIndex];
+            }
+        };
+        property.getSellList()
+                .forEach((s) -> {
+                    model.addRow(new Object[]{s.getSaleID(), s.getExemptIncome(), s.getExemptTaxed(), s.getTax(), s.getDate()});
+                });
+        Ventas_Table.setModel(model);
+    }
+
+    private void Pays_refreshTable() {
+        DefaultTableModel model = new javax.swing.table.DefaultTableModel(
+                new Object[][]{},
+                new String[]{
+                    "ID", "Número crédito", "Abono", "Correo"
+                }
+        ) {
+            Class[] types = new Class[]{
+                java.lang.Integer.class, java.lang.Integer.class, java.lang.Float.class, java.lang.Object.class
+            };
+            boolean[] canEdit = new boolean[]{
+                false, false, false, false
+            };
+
+            @Override
+            public Class getColumnClass(int columnIndex) {
+                return types[columnIndex];
+            }
+
+            @Override
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit[columnIndex];
+            }
+        };
+        property.getPayList().forEach((p) -> {
+            model.addRow(new Object[]{p.getID(), p.getCredit(), p.getDeposit(), p.getDate()});
+
+        });
+        Pagos_Table.setModel(model);
     }
 
 }

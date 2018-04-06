@@ -1,8 +1,11 @@
 package Resources;
 
 import Entities.Client;
+import Entities.DailySales;
 import Entities.Inventory;
+import Entities.Payment;
 import Entities.Provider;
+import Entities.Purchases;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -58,6 +61,18 @@ public class Property implements Serializable {
      */
     private ArrayList<Provider> providerList;
     /**
+     * Lista de compas. (Temporal -> BD)
+     */
+    private ArrayList<Purchases> PurchaseList;
+    /**
+     * Lista de ventas. (Temporal -> BD)
+     */
+    private ArrayList<DailySales> SellList;
+    /**
+     * Lista de pagos. (Temporal -> BD)
+     */
+    private ArrayList<Payment> PayList;
+    /**
      * Lista de Usuario Administradores.
      */
     private ArrayList<Account> adminList;
@@ -86,9 +101,11 @@ public class Property implements Serializable {
         productList = new ArrayList();
         accountList = new ArrayList();
         clientList = new ArrayList();
-        clientList = new ArrayList();
-        adminList = new ArrayList();
         providerList = new ArrayList();
+        adminList = new ArrayList();
+        PurchaseList = new ArrayList();
+        SellList = new ArrayList();
+        PayList = new ArrayList();
         accountList.add(account);
         lastProductId = 0;
         lastUserId = 0;
@@ -181,6 +198,30 @@ public class Property implements Serializable {
 
     public void setProviderList(ArrayList<Provider> providerList) {
         this.providerList = providerList;
+    }
+
+    public ArrayList<Purchases> getPurchaseList() {
+        return PurchaseList;
+    }
+
+    public void setPurchaseList(ArrayList<Purchases> PurchaseList) {
+        this.PurchaseList = PurchaseList;
+    }
+
+    public ArrayList<DailySales> getSellList() {
+        return SellList;
+    }
+
+    public void setSellList(ArrayList<DailySales> SellList) {
+        this.SellList = SellList;
+    }
+
+    public ArrayList<Payment> getPayList() {
+        return PayList;
+    }
+
+    public void setPayList(ArrayList<Payment> PayList) {
+        this.PayList = PayList;
     }
 
     @Override
