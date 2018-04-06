@@ -1,5 +1,6 @@
 package Resources;
 
+import Entities.Client;
 import Entities.Inventory;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -48,6 +49,10 @@ public class Property implements Serializable {
      */
     private ArrayList<Inventory> productList;
     /**
+     * Lista de clientes. (Temporal -> BD)
+     */
+    private ArrayList<Client> clientList;
+    /**
      * Lista de Usuario Administradores.
      */
     private ArrayList<Account> adminList;
@@ -63,6 +68,10 @@ public class Property implements Serializable {
      * Último Id de Producto añadido.
      */
     private int lastProductId;
+    /**
+     * Último Id de Producto añadido.
+     */
+    private int lastNumClient;
 
     public Property(int mix[][], Account account) {
         //this.CREATE_KEY = "03jK9In42yr4i17fj7CY";
@@ -71,10 +80,12 @@ public class Property implements Serializable {
         this.account = account;
         productList = new ArrayList();
         accountList = new ArrayList();
+        clientList = new ArrayList();
         adminList = new ArrayList();
         accountList.add(account);
         lastProductId = 0;
         lastUserId = 0;
+        lastNumClient = 0;
     }
 
     public ArrayList<Account> getAdminList() {
@@ -141,7 +152,22 @@ public class Property implements Serializable {
         this.lastProductId = lastProductId;
     }
 
-    
+    public int getLastNumClient() {
+        return lastNumClient;
+    }
+
+    public void setLastNumClient(int lastNumClient) {
+        this.lastNumClient = lastNumClient;
+    }
+
+    public ArrayList<Client> getClientList() {
+        return clientList;
+    }
+
+    public void setClientList(ArrayList<Client> clientList) {
+        this.clientList = clientList;
+    }
+
     @Override
     public String toString() {
         return "Property{" + "mix=" + Arrays.deepToString(mix) + ", account=" + account + '}';

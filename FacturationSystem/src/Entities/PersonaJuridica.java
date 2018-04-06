@@ -1,19 +1,18 @@
 package Entities;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Dario
  */
-public class PersonaJuridica extends Client{
-    private int numCliente;
+public class PersonaJuridica extends Client implements Serializable{
+
     private String rtn;
 
-    public int getNumCliente() {
-        return numCliente;
-    }
-
-    public void setNumCliente(int numCliente) {
-        this.numCliente = numCliente;
+    public PersonaJuridica(String rtn, int numClient, String nombre, String correo, String telefono, String departamento, String municipio, String ciudad) {
+        super(numClient, nombre, correo, telefono, departamento, municipio, ciudad);
+        this.rtn = rtn;
     }
 
     public String getRtn() {
