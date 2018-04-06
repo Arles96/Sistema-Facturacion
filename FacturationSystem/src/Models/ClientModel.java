@@ -155,7 +155,7 @@ public class ClientModel extends Model{
                 int numCliente = rs.getInt("num_cliente");
                 String rtn = rs.getString("rtn");
                 
-                view.add(new PersonaNatural(numCliente, rtn));
+                view.add(new PersonaNatural( rtn, numCliente));
             }
             
         }catch(Exception ex){

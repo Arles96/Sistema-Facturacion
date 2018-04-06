@@ -2891,6 +2891,7 @@ public class Desk extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        CV_TabbedPane.setForeground(new java.awt.Color(255, 255, 255));
         CV_TabbedPane.setTabLayoutPolicy(javax.swing.JTabbedPane.SCROLL_TAB_LAYOUT);
         CV_TabbedPane.setTabPlacement(javax.swing.JTabbedPane.LEFT);
         CV_TabbedPane.setToolTipText("");

@@ -4294,6 +4294,9 @@
           <SubComponents>
             <Container class="javax.swing.JTabbedPane" name="CV_TabbedPane">
               <Properties>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
                 <Property name="tabLayoutPolicy" type="int" value="1"/>
                 <Property name="tabPlacement" type="int" value="2"/>
                 <Property name="toolTipText" type="java.lang.String" value=""/>
