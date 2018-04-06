@@ -4,6 +4,7 @@ import Entities.User;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.LinkedList;
 
 /**
@@ -64,8 +65,8 @@ public class UserModel extends Model {
         super.close();
     }
 
-    public LinkedList getView() {
-        LinkedList<User> view = new LinkedList();
+    public ArrayList<User> getView() {
+        ArrayList<User> view = new ArrayList();
         super.connect();
         try {
             Statement st = connect.createStatement();

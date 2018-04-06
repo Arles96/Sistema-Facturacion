@@ -1,9 +1,14 @@
 package Models;
 
 import Entities.DailySales;
+import Entities.Inventory;
 import Entities.Purchases;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -63,4 +68,26 @@ public class DailySales_Model extends Model {
         }
         super.close();
     }
+    
+    public ArrayList<DailySales> getView(){
+        ArrayList<DailySales> view = new ArrayList();
+        super.connect();
+        try{
+            Statement st = connect.createStatement();
+            ResultSet rs = st.executeQuery("Select * from VW_VENTADIARIA");
+            while(rs.next()){
+                int id_venta = rs.getInt("id_venta");
+                float ingresoExento = rs.getFloat("ingresoExento");
+                float ingresoGravado = rs.getFloat("ingresoGravado");
+                float impuesto = rs.getFloat("impuesto");
+                String fecha = rs.getDate("fecha").toString();
+                view.add(new DailySales(id_venta, ingresoExento, ingresoGravado, impuesto, fecha));
+            }
+        }catch(Exception ex){
+            return null;
+        }
+        super.close();
+        return view;
+    }
+    
 }

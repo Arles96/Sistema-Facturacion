@@ -6,8 +6,13 @@
 package Models;
 
 import Entities.Binnacle;
+import Entities.Inventory;
+import java.sql.Date;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -46,7 +51,33 @@ public class BinnacleModel extends Model {
 
     @Override
     public void delete(Object id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        super.connect();
+        try{
+            PreparedStatement st = connect.prepareStatement("Delete from Bitacora where id_producto=?");
+            st.setInt(1, (int)id);
+            st.execute();
+        }catch(Exception ex){
+        }
+        super.close();
     }
     
+     public ArrayList<Binnacle> getView(){
+        ArrayList<Binnacle> view = new ArrayList();
+        super.connect();
+        try{
+            Statement st = connect.createStatement();
+            ResultSet rs = st.executeQuery("Select * from VW_BITACORA");
+            while(rs.next()){
+                int id_bitacora = rs.getInt("id_bitacora");
+                String id_usuario = rs.getString("id_usuario");
+                String descripcion = rs.getString("descripcion");
+                Date fecha = rs.getDate("fecha");
+                view.add(new Binnacle(id_bitacora, id_usuario, fecha, descripcion));
+            }
+            
+        }catch(Exception ex){
+        }
+        super.close();
+        return view;
+     }
 }
