@@ -1,10 +1,13 @@
 package WorkSheet_Panels;
 
 import Entities.Client;
+import Entities.DailySales;
 import Entities.Inventory;
+import Entities.Payment;
 import Entities.PersonaJuridica;
 import Entities.PersonaNatural;
 import Entities.Provider;
+import Entities.Purchases;
 import Frames.WorkSheet;
 import Resources.Property;
 import Resources.Account;
@@ -48,7 +51,6 @@ public class Desk extends javax.swing.JPanel {
             panelCaja.setVisible(false);
             panelClientes.setVisible(false);
             panelCV.setVisible(false);
-            panelAjustes.setVisible(false);
             panelProductos.setVisible(false);
             panelEmpleados.setVisible(false);
             panelUser.setVisible(false);
@@ -63,12 +65,8 @@ public class Desk extends javax.swing.JPanel {
             panelCV.setBounds(internalPanel.getBounds());
             panelCV.setSize(internalPanel.getSize());
             panelCV.setLocation(labelBack.getY() + 8, labelBack.getX() + 8);
-            panelAjustes.setBounds(internalPanel.getBounds());
-            panelAjustes.setSize(internalPanel.getSize());
-            panelAjustes.setLocation(labelBack.getY() + 8, labelBack.getX() + 8);
             panelProductos.setBounds(internalPanel.getBounds());
             panelProductos.setSize(internalPanel.getSize());
-            panelAjustes.setLocation(labelBack.getY() + 8, labelBack.getX() + 8);
             panelEmpleados.setBounds(internalPanel.getBounds());
             panelEmpleados.setSize(internalPanel.getSize());
             panelEmpleados.setLocation(labelBack.getY() + 8, labelBack.getX() + 8);
@@ -91,55 +89,8 @@ public class Desk extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        panelCaja = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
-        panelAjustes = new javax.swing.JPanel();
-        jLabel17 = new javax.swing.JLabel();
         panelStatistics = new javax.swing.JPanel();
         jLabel20 = new javax.swing.JLabel();
-        panelUser = new javax.swing.JPanel();
-        User_TabbedPane = new javax.swing.JTabbedPane();
-        User_SPGeneral = new javax.swing.JScrollPane();
-        User_SPGeneral_panel = new javax.swing.JPanel();
-        user = new javax.swing.JTextField();
-        password = new javax.swing.JPasswordField();
-        jLabel19 = new javax.swing.JLabel();
-        labelPassword = new javax.swing.JLabel();
-        errorUser = new javax.swing.JLabel();
-        labelDone = new javax.swing.JLabel();
-        passwordR = new javax.swing.JPasswordField();
-        labelPasswordR = new javax.swing.JLabel();
-        errorPasswordR = new javax.swing.JLabel();
-        email = new javax.swing.JTextField();
-        jLabel23 = new javax.swing.JLabel();
-        errorEmail = new javax.swing.JLabel();
-        labelEdit = new javax.swing.JLabel();
-        jLabel24 = new javax.swing.JLabel();
-        labelCancel = new javax.swing.JLabel();
-        passwordCurrent = new javax.swing.JPasswordField();
-        jLabel25 = new javax.swing.JLabel();
-        phone = new javax.swing.JTextField();
-        jLabel27 = new javax.swing.JLabel();
-        errorPhone = new javax.swing.JLabel();
-        ID = new javax.swing.JTextField();
-        jLabel28 = new javax.swing.JLabel();
-        User_SPAdminstrar = new javax.swing.JScrollPane();
-        User_SPAdministrar_panel = new javax.swing.JPanel();
-        jLabel26 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        Admin_User_Table = new javax.swing.JTable();
-        labelDone1 = new javax.swing.JLabel();
-        buttomAdministrator = new javax.swing.JRadioButton();
-        jPanel1 = new javax.swing.JPanel();
-        Admin_user_edit = new javax.swing.JTextField();
-        jLabel22 = new javax.swing.JLabel();
-        panelEmpleados = new javax.swing.JPanel();
-        Employee_TabbedPane = new javax.swing.JTabbedPane();
-        Employee_SP = new javax.swing.JScrollPane();
-        Employee_SP_panel = new javax.swing.JPanel();
-        jLabel30 = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        Employee_Table = new javax.swing.JTable();
         Product_Dialog_Select = new javax.swing.JDialog();
         Product_Dialog_Panel = new javax.swing.JPanel();
         Product_Select_labelBack = new javax.swing.JLabel();
@@ -147,6 +98,153 @@ public class Desk extends javax.swing.JPanel {
         jLabel47 = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
         Product_Dialog_Select_Table = new javax.swing.JTable();
+        Client_Dialog_Select = new javax.swing.JDialog();
+        Client_Dialog_Panel = new javax.swing.JPanel();
+        Client_Select_labelBack = new javax.swing.JLabel();
+        Client_Dialog_labelChangeType = new javax.swing.JLabel();
+        jLabel48 = new javax.swing.JLabel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        Client_Dialog_Select_Table = new javax.swing.JTable();
+        Client_Dialog_Label_Type = new javax.swing.JLabel();
+        Client_Dialog_labelSelect = new javax.swing.JLabel();
+        Client_Add_Type_Group = new javax.swing.ButtonGroup();
+        Client_Edit_Type_Group = new javax.swing.ButtonGroup();
+        Provider_Dialog_Select = new javax.swing.JDialog();
+        Provider_Dialog_Panel = new javax.swing.JPanel();
+        Provider_Select_labelBack = new javax.swing.JLabel();
+        jLabel71 = new javax.swing.JLabel();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        Provider_Dialog_Select_Table = new javax.swing.JTable();
+        Provider_Dialog_labelSelect = new javax.swing.JLabel();
+        FirstPlane = new javax.swing.JPanel();
+        internalPanel = new javax.swing.JPanel();
+        pCaja = new javax.swing.JPanel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        pClientes = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        pCV = new javax.swing.JPanel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        pEmpleados = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        pProductos = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        pProveedores = new javax.swing.JPanel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        panelCV = new javax.swing.JPanel();
+        CV_TabbedPane = new javax.swing.JTabbedPane();
+        Compras_SP = new javax.swing.JScrollPane();
+        Compras_SP_panel = new javax.swing.JPanel();
+        jLabel35 = new javax.swing.JLabel();
+        jScrollPane9 = new javax.swing.JScrollPane();
+        Compras_Table = new javax.swing.JTable();
+        Ventas_SP = new javax.swing.JScrollPane();
+        Ventas_SP_panel = new javax.swing.JPanel();
+        jLabel36 = new javax.swing.JLabel();
+        jScrollPane10 = new javax.swing.JScrollPane();
+        Ventas_Table = new javax.swing.JTable();
+        Pagos_SP = new javax.swing.JScrollPane();
+        Pagos_SP_panel = new javax.swing.JPanel();
+        jLabel37 = new javax.swing.JLabel();
+        jScrollPane11 = new javax.swing.JScrollPane();
+        Pagos_Table = new javax.swing.JTable();
+        panelProveedores = new javax.swing.JPanel();
+        Provider_TabbedPane = new javax.swing.JTabbedPane();
+        Provider_Add_SP = new javax.swing.JScrollPane();
+        Provider_SP_AddPanel = new javax.swing.JPanel();
+        jLabel34 = new javax.swing.JLabel();
+        Provider_Add_Email = new javax.swing.JTextField();
+        jLabel113 = new javax.swing.JLabel();
+        Provider_Add_Name = new javax.swing.JTextField();
+        Provider_Add_Address = new javax.swing.JTextField();
+        Provider_Add_labelDone = new javax.swing.JLabel();
+        jLabel114 = new javax.swing.JLabel();
+        jLabel83 = new javax.swing.JLabel();
+        Provider_Add_RTN = new javax.swing.JFormattedTextField();
+        Client_Add_Label_Type3 = new javax.swing.JLabel();
+        jLabel115 = new javax.swing.JLabel();
+        Provider_Add_Phone = new javax.swing.JTextField();
+        Provider_List_SP = new javax.swing.JScrollPane();
+        Provider_SP_ListPanel = new javax.swing.JPanel();
+        Provider_List_Remove = new javax.swing.JLabel();
+        Provider_List_EditSelected = new javax.swing.JLabel();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        Provider_List_Table = new javax.swing.JTable();
+        jLabel70 = new javax.swing.JLabel();
+        Provider_Edit_SP = new javax.swing.JScrollPane();
+        Provider_SP_EditPanel = new javax.swing.JPanel();
+        jLabel41 = new javax.swing.JLabel();
+        Provider_Edit_labelSelect = new javax.swing.JLabel();
+        jLabel110 = new javax.swing.JLabel();
+        Provider_Edit_Email = new javax.swing.JTextField();
+        Client_Add_Label_Type2 = new javax.swing.JLabel();
+        Provider_Edit_RTN = new javax.swing.JFormattedTextField();
+        jLabel82 = new javax.swing.JLabel();
+        jLabel111 = new javax.swing.JLabel();
+        Provider_Edit_labelDone = new javax.swing.JLabel();
+        Provider_Edit_Address = new javax.swing.JTextField();
+        Provider_Edit_Name = new javax.swing.JTextField();
+        jLabel112 = new javax.swing.JLabel();
+        Provider_Edit_Phone = new javax.swing.JTextField();
+        panelClientes = new javax.swing.JPanel();
+        Client_TabbedPane = new javax.swing.JTabbedPane();
+        Client_Add_SP = new javax.swing.JScrollPane();
+        Client_SP_AddPanel = new javax.swing.JPanel();
+        jLabel33 = new javax.swing.JLabel();
+        Client_Add_Name = new javax.swing.JTextField();
+        Client_Add_labelDone = new javax.swing.JLabel();
+        jLabel74 = new javax.swing.JLabel();
+        jLabel77 = new javax.swing.JLabel();
+        Client_Add_Type_Person = new javax.swing.JRadioButton();
+        Client_Add_Type_Bussines = new javax.swing.JRadioButton();
+        Client_Add_ID_RTN = new javax.swing.JFormattedTextField();
+        Client_Add_Label_Type = new javax.swing.JLabel();
+        Client_Add_Email = new javax.swing.JTextField();
+        jLabel90 = new javax.swing.JLabel();
+        Client_Add_Phone = new javax.swing.JTextField();
+        jLabel91 = new javax.swing.JLabel();
+        Client_Add_Department = new javax.swing.JTextField();
+        jLabel92 = new javax.swing.JLabel();
+        Client_Add_Municipio = new javax.swing.JTextField();
+        jLabel93 = new javax.swing.JLabel();
+        Client_Add_City = new javax.swing.JTextField();
+        jLabel94 = new javax.swing.JLabel();
+        Client_List_SP = new javax.swing.JScrollPane();
+        Client_SP_ListPanel = new javax.swing.JPanel();
+        Client_List_Remove = new javax.swing.JLabel();
+        Client_List_EditSelected = new javax.swing.JLabel();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        Client_List_Table = new javax.swing.JTable();
+        Client_List_labelChangeType = new javax.swing.JLabel();
+        jLabel49 = new javax.swing.JLabel();
+        Client_List_Label_Type = new javax.swing.JLabel();
+        Client_Edit_SP = new javax.swing.JScrollPane();
+        Client_SP_EditPanel = new javax.swing.JPanel();
+        jLabel40 = new javax.swing.JLabel();
+        Client_Edit_labelSelect = new javax.swing.JLabel();
+        Client_Edit_Municipio = new javax.swing.JTextField();
+        jLabel75 = new javax.swing.JLabel();
+        jLabel95 = new javax.swing.JLabel();
+        Client_Edit_City = new javax.swing.JTextField();
+        Client_Edit_Name = new javax.swing.JTextField();
+        jLabel96 = new javax.swing.JLabel();
+        Client_Edit_Type_Person = new javax.swing.JRadioButton();
+        Client_Edit_Type_Bussines = new javax.swing.JRadioButton();
+        Client_Edit_Email = new javax.swing.JTextField();
+        jLabel97 = new javax.swing.JLabel();
+        Client_Edit_labelDone = new javax.swing.JLabel();
+        jLabel78 = new javax.swing.JLabel();
+        Client_Edit_ID_RTN = new javax.swing.JFormattedTextField();
+        Client_Edit_Phone = new javax.swing.JTextField();
+        Client_Edit_Label_Type = new javax.swing.JLabel();
+        jLabel98 = new javax.swing.JLabel();
+        Client_Edit_Department = new javax.swing.JTextField();
+        jLabel99 = new javax.swing.JLabel();
         panelProductos = new javax.swing.JPanel();
         Product_TabbedPane = new javax.swing.JTabbedPane();
         Product_Add_SP = new javax.swing.JScrollPane();
@@ -205,197 +303,94 @@ public class Desk extends javax.swing.JPanel {
         jLabel67 = new javax.swing.JLabel();
         jLabel68 = new javax.swing.JLabel();
         jLabel69 = new javax.swing.JLabel();
-        Client_Dialog_Select = new javax.swing.JDialog();
-        Client_Dialog_Panel = new javax.swing.JPanel();
-        Client_Select_labelBack = new javax.swing.JLabel();
-        Client_Dialog_labelChangeType = new javax.swing.JLabel();
-        jLabel48 = new javax.swing.JLabel();
-        jScrollPane5 = new javax.swing.JScrollPane();
-        Client_Dialog_Select_Table = new javax.swing.JTable();
-        Client_Dialog_Label_Type = new javax.swing.JLabel();
-        Client_Dialog_labelSelect = new javax.swing.JLabel();
-        Client_Add_Type_Group = new javax.swing.ButtonGroup();
-        Client_Edit_Type_Group = new javax.swing.ButtonGroup();
-        panelClientes = new javax.swing.JPanel();
-        Client_TabbedPane = new javax.swing.JTabbedPane();
-        Client_Add_SP = new javax.swing.JScrollPane();
-        Client_SP_AddPanel = new javax.swing.JPanel();
-        jLabel33 = new javax.swing.JLabel();
-        Client_Add_Name = new javax.swing.JTextField();
-        Client_Add_labelDone = new javax.swing.JLabel();
-        jLabel74 = new javax.swing.JLabel();
-        jLabel77 = new javax.swing.JLabel();
-        Client_Add_Type_Person = new javax.swing.JRadioButton();
-        Client_Add_Type_Bussines = new javax.swing.JRadioButton();
-        Client_Add_ID_RTN = new javax.swing.JFormattedTextField();
-        Client_Add_Label_Type = new javax.swing.JLabel();
-        Client_Add_Email = new javax.swing.JTextField();
-        jLabel90 = new javax.swing.JLabel();
-        Client_Add_Phone = new javax.swing.JTextField();
-        jLabel91 = new javax.swing.JLabel();
-        Client_Add_Department = new javax.swing.JTextField();
-        jLabel92 = new javax.swing.JLabel();
-        Client_Add_Municipio = new javax.swing.JTextField();
-        jLabel93 = new javax.swing.JLabel();
-        Client_Add_City = new javax.swing.JTextField();
-        jLabel94 = new javax.swing.JLabel();
-        Client_List_SP = new javax.swing.JScrollPane();
-        Client_SP_ListPanel = new javax.swing.JPanel();
-        Client_List_Remove = new javax.swing.JLabel();
-        Client_List_EditSelected = new javax.swing.JLabel();
-        jScrollPane7 = new javax.swing.JScrollPane();
-        Client_List_Table = new javax.swing.JTable();
-        Client_List_labelChangeType = new javax.swing.JLabel();
-        jLabel49 = new javax.swing.JLabel();
-        Client_List_Label_Type = new javax.swing.JLabel();
-        Client_Edit_SP = new javax.swing.JScrollPane();
-        Client_SP_EditPanel = new javax.swing.JPanel();
-        jLabel40 = new javax.swing.JLabel();
-        Client_Edit_labelSelect = new javax.swing.JLabel();
-        Client_Edit_Municipio = new javax.swing.JTextField();
-        jLabel75 = new javax.swing.JLabel();
-        jLabel95 = new javax.swing.JLabel();
-        Client_Edit_City = new javax.swing.JTextField();
-        Client_Edit_Name = new javax.swing.JTextField();
-        jLabel96 = new javax.swing.JLabel();
-        Client_Edit_Type_Person = new javax.swing.JRadioButton();
-        Client_Edit_Type_Bussines = new javax.swing.JRadioButton();
-        Client_Edit_Email = new javax.swing.JTextField();
-        jLabel97 = new javax.swing.JLabel();
-        Client_Edit_labelDone = new javax.swing.JLabel();
-        jLabel78 = new javax.swing.JLabel();
-        Client_Edit_ID_RTN = new javax.swing.JFormattedTextField();
-        Client_Edit_Phone = new javax.swing.JTextField();
-        Client_Edit_Label_Type = new javax.swing.JLabel();
-        jLabel98 = new javax.swing.JLabel();
-        Client_Edit_Department = new javax.swing.JTextField();
-        jLabel99 = new javax.swing.JLabel();
-        panelProveedores = new javax.swing.JPanel();
-        Provider_TabbedPane = new javax.swing.JTabbedPane();
-        Provider_Add_SP = new javax.swing.JScrollPane();
-        Provider_SP_AddPanel = new javax.swing.JPanel();
-        jLabel34 = new javax.swing.JLabel();
-        Provider_Add_Email = new javax.swing.JTextField();
-        jLabel113 = new javax.swing.JLabel();
-        Provider_Add_Name = new javax.swing.JTextField();
-        Provider_Add_Address = new javax.swing.JTextField();
-        Provider_Add_labelDone = new javax.swing.JLabel();
-        jLabel114 = new javax.swing.JLabel();
-        jLabel83 = new javax.swing.JLabel();
-        Provider_Add_RTN = new javax.swing.JFormattedTextField();
-        Client_Add_Label_Type3 = new javax.swing.JLabel();
-        jLabel115 = new javax.swing.JLabel();
-        Provider_Add_Phone = new javax.swing.JTextField();
-        Provider_List_SP = new javax.swing.JScrollPane();
-        Provider_SP_ListPanel = new javax.swing.JPanel();
-        Provider_List_Remove = new javax.swing.JLabel();
-        Provider_List_EditSelected = new javax.swing.JLabel();
-        jScrollPane8 = new javax.swing.JScrollPane();
-        Provider_List_Table = new javax.swing.JTable();
-        jLabel70 = new javax.swing.JLabel();
-        Provider_Edit_SP = new javax.swing.JScrollPane();
-        Provider_SP_EditPanel = new javax.swing.JPanel();
-        jLabel41 = new javax.swing.JLabel();
-        Provider_Edit_labelSelect = new javax.swing.JLabel();
-        jLabel110 = new javax.swing.JLabel();
-        Provider_Edit_Email = new javax.swing.JTextField();
-        Client_Add_Label_Type2 = new javax.swing.JLabel();
-        Provider_Edit_RTN = new javax.swing.JFormattedTextField();
-        jLabel82 = new javax.swing.JLabel();
-        jLabel111 = new javax.swing.JLabel();
-        Provider_Edit_labelDone = new javax.swing.JLabel();
-        Provider_Edit_Address = new javax.swing.JTextField();
-        Provider_Edit_Name = new javax.swing.JTextField();
-        jLabel112 = new javax.swing.JLabel();
-        Provider_Edit_Phone = new javax.swing.JTextField();
-        Provider_Dialog_Select = new javax.swing.JDialog();
-        Provider_Dialog_Panel = new javax.swing.JPanel();
-        Provider_Select_labelBack = new javax.swing.JLabel();
-        jLabel71 = new javax.swing.JLabel();
-        jScrollPane6 = new javax.swing.JScrollPane();
-        Provider_Dialog_Select_Table = new javax.swing.JTable();
-        Provider_Dialog_labelSelect = new javax.swing.JLabel();
-        FirstPlane = new javax.swing.JPanel();
-        internalPanel = new javax.swing.JPanel();
-        pCaja = new javax.swing.JPanel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        pClientes = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        pCV = new javax.swing.JPanel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        pEmpleados = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        pProductos = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        pProveedores = new javax.swing.JPanel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
-        panelCV = new javax.swing.JPanel();
-        CV_TabbedPane = new javax.swing.JTabbedPane();
-        Compras_SP = new javax.swing.JScrollPane();
-        Compras_SP_panel = new javax.swing.JPanel();
-        jLabel35 = new javax.swing.JLabel();
-        jScrollPane9 = new javax.swing.JScrollPane();
-        Compras_Table = new javax.swing.JTable();
-        Ventas_SP = new javax.swing.JScrollPane();
-        Ventas_SP_panel = new javax.swing.JPanel();
-        jLabel36 = new javax.swing.JLabel();
-        jScrollPane10 = new javax.swing.JScrollPane();
-        Ventas_Table = new javax.swing.JTable();
-        Pagos_SP = new javax.swing.JScrollPane();
-        Pagos_SP_panel = new javax.swing.JPanel();
-        jLabel37 = new javax.swing.JLabel();
-        jScrollPane11 = new javax.swing.JScrollPane();
-        Pagos_Table = new javax.swing.JTable();
+        panelEmpleados = new javax.swing.JPanel();
+        Employee_TabbedPane = new javax.swing.JTabbedPane();
+        Employee_SP = new javax.swing.JScrollPane();
+        Employee_SP_panel = new javax.swing.JPanel();
+        jLabel30 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        Employee_Table = new javax.swing.JTable();
+        panelCaja = new javax.swing.JPanel();
+        Caja_TabbedPane = new javax.swing.JTabbedPane();
+        Caja_Compras_SP = new javax.swing.JScrollPane();
+        Caja_Compras_SP_panel = new javax.swing.JPanel();
+        jLabel38 = new javax.swing.JLabel();
+        Caja_Compra_Add_Done = new javax.swing.JLabel();
+        Compra_RTN = new javax.swing.JTextField();
+        jLabel76 = new javax.swing.JLabel();
+        Compra_CAI = new javax.swing.JTextField();
+        jLabel79 = new javax.swing.JLabel();
+        Compra_numeroFiscal = new javax.swing.JTextField();
+        jLabel80 = new javax.swing.JLabel();
+        Compra_SubT = new javax.swing.JTextField();
+        jLabel81 = new javax.swing.JLabel();
+        Compra_ID = new javax.swing.JTextField();
+        jLabel84 = new javax.swing.JLabel();
+        jLabel85 = new javax.swing.JLabel();
+        Compra_Fecha = new com.toedter.calendar.JDateChooser();
+        Caja_Ventas_SP = new javax.swing.JScrollPane();
+        Caja_SP_panel = new javax.swing.JPanel();
+        jLabel42 = new javax.swing.JLabel();
+        Venta_IngresoGravado = new javax.swing.JTextField();
+        jLabel86 = new javax.swing.JLabel();
+        Venta_Impuesto = new javax.swing.JTextField();
+        jLabel87 = new javax.swing.JLabel();
+        Caja_Compra_Add_Done1 = new javax.swing.JLabel();
+        Venta_ID = new javax.swing.JTextField();
+        jLabel89 = new javax.swing.JLabel();
+        jLabel100 = new javax.swing.JLabel();
+        Venta_IngresoExento = new javax.swing.JTextField();
+        Venta_Fecha = new com.toedter.calendar.JDateChooser();
+        jLabel101 = new javax.swing.JLabel();
+        Caja_Pagos_SP = new javax.swing.JScrollPane();
+        Caja_Pagos_SP_panel = new javax.swing.JPanel();
+        jLabel43 = new javax.swing.JLabel();
+        Pago_Fecha = new com.toedter.calendar.JDateChooser();
+        jLabel88 = new javax.swing.JLabel();
+        jLabel102 = new javax.swing.JLabel();
+        Caja_Compra_Add_Done2 = new javax.swing.JLabel();
+        Pago_ID = new javax.swing.JTextField();
+        jLabel104 = new javax.swing.JLabel();
+        jLabel105 = new javax.swing.JLabel();
+        Pago_Num = new javax.swing.JTextField();
+        Pago_Abono = new javax.swing.JTextField();
+        panelUser = new javax.swing.JPanel();
+        User_TabbedPane = new javax.swing.JTabbedPane();
+        User_SPGeneral = new javax.swing.JScrollPane();
+        User_SPGeneral_panel = new javax.swing.JPanel();
+        user = new javax.swing.JTextField();
+        password = new javax.swing.JPasswordField();
+        jLabel19 = new javax.swing.JLabel();
+        labelPassword = new javax.swing.JLabel();
+        errorUser = new javax.swing.JLabel();
+        labelDone = new javax.swing.JLabel();
+        passwordR = new javax.swing.JPasswordField();
+        labelPasswordR = new javax.swing.JLabel();
+        errorPasswordR = new javax.swing.JLabel();
+        email = new javax.swing.JTextField();
+        jLabel23 = new javax.swing.JLabel();
+        errorEmail = new javax.swing.JLabel();
+        labelEdit = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        labelCancel = new javax.swing.JLabel();
+        passwordCurrent = new javax.swing.JPasswordField();
+        jLabel25 = new javax.swing.JLabel();
+        phone = new javax.swing.JTextField();
+        jLabel27 = new javax.swing.JLabel();
+        errorPhone = new javax.swing.JLabel();
+        ID = new javax.swing.JTextField();
+        jLabel28 = new javax.swing.JLabel();
+        User_SPAdminstrar = new javax.swing.JScrollPane();
+        User_SPAdministrar_panel = new javax.swing.JPanel();
+        jLabel26 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        Admin_User_Table = new javax.swing.JTable();
+        labelDone1 = new javax.swing.JLabel();
+        buttomAdministrator = new javax.swing.JRadioButton();
+        jPanel1 = new javax.swing.JPanel();
+        Admin_user_edit = new javax.swing.JTextField();
+        jLabel22 = new javax.swing.JLabel();
         labelBack = new javax.swing.JLabel();
-
-        jLabel6.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setText("CAJA");
-
-        javax.swing.GroupLayout panelCajaLayout = new javax.swing.GroupLayout(panelCaja);
-        panelCaja.setLayout(panelCajaLayout);
-        panelCajaLayout.setHorizontalGroup(
-            panelCajaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelCajaLayout.createSequentialGroup()
-                .addContainerGap(193, Short.MAX_VALUE)
-                .addComponent(jLabel6)
-                .addContainerGap(211, Short.MAX_VALUE))
-        );
-        panelCajaLayout.setVerticalGroup(
-            panelCajaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelCajaLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel6)
-                .addContainerGap(473, Short.MAX_VALUE))
-        );
-
-        jLabel17.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        jLabel17.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel17.setText("Ajustes");
-
-        javax.swing.GroupLayout panelAjustesLayout = new javax.swing.GroupLayout(panelAjustes);
-        panelAjustes.setLayout(panelAjustesLayout);
-        panelAjustesLayout.setHorizontalGroup(
-            panelAjustesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelAjustesLayout.createSequentialGroup()
-                .addGap(93, 93, 93)
-                .addComponent(jLabel17)
-                .addContainerGap(95, Short.MAX_VALUE))
-        );
-        panelAjustesLayout.setVerticalGroup(
-            panelAjustesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelAjustesLayout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addComponent(jLabel17)
-                .addContainerGap(447, Short.MAX_VALUE))
-        );
 
         jLabel20.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
         jLabel20.setForeground(new java.awt.Color(255, 255, 255));
@@ -417,6 +412,2659 @@ public class Desk extends javax.swing.JPanel {
                 .addContainerGap()
                 .addComponent(jLabel20)
                 .addContainerGap(473, Short.MAX_VALUE))
+        );
+
+        Product_Dialog_Select.setTitle("Seleccionar Producto");
+        Product_Dialog_Select.setAlwaysOnTop(true);
+        Product_Dialog_Select.setIconImage(getIconImage());
+        Product_Dialog_Select.setModal(true);
+        Product_Dialog_Select.setModalExclusionType(java.awt.Dialog.ModalExclusionType.TOOLKIT_EXCLUDE);
+
+        Product_Select_labelBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICO/40px/icons8_Back_40px_1.png"))); // NOI18N
+        Product_Select_labelBack.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Product_Select_labelBack.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Product_Select_labelBackMouseClicked(evt);
+            }
+        });
+
+        Product_Dialog_labelSelect.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICO/40px/icons8_Natural_User_Interface_2_40px.png"))); // NOI18N
+        Product_Dialog_labelSelect.setText("Elegir producto");
+        Product_Dialog_labelSelect.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Product_Dialog_labelSelect.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Product_Dialog_labelSelectMouseClicked(evt);
+            }
+        });
+
+        jLabel47.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
+        jLabel47.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel47.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel47.setText("Listado de Productos");
+
+        jScrollPane4.setOpaque(false);
+
+        Product_Dialog_Select_Table.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "ID", "Nombre", "Tipo", "Precio unidad", "Precio venta unidad", "Precio caja", "Precio venta caja", "Impuesto", "Fecha vencimiento", "Existencia unidad", "Existencia caja"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Float.class, java.lang.Float.class, java.lang.Float.class, java.lang.Float.class, java.lang.Float.class, java.lang.Object.class, java.lang.Float.class, java.lang.Float.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Product_Dialog_Select_Table.setDebugGraphicsOptions(javax.swing.DebugGraphics.BUFFERED_OPTION);
+        Product_Dialog_Select_Table.setDropMode(javax.swing.DropMode.INSERT_COLS);
+        Product_Dialog_Select_Table.setEditingColumn(-1);
+        Product_Dialog_Select_Table.setEditingRow(-1);
+        Product_Dialog_Select_Table.setOpaque(false);
+        Product_Dialog_Select_Table.setRowSelectionAllowed(false);
+        Product_Dialog_Select_Table.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        Product_Dialog_Select_Table.setUpdateSelectionOnSort(false);
+        Product_Dialog_Select_Table.setVerifyInputWhenFocusTarget(false);
+        jScrollPane4.setViewportView(Product_Dialog_Select_Table);
+
+        javax.swing.GroupLayout Product_Dialog_PanelLayout = new javax.swing.GroupLayout(Product_Dialog_Panel);
+        Product_Dialog_Panel.setLayout(Product_Dialog_PanelLayout);
+        Product_Dialog_PanelLayout.setHorizontalGroup(
+            Product_Dialog_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 621, Short.MAX_VALUE)
+            .addGroup(Product_Dialog_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(Product_Dialog_PanelLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addGroup(Product_Dialog_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 609, Short.MAX_VALUE)
+                        .addGroup(Product_Dialog_PanelLayout.createSequentialGroup()
+                            .addGap(224, 224, 224)
+                            .addComponent(Product_Dialog_labelSelect))
+                        .addGroup(Product_Dialog_PanelLayout.createSequentialGroup()
+                            .addComponent(Product_Select_labelBack)
+                            .addGap(42, 42, 42)
+                            .addComponent(jLabel47, javax.swing.GroupLayout.PREFERRED_SIZE, 413, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addContainerGap()))
+        );
+        Product_Dialog_PanelLayout.setVerticalGroup(
+            Product_Dialog_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 420, Short.MAX_VALUE)
+            .addGroup(Product_Dialog_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(Product_Dialog_PanelLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addGroup(Product_Dialog_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel47)
+                        .addComponent(Product_Select_labelBack))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 309, Short.MAX_VALUE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(Product_Dialog_labelSelect)
+                    .addContainerGap()))
+        );
+
+        javax.swing.GroupLayout Product_Dialog_SelectLayout = new javax.swing.GroupLayout(Product_Dialog_Select.getContentPane());
+        Product_Dialog_Select.getContentPane().setLayout(Product_Dialog_SelectLayout);
+        Product_Dialog_SelectLayout.setHorizontalGroup(
+            Product_Dialog_SelectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Product_Dialog_Panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        Product_Dialog_SelectLayout.setVerticalGroup(
+            Product_Dialog_SelectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Product_Dialog_Panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        Client_Dialog_Select.setTitle("Seleccionar Cliente");
+        Client_Dialog_Select.setAlwaysOnTop(true);
+        Client_Dialog_Select.setIconImage(getIconImage());
+        Client_Dialog_Select.setModal(true);
+        Client_Dialog_Select.setModalExclusionType(java.awt.Dialog.ModalExclusionType.TOOLKIT_EXCLUDE);
+
+        Client_Select_labelBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICO/40px/icons8_Back_40px_1.png"))); // NOI18N
+        Client_Select_labelBack.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Client_Select_labelBack.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Client_Select_labelBackMouseClicked(evt);
+            }
+        });
+
+        Client_Dialog_labelChangeType.setForeground(new java.awt.Color(255, 255, 255));
+        Client_Dialog_labelChangeType.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICO/40px/icons8_Handle_With_Care_40px.png"))); // NOI18N
+        Client_Dialog_labelChangeType.setText("Cambiar tipo de Cliente");
+        Client_Dialog_labelChangeType.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Client_Dialog_labelChangeType.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Client_Dialog_labelChangeTypeMouseClicked(evt);
+            }
+        });
+
+        jLabel48.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
+        jLabel48.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel48.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel48.setText("Listado de Clientes");
+
+        jScrollPane5.setOpaque(false);
+
+        Client_Dialog_Select_Table.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "#", "ID", "Nombre", "Correo", "Teléfono", "Departamento", "Municipio", "Ciudad"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Client_Dialog_Select_Table.setDebugGraphicsOptions(javax.swing.DebugGraphics.BUFFERED_OPTION);
+        Client_Dialog_Select_Table.setDropMode(javax.swing.DropMode.INSERT_COLS);
+        Client_Dialog_Select_Table.setEditingColumn(-1);
+        Client_Dialog_Select_Table.setEditingRow(-1);
+        Client_Dialog_Select_Table.setOpaque(false);
+        Client_Dialog_Select_Table.setRowSelectionAllowed(false);
+        Client_Dialog_Select_Table.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        Client_Dialog_Select_Table.setUpdateSelectionOnSort(false);
+        Client_Dialog_Select_Table.setVerifyInputWhenFocusTarget(false);
+        jScrollPane5.setViewportView(Client_Dialog_Select_Table);
+
+        Client_Dialog_Label_Type.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        Client_Dialog_Label_Type.setForeground(new java.awt.Color(255, 255, 255));
+        Client_Dialog_Label_Type.setText("Tipo: Persona");
+
+        Client_Dialog_labelSelect.setForeground(new java.awt.Color(255, 255, 255));
+        Client_Dialog_labelSelect.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICO/40px/icons8_Natural_User_Interface_2_40px.png"))); // NOI18N
+        Client_Dialog_labelSelect.setText("Elegir cliente");
+        Client_Dialog_labelSelect.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Client_Dialog_labelSelect.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Client_Dialog_labelSelectMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout Client_Dialog_PanelLayout = new javax.swing.GroupLayout(Client_Dialog_Panel);
+        Client_Dialog_Panel.setLayout(Client_Dialog_PanelLayout);
+        Client_Dialog_PanelLayout.setHorizontalGroup(
+            Client_Dialog_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Client_Dialog_PanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(Client_Dialog_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane5)
+                    .addGroup(Client_Dialog_PanelLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Client_Dialog_labelChangeType)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Client_Dialog_labelSelect)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(Client_Dialog_PanelLayout.createSequentialGroup()
+                        .addComponent(Client_Select_labelBack)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel48)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 98, Short.MAX_VALUE)
+                        .addComponent(Client_Dialog_Label_Type, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
+        );
+        Client_Dialog_PanelLayout.setVerticalGroup(
+            Client_Dialog_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Client_Dialog_PanelLayout.createSequentialGroup()
+                .addGap(7, 7, 7)
+                .addGroup(Client_Dialog_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Client_Select_labelBack)
+                    .addGroup(Client_Dialog_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel48)
+                        .addComponent(Client_Dialog_Label_Type, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 308, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(Client_Dialog_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Client_Dialog_labelSelect)
+                    .addComponent(Client_Dialog_labelChangeType))
+                .addContainerGap())
+        );
+
+        javax.swing.GroupLayout Client_Dialog_SelectLayout = new javax.swing.GroupLayout(Client_Dialog_Select.getContentPane());
+        Client_Dialog_Select.getContentPane().setLayout(Client_Dialog_SelectLayout);
+        Client_Dialog_SelectLayout.setHorizontalGroup(
+            Client_Dialog_SelectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Client_Dialog_SelectLayout.createSequentialGroup()
+                .addComponent(Client_Dialog_Panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        Client_Dialog_SelectLayout.setVerticalGroup(
+            Client_Dialog_SelectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Client_Dialog_Panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        Provider_Dialog_Select.setTitle("Seleccionar Proveedor");
+        Provider_Dialog_Select.setAlwaysOnTop(true);
+        Provider_Dialog_Select.setIconImage(getIconImage());
+        Provider_Dialog_Select.setModal(true);
+        Provider_Dialog_Select.setModalExclusionType(java.awt.Dialog.ModalExclusionType.TOOLKIT_EXCLUDE);
+
+        Provider_Select_labelBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICO/40px/icons8_Back_40px_1.png"))); // NOI18N
+        Provider_Select_labelBack.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Provider_Select_labelBack.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Provider_Select_labelBackMouseClicked(evt);
+            }
+        });
+
+        jLabel71.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
+        jLabel71.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel71.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel71.setText("Listado de Proveedores");
+
+        jScrollPane6.setOpaque(false);
+
+        Provider_Dialog_Select_Table.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "RTN", "Nombre", "Correo", "Teléfono", "Dirección"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Provider_Dialog_Select_Table.setDebugGraphicsOptions(javax.swing.DebugGraphics.BUFFERED_OPTION);
+        Provider_Dialog_Select_Table.setDropMode(javax.swing.DropMode.INSERT_COLS);
+        Provider_Dialog_Select_Table.setEditingColumn(-1);
+        Provider_Dialog_Select_Table.setEditingRow(-1);
+        Provider_Dialog_Select_Table.setOpaque(false);
+        Provider_Dialog_Select_Table.setRowSelectionAllowed(false);
+        Provider_Dialog_Select_Table.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        Provider_Dialog_Select_Table.setUpdateSelectionOnSort(false);
+        Provider_Dialog_Select_Table.setVerifyInputWhenFocusTarget(false);
+        jScrollPane6.setViewportView(Provider_Dialog_Select_Table);
+
+        Provider_Dialog_labelSelect.setForeground(new java.awt.Color(255, 255, 255));
+        Provider_Dialog_labelSelect.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICO/40px/icons8_Natural_User_Interface_2_40px.png"))); // NOI18N
+        Provider_Dialog_labelSelect.setText("Elegir Proveedor");
+        Provider_Dialog_labelSelect.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Provider_Dialog_labelSelect.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Provider_Dialog_labelSelectMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout Provider_Dialog_PanelLayout = new javax.swing.GroupLayout(Provider_Dialog_Panel);
+        Provider_Dialog_Panel.setLayout(Provider_Dialog_PanelLayout);
+        Provider_Dialog_PanelLayout.setHorizontalGroup(
+            Provider_Dialog_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Provider_Dialog_PanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(Provider_Dialog_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 659, Short.MAX_VALUE)
+                    .addGroup(Provider_Dialog_PanelLayout.createSequentialGroup()
+                        .addComponent(Provider_Select_labelBack)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel71)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(Provider_Dialog_PanelLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(Provider_Dialog_labelSelect)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        Provider_Dialog_PanelLayout.setVerticalGroup(
+            Provider_Dialog_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Provider_Dialog_PanelLayout.createSequentialGroup()
+                .addGap(7, 7, 7)
+                .addGroup(Provider_Dialog_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Provider_Select_labelBack)
+                    .addComponent(jLabel71))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 301, Short.MAX_VALUE)
+                .addGap(7, 7, 7)
+                .addComponent(Provider_Dialog_labelSelect)
+                .addContainerGap())
+        );
+
+        javax.swing.GroupLayout Provider_Dialog_SelectLayout = new javax.swing.GroupLayout(Provider_Dialog_Select.getContentPane());
+        Provider_Dialog_Select.getContentPane().setLayout(Provider_Dialog_SelectLayout);
+        Provider_Dialog_SelectLayout.setHorizontalGroup(
+            Provider_Dialog_SelectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Provider_Dialog_SelectLayout.createSequentialGroup()
+                .addComponent(Provider_Dialog_Panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        Provider_Dialog_SelectLayout.setVerticalGroup(
+            Provider_Dialog_SelectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Provider_Dialog_Panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        pCaja.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pCajaMouseClicked(evt);
+            }
+        });
+
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICO/100px/icons8_Receipt_100px.png"))); // NOI18N
+        jLabel12.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setText("Caja");
+        jLabel7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        javax.swing.GroupLayout pCajaLayout = new javax.swing.GroupLayout(pCaja);
+        pCaja.setLayout(pCajaLayout);
+        pCajaLayout.setHorizontalGroup(
+            pCajaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 119, Short.MAX_VALUE)
+            .addGroup(pCajaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pCajaLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addGroup(pCajaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(pCajaLayout.createSequentialGroup()
+                            .addGap(37, 37, 37)
+                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jLabel12))
+                    .addContainerGap(13, Short.MAX_VALUE)))
+        );
+        pCajaLayout.setVerticalGroup(
+            pCajaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(pCajaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pCajaLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(jLabel7)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+
+        pClientes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pClientesMouseClicked(evt);
+            }
+        });
+
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Clientes");
+        jLabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICO/100px/icons8_User_Groups_100px.png"))); // NOI18N
+        jLabel4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        javax.swing.GroupLayout pClientesLayout = new javax.swing.GroupLayout(pClientes);
+        pClientes.setLayout(pClientesLayout);
+        pClientesLayout.setHorizontalGroup(
+            pClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 112, Short.MAX_VALUE)
+            .addGroup(pClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pClientesLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addGroup(pClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel4)
+                        .addGroup(pClientesLayout.createSequentialGroup()
+                            .addGap(26, 26, 26)
+                            .addComponent(jLabel2)))
+                    .addContainerGap()))
+        );
+        pClientesLayout.setVerticalGroup(
+            pClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 134, Short.MAX_VALUE)
+            .addGroup(pClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pClientesLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jLabel4)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(jLabel2)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+
+        pCV.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pCVMouseClicked(evt);
+            }
+        });
+
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setText("Compras / Ventas / Pagos");
+        jLabel10.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICO/100px/icons8_Handshake_100px.png"))); // NOI18N
+        jLabel3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        javax.swing.GroupLayout pCVLayout = new javax.swing.GroupLayout(pCV);
+        pCV.setLayout(pCVLayout);
+        pCVLayout.setHorizontalGroup(
+            pCVLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pCVLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel10)
+                .addContainerGap())
+            .addGroup(pCVLayout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        pCVLayout.setVerticalGroup(
+            pCVLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pCVLayout.createSequentialGroup()
+                .addGap(9, 9, 9)
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel10)
+                .addContainerGap())
+        );
+
+        pEmpleados.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pEmpleadosMouseClicked(evt);
+            }
+        });
+
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICO/100px/icons8_Online_Support_100px.png"))); // NOI18N
+        jLabel5.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jLabel5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setText("Empleados");
+        jLabel9.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        javax.swing.GroupLayout pEmpleadosLayout = new javax.swing.GroupLayout(pEmpleados);
+        pEmpleados.setLayout(pEmpleadosLayout);
+        pEmpleadosLayout.setHorizontalGroup(
+            pEmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 124, Short.MAX_VALUE)
+            .addGroup(pEmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pEmpleadosLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addGroup(pEmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pEmpleadosLayout.createSequentialGroup()
+                            .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(12, 12, 12))
+                        .addComponent(jLabel5))
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+        pEmpleadosLayout.setVerticalGroup(
+            pEmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 146, Short.MAX_VALUE)
+            .addGroup(pEmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pEmpleadosLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jLabel5)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(jLabel9)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+
+        pProductos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pProductosMouseClicked(evt);
+            }
+        });
+
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Productos");
+        jLabel1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICO/100px/icons8_Ingredients_100px.png"))); // NOI18N
+        jLabel14.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        javax.swing.GroupLayout pProductosLayout = new javax.swing.GroupLayout(pProductos);
+        pProductos.setLayout(pProductosLayout);
+        pProductosLayout.setHorizontalGroup(
+            pProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pProductosLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pProductosLayout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(21, 21, 21))
+                    .addGroup(pProductosLayout.createSequentialGroup()
+                        .addComponent(jLabel14)
+                        .addContainerGap())))
+        );
+        pProductosLayout.setVerticalGroup(
+            pProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pProductosLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel14)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        pProveedores.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pProveedoresMouseClicked(evt);
+            }
+        });
+
+        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICO/100px/icons8_Conference_100px.png"))); // NOI18N
+        jLabel11.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jLabel11.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel11.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel16.setText("Proveedores");
+        jLabel16.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        javax.swing.GroupLayout pProveedoresLayout = new javax.swing.GroupLayout(pProveedores);
+        pProveedores.setLayout(pProveedoresLayout);
+        pProveedoresLayout.setHorizontalGroup(
+            pProveedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 112, Short.MAX_VALUE)
+            .addGroup(pProveedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pProveedoresLayout.createSequentialGroup()
+                    .addGroup(pProveedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(pProveedoresLayout.createSequentialGroup()
+                            .addContainerGap()
+                            .addComponent(jLabel11))
+                        .addGroup(pProveedoresLayout.createSequentialGroup()
+                            .addGap(21, 21, 21)
+                            .addComponent(jLabel16)))
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+        pProveedoresLayout.setVerticalGroup(
+            pProveedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 134, Short.MAX_VALUE)
+            .addGroup(pProveedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pProveedoresLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jLabel11)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(jLabel16)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+
+        javax.swing.GroupLayout internalPanelLayout = new javax.swing.GroupLayout(internalPanel);
+        internalPanel.setLayout(internalPanelLayout);
+        internalPanelLayout.setHorizontalGroup(
+            internalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(internalPanelLayout.createSequentialGroup()
+                .addContainerGap(86, Short.MAX_VALUE)
+                .addGroup(internalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(internalPanelLayout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(pProveedores, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(pCV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(internalPanelLayout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addComponent(pCaja, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 225, Short.MAX_VALUE)
+                .addGroup(internalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(pEmpleados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pClientes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pProductos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(214, Short.MAX_VALUE))
+        );
+        internalPanelLayout.setVerticalGroup(
+            internalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(internalPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(internalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(pClientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(pCaja, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
+                .addGroup(internalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(pEmpleados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pCV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
+                .addGroup(internalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(pProductos, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pProveedores, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(11, Short.MAX_VALUE))
+        );
+
+        CV_TabbedPane.setForeground(new java.awt.Color(255, 255, 255));
+        CV_TabbedPane.setTabLayoutPolicy(javax.swing.JTabbedPane.SCROLL_TAB_LAYOUT);
+        CV_TabbedPane.setTabPlacement(javax.swing.JTabbedPane.LEFT);
+        CV_TabbedPane.setToolTipText("");
+        CV_TabbedPane.setAutoscrolls(true);
+        CV_TabbedPane.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        CV_TabbedPane.setDoubleBuffered(true);
+        CV_TabbedPane.setFocusCycleRoot(true);
+        CV_TabbedPane.setFocusTraversalPolicyProvider(true);
+        CV_TabbedPane.setOpaque(true);
+        CV_TabbedPane.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                CV_TabbedPaneStateChanged(evt);
+            }
+        });
+
+        jLabel35.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
+        jLabel35.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel35.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel35.setText("Listado de Compras");
+
+        jScrollPane9.setOpaque(false);
+
+        Compras_Table.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "ID", "RTN Proveedor", "CAI", "Número de documentos fiscales", "Subtotal compra", "Fecha"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Float.class, java.lang.Object.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Compras_Table.setDebugGraphicsOptions(javax.swing.DebugGraphics.BUFFERED_OPTION);
+        Compras_Table.setDropMode(javax.swing.DropMode.INSERT_COLS);
+        Compras_Table.setEditingColumn(-1);
+        Compras_Table.setEditingRow(-1);
+        Compras_Table.setOpaque(false);
+        Compras_Table.setRowSelectionAllowed(false);
+        Compras_Table.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        Compras_Table.setUpdateSelectionOnSort(false);
+        Compras_Table.setVerifyInputWhenFocusTarget(false);
+        jScrollPane9.setViewportView(Compras_Table);
+
+        javax.swing.GroupLayout Compras_SP_panelLayout = new javax.swing.GroupLayout(Compras_SP_panel);
+        Compras_SP_panel.setLayout(Compras_SP_panelLayout);
+        Compras_SP_panelLayout.setHorizontalGroup(
+            Compras_SP_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Compras_SP_panelLayout.createSequentialGroup()
+                .addGap(12, 12, 12)
+                .addGroup(Compras_SP_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Compras_SP_panelLayout.createSequentialGroup()
+                        .addComponent(jLabel35)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(Compras_SP_panelLayout.createSequentialGroup()
+                        .addComponent(jScrollPane9, javax.swing.GroupLayout.DEFAULT_SIZE, 734, Short.MAX_VALUE)
+                        .addGap(19, 19, 19))))
+        );
+        Compras_SP_panelLayout.setVerticalGroup(
+            Compras_SP_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Compras_SP_panelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel35)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane9, javax.swing.GroupLayout.DEFAULT_SIZE, 415, Short.MAX_VALUE)
+                .addGap(23, 23, 23))
+        );
+
+        Compras_SP.setViewportView(Compras_SP_panel);
+
+        CV_TabbedPane.addTab("Compras", Compras_SP);
+
+        jLabel36.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
+        jLabel36.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel36.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel36.setText("Listado de Ventas");
+
+        jScrollPane10.setOpaque(false);
+
+        Ventas_Table.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "ID", "Ingreso exento", "Ingreso gravado", "Impuesto", "Fecha"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.Float.class, java.lang.Float.class, java.lang.Float.class, java.lang.Object.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Ventas_Table.setDebugGraphicsOptions(javax.swing.DebugGraphics.BUFFERED_OPTION);
+        Ventas_Table.setDropMode(javax.swing.DropMode.INSERT_COLS);
+        Ventas_Table.setEditingColumn(-1);
+        Ventas_Table.setEditingRow(-1);
+        Ventas_Table.setOpaque(false);
+        Ventas_Table.setRowSelectionAllowed(false);
+        Ventas_Table.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        Ventas_Table.setUpdateSelectionOnSort(false);
+        Ventas_Table.setVerifyInputWhenFocusTarget(false);
+        jScrollPane10.setViewportView(Ventas_Table);
+
+        javax.swing.GroupLayout Ventas_SP_panelLayout = new javax.swing.GroupLayout(Ventas_SP_panel);
+        Ventas_SP_panel.setLayout(Ventas_SP_panelLayout);
+        Ventas_SP_panelLayout.setHorizontalGroup(
+            Ventas_SP_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Ventas_SP_panelLayout.createSequentialGroup()
+                .addGap(12, 12, 12)
+                .addGroup(Ventas_SP_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Ventas_SP_panelLayout.createSequentialGroup()
+                        .addComponent(jScrollPane10, javax.swing.GroupLayout.DEFAULT_SIZE, 734, Short.MAX_VALUE)
+                        .addGap(19, 19, 19))
+                    .addGroup(Ventas_SP_panelLayout.createSequentialGroup()
+                        .addComponent(jLabel36)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+        );
+        Ventas_SP_panelLayout.setVerticalGroup(
+            Ventas_SP_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Ventas_SP_panelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel36)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane10, javax.swing.GroupLayout.DEFAULT_SIZE, 417, Short.MAX_VALUE)
+                .addGap(21, 21, 21))
+        );
+
+        Ventas_SP.setViewportView(Ventas_SP_panel);
+
+        CV_TabbedPane.addTab("Ventas", Ventas_SP);
+
+        jLabel37.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
+        jLabel37.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel37.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel37.setText("Listado de Pagos");
+
+        jScrollPane11.setOpaque(false);
+
+        Pagos_Table.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "ID", "Número crédito", "Abono", "Correo"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.Integer.class, java.lang.Float.class, java.lang.Object.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Pagos_Table.setDebugGraphicsOptions(javax.swing.DebugGraphics.BUFFERED_OPTION);
+        Pagos_Table.setDropMode(javax.swing.DropMode.INSERT_COLS);
+        Pagos_Table.setEditingColumn(-1);
+        Pagos_Table.setEditingRow(-1);
+        Pagos_Table.setOpaque(false);
+        Pagos_Table.setRowSelectionAllowed(false);
+        Pagos_Table.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        Pagos_Table.setUpdateSelectionOnSort(false);
+        Pagos_Table.setVerifyInputWhenFocusTarget(false);
+        jScrollPane11.setViewportView(Pagos_Table);
+
+        javax.swing.GroupLayout Pagos_SP_panelLayout = new javax.swing.GroupLayout(Pagos_SP_panel);
+        Pagos_SP_panel.setLayout(Pagos_SP_panelLayout);
+        Pagos_SP_panelLayout.setHorizontalGroup(
+            Pagos_SP_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Pagos_SP_panelLayout.createSequentialGroup()
+                .addGap(12, 12, 12)
+                .addGroup(Pagos_SP_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Pagos_SP_panelLayout.createSequentialGroup()
+                        .addComponent(jScrollPane11, javax.swing.GroupLayout.DEFAULT_SIZE, 734, Short.MAX_VALUE)
+                        .addGap(19, 19, 19))
+                    .addGroup(Pagos_SP_panelLayout.createSequentialGroup()
+                        .addComponent(jLabel37)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+        );
+        Pagos_SP_panelLayout.setVerticalGroup(
+            Pagos_SP_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Pagos_SP_panelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel37)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane11, javax.swing.GroupLayout.DEFAULT_SIZE, 429, Short.MAX_VALUE)
+                .addGap(9, 9, 9))
+        );
+
+        Pagos_SP.setViewportView(Pagos_SP_panel);
+
+        CV_TabbedPane.addTab("Pagos", Pagos_SP);
+
+        javax.swing.GroupLayout panelCVLayout = new javax.swing.GroupLayout(panelCV);
+        panelCV.setLayout(panelCVLayout);
+        panelCVLayout.setHorizontalGroup(
+            panelCVLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(CV_TabbedPane, javax.swing.GroupLayout.DEFAULT_SIZE, 837, Short.MAX_VALUE)
+        );
+        panelCVLayout.setVerticalGroup(
+            panelCVLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(CV_TabbedPane, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 453, Short.MAX_VALUE)
+        );
+
+        Provider_TabbedPane.setForeground(new java.awt.Color(255, 255, 255));
+        Provider_TabbedPane.setTabLayoutPolicy(javax.swing.JTabbedPane.SCROLL_TAB_LAYOUT);
+        Provider_TabbedPane.setTabPlacement(javax.swing.JTabbedPane.LEFT);
+        Provider_TabbedPane.setToolTipText("");
+        Provider_TabbedPane.setAutoscrolls(true);
+        Provider_TabbedPane.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        Provider_TabbedPane.setDoubleBuffered(true);
+        Provider_TabbedPane.setFocusCycleRoot(true);
+        Provider_TabbedPane.setFocusTraversalPolicyProvider(true);
+        Provider_TabbedPane.setOpaque(true);
+        Provider_TabbedPane.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                Provider_TabbedPaneStateChanged(evt);
+            }
+        });
+
+        jLabel34.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
+        jLabel34.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel34.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel34.setText("Agregar Proveedor");
+
+        jLabel113.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel113.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel113.setText("Teléfono");
+
+        Provider_Add_labelDone.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICO/60px/icons8_Checkmark_60px.png"))); // NOI18N
+        Provider_Add_labelDone.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Provider_Add_labelDone.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Provider_Add_labelDoneMouseClicked(evt);
+            }
+        });
+
+        jLabel114.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel114.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel114.setText("Dirección");
+
+        jLabel83.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel83.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel83.setText("Nombre");
+
+        Provider_Add_RTN.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat(""))));
+
+        Client_Add_Label_Type3.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        Client_Add_Label_Type3.setForeground(new java.awt.Color(255, 255, 255));
+        Client_Add_Label_Type3.setText("RTN");
+
+        jLabel115.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel115.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel115.setText("Correo");
+
+        javax.swing.GroupLayout Provider_SP_AddPanelLayout = new javax.swing.GroupLayout(Provider_SP_AddPanel);
+        Provider_SP_AddPanel.setLayout(Provider_SP_AddPanelLayout);
+        Provider_SP_AddPanelLayout.setHorizontalGroup(
+            Provider_SP_AddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Provider_SP_AddPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel34, javax.swing.GroupLayout.PREFERRED_SIZE, 427, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(Provider_SP_AddPanelLayout.createSequentialGroup()
+                .addContainerGap(132, Short.MAX_VALUE)
+                .addGroup(Provider_SP_AddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Provider_Add_Name, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel83)
+                    .addGroup(Provider_SP_AddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(Client_Add_Label_Type3)
+                        .addComponent(Provider_Add_RTN, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(Provider_SP_AddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(Provider_Add_Email, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
+                        .addComponent(jLabel115)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 132, Short.MAX_VALUE)
+                .addGroup(Provider_SP_AddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Provider_Add_labelDone)
+                    .addGroup(Provider_SP_AddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(Provider_Add_Phone, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
+                        .addComponent(jLabel113))
+                    .addGroup(Provider_SP_AddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(Provider_Add_Address, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
+                        .addComponent(jLabel114)))
+                .addContainerGap(119, Short.MAX_VALUE))
+        );
+        Provider_SP_AddPanelLayout.setVerticalGroup(
+            Provider_SP_AddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Provider_SP_AddPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel34)
+                .addGap(26, 26, 26)
+                .addGroup(Provider_SP_AddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Provider_SP_AddPanelLayout.createSequentialGroup()
+                        .addComponent(jLabel83)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Provider_Add_Name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(Provider_SP_AddPanelLayout.createSequentialGroup()
+                        .addComponent(jLabel113)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Provider_Add_Phone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 79, Short.MAX_VALUE)
+                .addGroup(Provider_SP_AddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(Provider_SP_AddPanelLayout.createSequentialGroup()
+                        .addComponent(Client_Add_Label_Type3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Provider_Add_RTN))
+                    .addGroup(Provider_SP_AddPanelLayout.createSequentialGroup()
+                        .addComponent(jLabel114)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Provider_Add_Address, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, Short.MAX_VALUE)
+                .addGroup(Provider_SP_AddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Provider_SP_AddPanelLayout.createSequentialGroup()
+                        .addComponent(jLabel115)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Provider_Add_Email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Provider_Add_labelDone, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addContainerGap(129, Short.MAX_VALUE))
+        );
+
+        Provider_Add_SP.setViewportView(Provider_SP_AddPanel);
+
+        Provider_TabbedPane.addTab("Agregar", Provider_Add_SP);
+
+        Provider_List_Remove.setForeground(new java.awt.Color(255, 255, 255));
+        Provider_List_Remove.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICO/40px/icons8_Delete_40px.png"))); // NOI18N
+        Provider_List_Remove.setText("Eliminar");
+        Provider_List_Remove.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Provider_List_Remove.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Provider_List_RemoveMouseClicked(evt);
+            }
+        });
+
+        Provider_List_EditSelected.setForeground(new java.awt.Color(255, 255, 255));
+        Provider_List_EditSelected.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICO/40px/icons8_Edit_40px.png"))); // NOI18N
+        Provider_List_EditSelected.setText("Modificar");
+        Provider_List_EditSelected.setToolTipText("");
+        Provider_List_EditSelected.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Provider_List_EditSelected.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Provider_List_EditSelectedMouseClicked(evt);
+            }
+        });
+
+        jScrollPane8.setOpaque(false);
+
+        Provider_List_Table.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "RTN", "Nombre", "Correo", "Teléfono", "Dirección"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Provider_List_Table.setDebugGraphicsOptions(javax.swing.DebugGraphics.BUFFERED_OPTION);
+        Provider_List_Table.setDropMode(javax.swing.DropMode.INSERT_COLS);
+        Provider_List_Table.setEditingColumn(-1);
+        Provider_List_Table.setEditingRow(-1);
+        Provider_List_Table.setOpaque(false);
+        Provider_List_Table.setRowSelectionAllowed(false);
+        Provider_List_Table.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        Provider_List_Table.setUpdateSelectionOnSort(false);
+        Provider_List_Table.setVerifyInputWhenFocusTarget(false);
+        jScrollPane8.setViewportView(Provider_List_Table);
+
+        jLabel70.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
+        jLabel70.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel70.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel70.setText("Listado de Proveedores");
+
+        javax.swing.GroupLayout Provider_SP_ListPanelLayout = new javax.swing.GroupLayout(Provider_SP_ListPanel);
+        Provider_SP_ListPanel.setLayout(Provider_SP_ListPanelLayout);
+        Provider_SP_ListPanelLayout.setHorizontalGroup(
+            Provider_SP_ListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Provider_SP_ListPanelLayout.createSequentialGroup()
+                .addGroup(Provider_SP_ListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Provider_SP_ListPanelLayout.createSequentialGroup()
+                        .addGroup(Provider_SP_ListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(Provider_SP_ListPanelLayout.createSequentialGroup()
+                                .addContainerGap(133, Short.MAX_VALUE)
+                                .addComponent(Provider_List_Remove)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 134, Short.MAX_VALUE)
+                                .addComponent(Provider_List_EditSelected))
+                            .addGroup(Provider_SP_ListPanelLayout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(jLabel70)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 297, Short.MAX_VALUE))
+                    .addGroup(Provider_SP_ListPanelLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane8)))
+                .addContainerGap())
+        );
+        Provider_SP_ListPanelLayout.setVerticalGroup(
+            Provider_SP_ListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Provider_SP_ListPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel70)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 404, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(Provider_SP_ListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Provider_List_Remove)
+                    .addComponent(Provider_List_EditSelected))
+                .addGap(9, 9, 9))
+        );
+
+        Provider_List_SP.setViewportView(Provider_SP_ListPanel);
+
+        Provider_TabbedPane.addTab("Listado", Provider_List_SP);
+
+        Provider_SP_EditPanel.setToolTipText("");
+
+        jLabel41.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
+        jLabel41.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel41.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel41.setText("Editar Proveedor");
+
+        Provider_Edit_labelSelect.setForeground(new java.awt.Color(255, 255, 255));
+        Provider_Edit_labelSelect.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICO/40px/icons8_Natural_User_Interface_2_40px.png"))); // NOI18N
+        Provider_Edit_labelSelect.setText("Elegir proveedor");
+        Provider_Edit_labelSelect.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Provider_Edit_labelSelect.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Provider_Edit_labelSelectMouseClicked(evt);
+            }
+        });
+
+        jLabel110.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel110.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel110.setText("Correo");
+
+        Client_Add_Label_Type2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        Client_Add_Label_Type2.setForeground(new java.awt.Color(255, 255, 255));
+        Client_Add_Label_Type2.setText("RTN");
+
+        Provider_Edit_RTN.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("####-####-#####"))));
+
+        jLabel82.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel82.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel82.setText("Nombre");
+
+        jLabel111.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel111.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel111.setText("Dirección");
+
+        Provider_Edit_labelDone.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICO/60px/icons8_Checkmark_60px.png"))); // NOI18N
+        Provider_Edit_labelDone.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Provider_Edit_labelDone.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Provider_Edit_labelDoneMouseClicked(evt);
+            }
+        });
+
+        jLabel112.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel112.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel112.setText("Teléfono");
+
+        javax.swing.GroupLayout Provider_SP_EditPanelLayout = new javax.swing.GroupLayout(Provider_SP_EditPanel);
+        Provider_SP_EditPanel.setLayout(Provider_SP_EditPanelLayout);
+        Provider_SP_EditPanelLayout.setHorizontalGroup(
+            Provider_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Provider_SP_EditPanelLayout.createSequentialGroup()
+                .addGroup(Provider_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Provider_SP_EditPanelLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel41)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Provider_Edit_labelSelect))
+                    .addGroup(Provider_SP_EditPanelLayout.createSequentialGroup()
+                        .addContainerGap(97, Short.MAX_VALUE)
+                        .addGroup(Provider_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Provider_Edit_Name, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel82)
+                            .addGroup(Provider_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(Client_Add_Label_Type2)
+                                .addComponent(Provider_Edit_RTN, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(Provider_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(Provider_Edit_Email, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
+                                .addComponent(jLabel110)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 139, Short.MAX_VALUE)
+                        .addGroup(Provider_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Provider_Edit_labelDone)
+                            .addGroup(Provider_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(Provider_Edit_Phone, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
+                                .addComponent(jLabel112))
+                            .addGroup(Provider_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(Provider_Edit_Address, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
+                                .addComponent(jLabel111)))))
+                .addContainerGap(147, Short.MAX_VALUE))
+        );
+        Provider_SP_EditPanelLayout.setVerticalGroup(
+            Provider_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Provider_SP_EditPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(Provider_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel41)
+                    .addComponent(Provider_Edit_labelSelect))
+                .addGap(27, 27, 27)
+                .addGroup(Provider_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Provider_SP_EditPanelLayout.createSequentialGroup()
+                        .addComponent(jLabel82)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Provider_Edit_Name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(Provider_SP_EditPanelLayout.createSequentialGroup()
+                        .addComponent(jLabel112)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Provider_Edit_Phone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, Short.MAX_VALUE)
+                .addGroup(Provider_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(Provider_SP_EditPanelLayout.createSequentialGroup()
+                        .addComponent(Client_Add_Label_Type2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Provider_Edit_RTN))
+                    .addGroup(Provider_SP_EditPanelLayout.createSequentialGroup()
+                        .addComponent(jLabel111)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Provider_Edit_Address, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
+                .addGroup(Provider_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Provider_SP_EditPanelLayout.createSequentialGroup()
+                        .addComponent(jLabel110)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Provider_Edit_Email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Provider_Edit_labelDone, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addContainerGap(146, Short.MAX_VALUE))
+        );
+
+        Provider_Edit_SP.setViewportView(Provider_SP_EditPanel);
+
+        Provider_TabbedPane.addTab("Modificar", Provider_Edit_SP);
+
+        javax.swing.GroupLayout panelProveedoresLayout = new javax.swing.GroupLayout(panelProveedores);
+        panelProveedores.setLayout(panelProveedoresLayout);
+        panelProveedoresLayout.setHorizontalGroup(
+            panelProveedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Provider_TabbedPane, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 837, Short.MAX_VALUE)
+        );
+        panelProveedoresLayout.setVerticalGroup(
+            panelProveedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Provider_TabbedPane, javax.swing.GroupLayout.DEFAULT_SIZE, 456, Short.MAX_VALUE)
+        );
+
+        Client_TabbedPane.setForeground(new java.awt.Color(255, 255, 255));
+        Client_TabbedPane.setTabLayoutPolicy(javax.swing.JTabbedPane.SCROLL_TAB_LAYOUT);
+        Client_TabbedPane.setTabPlacement(javax.swing.JTabbedPane.LEFT);
+        Client_TabbedPane.setToolTipText("");
+        Client_TabbedPane.setAutoscrolls(true);
+        Client_TabbedPane.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        Client_TabbedPane.setDoubleBuffered(true);
+        Client_TabbedPane.setFocusCycleRoot(true);
+        Client_TabbedPane.setFocusTraversalPolicyProvider(true);
+        Client_TabbedPane.setOpaque(true);
+        Client_TabbedPane.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                Client_TabbedPaneStateChanged(evt);
+            }
+        });
+
+        jLabel33.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
+        jLabel33.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel33.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel33.setText("Agregar Cliente");
+
+        Client_Add_labelDone.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICO/60px/icons8_Checkmark_60px.png"))); // NOI18N
+        Client_Add_labelDone.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Client_Add_labelDone.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Client_Add_labelDoneMouseClicked(evt);
+            }
+        });
+
+        jLabel74.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel74.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel74.setText("Nombre");
+
+        jLabel77.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel77.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel77.setText("Tipo");
+
+        Client_Add_Type_Group.add(Client_Add_Type_Person);
+        Client_Add_Type_Person.setForeground(new java.awt.Color(255, 255, 255));
+        Client_Add_Type_Person.setText("Persona");
+        Client_Add_Type_Person.setOpaque(false);
+        Client_Add_Type_Person.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Client_Add_Type_PersonActionPerformed(evt);
+            }
+        });
+
+        Client_Add_Type_Group.add(Client_Add_Type_Bussines);
+        Client_Add_Type_Bussines.setForeground(new java.awt.Color(255, 255, 255));
+        Client_Add_Type_Bussines.setText("Empresa");
+        Client_Add_Type_Bussines.setOpaque(false);
+        Client_Add_Type_Bussines.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Client_Add_Type_BussinesActionPerformed(evt);
+            }
+        });
+
+        Client_Add_ID_RTN.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("####-####-#####"))));
+
+        Client_Add_Label_Type.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        Client_Add_Label_Type.setForeground(new java.awt.Color(255, 255, 255));
+        Client_Add_Label_Type.setText("Id");
+
+        jLabel90.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel90.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel90.setText("Correo");
+
+        jLabel91.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel91.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel91.setText("Teléfono");
+
+        jLabel92.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel92.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel92.setText("Departamento");
+
+        jLabel93.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel93.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel93.setText("Municipio");
+
+        jLabel94.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel94.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel94.setText("Ciudad");
+
+        javax.swing.GroupLayout Client_SP_AddPanelLayout = new javax.swing.GroupLayout(Client_SP_AddPanel);
+        Client_SP_AddPanel.setLayout(Client_SP_AddPanelLayout);
+        Client_SP_AddPanelLayout.setHorizontalGroup(
+            Client_SP_AddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Client_SP_AddPanelLayout.createSequentialGroup()
+                .addGap(12, 12, 12)
+                .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 427, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(312, Short.MAX_VALUE))
+            .addGroup(Client_SP_AddPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(Client_SP_AddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Client_SP_AddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(Client_Add_Name, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel74)
+                        .addComponent(jLabel77)
+                        .addGroup(Client_SP_AddPanelLayout.createSequentialGroup()
+                            .addGap(3, 3, 3)
+                            .addComponent(Client_Add_Label_Type))
+                        .addComponent(Client_Add_ID_RTN, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(Client_SP_AddPanelLayout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addGroup(Client_SP_AddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(Client_Add_Email, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
+                            .addComponent(jLabel90)))
+                    .addGroup(Client_SP_AddPanelLayout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(Client_Add_Type_Person)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Client_Add_Type_Bussines)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(Client_SP_AddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Client_SP_AddPanelLayout.createSequentialGroup()
+                        .addGroup(Client_SP_AddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(Client_SP_AddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(Client_Add_Department, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
+                                .addComponent(jLabel92))
+                            .addGroup(Client_SP_AddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(Client_Add_Municipio)
+                                .addComponent(jLabel93)
+                                .addComponent(Client_Add_City, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel94)))
+                        .addGap(18, 18, Short.MAX_VALUE)
+                        .addComponent(Client_Add_labelDone))
+                    .addGroup(Client_SP_AddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(Client_Add_Phone, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
+                        .addComponent(jLabel91)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        Client_SP_AddPanelLayout.setVerticalGroup(
+            Client_SP_AddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Client_SP_AddPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel33)
+                .addGap(27, 27, 27)
+                .addGroup(Client_SP_AddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(Client_SP_AddPanelLayout.createSequentialGroup()
+                        .addComponent(jLabel74)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Client_Add_Name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(Client_SP_AddPanelLayout.createSequentialGroup()
+                        .addComponent(jLabel91)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Client_Add_Phone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                .addGroup(Client_SP_AddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Client_SP_AddPanelLayout.createSequentialGroup()
+                        .addComponent(jLabel92)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(Client_SP_AddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(Client_SP_AddPanelLayout.createSequentialGroup()
+                                .addComponent(Client_Add_Department, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
+                                .addComponent(jLabel93))
+                            .addGroup(Client_SP_AddPanelLayout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(Client_Add_labelDone)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Client_Add_Municipio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(Client_SP_AddPanelLayout.createSequentialGroup()
+                        .addComponent(jLabel77)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(Client_SP_AddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Client_Add_Type_Person)
+                            .addComponent(Client_Add_Type_Bussines))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                        .addComponent(Client_Add_Label_Type)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Client_Add_ID_RTN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                .addGroup(Client_SP_AddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Client_SP_AddPanelLayout.createSequentialGroup()
+                        .addComponent(jLabel90)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Client_Add_Email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Client_SP_AddPanelLayout.createSequentialGroup()
+                        .addComponent(jLabel94)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Client_Add_City, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(125, Short.MAX_VALUE))
+        );
+
+        Client_Add_SP.setViewportView(Client_SP_AddPanel);
+
+        Client_TabbedPane.addTab("Agregar", Client_Add_SP);
+
+        Client_List_Remove.setForeground(new java.awt.Color(255, 255, 255));
+        Client_List_Remove.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICO/40px/icons8_Delete_40px.png"))); // NOI18N
+        Client_List_Remove.setText("Eliminar");
+        Client_List_Remove.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Client_List_Remove.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Client_List_RemoveMouseClicked(evt);
+            }
+        });
+
+        Client_List_EditSelected.setForeground(new java.awt.Color(255, 255, 255));
+        Client_List_EditSelected.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICO/40px/icons8_Edit_40px.png"))); // NOI18N
+        Client_List_EditSelected.setText("Modificar");
+        Client_List_EditSelected.setToolTipText("");
+        Client_List_EditSelected.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Client_List_EditSelected.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Client_List_EditSelectedMouseClicked(evt);
+            }
+        });
+
+        jScrollPane7.setOpaque(false);
+
+        Client_List_Table.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "#", "ID", "Nombre", "Correo", "Teléfono", "Departamento", "Municipio", "Ciudad"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Client_List_Table.setDebugGraphicsOptions(javax.swing.DebugGraphics.BUFFERED_OPTION);
+        Client_List_Table.setDropMode(javax.swing.DropMode.INSERT_COLS);
+        Client_List_Table.setEditingColumn(-1);
+        Client_List_Table.setEditingRow(-1);
+        Client_List_Table.setOpaque(false);
+        Client_List_Table.setRowSelectionAllowed(false);
+        Client_List_Table.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        Client_List_Table.setUpdateSelectionOnSort(false);
+        Client_List_Table.setVerifyInputWhenFocusTarget(false);
+        jScrollPane7.setViewportView(Client_List_Table);
+
+        Client_List_labelChangeType.setForeground(new java.awt.Color(255, 255, 255));
+        Client_List_labelChangeType.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICO/40px/icons8_Handle_With_Care_40px.png"))); // NOI18N
+        Client_List_labelChangeType.setText("Cambiar tipo de Cliente");
+        Client_List_labelChangeType.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Client_List_labelChangeType.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Client_List_labelChangeTypeMouseClicked(evt);
+            }
+        });
+
+        jLabel49.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
+        jLabel49.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel49.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel49.setText("Listado de Clientes");
+
+        Client_List_Label_Type.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        Client_List_Label_Type.setForeground(new java.awt.Color(255, 255, 255));
+        Client_List_Label_Type.setText("Tipo: Persona");
+
+        javax.swing.GroupLayout Client_SP_ListPanelLayout = new javax.swing.GroupLayout(Client_SP_ListPanel);
+        Client_SP_ListPanel.setLayout(Client_SP_ListPanelLayout);
+        Client_SP_ListPanelLayout.setHorizontalGroup(
+            Client_SP_ListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Client_SP_ListPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Client_List_labelChangeType)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Client_List_Remove)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Client_List_EditSelected)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(Client_SP_ListPanelLayout.createSequentialGroup()
+                .addGap(6, 6, 6)
+                .addGroup(Client_SP_ListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Client_SP_ListPanelLayout.createSequentialGroup()
+                        .addComponent(jLabel49)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 236, Short.MAX_VALUE)
+                        .addComponent(Client_List_Label_Type, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())
+                    .addComponent(jScrollPane7)))
+        );
+        Client_SP_ListPanelLayout.setVerticalGroup(
+            Client_SP_ListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Client_SP_ListPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(Client_SP_ListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel49)
+                    .addComponent(Client_List_Label_Type, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 365, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(Client_SP_ListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Client_List_labelChangeType)
+                    .addComponent(Client_List_EditSelected)
+                    .addComponent(Client_List_Remove))
+                .addGap(17, 17, 17))
+        );
+
+        Client_List_SP.setViewportView(Client_SP_ListPanel);
+
+        Client_TabbedPane.addTab("Listado", Client_List_SP);
+
+        Client_SP_EditPanel.setToolTipText("");
+
+        jLabel40.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
+        jLabel40.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel40.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel40.setText("Editar Cliente");
+
+        Client_Edit_labelSelect.setForeground(new java.awt.Color(255, 255, 255));
+        Client_Edit_labelSelect.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICO/40px/icons8_Natural_User_Interface_2_40px.png"))); // NOI18N
+        Client_Edit_labelSelect.setText("Elegir cliente");
+        Client_Edit_labelSelect.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Client_Edit_labelSelect.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Product_Edit_labelSelect1MouseClicked(evt);
+            }
+        });
+
+        jLabel75.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel75.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel75.setText("Nombre");
+
+        jLabel95.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel95.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel95.setText("Municipio");
+
+        jLabel96.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel96.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel96.setText("Ciudad");
+
+        Client_Edit_Type_Group.add(Client_Edit_Type_Person);
+        Client_Edit_Type_Person.setForeground(new java.awt.Color(255, 255, 255));
+        Client_Edit_Type_Person.setText("Persona");
+        Client_Edit_Type_Person.setOpaque(false);
+        Client_Edit_Type_Person.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Client_Edit_Type_PersonActionPerformed(evt);
+            }
+        });
+
+        Client_Edit_Type_Group.add(Client_Edit_Type_Bussines);
+        Client_Edit_Type_Bussines.setForeground(new java.awt.Color(255, 255, 255));
+        Client_Edit_Type_Bussines.setText("Empresa");
+        Client_Edit_Type_Bussines.setOpaque(false);
+        Client_Edit_Type_Bussines.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Client_Edit_Type_BussinesActionPerformed(evt);
+            }
+        });
+
+        jLabel97.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel97.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel97.setText("Correo");
+
+        Client_Edit_labelDone.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICO/60px/icons8_Checkmark_60px.png"))); // NOI18N
+        Client_Edit_labelDone.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Client_Edit_labelDone.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Client_Edit_labelDoneMouseClicked(evt);
+            }
+        });
+
+        jLabel78.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel78.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel78.setText("Tipo");
+
+        Client_Edit_ID_RTN.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("####-####-#####"))));
+
+        Client_Edit_Label_Type.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        Client_Edit_Label_Type.setForeground(new java.awt.Color(255, 255, 255));
+        Client_Edit_Label_Type.setText("Id");
+
+        jLabel98.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel98.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel98.setText("Teléfono");
+
+        jLabel99.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel99.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel99.setText("Departamento");
+
+        javax.swing.GroupLayout Client_SP_EditPanelLayout = new javax.swing.GroupLayout(Client_SP_EditPanel);
+        Client_SP_EditPanel.setLayout(Client_SP_EditPanelLayout);
+        Client_SP_EditPanelLayout.setHorizontalGroup(
+            Client_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Client_SP_EditPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Client_Edit_labelSelect)
+                .addGap(45, 45, 45))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Client_SP_EditPanelLayout.createSequentialGroup()
+                .addContainerGap(77, Short.MAX_VALUE)
+                .addGroup(Client_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(Client_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(Client_Edit_Name, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel75)
+                        .addComponent(jLabel78)
+                        .addComponent(Client_Edit_Label_Type)
+                        .addGroup(Client_SP_EditPanelLayout.createSequentialGroup()
+                            .addComponent(Client_Edit_Type_Person)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(Client_Edit_Type_Bussines))
+                        .addComponent(Client_Edit_ID_RTN, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(Client_SP_EditPanelLayout.createSequentialGroup()
+                            .addGap(3, 3, 3)
+                            .addGroup(Client_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(Client_Edit_Email, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
+                                .addComponent(jLabel97))))
+                    .addGroup(Client_SP_EditPanelLayout.createSequentialGroup()
+                        .addComponent(jLabel40)
+                        .addGap(3, 3, 3)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 99, Short.MAX_VALUE)
+                .addGroup(Client_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Client_SP_EditPanelLayout.createSequentialGroup()
+                        .addGroup(Client_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(Client_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(Client_Edit_Department, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
+                                .addComponent(jLabel99))
+                            .addGroup(Client_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(Client_Edit_Municipio)
+                                .addComponent(jLabel95)
+                                .addComponent(Client_Edit_City, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel96)))
+                        .addGap(18, 18, Short.MAX_VALUE)
+                        .addComponent(Client_Edit_labelDone))
+                    .addGroup(Client_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(Client_Edit_Phone, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
+                        .addComponent(jLabel98)))
+                .addContainerGap(81, Short.MAX_VALUE))
+        );
+        Client_SP_EditPanelLayout.setVerticalGroup(
+            Client_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Client_SP_EditPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(Client_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel40)
+                    .addComponent(Client_Edit_labelSelect))
+                .addGap(30, 30, 30)
+                .addGroup(Client_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(Client_SP_EditPanelLayout.createSequentialGroup()
+                        .addComponent(jLabel75)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Client_Edit_Name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(Client_SP_EditPanelLayout.createSequentialGroup()
+                        .addComponent(jLabel98)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Client_Edit_Phone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                .addGroup(Client_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Client_SP_EditPanelLayout.createSequentialGroup()
+                        .addComponent(jLabel99)
+                        .addGroup(Client_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(Client_SP_EditPanelLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Client_Edit_Department, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                                .addComponent(jLabel95)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                            .addGroup(Client_SP_EditPanelLayout.createSequentialGroup()
+                                .addGap(20, 20, 20)
+                                .addComponent(Client_Edit_labelDone)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(Client_Edit_Municipio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(Client_SP_EditPanelLayout.createSequentialGroup()
+                        .addComponent(jLabel78)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(Client_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Client_Edit_Type_Person)
+                            .addComponent(Client_Edit_Type_Bussines))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Client_Edit_Label_Type)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Client_Edit_ID_RTN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
+                .addGroup(Client_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Client_SP_EditPanelLayout.createSequentialGroup()
+                        .addComponent(jLabel97)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Client_Edit_Email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Client_SP_EditPanelLayout.createSequentialGroup()
+                        .addComponent(jLabel96)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Client_Edit_City, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(137, Short.MAX_VALUE))
+        );
+
+        Client_Edit_SP.setViewportView(Client_SP_EditPanel);
+
+        Client_TabbedPane.addTab("Modificar", Client_Edit_SP);
+
+        javax.swing.GroupLayout panelClientesLayout = new javax.swing.GroupLayout(panelClientes);
+        panelClientes.setLayout(panelClientesLayout);
+        panelClientesLayout.setHorizontalGroup(
+            panelClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Client_TabbedPane, javax.swing.GroupLayout.DEFAULT_SIZE, 837, Short.MAX_VALUE)
+        );
+        panelClientesLayout.setVerticalGroup(
+            panelClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Client_TabbedPane, javax.swing.GroupLayout.DEFAULT_SIZE, 458, Short.MAX_VALUE)
+        );
+
+        Product_TabbedPane.setForeground(new java.awt.Color(255, 255, 255));
+        Product_TabbedPane.setTabLayoutPolicy(javax.swing.JTabbedPane.SCROLL_TAB_LAYOUT);
+        Product_TabbedPane.setTabPlacement(javax.swing.JTabbedPane.LEFT);
+        Product_TabbedPane.setToolTipText("");
+        Product_TabbedPane.setAutoscrolls(true);
+        Product_TabbedPane.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        Product_TabbedPane.setDoubleBuffered(true);
+        Product_TabbedPane.setFocusCycleRoot(true);
+        Product_TabbedPane.setFocusTraversalPolicyProvider(true);
+        Product_TabbedPane.setOpaque(true);
+        Product_TabbedPane.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                Product_TabbedPaneStateChanged(evt);
+            }
+        });
+
+        jLabel32.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
+        jLabel32.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel32.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel32.setText("Agregar Producto");
+
+        jLabel50.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel50.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel50.setText("Precio Caja");
+
+        Product_Add_priceBoxSell.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("###,###.000"))));
+        Product_Add_priceBoxSell.setText("0");
+
+        jLabel51.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel51.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel51.setText("Precio Unidad");
+
+        jLabel52.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel52.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel52.setText("Precio Venta Caja");
+
+        Product_Add_labelDone.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICO/60px/icons8_Checkmark_60px.png"))); // NOI18N
+        Product_Add_labelDone.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Product_Add_labelDone.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Product_Add_labelDoneMouseClicked(evt);
+            }
+        });
+
+        jLabel53.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel53.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel53.setText("Fecha Vencimiento");
+
+        Product_Add_Date.setOpaque(false);
+
+        Product_Add_priceU.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("###,###.000"))));
+        Product_Add_priceU.setText("0");
+
+        jLabel54.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel54.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel54.setText("Nombre");
+
+        Product_Add_priceUSell.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("###,###.000"))));
+        Product_Add_priceUSell.setText("0");
+
+        jLabel55.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel55.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel55.setText("Precio Venta Unidad");
+
+        Product_Add_priceBox.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("###,###.000"))));
+        Product_Add_priceBox.setText("0");
+
+        Product_Add_impu.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0%"))));
+        Product_Add_impu.setText("15");
+
+        jLabel56.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel56.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel56.setText("Impuesto");
+
+        jLabel57.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel57.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel57.setText("Tipo");
+
+        Product_Add_CantU.setModel(new javax.swing.SpinnerNumberModel(1, 1, null, 1));
+
+        jLabel58.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel58.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel58.setText("Cantidad Unidad");
+
+        jLabel59.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel59.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel59.setText("Cantidad Caja");
+
+        Product_Add_CantBox.setModel(new javax.swing.SpinnerNumberModel(1, 1, null, 1));
+
+        javax.swing.GroupLayout Product_SP_AddPanelLayout = new javax.swing.GroupLayout(Product_SP_AddPanel);
+        Product_SP_AddPanel.setLayout(Product_SP_AddPanelLayout);
+        Product_SP_AddPanelLayout.setHorizontalGroup(
+            Product_SP_AddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Product_SP_AddPanelLayout.createSequentialGroup()
+                .addContainerGap(85, Short.MAX_VALUE)
+                .addGroup(Product_SP_AddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(Product_Add_priceUSell, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(Product_SP_AddPanelLayout.createSequentialGroup()
+                        .addGroup(Product_SP_AddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(Product_Add_Type)
+                            .addComponent(Product_Add_Name)
+                            .addComponent(jLabel54)
+                            .addComponent(jLabel53)
+                            .addComponent(jLabel56)
+                            .addComponent(Product_Add_impu)
+                            .addComponent(Product_Add_Date, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
+                            .addComponent(jLabel57)
+                            .addComponent(jLabel51)
+                            .addComponent(Product_Add_priceU))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 87, Short.MAX_VALUE)
+                        .addGroup(Product_SP_AddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel55)
+                            .addComponent(jLabel52)
+                            .addComponent(Product_Add_priceBoxSell, javax.swing.GroupLayout.DEFAULT_SIZE, 166, Short.MAX_VALUE)
+                            .addComponent(jLabel50)
+                            .addComponent(Product_Add_priceBox)
+                            .addComponent(Product_Add_CantU)
+                            .addComponent(jLabel58)
+                            .addComponent(jLabel59)
+                            .addComponent(Product_Add_CantBox))))
+                .addGap(18, 85, Short.MAX_VALUE)
+                .addComponent(Product_Add_labelDone)
+                .addContainerGap(84, Short.MAX_VALUE))
+            .addGroup(Product_SP_AddPanelLayout.createSequentialGroup()
+                .addGap(12, 12, 12)
+                .addComponent(jLabel32)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        Product_SP_AddPanelLayout.setVerticalGroup(
+            Product_SP_AddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Product_SP_AddPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel32)
+                .addGap(27, 27, 27)
+                .addGroup(Product_SP_AddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Product_SP_AddPanelLayout.createSequentialGroup()
+                        .addComponent(jLabel54)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Product_Add_Name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(Product_SP_AddPanelLayout.createSequentialGroup()
+                        .addComponent(jLabel55)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Product_Add_priceUSell, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(Product_SP_AddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Product_SP_AddPanelLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Product_Add_labelDone)
+                        .addGap(1, 1, 1))
+                    .addGroup(Product_SP_AddPanelLayout.createSequentialGroup()
+                        .addGap(18, 21, Short.MAX_VALUE)
+                        .addGroup(Product_SP_AddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(Product_SP_AddPanelLayout.createSequentialGroup()
+                                .addComponent(jLabel50)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Product_Add_priceBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(Product_SP_AddPanelLayout.createSequentialGroup()
+                                .addComponent(jLabel57)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Product_Add_Type, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)))
+                .addGroup(Product_SP_AddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Product_SP_AddPanelLayout.createSequentialGroup()
+                        .addComponent(jLabel53)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Product_Add_Date, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(Product_SP_AddPanelLayout.createSequentialGroup()
+                        .addComponent(jLabel52)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Product_Add_priceBoxSell, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                .addGroup(Product_SP_AddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel58)
+                    .addComponent(jLabel56))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(Product_SP_AddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Product_Add_impu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Product_Add_CantU, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                .addGroup(Product_SP_AddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Product_SP_AddPanelLayout.createSequentialGroup()
+                        .addComponent(jLabel51)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Product_Add_priceU, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(Product_SP_AddPanelLayout.createSequentialGroup()
+                        .addComponent(jLabel59)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Product_Add_CantBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(48, Short.MAX_VALUE))
+        );
+
+        Product_Add_SP.setViewportView(Product_SP_AddPanel);
+
+        Product_TabbedPane.addTab("Agregar", Product_Add_SP);
+
+        jLabel31.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
+        jLabel31.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel31.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel31.setText("Listado de Productos");
+
+        jScrollPane3.setOpaque(false);
+
+        Product_List_Table.setAutoCreateRowSorter(true);
+        Product_List_Table.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "ID", "Nombre", "Tipo", "Precio unidad", "Precio venta unidad", "Precio caja", "Precio venta caja", "Impuesto", "Fecha vencimiento", "Existencia unidad", "Existencia caja"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Float.class, java.lang.Float.class, java.lang.Float.class, java.lang.Float.class, java.lang.Float.class, java.lang.Object.class, java.lang.Float.class, java.lang.Float.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Product_List_Table.setDebugGraphicsOptions(javax.swing.DebugGraphics.BUFFERED_OPTION);
+        Product_List_Table.setDropMode(javax.swing.DropMode.INSERT_COLS);
+        Product_List_Table.setEditingColumn(-1);
+        Product_List_Table.setEditingRow(-1);
+        Product_List_Table.setOpaque(false);
+        Product_List_Table.setRowSelectionAllowed(false);
+        Product_List_Table.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        Product_List_Table.setUpdateSelectionOnSort(false);
+        Product_List_Table.setVerifyInputWhenFocusTarget(false);
+        jScrollPane3.setViewportView(Product_List_Table);
+
+        Product_List_Remove.setForeground(new java.awt.Color(255, 255, 255));
+        Product_List_Remove.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICO/40px/icons8_Delete_40px.png"))); // NOI18N
+        Product_List_Remove.setText("Eliminar");
+        Product_List_Remove.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Product_List_Remove.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Product_List_RemoveMouseClicked(evt);
+            }
+        });
+
+        Product_List_EditSelected.setForeground(new java.awt.Color(255, 255, 255));
+        Product_List_EditSelected.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICO/40px/icons8_Edit_40px.png"))); // NOI18N
+        Product_List_EditSelected.setText("Modificar");
+        Product_List_EditSelected.setToolTipText("");
+        Product_List_EditSelected.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Product_List_EditSelected.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Product_List_EditSelectedMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout Product_SP_ListPanelLayout = new javax.swing.GroupLayout(Product_SP_ListPanel);
+        Product_SP_ListPanel.setLayout(Product_SP_ListPanelLayout);
+        Product_SP_ListPanelLayout.setHorizontalGroup(
+            Product_SP_ListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Product_SP_ListPanelLayout.createSequentialGroup()
+                .addGap(12, 12, 12)
+                .addGroup(Product_SP_ListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Product_SP_ListPanelLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Product_List_Remove)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Product_List_EditSelected)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(Product_SP_ListPanelLayout.createSequentialGroup()
+                        .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 427, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(Product_SP_ListPanelLayout.createSequentialGroup()
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 717, Short.MAX_VALUE)
+                        .addGap(22, 22, 22))))
+        );
+        Product_SP_ListPanelLayout.setVerticalGroup(
+            Product_SP_ListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Product_SP_ListPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel31)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 356, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(Product_SP_ListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Product_List_EditSelected)
+                    .addComponent(Product_List_Remove))
+                .addGap(9, 9, 9))
+        );
+
+        Product_List_SP.setViewportView(Product_SP_ListPanel);
+
+        Product_TabbedPane.addTab("Listado", Product_List_SP);
+
+        jLabel39.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
+        jLabel39.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel39.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel39.setText("Editar Producto");
+
+        Product_Edit_labelSelect.setForeground(new java.awt.Color(255, 255, 255));
+        Product_Edit_labelSelect.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICO/40px/icons8_Natural_User_Interface_2_40px.png"))); // NOI18N
+        Product_Edit_labelSelect.setText("Elegir producto");
+        Product_Edit_labelSelect.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Product_Edit_labelSelect.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Product_Edit_labelSelectMouseClicked(evt);
+            }
+        });
+
+        jLabel60.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel60.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel60.setText("Cantidad Unidad");
+
+        Product_Edit_priceUSell.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("###,###.000"))));
+        Product_Edit_priceUSell.setText("0");
+
+        jLabel61.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel61.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel61.setText("Cantidad Caja");
+
+        jLabel62.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel62.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel62.setText("Precio Venta Unidad");
+
+        Product_Edit_CantBox.setModel(new javax.swing.SpinnerNumberModel(1, 1, null, 1));
+
+        Product_Edit_priceBoxSell.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("###,###.000"))));
+        Product_Edit_priceBoxSell.setText("0");
+
+        Product_Edit_priceBox.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("###,###.000"))));
+        Product_Edit_priceBox.setText("0");
+
+        jLabel63.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel63.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel63.setText("Precio Unidad");
+
+        Product_Edit_impu.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0%"))));
+        Product_Edit_impu.setText("15");
+
+        jLabel64.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel64.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel64.setText("Precio Venta Caja");
+
+        jLabel65.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel65.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel65.setText("Impuesto");
+
+        Product_Edit_labelDone.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICO/60px/icons8_Checkmark_60px.png"))); // NOI18N
+        Product_Edit_labelDone.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Product_Edit_labelDone.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Product_Edit_labelDoneMouseClicked(evt);
+            }
+        });
+
+        jLabel66.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel66.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel66.setText("Fecha Vencimiento");
+
+        Product_Edit_Date.setOpaque(false);
+
+        Product_Edit_CantU.setModel(new javax.swing.SpinnerNumberModel(1, 1, null, 1));
+
+        Product_Edit_priceU.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("###,###.000"))));
+        Product_Edit_priceU.setText("0");
+
+        jLabel67.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel67.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel67.setText("Nombre");
+
+        jLabel68.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel68.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel68.setText("Precio Caja");
+
+        jLabel69.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel69.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel69.setText("Tipo");
+
+        javax.swing.GroupLayout Product_SP_EditPanelLayout = new javax.swing.GroupLayout(Product_SP_EditPanel);
+        Product_SP_EditPanel.setLayout(Product_SP_EditPanelLayout);
+        Product_SP_EditPanelLayout.setHorizontalGroup(
+            Product_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Product_SP_EditPanelLayout.createSequentialGroup()
+                .addGap(45, 45, 45)
+                .addGroup(Product_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(Product_Edit_priceUSell, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(Product_SP_EditPanelLayout.createSequentialGroup()
+                        .addGroup(Product_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(Product_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(Product_Edit_Type)
+                                .addComponent(Product_Edit_Name)
+                                .addComponent(jLabel67)
+                                .addComponent(jLabel66)
+                                .addComponent(jLabel65)
+                                .addComponent(Product_Edit_impu)
+                                .addComponent(Product_Edit_Date, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel63)
+                                .addComponent(Product_Edit_priceU, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel69))
+                        .addGap(18, 114, Short.MAX_VALUE)
+                        .addGroup(Product_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel62)
+                            .addComponent(jLabel64)
+                            .addComponent(Product_Edit_priceBoxSell)
+                            .addComponent(jLabel68)
+                            .addComponent(Product_Edit_priceBox)
+                            .addComponent(Product_Edit_CantU)
+                            .addComponent(jLabel60)
+                            .addComponent(jLabel61)
+                            .addComponent(Product_Edit_CantBox, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(18, 114, Short.MAX_VALUE)
+                .addComponent(Product_Edit_labelDone)
+                .addGap(68, 68, 68))
+            .addGroup(Product_SP_EditPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel39)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Product_Edit_labelSelect)
+                .addGap(45, 45, 45))
+        );
+        Product_SP_EditPanelLayout.setVerticalGroup(
+            Product_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Product_SP_EditPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(Product_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel39)
+                    .addComponent(Product_Edit_labelSelect))
+                .addGap(24, 24, 24)
+                .addGroup(Product_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Product_SP_EditPanelLayout.createSequentialGroup()
+                        .addComponent(jLabel67)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Product_Edit_Name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(Product_SP_EditPanelLayout.createSequentialGroup()
+                        .addComponent(jLabel62)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Product_Edit_priceUSell, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 21, Short.MAX_VALUE)
+                .addGroup(Product_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Product_SP_EditPanelLayout.createSequentialGroup()
+                        .addComponent(jLabel68)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Product_Edit_priceBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(Product_SP_EditPanelLayout.createSequentialGroup()
+                        .addComponent(jLabel69)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Product_Edit_Type, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(Product_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Product_SP_EditPanelLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                        .addGroup(Product_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(Product_SP_EditPanelLayout.createSequentialGroup()
+                                .addComponent(jLabel66)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Product_Edit_Date, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(Product_SP_EditPanelLayout.createSequentialGroup()
+                                .addComponent(jLabel64)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Product_Edit_priceBoxSell, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE))
+                    .addGroup(Product_SP_EditPanelLayout.createSequentialGroup()
+                        .addGap(7, 7, 7)
+                        .addComponent(Product_Edit_labelDone)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGroup(Product_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel60)
+                    .addComponent(jLabel65))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(Product_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Product_Edit_impu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Product_Edit_CantU, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                .addGroup(Product_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Product_SP_EditPanelLayout.createSequentialGroup()
+                        .addComponent(jLabel63)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Product_Edit_priceU, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(Product_SP_EditPanelLayout.createSequentialGroup()
+                        .addComponent(jLabel61)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Product_Edit_CantBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(36, Short.MAX_VALUE))
+        );
+
+        Product_Edit_SP.setViewportView(Product_SP_EditPanel);
+
+        Product_TabbedPane.addTab("Modificar", Product_Edit_SP);
+
+        javax.swing.GroupLayout panelProductosLayout = new javax.swing.GroupLayout(panelProductos);
+        panelProductos.setLayout(panelProductosLayout);
+        panelProductosLayout.setHorizontalGroup(
+            panelProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Product_TabbedPane, javax.swing.GroupLayout.DEFAULT_SIZE, 837, Short.MAX_VALUE)
+        );
+        panelProductosLayout.setVerticalGroup(
+            panelProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Product_TabbedPane, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 456, Short.MAX_VALUE)
+        );
+
+        Employee_TabbedPane.setTabLayoutPolicy(javax.swing.JTabbedPane.SCROLL_TAB_LAYOUT);
+        Employee_TabbedPane.setTabPlacement(javax.swing.JTabbedPane.LEFT);
+        Employee_TabbedPane.setToolTipText("");
+        Employee_TabbedPane.setAutoscrolls(true);
+        Employee_TabbedPane.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        Employee_TabbedPane.setDoubleBuffered(true);
+        Employee_TabbedPane.setFocusCycleRoot(true);
+        Employee_TabbedPane.setFocusTraversalPolicyProvider(true);
+        Employee_TabbedPane.setOpaque(true);
+        Employee_TabbedPane.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                Employee_TabbedPaneStateChanged(evt);
+            }
+        });
+
+        jLabel30.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
+        jLabel30.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel30.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel30.setText("Listado de Empleados");
+
+        jScrollPane2.setOpaque(false);
+
+        Employee_Table.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "ID", "Usuario", "Cargo", "Correo", "Teléfono"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Employee_Table.setDebugGraphicsOptions(javax.swing.DebugGraphics.BUFFERED_OPTION);
+        Employee_Table.setDropMode(javax.swing.DropMode.INSERT_COLS);
+        Employee_Table.setEditingColumn(-1);
+        Employee_Table.setEditingRow(-1);
+        Employee_Table.setOpaque(false);
+        Employee_Table.setRowSelectionAllowed(false);
+        Employee_Table.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        Employee_Table.setUpdateSelectionOnSort(false);
+        Employee_Table.setVerifyInputWhenFocusTarget(false);
+        jScrollPane2.setViewportView(Employee_Table);
+
+        javax.swing.GroupLayout Employee_SP_panelLayout = new javax.swing.GroupLayout(Employee_SP_panel);
+        Employee_SP_panel.setLayout(Employee_SP_panelLayout);
+        Employee_SP_panelLayout.setHorizontalGroup(
+            Employee_SP_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Employee_SP_panelLayout.createSequentialGroup()
+                .addGap(12, 12, 12)
+                .addGroup(Employee_SP_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 744, Short.MAX_VALUE)
+                    .addGroup(Employee_SP_panelLayout.createSequentialGroup()
+                        .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 427, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addGap(19, 19, 19))
+        );
+        Employee_SP_panelLayout.setVerticalGroup(
+            Employee_SP_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Employee_SP_panelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel30)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 353, Short.MAX_VALUE)
+                .addGap(79, 79, 79))
+        );
+
+        Employee_SP.setViewportView(Employee_SP_panel);
+
+        Employee_TabbedPane.addTab("Listado", Employee_SP);
+
+        javax.swing.GroupLayout panelEmpleadosLayout = new javax.swing.GroupLayout(panelEmpleados);
+        panelEmpleados.setLayout(panelEmpleadosLayout);
+        panelEmpleadosLayout.setHorizontalGroup(
+            panelEmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Employee_TabbedPane, javax.swing.GroupLayout.DEFAULT_SIZE, 837, Short.MAX_VALUE)
+        );
+        panelEmpleadosLayout.setVerticalGroup(
+            panelEmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Employee_TabbedPane, javax.swing.GroupLayout.DEFAULT_SIZE, 457, Short.MAX_VALUE)
+        );
+
+        Caja_TabbedPane.setForeground(new java.awt.Color(255, 255, 255));
+        Caja_TabbedPane.setTabLayoutPolicy(javax.swing.JTabbedPane.SCROLL_TAB_LAYOUT);
+        Caja_TabbedPane.setTabPlacement(javax.swing.JTabbedPane.LEFT);
+        Caja_TabbedPane.setToolTipText("");
+        Caja_TabbedPane.setAutoscrolls(true);
+        Caja_TabbedPane.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        Caja_TabbedPane.setDoubleBuffered(true);
+        Caja_TabbedPane.setFocusCycleRoot(true);
+        Caja_TabbedPane.setFocusTraversalPolicyProvider(true);
+        Caja_TabbedPane.setOpaque(true);
+        Caja_TabbedPane.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                Caja_TabbedPaneStateChanged(evt);
+            }
+        });
+
+        jLabel38.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
+        jLabel38.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel38.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel38.setText("Nueva Compra");
+
+        Caja_Compra_Add_Done.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICO/60px/icons8_Checkmark_60px.png"))); // NOI18N
+        Caja_Compra_Add_Done.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Caja_Compra_Add_Done.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Caja_Compra_Add_DoneMouseClicked(evt);
+            }
+        });
+
+        jLabel76.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel76.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel76.setText("RTN Proveedor");
+
+        jLabel79.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel79.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel79.setText("CAI");
+
+        jLabel80.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel80.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel80.setText("Número de documento fiscal");
+
+        jLabel81.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel81.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel81.setText("Subtotal Compra");
+
+        jLabel84.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel84.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel84.setText("ID Compra");
+
+        jLabel85.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel85.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel85.setText("Fecha");
+
+        javax.swing.GroupLayout Caja_Compras_SP_panelLayout = new javax.swing.GroupLayout(Caja_Compras_SP_panel);
+        Caja_Compras_SP_panel.setLayout(Caja_Compras_SP_panelLayout);
+        Caja_Compras_SP_panelLayout.setHorizontalGroup(
+            Caja_Compras_SP_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Caja_Compras_SP_panelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel38)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(Caja_Compras_SP_panelLayout.createSequentialGroup()
+                .addContainerGap(67, Short.MAX_VALUE)
+                .addGroup(Caja_Compras_SP_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(Compra_RTN)
+                    .addComponent(jLabel76)
+                    .addComponent(Compra_CAI)
+                    .addComponent(jLabel79)
+                    .addComponent(Compra_numeroFiscal)
+                    .addComponent(jLabel80))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 99, Short.MAX_VALUE)
+                .addGroup(Caja_Compras_SP_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(Compra_SubT, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
+                    .addComponent(jLabel81)
+                    .addComponent(Compra_ID, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
+                    .addComponent(jLabel84)
+                    .addComponent(jLabel85)
+                    .addComponent(Compra_Fecha, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
+                .addComponent(Caja_Compra_Add_Done)
+                .addGap(64, 64, 64))
+        );
+        Caja_Compras_SP_panelLayout.setVerticalGroup(
+            Caja_Compras_SP_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Caja_Compras_SP_panelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel38)
+                .addGap(46, 46, 46)
+                .addGroup(Caja_Compras_SP_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Caja_Compras_SP_panelLayout.createSequentialGroup()
+                        .addComponent(jLabel76)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Compra_RTN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(Caja_Compras_SP_panelLayout.createSequentialGroup()
+                        .addComponent(jLabel81)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Compra_SubT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
+                        .addGroup(Caja_Compras_SP_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Caja_Compras_SP_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(Caja_Compras_SP_panelLayout.createSequentialGroup()
+                                    .addComponent(jLabel79)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(Compra_CAI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(Caja_Compras_SP_panelLayout.createSequentialGroup()
+                                    .addComponent(jLabel84)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(Compra_ID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(Caja_Compra_Add_Done, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
+                        .addGroup(Caja_Compras_SP_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(Caja_Compras_SP_panelLayout.createSequentialGroup()
+                                .addComponent(jLabel80)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Compra_numeroFiscal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(Caja_Compras_SP_panelLayout.createSequentialGroup()
+                                .addComponent(jLabel85)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Compra_Fecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(110, Short.MAX_VALUE))
+        );
+
+        Caja_Compras_SP.setViewportView(Caja_Compras_SP_panel);
+
+        Caja_TabbedPane.addTab("Compras", Caja_Compras_SP);
+
+        jLabel42.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
+        jLabel42.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel42.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel42.setText("Nueva Venta");
+
+        jLabel86.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel86.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel86.setText("Ingreso Gravado");
+
+        jLabel87.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel87.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel87.setText("Impuesto");
+
+        Caja_Compra_Add_Done1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICO/60px/icons8_Checkmark_60px.png"))); // NOI18N
+        Caja_Compra_Add_Done1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Caja_Compra_Add_Done1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Caja_Compra_Add_Done1MouseClicked(evt);
+            }
+        });
+
+        jLabel89.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel89.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel89.setText("Fecha");
+
+        jLabel100.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel100.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel100.setText("ID Venta");
+
+        jLabel101.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel101.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel101.setText("Ingreso Exento");
+
+        javax.swing.GroupLayout Caja_SP_panelLayout = new javax.swing.GroupLayout(Caja_SP_panel);
+        Caja_SP_panel.setLayout(Caja_SP_panelLayout);
+        Caja_SP_panelLayout.setHorizontalGroup(
+            Caja_SP_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Caja_SP_panelLayout.createSequentialGroup()
+                .addGap(12, 12, 12)
+                .addComponent(jLabel42)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(Caja_SP_panelLayout.createSequentialGroup()
+                .addContainerGap(87, Short.MAX_VALUE)
+                .addGroup(Caja_SP_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Venta_IngresoExento, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Venta_ID, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Venta_IngresoGravado, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel100)
+                    .addComponent(jLabel101)
+                    .addComponent(jLabel86))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 124, Short.MAX_VALUE)
+                .addGroup(Caja_SP_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(Venta_Impuesto)
+                    .addComponent(jLabel87)
+                    .addComponent(jLabel89)
+                    .addComponent(Venta_Fecha, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 90, Short.MAX_VALUE)
+                .addComponent(Caja_Compra_Add_Done1)
+                .addGap(48, 48, 48))
+        );
+        Caja_SP_panelLayout.setVerticalGroup(
+            Caja_SP_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Caja_SP_panelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel42)
+                .addGap(42, 42, 42)
+                .addGroup(Caja_SP_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Caja_SP_panelLayout.createSequentialGroup()
+                        .addComponent(jLabel100)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Venta_ID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())
+                    .addGroup(Caja_SP_panelLayout.createSequentialGroup()
+                        .addComponent(jLabel87)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Venta_Impuesto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                        .addGroup(Caja_SP_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(Caja_SP_panelLayout.createSequentialGroup()
+                                .addGroup(Caja_SP_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Caja_SP_panelLayout.createSequentialGroup()
+                                        .addComponent(jLabel101)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Venta_IngresoExento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(Caja_Compra_Add_Done1, javax.swing.GroupLayout.Alignment.TRAILING))
+                                .addGap(18, 45, Short.MAX_VALUE)
+                                .addComponent(jLabel86)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Venta_IngresoGravado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap(157, Short.MAX_VALUE))
+                            .addGroup(Caja_SP_panelLayout.createSequentialGroup()
+                                .addGap(11, 11, 11)
+                                .addComponent(jLabel89)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Venta_Fecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap(246, Short.MAX_VALUE))))))
+        );
+
+        Caja_Ventas_SP.setViewportView(Caja_SP_panel);
+
+        Caja_TabbedPane.addTab("Ventas", Caja_Ventas_SP);
+
+        jLabel43.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
+        jLabel43.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel43.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel43.setText("Nuevo Pago");
+
+        jLabel88.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel88.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel88.setText("Abono");
+
+        jLabel102.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel102.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel102.setText("Número de Crédito");
+
+        Caja_Compra_Add_Done2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICO/60px/icons8_Checkmark_60px.png"))); // NOI18N
+        Caja_Compra_Add_Done2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Caja_Compra_Add_Done2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Caja_Compra_Add_Done2MouseClicked(evt);
+            }
+        });
+
+        jLabel104.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel104.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel104.setText("Fecha");
+
+        jLabel105.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel105.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel105.setText("ID Pago");
+
+        javax.swing.GroupLayout Caja_Pagos_SP_panelLayout = new javax.swing.GroupLayout(Caja_Pagos_SP_panel);
+        Caja_Pagos_SP_panel.setLayout(Caja_Pagos_SP_panelLayout);
+        Caja_Pagos_SP_panelLayout.setHorizontalGroup(
+            Caja_Pagos_SP_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Caja_Pagos_SP_panelLayout.createSequentialGroup()
+                .addGap(12, 12, 12)
+                .addComponent(jLabel43)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(Caja_Pagos_SP_panelLayout.createSequentialGroup()
+                .addContainerGap(89, Short.MAX_VALUE)
+                .addGroup(Caja_Pagos_SP_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Caja_Pagos_SP_panelLayout.createSequentialGroup()
+                        .addComponent(jLabel105)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(Caja_Pagos_SP_panelLayout.createSequentialGroup()
+                        .addGroup(Caja_Pagos_SP_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel102)
+                            .addComponent(jLabel88)
+                            .addComponent(Pago_Num, javax.swing.GroupLayout.DEFAULT_SIZE, 183, Short.MAX_VALUE)
+                            .addComponent(Pago_ID)
+                            .addComponent(Pago_Abono))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
+                        .addGroup(Caja_Pagos_SP_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel104)
+                            .addComponent(Pago_Fecha, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(Caja_Pagos_SP_panelLayout.createSequentialGroup()
+                                .addGap(13, 13, 13)
+                                .addComponent(Caja_Compra_Add_Done2)))
+                        .addContainerGap(232, Short.MAX_VALUE))))
+        );
+        Caja_Pagos_SP_panelLayout.setVerticalGroup(
+            Caja_Pagos_SP_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Caja_Pagos_SP_panelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel43)
+                .addGap(43, 43, 43)
+                .addGroup(Caja_Pagos_SP_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Caja_Pagos_SP_panelLayout.createSequentialGroup()
+                        .addComponent(jLabel102)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Pago_Num, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 27, Short.MAX_VALUE)
+                        .addComponent(jLabel105)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Pago_ID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 25, Short.MAX_VALUE)
+                        .addComponent(jLabel88))
+                    .addGroup(Caja_Pagos_SP_panelLayout.createSequentialGroup()
+                        .addComponent(jLabel104)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Pago_Fecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(Caja_Pagos_SP_panelLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(Caja_Compra_Add_Done2)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Pago_Abono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(156, Short.MAX_VALUE))
+        );
+
+        Caja_Pagos_SP.setViewportView(Caja_Pagos_SP_panel);
+
+        Caja_TabbedPane.addTab("Pagos", Caja_Pagos_SP);
+
+        javax.swing.GroupLayout panelCajaLayout = new javax.swing.GroupLayout(panelCaja);
+        panelCaja.setLayout(panelCajaLayout);
+        panelCajaLayout.setHorizontalGroup(
+            panelCajaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Caja_TabbedPane, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 837, Short.MAX_VALUE)
+        );
+        panelCajaLayout.setVerticalGroup(
+            panelCajaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Caja_TabbedPane, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 458, Short.MAX_VALUE)
         );
 
         panelUser.setOpaque(false);
@@ -797,2332 +3445,11 @@ public class Desk extends javax.swing.JPanel {
         panelUser.setLayout(panelUserLayout);
         panelUserLayout.setHorizontalGroup(
             panelUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(User_TabbedPane, javax.swing.GroupLayout.DEFAULT_SIZE, 744, Short.MAX_VALUE)
+            .addComponent(User_TabbedPane, javax.swing.GroupLayout.DEFAULT_SIZE, 837, Short.MAX_VALUE)
         );
         panelUserLayout.setVerticalGroup(
             panelUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(User_TabbedPane, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 474, Short.MAX_VALUE)
-        );
-
-        Employee_TabbedPane.setTabLayoutPolicy(javax.swing.JTabbedPane.SCROLL_TAB_LAYOUT);
-        Employee_TabbedPane.setTabPlacement(javax.swing.JTabbedPane.LEFT);
-        Employee_TabbedPane.setToolTipText("");
-        Employee_TabbedPane.setAutoscrolls(true);
-        Employee_TabbedPane.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        Employee_TabbedPane.setDoubleBuffered(true);
-        Employee_TabbedPane.setFocusCycleRoot(true);
-        Employee_TabbedPane.setFocusTraversalPolicyProvider(true);
-        Employee_TabbedPane.setOpaque(true);
-        Employee_TabbedPane.addChangeListener(new javax.swing.event.ChangeListener() {
-            public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                Employee_TabbedPaneStateChanged(evt);
-            }
-        });
-
-        jLabel30.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
-        jLabel30.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel30.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel30.setText("Listado de Empleados");
-
-        jScrollPane2.setOpaque(false);
-
-        Employee_Table.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "ID", "Usuario", "Cargo", "Correo", "Teléfono"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.String.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        Employee_Table.setDebugGraphicsOptions(javax.swing.DebugGraphics.BUFFERED_OPTION);
-        Employee_Table.setDropMode(javax.swing.DropMode.INSERT_COLS);
-        Employee_Table.setEditingColumn(-1);
-        Employee_Table.setEditingRow(-1);
-        Employee_Table.setOpaque(false);
-        Employee_Table.setRowSelectionAllowed(false);
-        Employee_Table.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        Employee_Table.setUpdateSelectionOnSort(false);
-        Employee_Table.setVerifyInputWhenFocusTarget(false);
-        jScrollPane2.setViewportView(Employee_Table);
-
-        javax.swing.GroupLayout Employee_SP_panelLayout = new javax.swing.GroupLayout(Employee_SP_panel);
-        Employee_SP_panel.setLayout(Employee_SP_panelLayout);
-        Employee_SP_panelLayout.setHorizontalGroup(
-            Employee_SP_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Employee_SP_panelLayout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addGroup(Employee_SP_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 674, Short.MAX_VALUE)
-                    .addGroup(Employee_SP_panelLayout.createSequentialGroup()
-                        .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 427, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addGap(19, 19, 19))
-        );
-        Employee_SP_panelLayout.setVerticalGroup(
-            Employee_SP_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Employee_SP_panelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel30)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 341, Short.MAX_VALUE)
-                .addGap(79, 79, 79))
-        );
-
-        Employee_SP.setViewportView(Employee_SP_panel);
-
-        Employee_TabbedPane.addTab("Listado", Employee_SP);
-
-        javax.swing.GroupLayout panelEmpleadosLayout = new javax.swing.GroupLayout(panelEmpleados);
-        panelEmpleados.setLayout(panelEmpleadosLayout);
-        panelEmpleadosLayout.setHorizontalGroup(
-            panelEmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Employee_TabbedPane, javax.swing.GroupLayout.DEFAULT_SIZE, 767, Short.MAX_VALUE)
-        );
-        panelEmpleadosLayout.setVerticalGroup(
-            panelEmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Employee_TabbedPane)
-        );
-
-        Product_Dialog_Select.setTitle("Seleccionar Producto");
-        Product_Dialog_Select.setAlwaysOnTop(true);
-        Product_Dialog_Select.setIconImage(getIconImage());
-        Product_Dialog_Select.setModal(true);
-        Product_Dialog_Select.setModalExclusionType(java.awt.Dialog.ModalExclusionType.TOOLKIT_EXCLUDE);
-
-        Product_Select_labelBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICO/40px/icons8_Back_40px_1.png"))); // NOI18N
-        Product_Select_labelBack.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Product_Select_labelBack.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Product_Select_labelBackMouseClicked(evt);
-            }
-        });
-
-        Product_Dialog_labelSelect.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICO/40px/icons8_Natural_User_Interface_2_40px.png"))); // NOI18N
-        Product_Dialog_labelSelect.setText("Elegir producto");
-        Product_Dialog_labelSelect.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Product_Dialog_labelSelect.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Product_Dialog_labelSelectMouseClicked(evt);
-            }
-        });
-
-        jLabel47.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
-        jLabel47.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel47.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel47.setText("Listado de Productos");
-
-        jScrollPane4.setOpaque(false);
-
-        Product_Dialog_Select_Table.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "ID", "Nombre", "Tipo", "Precio unidad", "Precio venta unidad", "Precio caja", "Precio venta caja", "Impuesto", "Fecha vencimiento", "Existencia unidad", "Existencia caja"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Float.class, java.lang.Float.class, java.lang.Float.class, java.lang.Float.class, java.lang.Float.class, java.lang.Object.class, java.lang.Float.class, java.lang.Float.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false, false, false
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        Product_Dialog_Select_Table.setDebugGraphicsOptions(javax.swing.DebugGraphics.BUFFERED_OPTION);
-        Product_Dialog_Select_Table.setDropMode(javax.swing.DropMode.INSERT_COLS);
-        Product_Dialog_Select_Table.setEditingColumn(-1);
-        Product_Dialog_Select_Table.setEditingRow(-1);
-        Product_Dialog_Select_Table.setOpaque(false);
-        Product_Dialog_Select_Table.setRowSelectionAllowed(false);
-        Product_Dialog_Select_Table.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        Product_Dialog_Select_Table.setUpdateSelectionOnSort(false);
-        Product_Dialog_Select_Table.setVerifyInputWhenFocusTarget(false);
-        jScrollPane4.setViewportView(Product_Dialog_Select_Table);
-
-        javax.swing.GroupLayout Product_Dialog_PanelLayout = new javax.swing.GroupLayout(Product_Dialog_Panel);
-        Product_Dialog_Panel.setLayout(Product_Dialog_PanelLayout);
-        Product_Dialog_PanelLayout.setHorizontalGroup(
-            Product_Dialog_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 621, Short.MAX_VALUE)
-            .addGroup(Product_Dialog_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(Product_Dialog_PanelLayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addGroup(Product_Dialog_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 609, Short.MAX_VALUE)
-                        .addGroup(Product_Dialog_PanelLayout.createSequentialGroup()
-                            .addGap(224, 224, 224)
-                            .addComponent(Product_Dialog_labelSelect))
-                        .addGroup(Product_Dialog_PanelLayout.createSequentialGroup()
-                            .addComponent(Product_Select_labelBack)
-                            .addGap(42, 42, 42)
-                            .addComponent(jLabel47, javax.swing.GroupLayout.PREFERRED_SIZE, 413, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addContainerGap()))
-        );
-        Product_Dialog_PanelLayout.setVerticalGroup(
-            Product_Dialog_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 420, Short.MAX_VALUE)
-            .addGroup(Product_Dialog_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(Product_Dialog_PanelLayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addGroup(Product_Dialog_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel47)
-                        .addComponent(Product_Select_labelBack))
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 309, Short.MAX_VALUE)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(Product_Dialog_labelSelect)
-                    .addContainerGap()))
-        );
-
-        javax.swing.GroupLayout Product_Dialog_SelectLayout = new javax.swing.GroupLayout(Product_Dialog_Select.getContentPane());
-        Product_Dialog_Select.getContentPane().setLayout(Product_Dialog_SelectLayout);
-        Product_Dialog_SelectLayout.setHorizontalGroup(
-            Product_Dialog_SelectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Product_Dialog_Panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        Product_Dialog_SelectLayout.setVerticalGroup(
-            Product_Dialog_SelectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Product_Dialog_Panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-
-        Product_TabbedPane.setForeground(new java.awt.Color(255, 255, 255));
-        Product_TabbedPane.setTabLayoutPolicy(javax.swing.JTabbedPane.SCROLL_TAB_LAYOUT);
-        Product_TabbedPane.setTabPlacement(javax.swing.JTabbedPane.LEFT);
-        Product_TabbedPane.setToolTipText("");
-        Product_TabbedPane.setAutoscrolls(true);
-        Product_TabbedPane.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        Product_TabbedPane.setDoubleBuffered(true);
-        Product_TabbedPane.setFocusCycleRoot(true);
-        Product_TabbedPane.setFocusTraversalPolicyProvider(true);
-        Product_TabbedPane.setOpaque(true);
-        Product_TabbedPane.addChangeListener(new javax.swing.event.ChangeListener() {
-            public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                Product_TabbedPaneStateChanged(evt);
-            }
-        });
-
-        jLabel32.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
-        jLabel32.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel32.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel32.setText("Agregar Producto");
-
-        jLabel50.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel50.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel50.setText("Precio Caja");
-
-        Product_Add_priceBoxSell.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("###,###.000"))));
-        Product_Add_priceBoxSell.setText("0");
-
-        jLabel51.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel51.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel51.setText("Precio Unidad");
-
-        jLabel52.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel52.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel52.setText("Precio Venta Caja");
-
-        Product_Add_labelDone.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICO/60px/icons8_Checkmark_60px.png"))); // NOI18N
-        Product_Add_labelDone.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Product_Add_labelDone.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Product_Add_labelDoneMouseClicked(evt);
-            }
-        });
-
-        jLabel53.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel53.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel53.setText("Fecha Vencimiento");
-
-        Product_Add_Date.setOpaque(false);
-
-        Product_Add_priceU.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("###,###.000"))));
-        Product_Add_priceU.setText("0");
-
-        jLabel54.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel54.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel54.setText("Nombre");
-
-        Product_Add_priceUSell.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("###,###.000"))));
-        Product_Add_priceUSell.setText("0");
-
-        jLabel55.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel55.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel55.setText("Precio Venta Unidad");
-
-        Product_Add_priceBox.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("###,###.000"))));
-        Product_Add_priceBox.setText("0");
-
-        Product_Add_impu.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0%"))));
-        Product_Add_impu.setText("15");
-
-        jLabel56.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel56.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel56.setText("Impuesto");
-
-        jLabel57.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel57.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel57.setText("Tipo");
-
-        Product_Add_CantU.setModel(new javax.swing.SpinnerNumberModel(1, 1, null, 1));
-
-        jLabel58.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel58.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel58.setText("Cantidad Unidad");
-
-        jLabel59.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel59.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel59.setText("Cantidad Caja");
-
-        Product_Add_CantBox.setModel(new javax.swing.SpinnerNumberModel(1, 1, null, 1));
-
-        javax.swing.GroupLayout Product_SP_AddPanelLayout = new javax.swing.GroupLayout(Product_SP_AddPanel);
-        Product_SP_AddPanel.setLayout(Product_SP_AddPanelLayout);
-        Product_SP_AddPanelLayout.setHorizontalGroup(
-            Product_SP_AddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Product_SP_AddPanelLayout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addComponent(jLabel32, javax.swing.GroupLayout.PREFERRED_SIZE, 427, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(Product_SP_AddPanelLayout.createSequentialGroup()
-                .addContainerGap(49, Short.MAX_VALUE)
-                .addGroup(Product_SP_AddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(Product_Add_priceUSell, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(Product_SP_AddPanelLayout.createSequentialGroup()
-                        .addGroup(Product_SP_AddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(Product_Add_Type)
-                            .addComponent(Product_Add_Name)
-                            .addComponent(jLabel54)
-                            .addComponent(jLabel53)
-                            .addComponent(jLabel56)
-                            .addComponent(Product_Add_impu)
-                            .addComponent(Product_Add_Date, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
-                            .addComponent(jLabel57)
-                            .addComponent(jLabel51)
-                            .addComponent(Product_Add_priceU))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
-                        .addGroup(Product_SP_AddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel55)
-                            .addComponent(jLabel52)
-                            .addComponent(Product_Add_priceBoxSell, javax.swing.GroupLayout.DEFAULT_SIZE, 166, Short.MAX_VALUE)
-                            .addComponent(jLabel50)
-                            .addComponent(Product_Add_priceBox)
-                            .addComponent(Product_Add_CantU)
-                            .addComponent(jLabel58)
-                            .addComponent(jLabel59)
-                            .addComponent(Product_Add_CantBox))))
-                .addGap(18, 49, Short.MAX_VALUE)
-                .addComponent(Product_Add_labelDone)
-                .addContainerGap(50, Short.MAX_VALUE))
-        );
-        Product_SP_AddPanelLayout.setVerticalGroup(
-            Product_SP_AddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Product_SP_AddPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel32)
-                .addGap(27, 27, 27)
-                .addGroup(Product_SP_AddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(Product_SP_AddPanelLayout.createSequentialGroup()
-                        .addComponent(jLabel54)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Product_Add_Name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(Product_SP_AddPanelLayout.createSequentialGroup()
-                        .addComponent(jLabel55)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Product_Add_priceUSell, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGroup(Product_SP_AddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Product_SP_AddPanelLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(Product_Add_labelDone)
-                        .addGap(1, 1, 1))
-                    .addGroup(Product_SP_AddPanelLayout.createSequentialGroup()
-                        .addGap(18, 21, Short.MAX_VALUE)
-                        .addGroup(Product_SP_AddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(Product_SP_AddPanelLayout.createSequentialGroup()
-                                .addComponent(jLabel50)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Product_Add_priceBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(Product_SP_AddPanelLayout.createSequentialGroup()
-                                .addComponent(jLabel57)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Product_Add_Type, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)))
-                .addGroup(Product_SP_AddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(Product_SP_AddPanelLayout.createSequentialGroup()
-                        .addComponent(jLabel53)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Product_Add_Date, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(Product_SP_AddPanelLayout.createSequentialGroup()
-                        .addComponent(jLabel52)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Product_Add_priceBoxSell, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
-                .addGroup(Product_SP_AddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel58)
-                    .addComponent(jLabel56))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(Product_SP_AddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Product_Add_impu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Product_Add_CantU, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
-                .addGroup(Product_SP_AddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(Product_SP_AddPanelLayout.createSequentialGroup()
-                        .addComponent(jLabel51)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Product_Add_priceU, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(Product_SP_AddPanelLayout.createSequentialGroup()
-                        .addComponent(jLabel59)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Product_Add_CantBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(48, Short.MAX_VALUE))
-        );
-
-        Product_Add_SP.setViewportView(Product_SP_AddPanel);
-
-        Product_TabbedPane.addTab("Agregar", Product_Add_SP);
-
-        jLabel31.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
-        jLabel31.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel31.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel31.setText("Listado de Productos");
-
-        jScrollPane3.setOpaque(false);
-
-        Product_List_Table.setAutoCreateRowSorter(true);
-        Product_List_Table.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "ID", "Nombre", "Tipo", "Precio unidad", "Precio venta unidad", "Precio caja", "Precio venta caja", "Impuesto", "Fecha vencimiento", "Existencia unidad", "Existencia caja"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Float.class, java.lang.Float.class, java.lang.Float.class, java.lang.Float.class, java.lang.Float.class, java.lang.Object.class, java.lang.Float.class, java.lang.Float.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false, false, false
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        Product_List_Table.setDebugGraphicsOptions(javax.swing.DebugGraphics.BUFFERED_OPTION);
-        Product_List_Table.setDropMode(javax.swing.DropMode.INSERT_COLS);
-        Product_List_Table.setEditingColumn(-1);
-        Product_List_Table.setEditingRow(-1);
-        Product_List_Table.setOpaque(false);
-        Product_List_Table.setRowSelectionAllowed(false);
-        Product_List_Table.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        Product_List_Table.setUpdateSelectionOnSort(false);
-        Product_List_Table.setVerifyInputWhenFocusTarget(false);
-        jScrollPane3.setViewportView(Product_List_Table);
-
-        Product_List_Remove.setForeground(new java.awt.Color(255, 255, 255));
-        Product_List_Remove.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICO/40px/icons8_Delete_40px.png"))); // NOI18N
-        Product_List_Remove.setText("Eliminar");
-        Product_List_Remove.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Product_List_Remove.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Product_List_RemoveMouseClicked(evt);
-            }
-        });
-
-        Product_List_EditSelected.setForeground(new java.awt.Color(255, 255, 255));
-        Product_List_EditSelected.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICO/40px/icons8_Edit_40px.png"))); // NOI18N
-        Product_List_EditSelected.setText("Modificar");
-        Product_List_EditSelected.setToolTipText("");
-        Product_List_EditSelected.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Product_List_EditSelected.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Product_List_EditSelectedMouseClicked(evt);
-            }
-        });
-
-        javax.swing.GroupLayout Product_SP_ListPanelLayout = new javax.swing.GroupLayout(Product_SP_ListPanel);
-        Product_SP_ListPanel.setLayout(Product_SP_ListPanelLayout);
-        Product_SP_ListPanelLayout.setHorizontalGroup(
-            Product_SP_ListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Product_SP_ListPanelLayout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addGroup(Product_SP_ListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(Product_SP_ListPanelLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(Product_List_Remove)
-                        .addGap(18, 18, Short.MAX_VALUE)
-                        .addComponent(Product_List_EditSelected)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(Product_SP_ListPanelLayout.createSequentialGroup()
-                        .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 427, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(Product_SP_ListPanelLayout.createSequentialGroup()
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 590, Short.MAX_VALUE)
-                        .addGap(22, 22, 22))))
-        );
-        Product_SP_ListPanelLayout.setVerticalGroup(
-            Product_SP_ListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Product_SP_ListPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel31)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 356, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(Product_SP_ListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Product_List_Remove)
-                    .addComponent(Product_List_EditSelected))
-                .addGap(9, 9, 9))
-        );
-
-        Product_List_SP.setViewportView(Product_SP_ListPanel);
-
-        Product_TabbedPane.addTab("Listado", Product_List_SP);
-
-        jLabel39.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
-        jLabel39.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel39.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel39.setText("Editar Producto");
-
-        Product_Edit_labelSelect.setForeground(new java.awt.Color(255, 255, 255));
-        Product_Edit_labelSelect.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICO/40px/icons8_Natural_User_Interface_2_40px.png"))); // NOI18N
-        Product_Edit_labelSelect.setText("Elegir producto");
-        Product_Edit_labelSelect.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Product_Edit_labelSelect.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Product_Edit_labelSelectMouseClicked(evt);
-            }
-        });
-
-        jLabel60.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel60.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel60.setText("Cantidad Unidad");
-
-        Product_Edit_priceUSell.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("###,###.000"))));
-        Product_Edit_priceUSell.setText("0");
-
-        jLabel61.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel61.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel61.setText("Cantidad Caja");
-
-        jLabel62.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel62.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel62.setText("Precio Venta Unidad");
-
-        Product_Edit_CantBox.setModel(new javax.swing.SpinnerNumberModel(1, 1, null, 1));
-
-        Product_Edit_priceBoxSell.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("###,###.000"))));
-        Product_Edit_priceBoxSell.setText("0");
-
-        Product_Edit_priceBox.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("###,###.000"))));
-        Product_Edit_priceBox.setText("0");
-
-        jLabel63.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel63.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel63.setText("Precio Unidad");
-
-        Product_Edit_impu.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0%"))));
-        Product_Edit_impu.setText("15");
-
-        jLabel64.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel64.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel64.setText("Precio Venta Caja");
-
-        jLabel65.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel65.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel65.setText("Impuesto");
-
-        Product_Edit_labelDone.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICO/60px/icons8_Checkmark_60px.png"))); // NOI18N
-        Product_Edit_labelDone.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Product_Edit_labelDone.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Product_Edit_labelDoneMouseClicked(evt);
-            }
-        });
-
-        jLabel66.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel66.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel66.setText("Fecha Vencimiento");
-
-        Product_Edit_Date.setOpaque(false);
-
-        Product_Edit_CantU.setModel(new javax.swing.SpinnerNumberModel(1, 1, null, 1));
-
-        Product_Edit_priceU.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("###,###.000"))));
-        Product_Edit_priceU.setText("0");
-
-        jLabel67.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel67.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel67.setText("Nombre");
-
-        jLabel68.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel68.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel68.setText("Precio Caja");
-
-        jLabel69.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel69.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel69.setText("Tipo");
-
-        javax.swing.GroupLayout Product_SP_EditPanelLayout = new javax.swing.GroupLayout(Product_SP_EditPanel);
-        Product_SP_EditPanel.setLayout(Product_SP_EditPanelLayout);
-        Product_SP_EditPanelLayout.setHorizontalGroup(
-            Product_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Product_SP_EditPanelLayout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addGroup(Product_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(Product_SP_EditPanelLayout.createSequentialGroup()
-                        .addGroup(Product_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(Product_Edit_priceUSell, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(Product_SP_EditPanelLayout.createSequentialGroup()
-                                .addGroup(Product_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(Product_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(Product_Edit_Type)
-                                        .addComponent(Product_Edit_Name)
-                                        .addComponent(jLabel67)
-                                        .addComponent(jLabel66)
-                                        .addComponent(jLabel65)
-                                        .addComponent(Product_Edit_impu)
-                                        .addComponent(Product_Edit_Date, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabel63)
-                                        .addComponent(Product_Edit_priceU, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jLabel69))
-                                .addGap(18, 18, Short.MAX_VALUE)
-                                .addGroup(Product_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jLabel62)
-                                    .addComponent(jLabel64)
-                                    .addComponent(Product_Edit_priceBoxSell)
-                                    .addComponent(jLabel68)
-                                    .addComponent(Product_Edit_priceBox)
-                                    .addComponent(Product_Edit_CantU)
-                                    .addComponent(jLabel60)
-                                    .addComponent(jLabel61)
-                                    .addComponent(Product_Edit_CantBox, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(18, 18, Short.MAX_VALUE)
-                        .addComponent(Product_Edit_labelDone)
-                        .addGap(68, 68, 68))
-                    .addGroup(Product_SP_EditPanelLayout.createSequentialGroup()
-                        .addComponent(jLabel39, javax.swing.GroupLayout.PREFERRED_SIZE, 427, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(Product_Edit_labelSelect)
-                        .addGap(45, 45, 45))))
-        );
-        Product_SP_EditPanelLayout.setVerticalGroup(
-            Product_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Product_SP_EditPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(Product_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel39)
-                    .addComponent(Product_Edit_labelSelect))
-                .addGap(24, 24, 24)
-                .addGroup(Product_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(Product_SP_EditPanelLayout.createSequentialGroup()
-                        .addComponent(jLabel67)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Product_Edit_Name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(Product_SP_EditPanelLayout.createSequentialGroup()
-                        .addComponent(jLabel62)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Product_Edit_priceUSell, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 21, Short.MAX_VALUE)
-                .addGroup(Product_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(Product_SP_EditPanelLayout.createSequentialGroup()
-                        .addComponent(jLabel68)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Product_Edit_priceBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(Product_SP_EditPanelLayout.createSequentialGroup()
-                        .addComponent(jLabel69)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Product_Edit_Type, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGroup(Product_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(Product_SP_EditPanelLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
-                        .addGroup(Product_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(Product_SP_EditPanelLayout.createSequentialGroup()
-                                .addComponent(jLabel66)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Product_Edit_Date, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(Product_SP_EditPanelLayout.createSequentialGroup()
-                                .addComponent(jLabel64)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Product_Edit_priceBoxSell, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE))
-                    .addGroup(Product_SP_EditPanelLayout.createSequentialGroup()
-                        .addGap(7, 7, 7)
-                        .addComponent(Product_Edit_labelDone)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addGroup(Product_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel60)
-                    .addComponent(jLabel65))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(Product_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Product_Edit_impu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Product_Edit_CantU, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
-                .addGroup(Product_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(Product_SP_EditPanelLayout.createSequentialGroup()
-                        .addComponent(jLabel63)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Product_Edit_priceU, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(Product_SP_EditPanelLayout.createSequentialGroup()
-                        .addComponent(jLabel61)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Product_Edit_CantBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(36, Short.MAX_VALUE))
-        );
-
-        Product_Edit_SP.setViewportView(Product_SP_EditPanel);
-
-        Product_TabbedPane.addTab("Modificar", Product_Edit_SP);
-
-        javax.swing.GroupLayout panelProductosLayout = new javax.swing.GroupLayout(panelProductos);
-        panelProductos.setLayout(panelProductosLayout);
-        panelProductosLayout.setHorizontalGroup(
-            panelProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Product_TabbedPane, javax.swing.GroupLayout.DEFAULT_SIZE, 697, Short.MAX_VALUE)
-        );
-        panelProductosLayout.setVerticalGroup(
-            panelProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Product_TabbedPane, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 483, Short.MAX_VALUE)
-        );
-
-        Client_Dialog_Select.setTitle("Seleccionar Cliente");
-        Client_Dialog_Select.setAlwaysOnTop(true);
-        Client_Dialog_Select.setIconImage(getIconImage());
-        Client_Dialog_Select.setModal(true);
-        Client_Dialog_Select.setModalExclusionType(java.awt.Dialog.ModalExclusionType.TOOLKIT_EXCLUDE);
-
-        Client_Select_labelBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICO/40px/icons8_Back_40px_1.png"))); // NOI18N
-        Client_Select_labelBack.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Client_Select_labelBack.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Client_Select_labelBackMouseClicked(evt);
-            }
-        });
-
-        Client_Dialog_labelChangeType.setForeground(new java.awt.Color(255, 255, 255));
-        Client_Dialog_labelChangeType.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICO/40px/icons8_Handle_With_Care_40px.png"))); // NOI18N
-        Client_Dialog_labelChangeType.setText("Cambiar tipo de Cliente");
-        Client_Dialog_labelChangeType.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Client_Dialog_labelChangeType.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Client_Dialog_labelChangeTypeMouseClicked(evt);
-            }
-        });
-
-        jLabel48.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
-        jLabel48.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel48.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel48.setText("Listado de Clientes");
-
-        jScrollPane5.setOpaque(false);
-
-        Client_Dialog_Select_Table.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "#", "ID", "Nombre", "Correo", "Teléfono", "Departamento", "Municipio", "Ciudad"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        Client_Dialog_Select_Table.setDebugGraphicsOptions(javax.swing.DebugGraphics.BUFFERED_OPTION);
-        Client_Dialog_Select_Table.setDropMode(javax.swing.DropMode.INSERT_COLS);
-        Client_Dialog_Select_Table.setEditingColumn(-1);
-        Client_Dialog_Select_Table.setEditingRow(-1);
-        Client_Dialog_Select_Table.setOpaque(false);
-        Client_Dialog_Select_Table.setRowSelectionAllowed(false);
-        Client_Dialog_Select_Table.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        Client_Dialog_Select_Table.setUpdateSelectionOnSort(false);
-        Client_Dialog_Select_Table.setVerifyInputWhenFocusTarget(false);
-        jScrollPane5.setViewportView(Client_Dialog_Select_Table);
-
-        Client_Dialog_Label_Type.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        Client_Dialog_Label_Type.setForeground(new java.awt.Color(255, 255, 255));
-        Client_Dialog_Label_Type.setText("Tipo: Persona");
-
-        Client_Dialog_labelSelect.setForeground(new java.awt.Color(255, 255, 255));
-        Client_Dialog_labelSelect.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICO/40px/icons8_Natural_User_Interface_2_40px.png"))); // NOI18N
-        Client_Dialog_labelSelect.setText("Elegir cliente");
-        Client_Dialog_labelSelect.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Client_Dialog_labelSelect.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Client_Dialog_labelSelectMouseClicked(evt);
-            }
-        });
-
-        javax.swing.GroupLayout Client_Dialog_PanelLayout = new javax.swing.GroupLayout(Client_Dialog_Panel);
-        Client_Dialog_Panel.setLayout(Client_Dialog_PanelLayout);
-        Client_Dialog_PanelLayout.setHorizontalGroup(
-            Client_Dialog_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Client_Dialog_PanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(Client_Dialog_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane5)
-                    .addGroup(Client_Dialog_PanelLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(Client_Dialog_labelChangeType)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(Client_Dialog_labelSelect)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(Client_Dialog_PanelLayout.createSequentialGroup()
-                        .addComponent(Client_Select_labelBack)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel48)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 98, Short.MAX_VALUE)
-                        .addComponent(Client_Dialog_Label_Type, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
-        );
-        Client_Dialog_PanelLayout.setVerticalGroup(
-            Client_Dialog_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Client_Dialog_PanelLayout.createSequentialGroup()
-                .addGap(7, 7, 7)
-                .addGroup(Client_Dialog_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Client_Select_labelBack)
-                    .addGroup(Client_Dialog_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel48)
-                        .addComponent(Client_Dialog_Label_Type, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 308, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(Client_Dialog_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Client_Dialog_labelSelect)
-                    .addComponent(Client_Dialog_labelChangeType))
-                .addContainerGap())
-        );
-
-        javax.swing.GroupLayout Client_Dialog_SelectLayout = new javax.swing.GroupLayout(Client_Dialog_Select.getContentPane());
-        Client_Dialog_Select.getContentPane().setLayout(Client_Dialog_SelectLayout);
-        Client_Dialog_SelectLayout.setHorizontalGroup(
-            Client_Dialog_SelectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Client_Dialog_SelectLayout.createSequentialGroup()
-                .addComponent(Client_Dialog_Panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        Client_Dialog_SelectLayout.setVerticalGroup(
-            Client_Dialog_SelectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Client_Dialog_Panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-
-        Client_TabbedPane.setForeground(new java.awt.Color(255, 255, 255));
-        Client_TabbedPane.setTabLayoutPolicy(javax.swing.JTabbedPane.SCROLL_TAB_LAYOUT);
-        Client_TabbedPane.setTabPlacement(javax.swing.JTabbedPane.LEFT);
-        Client_TabbedPane.setToolTipText("");
-        Client_TabbedPane.setAutoscrolls(true);
-        Client_TabbedPane.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        Client_TabbedPane.setDoubleBuffered(true);
-        Client_TabbedPane.setFocusCycleRoot(true);
-        Client_TabbedPane.setFocusTraversalPolicyProvider(true);
-        Client_TabbedPane.setOpaque(true);
-        Client_TabbedPane.addChangeListener(new javax.swing.event.ChangeListener() {
-            public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                Client_TabbedPaneStateChanged(evt);
-            }
-        });
-
-        jLabel33.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
-        jLabel33.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel33.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel33.setText("Agregar Cliente");
-
-        Client_Add_labelDone.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICO/60px/icons8_Checkmark_60px.png"))); // NOI18N
-        Client_Add_labelDone.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Client_Add_labelDone.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Client_Add_labelDoneMouseClicked(evt);
-            }
-        });
-
-        jLabel74.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel74.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel74.setText("Nombre");
-
-        jLabel77.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel77.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel77.setText("Tipo");
-
-        Client_Add_Type_Group.add(Client_Add_Type_Person);
-        Client_Add_Type_Person.setForeground(new java.awt.Color(255, 255, 255));
-        Client_Add_Type_Person.setText("Persona");
-        Client_Add_Type_Person.setOpaque(false);
-        Client_Add_Type_Person.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Client_Add_Type_PersonActionPerformed(evt);
-            }
-        });
-
-        Client_Add_Type_Group.add(Client_Add_Type_Bussines);
-        Client_Add_Type_Bussines.setForeground(new java.awt.Color(255, 255, 255));
-        Client_Add_Type_Bussines.setText("Empresa");
-        Client_Add_Type_Bussines.setOpaque(false);
-        Client_Add_Type_Bussines.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Client_Add_Type_BussinesActionPerformed(evt);
-            }
-        });
-
-        Client_Add_ID_RTN.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("####-####-#####"))));
-
-        Client_Add_Label_Type.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        Client_Add_Label_Type.setForeground(new java.awt.Color(255, 255, 255));
-        Client_Add_Label_Type.setText("Id");
-
-        jLabel90.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel90.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel90.setText("Correo");
-
-        jLabel91.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel91.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel91.setText("Teléfono");
-
-        jLabel92.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel92.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel92.setText("Departamento");
-
-        jLabel93.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel93.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel93.setText("Municipio");
-
-        jLabel94.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel94.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel94.setText("Ciudad");
-
-        javax.swing.GroupLayout Client_SP_AddPanelLayout = new javax.swing.GroupLayout(Client_SP_AddPanel);
-        Client_SP_AddPanel.setLayout(Client_SP_AddPanelLayout);
-        Client_SP_AddPanelLayout.setHorizontalGroup(
-            Client_SP_AddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Client_SP_AddPanelLayout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 427, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(283, Short.MAX_VALUE))
-            .addGroup(Client_SP_AddPanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(Client_SP_AddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(Client_SP_AddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(Client_Add_Name, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel74)
-                        .addComponent(jLabel77)
-                        .addGroup(Client_SP_AddPanelLayout.createSequentialGroup()
-                            .addGap(3, 3, 3)
-                            .addComponent(Client_Add_Label_Type))
-                        .addComponent(Client_Add_ID_RTN, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(Client_SP_AddPanelLayout.createSequentialGroup()
-                        .addGap(3, 3, 3)
-                        .addGroup(Client_SP_AddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(Client_Add_Email, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
-                            .addComponent(jLabel90)))
-                    .addGroup(Client_SP_AddPanelLayout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(Client_Add_Type_Person)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Client_Add_Type_Bussines)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(Client_SP_AddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(Client_SP_AddPanelLayout.createSequentialGroup()
-                        .addGroup(Client_SP_AddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(Client_SP_AddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(Client_Add_Department, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
-                                .addComponent(jLabel92))
-                            .addGroup(Client_SP_AddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(Client_Add_Municipio)
-                                .addComponent(jLabel93)
-                                .addComponent(Client_Add_City, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel94)))
-                        .addGap(18, 18, Short.MAX_VALUE)
-                        .addComponent(Client_Add_labelDone))
-                    .addGroup(Client_SP_AddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(Client_Add_Phone, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
-                        .addComponent(jLabel91)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        Client_SP_AddPanelLayout.setVerticalGroup(
-            Client_SP_AddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Client_SP_AddPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel33)
-                .addGap(27, 27, 27)
-                .addGroup(Client_SP_AddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(Client_SP_AddPanelLayout.createSequentialGroup()
-                        .addComponent(jLabel74)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Client_Add_Name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(Client_SP_AddPanelLayout.createSequentialGroup()
-                        .addComponent(jLabel91)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Client_Add_Phone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
-                .addGroup(Client_SP_AddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(Client_SP_AddPanelLayout.createSequentialGroup()
-                        .addComponent(jLabel92)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(Client_SP_AddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(Client_SP_AddPanelLayout.createSequentialGroup()
-                                .addComponent(Client_Add_Department, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
-                                .addComponent(jLabel93))
-                            .addGroup(Client_SP_AddPanelLayout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(Client_Add_labelDone)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Client_Add_Municipio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(Client_SP_AddPanelLayout.createSequentialGroup()
-                        .addComponent(jLabel77)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(Client_SP_AddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(Client_Add_Type_Person)
-                            .addComponent(Client_Add_Type_Bussines))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
-                        .addComponent(Client_Add_Label_Type)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Client_Add_ID_RTN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
-                .addGroup(Client_SP_AddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Client_SP_AddPanelLayout.createSequentialGroup()
-                        .addComponent(jLabel90)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Client_Add_Email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Client_SP_AddPanelLayout.createSequentialGroup()
-                        .addComponent(jLabel94)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Client_Add_City, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(125, Short.MAX_VALUE))
-        );
-
-        Client_Add_SP.setViewportView(Client_SP_AddPanel);
-
-        Client_TabbedPane.addTab("Agregar", Client_Add_SP);
-
-        Client_List_Remove.setForeground(new java.awt.Color(255, 255, 255));
-        Client_List_Remove.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICO/40px/icons8_Delete_40px.png"))); // NOI18N
-        Client_List_Remove.setText("Eliminar");
-        Client_List_Remove.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Client_List_Remove.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Client_List_RemoveMouseClicked(evt);
-            }
-        });
-
-        Client_List_EditSelected.setForeground(new java.awt.Color(255, 255, 255));
-        Client_List_EditSelected.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICO/40px/icons8_Edit_40px.png"))); // NOI18N
-        Client_List_EditSelected.setText("Modificar");
-        Client_List_EditSelected.setToolTipText("");
-        Client_List_EditSelected.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Client_List_EditSelected.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Client_List_EditSelectedMouseClicked(evt);
-            }
-        });
-
-        jScrollPane7.setOpaque(false);
-
-        Client_List_Table.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "#", "ID", "Nombre", "Correo", "Teléfono", "Departamento", "Municipio", "Ciudad"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        Client_List_Table.setDebugGraphicsOptions(javax.swing.DebugGraphics.BUFFERED_OPTION);
-        Client_List_Table.setDropMode(javax.swing.DropMode.INSERT_COLS);
-        Client_List_Table.setEditingColumn(-1);
-        Client_List_Table.setEditingRow(-1);
-        Client_List_Table.setOpaque(false);
-        Client_List_Table.setRowSelectionAllowed(false);
-        Client_List_Table.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        Client_List_Table.setUpdateSelectionOnSort(false);
-        Client_List_Table.setVerifyInputWhenFocusTarget(false);
-        jScrollPane7.setViewportView(Client_List_Table);
-
-        Client_List_labelChangeType.setForeground(new java.awt.Color(255, 255, 255));
-        Client_List_labelChangeType.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICO/40px/icons8_Handle_With_Care_40px.png"))); // NOI18N
-        Client_List_labelChangeType.setText("Cambiar tipo de Cliente");
-        Client_List_labelChangeType.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Client_List_labelChangeType.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Client_List_labelChangeTypeMouseClicked(evt);
-            }
-        });
-
-        jLabel49.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
-        jLabel49.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel49.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel49.setText("Listado de Clientes");
-
-        Client_List_Label_Type.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        Client_List_Label_Type.setForeground(new java.awt.Color(255, 255, 255));
-        Client_List_Label_Type.setText("Tipo: Persona");
-
-        javax.swing.GroupLayout Client_SP_ListPanelLayout = new javax.swing.GroupLayout(Client_SP_ListPanel);
-        Client_SP_ListPanel.setLayout(Client_SP_ListPanelLayout);
-        Client_SP_ListPanelLayout.setHorizontalGroup(
-            Client_SP_ListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Client_SP_ListPanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Client_List_labelChangeType)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Client_List_Remove)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Client_List_EditSelected)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(Client_SP_ListPanelLayout.createSequentialGroup()
-                .addGap(6, 6, 6)
-                .addGroup(Client_SP_ListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(Client_SP_ListPanelLayout.createSequentialGroup()
-                        .addComponent(jLabel49)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 211, Short.MAX_VALUE)
-                        .addComponent(Client_List_Label_Type, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())
-                    .addComponent(jScrollPane7)))
-        );
-        Client_SP_ListPanelLayout.setVerticalGroup(
-            Client_SP_ListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Client_SP_ListPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(Client_SP_ListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel49)
-                    .addComponent(Client_List_Label_Type, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(Client_SP_ListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Client_List_labelChangeType)
-                    .addComponent(Client_List_EditSelected)
-                    .addComponent(Client_List_Remove))
-                .addGap(17, 17, 17))
-        );
-
-        Client_List_SP.setViewportView(Client_SP_ListPanel);
-
-        Client_TabbedPane.addTab("Listado", Client_List_SP);
-
-        Client_SP_EditPanel.setToolTipText("");
-
-        jLabel40.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
-        jLabel40.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel40.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel40.setText("Editar Cliente");
-
-        Client_Edit_labelSelect.setForeground(new java.awt.Color(255, 255, 255));
-        Client_Edit_labelSelect.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICO/40px/icons8_Natural_User_Interface_2_40px.png"))); // NOI18N
-        Client_Edit_labelSelect.setText("Elegir cliente");
-        Client_Edit_labelSelect.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Client_Edit_labelSelect.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Product_Edit_labelSelect1MouseClicked(evt);
-            }
-        });
-
-        jLabel75.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel75.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel75.setText("Nombre");
-
-        jLabel95.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel95.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel95.setText("Municipio");
-
-        jLabel96.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel96.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel96.setText("Ciudad");
-
-        Client_Edit_Type_Group.add(Client_Edit_Type_Person);
-        Client_Edit_Type_Person.setForeground(new java.awt.Color(255, 255, 255));
-        Client_Edit_Type_Person.setText("Persona");
-        Client_Edit_Type_Person.setOpaque(false);
-        Client_Edit_Type_Person.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Client_Edit_Type_PersonActionPerformed(evt);
-            }
-        });
-
-        Client_Edit_Type_Group.add(Client_Edit_Type_Bussines);
-        Client_Edit_Type_Bussines.setForeground(new java.awt.Color(255, 255, 255));
-        Client_Edit_Type_Bussines.setText("Empresa");
-        Client_Edit_Type_Bussines.setOpaque(false);
-        Client_Edit_Type_Bussines.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Client_Edit_Type_BussinesActionPerformed(evt);
-            }
-        });
-
-        jLabel97.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel97.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel97.setText("Correo");
-
-        Client_Edit_labelDone.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICO/60px/icons8_Checkmark_60px.png"))); // NOI18N
-        Client_Edit_labelDone.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Client_Edit_labelDone.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Client_Edit_labelDoneMouseClicked(evt);
-            }
-        });
-
-        jLabel78.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel78.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel78.setText("Tipo");
-
-        Client_Edit_ID_RTN.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("####-####-#####"))));
-
-        Client_Edit_Label_Type.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        Client_Edit_Label_Type.setForeground(new java.awt.Color(255, 255, 255));
-        Client_Edit_Label_Type.setText("Id");
-
-        jLabel98.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel98.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel98.setText("Teléfono");
-
-        jLabel99.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel99.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel99.setText("Departamento");
-
-        javax.swing.GroupLayout Client_SP_EditPanelLayout = new javax.swing.GroupLayout(Client_SP_EditPanel);
-        Client_SP_EditPanel.setLayout(Client_SP_EditPanelLayout);
-        Client_SP_EditPanelLayout.setHorizontalGroup(
-            Client_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Client_SP_EditPanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Client_Edit_labelSelect)
-                .addGap(45, 45, 45))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Client_SP_EditPanelLayout.createSequentialGroup()
-                .addContainerGap(64, Short.MAX_VALUE)
-                .addGroup(Client_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(Client_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(Client_Edit_Name, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel75)
-                        .addComponent(jLabel78)
-                        .addComponent(Client_Edit_Label_Type)
-                        .addGroup(Client_SP_EditPanelLayout.createSequentialGroup()
-                            .addComponent(Client_Edit_Type_Person)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(Client_Edit_Type_Bussines))
-                        .addComponent(Client_Edit_ID_RTN, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(Client_SP_EditPanelLayout.createSequentialGroup()
-                            .addGap(3, 3, 3)
-                            .addGroup(Client_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(Client_Edit_Email, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
-                                .addComponent(jLabel97))))
-                    .addGroup(Client_SP_EditPanelLayout.createSequentialGroup()
-                        .addComponent(jLabel40)
-                        .addGap(3, 3, 3)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 91, Short.MAX_VALUE)
-                .addGroup(Client_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(Client_SP_EditPanelLayout.createSequentialGroup()
-                        .addGroup(Client_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(Client_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(Client_Edit_Department, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
-                                .addComponent(jLabel99))
-                            .addGroup(Client_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(Client_Edit_Municipio)
-                                .addComponent(jLabel95)
-                                .addComponent(Client_Edit_City, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel96)))
-                        .addGap(18, 18, Short.MAX_VALUE)
-                        .addComponent(Client_Edit_labelDone))
-                    .addGroup(Client_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(Client_Edit_Phone, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
-                        .addComponent(jLabel98)))
-                .addContainerGap(73, Short.MAX_VALUE))
-        );
-        Client_SP_EditPanelLayout.setVerticalGroup(
-            Client_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Client_SP_EditPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(Client_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel40)
-                    .addComponent(Client_Edit_labelSelect))
-                .addGap(30, 30, 30)
-                .addGroup(Client_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(Client_SP_EditPanelLayout.createSequentialGroup()
-                        .addComponent(jLabel75)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Client_Edit_Name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(Client_SP_EditPanelLayout.createSequentialGroup()
-                        .addComponent(jLabel98)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Client_Edit_Phone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
-                .addGroup(Client_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(Client_SP_EditPanelLayout.createSequentialGroup()
-                        .addComponent(jLabel99)
-                        .addGroup(Client_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(Client_SP_EditPanelLayout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Client_Edit_Department, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
-                                .addComponent(jLabel95)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-                            .addGroup(Client_SP_EditPanelLayout.createSequentialGroup()
-                                .addGap(20, 20, 20)
-                                .addComponent(Client_Edit_labelDone)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addComponent(Client_Edit_Municipio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(Client_SP_EditPanelLayout.createSequentialGroup()
-                        .addComponent(jLabel78)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(Client_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(Client_Edit_Type_Person)
-                            .addComponent(Client_Edit_Type_Bussines))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(Client_Edit_Label_Type)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Client_Edit_ID_RTN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
-                .addGroup(Client_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Client_SP_EditPanelLayout.createSequentialGroup()
-                        .addComponent(jLabel97)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Client_Edit_Email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Client_SP_EditPanelLayout.createSequentialGroup()
-                        .addComponent(jLabel96)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Client_Edit_City, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(137, Short.MAX_VALUE))
-        );
-
-        Client_Edit_SP.setViewportView(Client_SP_EditPanel);
-
-        Client_TabbedPane.addTab("Modificar", Client_Edit_SP);
-
-        javax.swing.GroupLayout panelClientesLayout = new javax.swing.GroupLayout(panelClientes);
-        panelClientes.setLayout(panelClientesLayout);
-        panelClientesLayout.setHorizontalGroup(
-            panelClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Client_TabbedPane)
-        );
-        panelClientesLayout.setVerticalGroup(
-            panelClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Client_TabbedPane, javax.swing.GroupLayout.DEFAULT_SIZE, 486, Short.MAX_VALUE)
-        );
-
-        Provider_TabbedPane.setForeground(new java.awt.Color(255, 255, 255));
-        Provider_TabbedPane.setTabLayoutPolicy(javax.swing.JTabbedPane.SCROLL_TAB_LAYOUT);
-        Provider_TabbedPane.setTabPlacement(javax.swing.JTabbedPane.LEFT);
-        Provider_TabbedPane.setToolTipText("");
-        Provider_TabbedPane.setAutoscrolls(true);
-        Provider_TabbedPane.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        Provider_TabbedPane.setDoubleBuffered(true);
-        Provider_TabbedPane.setFocusCycleRoot(true);
-        Provider_TabbedPane.setFocusTraversalPolicyProvider(true);
-        Provider_TabbedPane.setOpaque(true);
-        Provider_TabbedPane.addChangeListener(new javax.swing.event.ChangeListener() {
-            public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                Provider_TabbedPaneStateChanged(evt);
-            }
-        });
-
-        jLabel34.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
-        jLabel34.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel34.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel34.setText("Agregar Proveedor");
-
-        jLabel113.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel113.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel113.setText("Teléfono");
-
-        Provider_Add_labelDone.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICO/60px/icons8_Checkmark_60px.png"))); // NOI18N
-        Provider_Add_labelDone.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Provider_Add_labelDone.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Provider_Add_labelDoneMouseClicked(evt);
-            }
-        });
-
-        jLabel114.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel114.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel114.setText("Dirección");
-
-        jLabel83.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel83.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel83.setText("Nombre");
-
-        Provider_Add_RTN.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat(""))));
-
-        Client_Add_Label_Type3.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        Client_Add_Label_Type3.setForeground(new java.awt.Color(255, 255, 255));
-        Client_Add_Label_Type3.setText("RTN");
-
-        jLabel115.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel115.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel115.setText("Correo");
-
-        javax.swing.GroupLayout Provider_SP_AddPanelLayout = new javax.swing.GroupLayout(Provider_SP_AddPanel);
-        Provider_SP_AddPanel.setLayout(Provider_SP_AddPanelLayout);
-        Provider_SP_AddPanelLayout.setHorizontalGroup(
-            Provider_SP_AddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Provider_SP_AddPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel34, javax.swing.GroupLayout.PREFERRED_SIZE, 427, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(Provider_SP_AddPanelLayout.createSequentialGroup()
-                .addContainerGap(124, Short.MAX_VALUE)
-                .addGroup(Provider_SP_AddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Provider_Add_Name, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel83)
-                    .addGroup(Provider_SP_AddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(Client_Add_Label_Type3)
-                        .addComponent(Provider_Add_RTN, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(Provider_SP_AddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(Provider_Add_Email, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
-                        .addComponent(jLabel115)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 124, Short.MAX_VALUE)
-                .addGroup(Provider_SP_AddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Provider_Add_labelDone)
-                    .addGroup(Provider_SP_AddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(Provider_Add_Phone, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
-                        .addComponent(jLabel113))
-                    .addGroup(Provider_SP_AddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(Provider_Add_Address, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
-                        .addComponent(jLabel114)))
-                .addContainerGap(110, Short.MAX_VALUE))
-        );
-        Provider_SP_AddPanelLayout.setVerticalGroup(
-            Provider_SP_AddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Provider_SP_AddPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel34)
-                .addGap(26, 26, 26)
-                .addGroup(Provider_SP_AddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(Provider_SP_AddPanelLayout.createSequentialGroup()
-                        .addComponent(jLabel83)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Provider_Add_Name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(Provider_SP_AddPanelLayout.createSequentialGroup()
-                        .addComponent(jLabel113)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Provider_Add_Phone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 79, Short.MAX_VALUE)
-                .addGroup(Provider_SP_AddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(Provider_SP_AddPanelLayout.createSequentialGroup()
-                        .addComponent(Client_Add_Label_Type3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Provider_Add_RTN))
-                    .addGroup(Provider_SP_AddPanelLayout.createSequentialGroup()
-                        .addComponent(jLabel114)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Provider_Add_Address, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, Short.MAX_VALUE)
-                .addGroup(Provider_SP_AddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Provider_SP_AddPanelLayout.createSequentialGroup()
-                        .addComponent(jLabel115)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Provider_Add_Email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(Provider_Add_labelDone, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addContainerGap(129, Short.MAX_VALUE))
-        );
-
-        Provider_Add_SP.setViewportView(Provider_SP_AddPanel);
-
-        Provider_TabbedPane.addTab("Agregar", Provider_Add_SP);
-
-        Provider_List_Remove.setForeground(new java.awt.Color(255, 255, 255));
-        Provider_List_Remove.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICO/40px/icons8_Delete_40px.png"))); // NOI18N
-        Provider_List_Remove.setText("Eliminar");
-        Provider_List_Remove.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Provider_List_Remove.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Provider_List_RemoveMouseClicked(evt);
-            }
-        });
-
-        Provider_List_EditSelected.setForeground(new java.awt.Color(255, 255, 255));
-        Provider_List_EditSelected.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICO/40px/icons8_Edit_40px.png"))); // NOI18N
-        Provider_List_EditSelected.setText("Modificar");
-        Provider_List_EditSelected.setToolTipText("");
-        Provider_List_EditSelected.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Provider_List_EditSelected.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Provider_List_EditSelectedMouseClicked(evt);
-            }
-        });
-
-        jScrollPane8.setOpaque(false);
-
-        Provider_List_Table.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "RTN", "Nombre", "Correo", "Teléfono", "Dirección"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        Provider_List_Table.setDebugGraphicsOptions(javax.swing.DebugGraphics.BUFFERED_OPTION);
-        Provider_List_Table.setDropMode(javax.swing.DropMode.INSERT_COLS);
-        Provider_List_Table.setEditingColumn(-1);
-        Provider_List_Table.setEditingRow(-1);
-        Provider_List_Table.setOpaque(false);
-        Provider_List_Table.setRowSelectionAllowed(false);
-        Provider_List_Table.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        Provider_List_Table.setUpdateSelectionOnSort(false);
-        Provider_List_Table.setVerifyInputWhenFocusTarget(false);
-        jScrollPane8.setViewportView(Provider_List_Table);
-
-        jLabel70.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
-        jLabel70.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel70.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel70.setText("Listado de Proveedores");
-
-        javax.swing.GroupLayout Provider_SP_ListPanelLayout = new javax.swing.GroupLayout(Provider_SP_ListPanel);
-        Provider_SP_ListPanel.setLayout(Provider_SP_ListPanelLayout);
-        Provider_SP_ListPanelLayout.setHorizontalGroup(
-            Provider_SP_ListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Provider_SP_ListPanelLayout.createSequentialGroup()
-                .addGroup(Provider_SP_ListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(Provider_SP_ListPanelLayout.createSequentialGroup()
-                        .addGroup(Provider_SP_ListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(Provider_SP_ListPanelLayout.createSequentialGroup()
-                                .addContainerGap(126, Short.MAX_VALUE)
-                                .addComponent(Provider_List_Remove)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 126, Short.MAX_VALUE)
-                                .addComponent(Provider_List_EditSelected))
-                            .addGroup(Provider_SP_ListPanelLayout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addComponent(jLabel70)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 281, Short.MAX_VALUE))
-                    .addGroup(Provider_SP_ListPanelLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane8)))
-                .addContainerGap())
-        );
-        Provider_SP_ListPanelLayout.setVerticalGroup(
-            Provider_SP_ListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Provider_SP_ListPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel70)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 404, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(Provider_SP_ListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Provider_List_Remove)
-                    .addComponent(Provider_List_EditSelected))
-                .addGap(9, 9, 9))
-        );
-
-        Provider_List_SP.setViewportView(Provider_SP_ListPanel);
-
-        Provider_TabbedPane.addTab("Listado", Provider_List_SP);
-
-        Provider_SP_EditPanel.setToolTipText("");
-
-        jLabel41.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
-        jLabel41.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel41.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel41.setText("Editar Proveedor");
-
-        Provider_Edit_labelSelect.setForeground(new java.awt.Color(255, 255, 255));
-        Provider_Edit_labelSelect.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICO/40px/icons8_Natural_User_Interface_2_40px.png"))); // NOI18N
-        Provider_Edit_labelSelect.setText("Elegir proveedor");
-        Provider_Edit_labelSelect.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Provider_Edit_labelSelect.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Provider_Edit_labelSelectMouseClicked(evt);
-            }
-        });
-
-        jLabel110.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel110.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel110.setText("Correo");
-
-        Client_Add_Label_Type2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        Client_Add_Label_Type2.setForeground(new java.awt.Color(255, 255, 255));
-        Client_Add_Label_Type2.setText("RTN");
-
-        Provider_Edit_RTN.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("####-####-#####"))));
-
-        jLabel82.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel82.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel82.setText("Nombre");
-
-        jLabel111.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel111.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel111.setText("Dirección");
-
-        Provider_Edit_labelDone.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICO/60px/icons8_Checkmark_60px.png"))); // NOI18N
-        Provider_Edit_labelDone.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Provider_Edit_labelDone.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Provider_Edit_labelDoneMouseClicked(evt);
-            }
-        });
-
-        jLabel112.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel112.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel112.setText("Teléfono");
-
-        javax.swing.GroupLayout Provider_SP_EditPanelLayout = new javax.swing.GroupLayout(Provider_SP_EditPanel);
-        Provider_SP_EditPanel.setLayout(Provider_SP_EditPanelLayout);
-        Provider_SP_EditPanelLayout.setHorizontalGroup(
-            Provider_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Provider_SP_EditPanelLayout.createSequentialGroup()
-                .addGroup(Provider_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(Provider_SP_EditPanelLayout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel41)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(Provider_Edit_labelSelect))
-                    .addGroup(Provider_SP_EditPanelLayout.createSequentialGroup()
-                        .addContainerGap(88, Short.MAX_VALUE)
-                        .addGroup(Provider_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Provider_Edit_Name, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel82)
-                            .addGroup(Provider_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(Client_Add_Label_Type2)
-                                .addComponent(Provider_Edit_RTN, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(Provider_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(Provider_Edit_Email, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
-                                .addComponent(jLabel110)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 133, Short.MAX_VALUE)
-                        .addGroup(Provider_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Provider_Edit_labelDone)
-                            .addGroup(Provider_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(Provider_Edit_Phone, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
-                                .addComponent(jLabel112))
-                            .addGroup(Provider_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(Provider_Edit_Address, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
-                                .addComponent(jLabel111)))))
-                .addContainerGap(131, Short.MAX_VALUE))
-        );
-        Provider_SP_EditPanelLayout.setVerticalGroup(
-            Provider_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Provider_SP_EditPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(Provider_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel41)
-                    .addComponent(Provider_Edit_labelSelect))
-                .addGap(27, 27, 27)
-                .addGroup(Provider_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(Provider_SP_EditPanelLayout.createSequentialGroup()
-                        .addComponent(jLabel82)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Provider_Edit_Name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(Provider_SP_EditPanelLayout.createSequentialGroup()
-                        .addComponent(jLabel112)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Provider_Edit_Phone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, Short.MAX_VALUE)
-                .addGroup(Provider_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(Provider_SP_EditPanelLayout.createSequentialGroup()
-                        .addComponent(Client_Add_Label_Type2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Provider_Edit_RTN))
-                    .addGroup(Provider_SP_EditPanelLayout.createSequentialGroup()
-                        .addComponent(jLabel111)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Provider_Edit_Address, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
-                .addGroup(Provider_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Provider_SP_EditPanelLayout.createSequentialGroup()
-                        .addComponent(jLabel110)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Provider_Edit_Email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(Provider_Edit_labelDone, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addContainerGap(146, Short.MAX_VALUE))
-        );
-
-        Provider_Edit_SP.setViewportView(Provider_SP_EditPanel);
-
-        Provider_TabbedPane.addTab("Modificar", Provider_Edit_SP);
-
-        javax.swing.GroupLayout panelProveedoresLayout = new javax.swing.GroupLayout(panelProveedores);
-        panelProveedores.setLayout(panelProveedoresLayout);
-        panelProveedoresLayout.setHorizontalGroup(
-            panelProveedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Provider_TabbedPane, javax.swing.GroupLayout.Alignment.TRAILING)
-        );
-        panelProveedoresLayout.setVerticalGroup(
-            panelProveedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Provider_TabbedPane, javax.swing.GroupLayout.DEFAULT_SIZE, 504, Short.MAX_VALUE)
-        );
-
-        Provider_Dialog_Select.setTitle("Seleccionar Proveedor");
-        Provider_Dialog_Select.setAlwaysOnTop(true);
-        Provider_Dialog_Select.setIconImage(getIconImage());
-        Provider_Dialog_Select.setModal(true);
-        Provider_Dialog_Select.setModalExclusionType(java.awt.Dialog.ModalExclusionType.TOOLKIT_EXCLUDE);
-
-        Provider_Select_labelBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICO/40px/icons8_Back_40px_1.png"))); // NOI18N
-        Provider_Select_labelBack.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Provider_Select_labelBack.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Provider_Select_labelBackMouseClicked(evt);
-            }
-        });
-
-        jLabel71.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
-        jLabel71.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel71.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel71.setText("Listado de Proveedores");
-
-        jScrollPane6.setOpaque(false);
-
-        Provider_Dialog_Select_Table.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "RTN", "Nombre", "Correo", "Teléfono", "Dirección"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        Provider_Dialog_Select_Table.setDebugGraphicsOptions(javax.swing.DebugGraphics.BUFFERED_OPTION);
-        Provider_Dialog_Select_Table.setDropMode(javax.swing.DropMode.INSERT_COLS);
-        Provider_Dialog_Select_Table.setEditingColumn(-1);
-        Provider_Dialog_Select_Table.setEditingRow(-1);
-        Provider_Dialog_Select_Table.setOpaque(false);
-        Provider_Dialog_Select_Table.setRowSelectionAllowed(false);
-        Provider_Dialog_Select_Table.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        Provider_Dialog_Select_Table.setUpdateSelectionOnSort(false);
-        Provider_Dialog_Select_Table.setVerifyInputWhenFocusTarget(false);
-        jScrollPane6.setViewportView(Provider_Dialog_Select_Table);
-
-        Provider_Dialog_labelSelect.setForeground(new java.awt.Color(255, 255, 255));
-        Provider_Dialog_labelSelect.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICO/40px/icons8_Natural_User_Interface_2_40px.png"))); // NOI18N
-        Provider_Dialog_labelSelect.setText("Elegir Proveedor");
-        Provider_Dialog_labelSelect.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Provider_Dialog_labelSelect.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Provider_Dialog_labelSelectMouseClicked(evt);
-            }
-        });
-
-        javax.swing.GroupLayout Provider_Dialog_PanelLayout = new javax.swing.GroupLayout(Provider_Dialog_Panel);
-        Provider_Dialog_Panel.setLayout(Provider_Dialog_PanelLayout);
-        Provider_Dialog_PanelLayout.setHorizontalGroup(
-            Provider_Dialog_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Provider_Dialog_PanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(Provider_Dialog_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 659, Short.MAX_VALUE)
-                    .addGroup(Provider_Dialog_PanelLayout.createSequentialGroup()
-                        .addComponent(Provider_Select_labelBack)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel71)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(Provider_Dialog_PanelLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(Provider_Dialog_labelSelect)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
-        );
-        Provider_Dialog_PanelLayout.setVerticalGroup(
-            Provider_Dialog_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Provider_Dialog_PanelLayout.createSequentialGroup()
-                .addGap(7, 7, 7)
-                .addGroup(Provider_Dialog_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Provider_Select_labelBack)
-                    .addComponent(jLabel71))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 301, Short.MAX_VALUE)
-                .addGap(7, 7, 7)
-                .addComponent(Provider_Dialog_labelSelect)
-                .addContainerGap())
-        );
-
-        javax.swing.GroupLayout Provider_Dialog_SelectLayout = new javax.swing.GroupLayout(Provider_Dialog_Select.getContentPane());
-        Provider_Dialog_Select.getContentPane().setLayout(Provider_Dialog_SelectLayout);
-        Provider_Dialog_SelectLayout.setHorizontalGroup(
-            Provider_Dialog_SelectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Provider_Dialog_SelectLayout.createSequentialGroup()
-                .addComponent(Provider_Dialog_Panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        Provider_Dialog_SelectLayout.setVerticalGroup(
-            Provider_Dialog_SelectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Provider_Dialog_Panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-
-        pCaja.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                pCajaMouseClicked(evt);
-            }
-        });
-
-        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICO/100px/icons8_Receipt_100px.png"))); // NOI18N
-        jLabel12.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("Caja");
-        jLabel7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-        javax.swing.GroupLayout pCajaLayout = new javax.swing.GroupLayout(pCaja);
-        pCaja.setLayout(pCajaLayout);
-        pCajaLayout.setHorizontalGroup(
-            pCajaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 119, Short.MAX_VALUE)
-            .addGroup(pCajaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(pCajaLayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addGroup(pCajaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(pCajaLayout.createSequentialGroup()
-                            .addGap(37, 37, 37)
-                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(jLabel12))
-                    .addContainerGap(13, Short.MAX_VALUE)))
-        );
-        pCajaLayout.setVerticalGroup(
-            pCajaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-            .addGroup(pCajaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(pCajaLayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(jLabel7)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-        );
-
-        pClientes.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                pClientesMouseClicked(evt);
-            }
-        });
-
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Clientes");
-        jLabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICO/100px/icons8_User_Groups_100px.png"))); // NOI18N
-        jLabel4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-        javax.swing.GroupLayout pClientesLayout = new javax.swing.GroupLayout(pClientes);
-        pClientes.setLayout(pClientesLayout);
-        pClientesLayout.setHorizontalGroup(
-            pClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 112, Short.MAX_VALUE)
-            .addGroup(pClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(pClientesLayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addGroup(pClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel4)
-                        .addGroup(pClientesLayout.createSequentialGroup()
-                            .addGap(26, 26, 26)
-                            .addComponent(jLabel2)))
-                    .addContainerGap()))
-        );
-        pClientesLayout.setVerticalGroup(
-            pClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 134, Short.MAX_VALUE)
-            .addGroup(pClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(pClientesLayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(jLabel4)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(jLabel2)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-        );
-
-        pCV.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                pCVMouseClicked(evt);
-            }
-        });
-
-        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setText("Compras / Ventas / Pagos");
-        jLabel10.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICO/100px/icons8_Handshake_100px.png"))); // NOI18N
-        jLabel3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-        javax.swing.GroupLayout pCVLayout = new javax.swing.GroupLayout(pCV);
-        pCV.setLayout(pCVLayout);
-        pCVLayout.setHorizontalGroup(
-            pCVLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pCVLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel10)
-                .addContainerGap())
-            .addGroup(pCVLayout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-        pCVLayout.setVerticalGroup(
-            pCVLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pCVLayout.createSequentialGroup()
-                .addGap(9, 9, 9)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel10)
-                .addContainerGap())
-        );
-
-        pEmpleados.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                pEmpleadosMouseClicked(evt);
-            }
-        });
-
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICO/100px/icons8_Online_Support_100px.png"))); // NOI18N
-        jLabel5.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        jLabel5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-
-        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setText("Empleados");
-        jLabel9.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-        javax.swing.GroupLayout pEmpleadosLayout = new javax.swing.GroupLayout(pEmpleados);
-        pEmpleados.setLayout(pEmpleadosLayout);
-        pEmpleadosLayout.setHorizontalGroup(
-            pEmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 124, Short.MAX_VALUE)
-            .addGroup(pEmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(pEmpleadosLayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addGroup(pEmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pEmpleadosLayout.createSequentialGroup()
-                            .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(12, 12, 12))
-                        .addComponent(jLabel5))
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-        );
-        pEmpleadosLayout.setVerticalGroup(
-            pEmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 146, Short.MAX_VALUE)
-            .addGroup(pEmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(pEmpleadosLayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(jLabel5)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(jLabel9)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-        );
-
-        pProductos.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                pProductosMouseClicked(evt);
-            }
-        });
-
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Productos");
-        jLabel1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICO/100px/icons8_Ingredients_100px.png"))); // NOI18N
-        jLabel14.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-        javax.swing.GroupLayout pProductosLayout = new javax.swing.GroupLayout(pProductos);
-        pProductos.setLayout(pProductosLayout);
-        pProductosLayout.setHorizontalGroup(
-            pProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pProductosLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(pProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pProductosLayout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(21, 21, 21))
-                    .addGroup(pProductosLayout.createSequentialGroup()
-                        .addComponent(jLabel14)
-                        .addContainerGap())))
-        );
-        pProductosLayout.setVerticalGroup(
-            pProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pProductosLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel14)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        pProveedores.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                pProveedoresMouseClicked(evt);
-            }
-        });
-
-        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICO/100px/icons8_Conference_100px.png"))); // NOI18N
-        jLabel11.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        jLabel11.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel11.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-
-        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel16.setText("Proveedores");
-        jLabel16.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-        javax.swing.GroupLayout pProveedoresLayout = new javax.swing.GroupLayout(pProveedores);
-        pProveedores.setLayout(pProveedoresLayout);
-        pProveedoresLayout.setHorizontalGroup(
-            pProveedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 112, Short.MAX_VALUE)
-            .addGroup(pProveedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(pProveedoresLayout.createSequentialGroup()
-                    .addGroup(pProveedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(pProveedoresLayout.createSequentialGroup()
-                            .addContainerGap()
-                            .addComponent(jLabel11))
-                        .addGroup(pProveedoresLayout.createSequentialGroup()
-                            .addGap(21, 21, 21)
-                            .addComponent(jLabel16)))
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-        );
-        pProveedoresLayout.setVerticalGroup(
-            pProveedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 134, Short.MAX_VALUE)
-            .addGroup(pProveedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(pProveedoresLayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(jLabel11)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(jLabel16)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-        );
-
-        javax.swing.GroupLayout internalPanelLayout = new javax.swing.GroupLayout(internalPanel);
-        internalPanel.setLayout(internalPanelLayout);
-        internalPanelLayout.setHorizontalGroup(
-            internalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(internalPanelLayout.createSequentialGroup()
-                .addContainerGap(86, Short.MAX_VALUE)
-                .addGroup(internalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(internalPanelLayout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(pProveedores, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(pCV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(internalPanelLayout.createSequentialGroup()
-                        .addGap(14, 14, 14)
-                        .addComponent(pCaja, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 112, Short.MAX_VALUE)
-                .addGroup(internalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(pEmpleados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(pClientes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(pProductos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(101, Short.MAX_VALUE))
-        );
-        internalPanelLayout.setVerticalGroup(
-            internalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(internalPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(internalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(pClientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(pCaja, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(internalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(pEmpleados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(pCV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(internalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(pProductos, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(pProveedores, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        CV_TabbedPane.setForeground(new java.awt.Color(255, 255, 255));
-        CV_TabbedPane.setTabLayoutPolicy(javax.swing.JTabbedPane.SCROLL_TAB_LAYOUT);
-        CV_TabbedPane.setTabPlacement(javax.swing.JTabbedPane.LEFT);
-        CV_TabbedPane.setToolTipText("");
-        CV_TabbedPane.setAutoscrolls(true);
-        CV_TabbedPane.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        CV_TabbedPane.setDoubleBuffered(true);
-        CV_TabbedPane.setFocusCycleRoot(true);
-        CV_TabbedPane.setFocusTraversalPolicyProvider(true);
-        CV_TabbedPane.setOpaque(true);
-        CV_TabbedPane.addChangeListener(new javax.swing.event.ChangeListener() {
-            public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                CV_TabbedPaneStateChanged(evt);
-            }
-        });
-
-        jLabel35.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
-        jLabel35.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel35.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel35.setText("Listado de Compras");
-
-        jScrollPane9.setOpaque(false);
-
-        Compras_Table.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "ID", "RTN Proveedor", "CAI", "Número de documentos fiscales", "Subtotal compra", "Fecha"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Float.class, java.lang.Object.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        Compras_Table.setDebugGraphicsOptions(javax.swing.DebugGraphics.BUFFERED_OPTION);
-        Compras_Table.setDropMode(javax.swing.DropMode.INSERT_COLS);
-        Compras_Table.setEditingColumn(-1);
-        Compras_Table.setEditingRow(-1);
-        Compras_Table.setOpaque(false);
-        Compras_Table.setRowSelectionAllowed(false);
-        Compras_Table.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        Compras_Table.setUpdateSelectionOnSort(false);
-        Compras_Table.setVerifyInputWhenFocusTarget(false);
-        jScrollPane9.setViewportView(Compras_Table);
-
-        javax.swing.GroupLayout Compras_SP_panelLayout = new javax.swing.GroupLayout(Compras_SP_panel);
-        Compras_SP_panel.setLayout(Compras_SP_panelLayout);
-        Compras_SP_panelLayout.setHorizontalGroup(
-            Compras_SP_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Compras_SP_panelLayout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addGroup(Compras_SP_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(Compras_SP_panelLayout.createSequentialGroup()
-                        .addComponent(jLabel35)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(Compras_SP_panelLayout.createSequentialGroup()
-                        .addComponent(jScrollPane9, javax.swing.GroupLayout.DEFAULT_SIZE, 721, Short.MAX_VALUE)
-                        .addGap(19, 19, 19))))
-        );
-        Compras_SP_panelLayout.setVerticalGroup(
-            Compras_SP_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Compras_SP_panelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel35)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane9, javax.swing.GroupLayout.DEFAULT_SIZE, 397, Short.MAX_VALUE)
-                .addGap(23, 23, 23))
-        );
-
-        Compras_SP.setViewportView(Compras_SP_panel);
-
-        CV_TabbedPane.addTab("Compras", Compras_SP);
-
-        jLabel36.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
-        jLabel36.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel36.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel36.setText("Listado de Ventas");
-
-        jScrollPane10.setOpaque(false);
-
-        Ventas_Table.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "ID", "Ingreso exento", "Ingreso gravado", "Impuesto", "Fecha"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.Float.class, java.lang.Float.class, java.lang.Float.class, java.lang.Object.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        Ventas_Table.setDebugGraphicsOptions(javax.swing.DebugGraphics.BUFFERED_OPTION);
-        Ventas_Table.setDropMode(javax.swing.DropMode.INSERT_COLS);
-        Ventas_Table.setEditingColumn(-1);
-        Ventas_Table.setEditingRow(-1);
-        Ventas_Table.setOpaque(false);
-        Ventas_Table.setRowSelectionAllowed(false);
-        Ventas_Table.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        Ventas_Table.setUpdateSelectionOnSort(false);
-        Ventas_Table.setVerifyInputWhenFocusTarget(false);
-        jScrollPane10.setViewportView(Ventas_Table);
-
-        javax.swing.GroupLayout Ventas_SP_panelLayout = new javax.swing.GroupLayout(Ventas_SP_panel);
-        Ventas_SP_panel.setLayout(Ventas_SP_panelLayout);
-        Ventas_SP_panelLayout.setHorizontalGroup(
-            Ventas_SP_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Ventas_SP_panelLayout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addGroup(Ventas_SP_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(Ventas_SP_panelLayout.createSequentialGroup()
-                        .addComponent(jScrollPane10, javax.swing.GroupLayout.DEFAULT_SIZE, 721, Short.MAX_VALUE)
-                        .addGap(19, 19, 19))
-                    .addGroup(Ventas_SP_panelLayout.createSequentialGroup()
-                        .addComponent(jLabel36)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-        );
-        Ventas_SP_panelLayout.setVerticalGroup(
-            Ventas_SP_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Ventas_SP_panelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel36)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane10, javax.swing.GroupLayout.DEFAULT_SIZE, 399, Short.MAX_VALUE)
-                .addGap(21, 21, 21))
-        );
-
-        Ventas_SP.setViewportView(Ventas_SP_panel);
-
-        CV_TabbedPane.addTab("Ventas", Ventas_SP);
-
-        jLabel37.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
-        jLabel37.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel37.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel37.setText("Listado de Pagos");
-
-        jScrollPane11.setOpaque(false);
-
-        Pagos_Table.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "ID", "Número crédito", "Abono", "Correo"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.Integer.class, java.lang.Float.class, java.lang.Object.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        Pagos_Table.setDebugGraphicsOptions(javax.swing.DebugGraphics.BUFFERED_OPTION);
-        Pagos_Table.setDropMode(javax.swing.DropMode.INSERT_COLS);
-        Pagos_Table.setEditingColumn(-1);
-        Pagos_Table.setEditingRow(-1);
-        Pagos_Table.setOpaque(false);
-        Pagos_Table.setRowSelectionAllowed(false);
-        Pagos_Table.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        Pagos_Table.setUpdateSelectionOnSort(false);
-        Pagos_Table.setVerifyInputWhenFocusTarget(false);
-        jScrollPane11.setViewportView(Pagos_Table);
-
-        javax.swing.GroupLayout Pagos_SP_panelLayout = new javax.swing.GroupLayout(Pagos_SP_panel);
-        Pagos_SP_panel.setLayout(Pagos_SP_panelLayout);
-        Pagos_SP_panelLayout.setHorizontalGroup(
-            Pagos_SP_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Pagos_SP_panelLayout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addGroup(Pagos_SP_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(Pagos_SP_panelLayout.createSequentialGroup()
-                        .addComponent(jScrollPane11, javax.swing.GroupLayout.DEFAULT_SIZE, 721, Short.MAX_VALUE)
-                        .addGap(19, 19, 19))
-                    .addGroup(Pagos_SP_panelLayout.createSequentialGroup()
-                        .addComponent(jLabel37)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-        );
-        Pagos_SP_panelLayout.setVerticalGroup(
-            Pagos_SP_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Pagos_SP_panelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel37)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane11, javax.swing.GroupLayout.DEFAULT_SIZE, 398, Short.MAX_VALUE)
-                .addGap(9, 9, 9))
-        );
-
-        Pagos_SP.setViewportView(Pagos_SP_panel);
-
-        CV_TabbedPane.addTab("Pagos", Pagos_SP);
-
-        javax.swing.GroupLayout panelCVLayout = new javax.swing.GroupLayout(panelCV);
-        panelCV.setLayout(panelCVLayout);
-        panelCVLayout.setHorizontalGroup(
-            panelCVLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(CV_TabbedPane)
-        );
-        panelCVLayout.setVerticalGroup(
-            panelCVLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(CV_TabbedPane, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 458, Short.MAX_VALUE)
+            .addComponent(User_TabbedPane, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 457, Short.MAX_VALUE)
         );
 
         labelBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICO/40px/icons8_Back_40px_1.png"))); // NOI18N
@@ -3140,13 +3467,22 @@ public class Desk extends javax.swing.JPanel {
             .addGroup(FirstPlaneLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(labelBack)
-                .addContainerGap(791, Short.MAX_VALUE))
-            .addComponent(panelCV, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(panelCaja, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(FirstPlaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(FirstPlaneLayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(internalPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addContainerGap()))
+                .addComponent(panelUser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(FirstPlaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(panelEmpleados, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(FirstPlaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(panelProductos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(FirstPlaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(panelClientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(FirstPlaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(panelProveedores, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(FirstPlaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(panelCV, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(FirstPlaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(internalPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         FirstPlaneLayout.setVerticalGroup(
             FirstPlaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3154,12 +3490,35 @@ public class Desk extends javax.swing.JPanel {
                 .addContainerGap()
                 .addComponent(labelBack)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(panelCV, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(panelCaja, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(FirstPlaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(FirstPlaneLayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(internalPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addContainerGap()))
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FirstPlaneLayout.createSequentialGroup()
+                    .addGap(53, 53, 53)
+                    .addComponent(panelUser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+            .addGroup(FirstPlaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FirstPlaneLayout.createSequentialGroup()
+                    .addGap(53, 53, 53)
+                    .addComponent(panelEmpleados, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+            .addGroup(FirstPlaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FirstPlaneLayout.createSequentialGroup()
+                    .addGap(54, 54, 54)
+                    .addComponent(panelProductos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+            .addGroup(FirstPlaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FirstPlaneLayout.createSequentialGroup()
+                    .addGap(52, 52, 52)
+                    .addComponent(panelClientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+            .addGroup(FirstPlaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FirstPlaneLayout.createSequentialGroup()
+                    .addGap(54, 54, 54)
+                    .addComponent(panelProveedores, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+            .addGroup(FirstPlaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FirstPlaneLayout.createSequentialGroup()
+                    .addGap(57, 57, 57)
+                    .addComponent(panelCV, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+            .addGroup(FirstPlaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FirstPlaneLayout.createSequentialGroup()
+                    .addGap(53, 53, 53)
+                    .addComponent(internalPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -3301,7 +3660,6 @@ public class Desk extends javax.swing.JPanel {
                 panelProveedores.setVisible(false);
                 panelClientes.setVisible(false);
                 panelCV.setVisible(false);
-                panelAjustes.setVisible(false);
                 panelProductos.setVisible(false);
                 panelEmpleados.setVisible(false);
                 panelUser.setVisible(false);
@@ -3927,6 +4285,46 @@ public class Desk extends javax.swing.JPanel {
         }
 
     }//GEN-LAST:event_CV_TabbedPaneStateChanged
+
+    private void Caja_TabbedPaneStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_Caja_TabbedPaneStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Caja_TabbedPaneStateChanged
+
+    private void Caja_Compra_Add_DoneMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Caja_Compra_Add_DoneMouseClicked
+        try {
+            property.getPurchaseList().add(new Purchases(Integer.parseInt(Compra_RTN.getText()), Compra_CAI.getText(), Compra_numeroFiscal.getText(), Float.parseFloat(Compra_SubT.getText()), Integer.parseInt(Compra_ID.getText()), Compra_Fecha.getDate().toGMTString()));
+            Compra_CAI.setText("");
+            Compra_Fecha.setDate(new Date());
+            Compra_ID.setText("");
+            Compra_RTN.setText("");
+            Compra_SubT.setText("");
+            Compra_numeroFiscal.setText("");
+        } catch (Exception e) {
+        }
+    }//GEN-LAST:event_Caja_Compra_Add_DoneMouseClicked
+
+    private void Caja_Compra_Add_Done1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Caja_Compra_Add_Done1MouseClicked
+        try {
+            property.getSellList().add(new DailySales(Integer.parseInt(Venta_ID.getText()), Float.parseFloat(Venta_IngresoExento.getText()), Float.parseFloat(Venta_IngresoGravado.getText()), Float.parseFloat(Venta_Impuesto.getText()), Venta_Fecha.getDate().toGMTString()));
+            Venta_ID.setText("");
+            Venta_Fecha.setDate(new Date());
+            Venta_Impuesto.setText("");
+            Venta_IngresoExento.setText("");
+            Venta_IngresoGravado.setText("");
+        } catch (Exception e) {
+        }
+    }//GEN-LAST:event_Caja_Compra_Add_Done1MouseClicked
+
+    private void Caja_Compra_Add_Done2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Caja_Compra_Add_Done2MouseClicked
+        try {
+            property.getPayList().add(new Payment(Integer.parseInt(Pago_ID.getText()), Integer.parseInt(Pago_Num.getText()), Float.parseFloat(Pago_Abono.getText()), Pago_Fecha.getDate().toGMTString()));
+            Pago_ID.setText("");
+            Pago_Fecha.setDate(new Date());
+            Pago_Abono.setText("");
+            Pago_Num.setText("");
+        } catch (Exception e) {
+        }
+    }//GEN-LAST:event_Caja_Compra_Add_Done2MouseClicked
     /**
      *
      * Establece ícono de ventana
@@ -3942,6 +4340,16 @@ public class Desk extends javax.swing.JPanel {
     private javax.swing.JTable Admin_User_Table;
     private javax.swing.JTextField Admin_user_edit;
     private javax.swing.JTabbedPane CV_TabbedPane;
+    private javax.swing.JLabel Caja_Compra_Add_Done;
+    private javax.swing.JLabel Caja_Compra_Add_Done1;
+    private javax.swing.JLabel Caja_Compra_Add_Done2;
+    private javax.swing.JScrollPane Caja_Compras_SP;
+    private javax.swing.JPanel Caja_Compras_SP_panel;
+    private javax.swing.JScrollPane Caja_Pagos_SP;
+    private javax.swing.JPanel Caja_Pagos_SP_panel;
+    private javax.swing.JPanel Caja_SP_panel;
+    private javax.swing.JTabbedPane Caja_TabbedPane;
+    private javax.swing.JScrollPane Caja_Ventas_SP;
     private javax.swing.JTextField Client_Add_City;
     private javax.swing.JTextField Client_Add_Department;
     private javax.swing.JTextField Client_Add_Email;
@@ -3988,6 +4396,12 @@ public class Desk extends javax.swing.JPanel {
     private javax.swing.JPanel Client_SP_ListPanel;
     private javax.swing.JLabel Client_Select_labelBack;
     private javax.swing.JTabbedPane Client_TabbedPane;
+    private javax.swing.JTextField Compra_CAI;
+    private com.toedter.calendar.JDateChooser Compra_Fecha;
+    private javax.swing.JTextField Compra_ID;
+    private javax.swing.JTextField Compra_RTN;
+    private javax.swing.JTextField Compra_SubT;
+    private javax.swing.JTextField Compra_numeroFiscal;
     private javax.swing.JScrollPane Compras_SP;
     private javax.swing.JPanel Compras_SP_panel;
     private javax.swing.JTable Compras_Table;
@@ -3997,6 +4411,10 @@ public class Desk extends javax.swing.JPanel {
     private javax.swing.JTable Employee_Table;
     private javax.swing.JPanel FirstPlane;
     private javax.swing.JTextField ID;
+    private javax.swing.JTextField Pago_Abono;
+    private com.toedter.calendar.JDateChooser Pago_Fecha;
+    private javax.swing.JTextField Pago_ID;
+    private javax.swing.JTextField Pago_Num;
     private javax.swing.JScrollPane Pagos_SP;
     private javax.swing.JPanel Pagos_SP_panel;
     private javax.swing.JTable Pagos_Table;
@@ -4071,6 +4489,11 @@ public class Desk extends javax.swing.JPanel {
     private javax.swing.JScrollPane User_SPGeneral;
     private javax.swing.JPanel User_SPGeneral_panel;
     private javax.swing.JTabbedPane User_TabbedPane;
+    private com.toedter.calendar.JDateChooser Venta_Fecha;
+    private javax.swing.JTextField Venta_ID;
+    private javax.swing.JTextField Venta_Impuesto;
+    private javax.swing.JTextField Venta_IngresoExento;
+    private javax.swing.JTextField Venta_IngresoGravado;
     private javax.swing.JScrollPane Ventas_SP;
     private javax.swing.JPanel Ventas_SP_panel;
     private javax.swing.JTable Ventas_Table;
@@ -4083,6 +4506,11 @@ public class Desk extends javax.swing.JPanel {
     private javax.swing.JPanel internalPanel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel100;
+    private javax.swing.JLabel jLabel101;
+    private javax.swing.JLabel jLabel102;
+    private javax.swing.JLabel jLabel104;
+    private javax.swing.JLabel jLabel105;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel110;
     private javax.swing.JLabel jLabel111;
@@ -4093,7 +4521,6 @@ public class Desk extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
@@ -4113,10 +4540,13 @@ public class Desk extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
+    private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel47;
     private javax.swing.JLabel jLabel48;
     private javax.swing.JLabel jLabel49;
@@ -4131,7 +4561,6 @@ public class Desk extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel57;
     private javax.swing.JLabel jLabel58;
     private javax.swing.JLabel jLabel59;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel60;
     private javax.swing.JLabel jLabel61;
     private javax.swing.JLabel jLabel62;
@@ -4147,10 +4576,20 @@ public class Desk extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel71;
     private javax.swing.JLabel jLabel74;
     private javax.swing.JLabel jLabel75;
+    private javax.swing.JLabel jLabel76;
     private javax.swing.JLabel jLabel77;
     private javax.swing.JLabel jLabel78;
+    private javax.swing.JLabel jLabel79;
+    private javax.swing.JLabel jLabel80;
+    private javax.swing.JLabel jLabel81;
     private javax.swing.JLabel jLabel82;
     private javax.swing.JLabel jLabel83;
+    private javax.swing.JLabel jLabel84;
+    private javax.swing.JLabel jLabel85;
+    private javax.swing.JLabel jLabel86;
+    private javax.swing.JLabel jLabel87;
+    private javax.swing.JLabel jLabel88;
+    private javax.swing.JLabel jLabel89;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabel90;
     private javax.swing.JLabel jLabel91;
@@ -4187,7 +4626,6 @@ public class Desk extends javax.swing.JPanel {
     private javax.swing.JPanel pEmpleados;
     private javax.swing.JPanel pProductos;
     private javax.swing.JPanel pProveedores;
-    private javax.swing.JPanel panelAjustes;
     private javax.swing.JPanel panelCV;
     private javax.swing.JPanel panelCaja;
     private javax.swing.JPanel panelClientes;
@@ -4278,7 +4716,6 @@ public class Desk extends javax.swing.JPanel {
             panelCaja.setBackground(this.getBackground());
             panelClientes.setBackground(this.getBackground());
             panelCV.setBackground(this.getBackground());
-            panelAjustes.setBackground(this.getBackground());
             panelProductos.setBackground(this.getBackground());
             panelEmpleados.setBackground(this.getBackground());
             panelUser.setBackground(this.getBackground());
@@ -4324,6 +4761,12 @@ public class Desk extends javax.swing.JPanel {
             Ventas_SP_panel.setBackground(this.getBackground());
             Pagos_SP.setBackground(this.getBackground());
             Pagos_SP_panel.setBackground(this.getBackground());
+            Caja_Compras_SP.setBackground(this.getBackground());
+            Caja_Compras_SP_panel.setBackground(this.getBackground());
+            Caja_Ventas_SP.setBackground(this.getBackground());
+            Caja_SP_panel.setBackground(this.getBackground());
+            Caja_Pagos_SP.setBackground(this.getBackground());
+            Caja_Pagos_SP_panel.setBackground(this.getBackground());
         } catch (Exception e) {
         }
     }
