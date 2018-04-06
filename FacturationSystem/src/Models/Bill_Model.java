@@ -6,8 +6,13 @@
 package Models;
 
 import Entities.Bill;
+import Resources.Account;
+import java.sql.Date;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -73,6 +78,30 @@ public class Bill_Model extends Model{
             Logger.getLogger(Bill_Model.class.getName()).log(Level.SEVERE, null, ex);
         }
        super.close();
+    }
+    public ArrayList<Bill> getView() {
+        ArrayList<Bill> view = new ArrayList();
+        super.connect();
+        try {
+            Statement st = connect.createStatement();
+            ResultSet rs = st.executeQuery("Select * from VW_FACTURA");
+            while (rs.next()) {
+                int numeroFactura = rs.  getInt("numeroFactura");
+                String codigoFactura = rs.getString("codigoFactura");
+                int idVenta = rs.getInt("idVenta");
+                boolean credito = rs.getBoolean("credito");
+                float   impuesto = rs.getFloat("impuesto");
+                float totalFactura = rs.getFloat("totalFactura");
+                int numeroCliente = rs.getInt("numeroCliente");
+                Date fechaEmision= rs.getDate("fechaEmision");
+
+                view.add(new Bill(numeroFactura ,codigoFactura , idVenta  ,credito , impuesto , totalFactura , numeroCliente , fechaEmision));
+            }
+
+        } catch (Exception ex) {
+        }
+        super.close();
+        return view;
     }
     
 }
