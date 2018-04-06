@@ -4,10 +4,18 @@ package Entities;
  *
  * @author Dario
  */
-public class PersonaNatural {
+public class PersonaNatural{
     private int numClient;
     private String id;
 
+    public PersonaNatural() {
+    }
+
+    public PersonaNatural(int numClient, String id) {
+        this.numClient = numClient;
+        this.id = id;
+    }
+    
     public int getNumClient() {
         return numClient;
     }

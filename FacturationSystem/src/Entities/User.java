@@ -11,6 +11,14 @@ public class User {
     private String correo;
     private String telefono;
 
+    public User(String id, String nombre, String password, String correo, String telefono) {
+        this.id = id;
+        this.nombre = nombre;
+        this.password = password;
+        this.correo = correo;
+        this.telefono = telefono;
+    }
+    
     public String getId() {
         return id;
     }
@@ -49,5 +57,10 @@ public class User {
 
     public void setTelefono(String telefono) {
         this.telefono = telefono;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" + "id=" + id + ", nombre=" + nombre + ", password=" + password + ", correo=" + correo + ", telefono=" + telefono + '}';
     }
 }

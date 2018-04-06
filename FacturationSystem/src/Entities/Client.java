@@ -13,6 +13,19 @@ public class Client {
     private String municipio;
     private String ciudad;
 
+    public Client() {
+    }
+    
+    public Client(int numClient, String nombre, String correo, String telefono, String departamento, String municipio, String ciudad) {
+        this.numClient = numClient;
+        this.nombre = nombre;
+        this.correo = correo;
+        this.telefono = telefono;
+        this.departamento = departamento;
+        this.municipio = municipio;
+        this.ciudad = ciudad;
+    }
+    
     public int getNumClient() {
         return numClient;
     }

@@ -11,7 +11,7 @@ package Entities;
  */
 public class Inventory {
     private int idProducto;
-    private String NombreProcto;
+    private String NombreProducto;
     private float impuesto;
     private float precioCaja;
     private float precioUnidad;
@@ -22,6 +22,19 @@ public class Inventory {
     private int cantidadUnidad;
     private String tipo;
 
+    public Inventory(int idProducto, String NombreProducto, float impuesto, float precioCaja, float precioUnidad, float precioVentaCaja, float precioVentaUnidad, String fechaVencimiento, int cantidadCaja, int cantidadUnidad, String tipo) {
+        this.idProducto = idProducto;
+        this.NombreProducto = NombreProducto;
+        this.impuesto = impuesto;
+        this.precioCaja = precioCaja;
+        this.precioUnidad = precioUnidad;
+        this.precioVentaCaja = precioVentaCaja;
+        this.precioVentaUnidad = precioVentaUnidad;
+        this.fechaVencimiento = fechaVencimiento;
+        this.cantidadCaja = cantidadCaja;
+        this.cantidadUnidad = cantidadUnidad;
+        this.tipo = tipo;
+    }
     
     public int getIdProducto() {
         return idProducto;
@@ -31,12 +44,12 @@ public class Inventory {
         this.idProducto = idProducto;
     }
 
-    public String getNombreProcto() {
-        return NombreProcto;
+    public String getNombreProducto() {
+        return NombreProducto;
     }
 
-    public void setNombreProcto(String NombreProcto) {
-        this.NombreProcto = NombreProcto;
+    public void setNombreProducto(String NombreProcto) {
+        this.NombreProducto = NombreProcto;
     }
 
     public float getImpuesto() {
