@@ -219,7 +219,7 @@ public class Property implements Serializable {
 
     public ArrayList<Purchases> getPurchaseList() {
         Purchases_Model m = new Purchases_Model();
-        productList = m.getView();
+        PurchaseList = m.getView();
         return PurchaseList;
     }
 

@@ -7,6 +7,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -71,8 +72,8 @@ public class Purchases_Model extends Model {
         super.close();
     }
 
-    public LinkedList getView() {
-        LinkedList<Purchases> view = new LinkedList();
+    public ArrayList<Purchases> getView() {
+        ArrayList<Purchases> view = new ArrayList();
         super.connect();
         try {
             Statement st = connect.createStatement();
