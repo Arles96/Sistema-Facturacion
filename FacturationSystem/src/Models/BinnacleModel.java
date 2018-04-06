@@ -46,11 +46,11 @@ public class BinnacleModel extends Model {
 
     @Override
     public void update(Object entity) {
-        
+        // La bitacora no se actualiza
     }
 
     @Override
-    public void delete(Object id) {
+    public void delete(Object id) { 
         super.connect();
         try{
             PreparedStatement st = connect.prepareStatement("Delete from Bitacora where id_producto=?");

@@ -7,6 +7,7 @@ import Entities.User;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.LinkedList;
 
 /**
@@ -102,8 +103,8 @@ public class ClientModel extends Model{
         super.close();
     }
     
-    public LinkedList getView(){
-        LinkedList<Client> view = new LinkedList();
+    public ArrayList<Client> getView(){
+        ArrayList<Client> view = new ArrayList();
         super.connect();
         try{
             Statement st = connect.createStatement();
@@ -126,8 +127,8 @@ public class ClientModel extends Model{
         return view;
     }
     
-    public LinkedList getViewJuridica(){
-        LinkedList<PersonaJuridica> view = new LinkedList();
+    public ArrayList<PersonaJuridica> getViewJuridica(){
+        ArrayList<PersonaJuridica> view = new ArrayList();
         super.connect();
         try{
             Statement st = connect.createStatement();
@@ -145,8 +146,8 @@ public class ClientModel extends Model{
         return view;
     }
     
-    public LinkedList getViewNatural(){
-        LinkedList<PersonaNatural> view = new LinkedList();
+    public ArrayList<PersonaNatural> getViewNatural(){
+        ArrayList<PersonaNatural> view = new ArrayList();
         super.connect();
         try{
             Statement st = connect.createStatement();
@@ -154,7 +155,6 @@ public class ClientModel extends Model{
             while(rs.next()){
                 int numCliente = rs.getInt("num_cliente");
                 String rtn = rs.getString("rtn");
-                
                 view.add(new PersonaNatural( rtn, numCliente));
             }
             
