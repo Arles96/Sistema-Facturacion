@@ -121,6 +121,8 @@ public class Property implements Serializable {
     }
 
     public ArrayList<Account> getAdminList() {
+        UserModel m = new UserModel();
+        adminList = m.getView();
         return adminList;
     }
 

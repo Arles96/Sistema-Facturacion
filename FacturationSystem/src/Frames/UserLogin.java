@@ -199,6 +199,7 @@ public class UserLogin extends javax.swing.JFrame {
                     workSheet.getItemLogout().setEnabled(true);
                     workSheet.getItemLogin().setEnabled(false);
                     workSheet.getStatusBar1().refresh();
+                    setVisible(false);
                     this.dispose();
                     workSheet.setVisible(true);
                 }

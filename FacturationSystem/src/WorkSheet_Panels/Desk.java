@@ -3784,6 +3784,8 @@ public class Desk extends javax.swing.JPanel {
                 level = 1;
             }
             property.getAccountList().get(Admin_User_Table.getSelectedRow()).setLevel(level);
+            UserModel m = new UserModel();
+            m.update(property.getAccountList().get(Admin_User_Table.getSelectedRow()));
             Admin_User_refreshTable();
             Admin_user_edit.setText("");
             buttomAdministrator.setSelected(false);
@@ -3864,6 +3866,8 @@ public class Desk extends javax.swing.JPanel {
 
     private void Product_List_RemoveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Product_List_RemoveMouseClicked
         if (Product_List_Table.getSelectedRow() > -1) {
+            InventarioModel m = new InventarioModel();
+            m.delete(property.getProductList().get(Product_Selected_row));
             property.getProductList().remove(Product_List_Table.getSelectedRow());
             Product_refreshTable();
         }
@@ -3912,14 +3916,15 @@ public class Desk extends javax.swing.JPanel {
     private void Product_Add_labelDoneMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Product_Add_labelDoneMouseClicked
         if (!Product_Add_Name.getText().isEmpty() && !Product_Add_Type.getText().isEmpty() && !Product_Add_impu.getText().isEmpty()) {
             try {
-                property.getProductList().add(new Inventory(property.getLastProductId() + 1, Product_Add_Name.getText(),
+                Inventory i = new Inventory(property.getLastProductId() + 1, Product_Add_Name.getText(),
                         Float.parseFloat(Product_Add_impu.getText()), Float.parseFloat(Product_Add_priceBox.getText()),
                         Float.parseFloat(Product_Add_priceU.getText()), Float.parseFloat(Product_Add_priceBoxSell.getText()),
                         Float.parseFloat(Product_Add_priceUSell.getText()),
                         Product_Add_Date.getDate().toString(), Integer.parseInt(Product_Add_CantU.getValue().toString()),
-                        Integer.parseInt(Product_Add_CantBox.getValue().toString()), Product_Add_Type.getText()));
+                        Integer.parseInt(Product_Add_CantBox.getValue().toString()), Product_Add_Type.getText());
+                property.getProductList().add(i);
                 InventarioModel m = new InventarioModel();
-                m.insert(property.getProductList().get(property.getProductList().size() - 1));
+                m.insert(i);
                 property.setLastProductId(property.getLastProductId() + 1);
                 Product_Add_refresh();
                 Product_Edit_Name.setEnabled(false);
@@ -3949,6 +3954,8 @@ public class Desk extends javax.swing.JPanel {
                         Float.parseFloat(Product_Edit_priceUSell.getText()),
                         Product_Edit_Date.getDate().toString(), Integer.parseInt(Product_Edit_CantU.getValue().toString()),
                         Integer.parseInt(Product_Edit_CantBox.getValue().toString()), Product_Edit_Type.getText()));
+                InventarioModel m = new InventarioModel();
+                m.update(property.getProductList().get(Product_Selected_row));
                 Product_Edit_refresh();
                 Product_Edit_Name.setEnabled(false);
                 Product_Edit_Type.setEnabled(false);
@@ -3987,19 +3994,23 @@ public class Desk extends javax.swing.JPanel {
                 && !Client_Add_Municipio.getText().isEmpty() && !Client_Add_Phone.getText().isEmpty()) {
             try {
                 if (Client_Add_Type_Person.isSelected()) {
-                    property.getClientList().add(new PersonaNatural(
+                    PersonaNatural p = new PersonaNatural(
                             Client_Add_ID_RTN.getText(), property.getLastNumClient() + 1, Client_Add_Name.getText(),
                             Client_Add_Email.getText(), Client_Add_Phone.getText(), Client_Add_Department.getText(),
                             Client_Add_Municipio.getText(), Client_Add_City.getText()
-                    ));
+                    );
+                    property.getClientList().add(p);
                     ClientModel m = new ClientModel();
-                    m.insert(property.getClientList().get(property.getClientList().size() - 1));
+                    m.insert(p);
                 } else {
-                    property.getClientList().add(new PersonaJuridica(
+                    PersonaJuridica p = new PersonaJuridica(
                             Client_Add_ID_RTN.getText(), property.getLastNumClient() + 1, Client_Add_Name.getText(),
                             Client_Add_Email.getText(), Client_Add_Phone.getText(), Client_Add_Department.getText(),
                             Client_Add_Municipio.getText(), Client_Add_City.getText()
-                    ));
+                    );
+                    property.getClientList().add(p);
+                    ClientModel m = new ClientModel();
+                    m.insert(p);
                 }
                 property.setLastNumClient(property.getLastNumClient() + 1);
                 Client_Add_refresh();
@@ -4011,6 +4022,8 @@ public class Desk extends javax.swing.JPanel {
 
     private void Client_List_RemoveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Client_List_RemoveMouseClicked
         if (Client_List_Table.getSelectedRow() > -1) {
+            ClientModel m = new ClientModel();
+            m.delete(property.getClientList().get(Client_Selected_row));
             property.getClientList().remove(Client_List_Table.getSelectedRow());
             Client_refreshTable();
         }
@@ -4122,6 +4135,8 @@ public class Desk extends javax.swing.JPanel {
                             Client_Edit_Email.getText(), Client_Edit_Phone.getText(), Client_Edit_Department.getText(),
                             Client_Edit_Municipio.getText(), Client_Edit_City.getText()
                     ));
+                    ClientModel m = new ClientModel();
+                    m.update(property.getClientList().get(Client_Selected_row));
                 } else {
                     property.getClientList().set(Client_Selected_row, new PersonaJuridica(
                             Client_Edit_ID_RTN.getText(), property.getLastNumClient() + 1, Client_Edit_Name.getText(),
@@ -4172,6 +4187,8 @@ public class Desk extends javax.swing.JPanel {
 
     private void Provider_List_RemoveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Provider_List_RemoveMouseClicked
         if (Provider_List_Table.getSelectedRow() > -1) {
+            Provider_Model m = new Provider_Model();
+            m.delete(property.getProviderList().get(Provider_Selected_row));
             property.getProviderList().remove(Provider_List_Table.getSelectedRow());
             Provider_refreshTable();
         }
@@ -4232,6 +4249,8 @@ public class Desk extends javax.swing.JPanel {
                         Provider_Edit_RTN.getText(), Provider_Edit_Name.getText(),
                         Provider_Edit_Address.getText(), Provider_Edit_Email.getText(), Provider_Edit_Phone.getText()
                 ));
+                Provider_Model m = new Provider_Model();
+                m.update(property.getProviderList().get(Provider_Selected_row));
                 Provider_Edit_Name.setEnabled(false);
                 Provider_Edit_Email.setEnabled(false);
                 Provider_Edit_Phone.setEnabled(false);
@@ -4248,11 +4267,12 @@ public class Desk extends javax.swing.JPanel {
         if (!Provider_Add_Name.getText().isEmpty() && !Provider_Add_Address.getText().isEmpty()
                 && !Provider_Add_RTN.getText().isEmpty() && !Provider_Add_Email.getText().isEmpty() && !Provider_Add_Phone.getText().isEmpty()) {
             try {
-                property.getProviderList().add(new Provider(Provider_Add_RTN.getText(), Provider_Add_Name.getText(),
+                Provider p = new Provider(Provider_Add_RTN.getText(), Provider_Add_Name.getText(),
                         Provider_Add_Address.getText(), Provider_Add_Email.getText(), Provider_Add_Phone.getText()
-                ));
+                );
+                property.getProviderList().add(p);
                 Provider_Model m = new Provider_Model();
-                m.insert(property.getProviderList().get(property.getProviderList().size() - 1));
+                m.insert(p);
                 Provider_Add_refresh();
             } catch (Exception e) {
                 e.printStackTrace();
@@ -4307,9 +4327,10 @@ public class Desk extends javax.swing.JPanel {
 
     private void Caja_Compra_Add_DoneMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Caja_Compra_Add_DoneMouseClicked
         try {
-            property.getPurchaseList().add(new Purchases(Integer.parseInt(Compra_RTN.getText()), Compra_CAI.getText(), Compra_numeroFiscal.getText(), Float.parseFloat(Compra_SubT.getText()), Integer.parseInt(Compra_ID.getText()), Compra_Fecha.getDate().toGMTString()));
+            Purchases p = new Purchases(Integer.parseInt(Compra_RTN.getText()), Compra_CAI.getText(), Compra_numeroFiscal.getText(), Float.parseFloat(Compra_SubT.getText()), Integer.parseInt(Compra_ID.getText()), Compra_Fecha.getDate().toGMTString());
+            property.getPurchaseList().add(p);
             Purchases_Model m = new Purchases_Model();
-            m.insert(property.getPurchaseList().get(property.getPurchaseList().size() - 1));
+            m.insert(p);
             Compra_CAI.setText("");
             Compra_Fecha.setDate(new Date());
             Compra_ID.setText("");
@@ -4322,9 +4343,10 @@ public class Desk extends javax.swing.JPanel {
 
     private void Caja_Compra_Add_Done1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Caja_Compra_Add_Done1MouseClicked
         try {
-            property.getSellList().add(new DailySales(Integer.parseInt(Venta_ID.getText()), Float.parseFloat(Venta_IngresoExento.getText()), Float.parseFloat(Venta_IngresoGravado.getText()), Float.parseFloat(Venta_Impuesto.getText()), Venta_Fecha.getDate().toGMTString()));
+            DailySales d = new DailySales(Integer.parseInt(Venta_ID.getText()), Float.parseFloat(Venta_IngresoExento.getText()), Float.parseFloat(Venta_IngresoGravado.getText()), Float.parseFloat(Venta_Impuesto.getText()), Venta_Fecha.getDate().toGMTString());
+            property.getSellList().add(d);
             DailySales_Model m = new DailySales_Model();
-            m.insert(property.getSellList().get(property.getSellList().size() - 1));
+            m.insert(d);
             Venta_ID.setText("");
             Venta_Fecha.setDate(new Date());
             Venta_Impuesto.setText("");
@@ -4336,9 +4358,10 @@ public class Desk extends javax.swing.JPanel {
 
     private void Caja_Compra_Add_Done2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Caja_Compra_Add_Done2MouseClicked
         try {
-            property.getPayList().add(new Payment(Integer.parseInt(Pago_ID.getText()), Integer.parseInt(Pago_Num.getText()), Float.parseFloat(Pago_Abono.getText()), Pago_Fecha.getDate().toGMTString()));
+            Payment p = new Payment(Integer.parseInt(Pago_ID.getText()), Integer.parseInt(Pago_Num.getText()), Float.parseFloat(Pago_Abono.getText()), Pago_Fecha.getDate().toGMTString());
+            property.getPayList().add(p);
             Payment_Model m = new Payment_Model();
-            m.insert(property.getPayList().get(property.getPayList().size() - 1));
+            m.insert(p);
             Pago_ID.setText("");
             Pago_Fecha.setDate(new Date());
             Pago_Abono.setText("");
