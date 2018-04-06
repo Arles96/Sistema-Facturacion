@@ -5,9 +5,13 @@
  */
 package Models;
 
+import Entities.Payment;
 import Entities.Provider;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.LinkedList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -69,6 +73,26 @@ public class Provider_Model extends Model {
             Logger.getLogger(Provider_Model.class.getName()).log(Level.SEVERE, null, ex);
         }
         super.close();
+    }
 
+    public LinkedList getView() {
+        LinkedList<Provider> view = new LinkedList();
+        super.connect();
+        try {
+            Statement st = connect.createStatement();
+            ResultSet rs = st.executeQuery("Select * from VW_PROVIDER");
+            while (rs.next()) {
+                String name = rs.getString("nombre");
+                String address = rs.getString("direccion");
+                String email = rs.getString("correo");
+                String cellphone = rs.getString("telefono");
+                String rtn_provider = rs.getString("rtn_proveedor");
+                view.add(new Provider(rtn_provider, name, address, email, cellphone));
+            }
+
+        } catch (Exception ex) {
+        }
+        super.close();
+        return view;
     }
 }
