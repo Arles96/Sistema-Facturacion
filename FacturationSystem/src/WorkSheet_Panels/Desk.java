@@ -4,6 +4,7 @@ import Entities.Client;
 import Entities.Inventory;
 import Entities.PersonaJuridica;
 import Entities.PersonaNatural;
+import Entities.Provider;
 import Frames.WorkSheet;
 import Resources.Property;
 import Resources.Account;
@@ -31,50 +32,60 @@ public class Desk extends javax.swing.JPanel {
      */
     public Desk() {
         initComponents();
-        Product_Dialog_Select.setLocationRelativeTo(null);
-        Product_Dialog_Select.pack();
-        Client_Dialog_Select.setLocationRelativeTo(null);
-        Client_Dialog_Select.pack();
-        pAjustes.setBackground(this.getBackground());
-        pCV.setBackground(this.getBackground());
-        pCaja.setBackground(this.getBackground());
-        pClientes.setBackground(this.getBackground());
-        pEmpleados.setBackground(this.getBackground());
-        pProductos.setBackground(this.getBackground());
-        panelCaja.setVisible(false);
-        panelClientes.setVisible(false);
-        panelCV.setVisible(false);
-        panelAjustes.setVisible(false);
-        panelProductos.setVisible(false);
-        panelEmpleados.setVisible(false);
-        panelUser.setVisible(false);
-        panelStatistics.setVisible(false);
-        panelCaja.setBounds(internalPanel.getBounds());
-        panelCaja.setSize(internalPanel.getSize());
-        panelCaja.setLocation(labelBack.getY() + 8, labelBack.getX() + 8);
-        panelClientes.setBounds(internalPanel.getBounds());
-        panelClientes.setSize(internalPanel.getSize());
-        panelClientes.setLocation(labelBack.getY() + 8, labelBack.getX() + 8);
-        panelCV.setBounds(internalPanel.getBounds());
-        panelCV.setSize(internalPanel.getSize());
-        panelCV.setLocation(labelBack.getY() + 8, labelBack.getX() + 8);
-        panelAjustes.setBounds(internalPanel.getBounds());
-        panelAjustes.setSize(internalPanel.getSize());
-        panelAjustes.setLocation(labelBack.getY() + 8, labelBack.getX() + 8);
-        panelProductos.setBounds(internalPanel.getBounds());
-        panelProductos.setSize(internalPanel.getSize());
-        panelAjustes.setLocation(labelBack.getY() + 8, labelBack.getX() + 8);
-        panelEmpleados.setBounds(internalPanel.getBounds());
-        panelEmpleados.setSize(internalPanel.getSize());
-        panelEmpleados.setLocation(labelBack.getY() + 8, labelBack.getX() + 8);
-        panelStatistics.setBounds(internalPanel.getBounds());
-        panelStatistics.setSize(internalPanel.getSize());
-        panelStatistics.setLocation(labelBack.getY() + 8, labelBack.getX() + 8);
-        panelUser.setBounds(internalPanel.getBounds());
-        panelUser.setSize(internalPanel.getSize());
-        panelUser.setLocation(labelBack.getY() + 8, labelBack.getX() + 8);
-        Admin_user_edit.setVisible(false);
-        errorPhone.setVisible(false);
+        try {
+
+            Product_Dialog_Select.setLocationRelativeTo(null);
+            Product_Dialog_Select.pack();
+            Client_Dialog_Select.setLocationRelativeTo(null);
+            Client_Dialog_Select.pack();
+            Provider_Dialog_Select.setLocationRelativeTo(null);
+            Provider_Dialog_Select.pack();
+            pAjustes.setBackground(this.getBackground());
+            pCV.setBackground(this.getBackground());
+            pCaja.setBackground(this.getBackground());
+            pClientes.setBackground(this.getBackground());
+            pEmpleados.setBackground(this.getBackground());
+            pProductos.setBackground(this.getBackground());
+            panelCaja.setVisible(false);
+            panelClientes.setVisible(false);
+            panelCV.setVisible(false);
+            panelAjustes.setVisible(false);
+            panelProductos.setVisible(false);
+            panelEmpleados.setVisible(false);
+            panelUser.setVisible(false);
+            panelStatistics.setVisible(false);
+            panelProveedores.setVisible(false);
+            panelCaja.setBounds(internalPanel.getBounds());
+            panelCaja.setSize(internalPanel.getSize());
+            panelCaja.setLocation(labelBack.getY() + 8, labelBack.getX() + 8);
+            panelClientes.setBounds(internalPanel.getBounds());
+            panelClientes.setSize(internalPanel.getSize());
+            panelClientes.setLocation(labelBack.getY() + 8, labelBack.getX() + 8);
+            panelCV.setBounds(internalPanel.getBounds());
+            panelCV.setSize(internalPanel.getSize());
+            panelCV.setLocation(labelBack.getY() + 8, labelBack.getX() + 8);
+            panelAjustes.setBounds(internalPanel.getBounds());
+            panelAjustes.setSize(internalPanel.getSize());
+            panelAjustes.setLocation(labelBack.getY() + 8, labelBack.getX() + 8);
+            panelProductos.setBounds(internalPanel.getBounds());
+            panelProductos.setSize(internalPanel.getSize());
+            panelAjustes.setLocation(labelBack.getY() + 8, labelBack.getX() + 8);
+            panelEmpleados.setBounds(internalPanel.getBounds());
+            panelEmpleados.setSize(internalPanel.getSize());
+            panelEmpleados.setLocation(labelBack.getY() + 8, labelBack.getX() + 8);
+            panelStatistics.setBounds(internalPanel.getBounds());
+            panelStatistics.setSize(internalPanel.getSize());
+            panelStatistics.setLocation(labelBack.getY() + 8, labelBack.getX() + 8);
+            panelUser.setBounds(internalPanel.getBounds());
+            panelUser.setSize(internalPanel.getSize());
+            panelUser.setLocation(labelBack.getY() + 8, labelBack.getX() + 8);
+            panelProveedores.setBounds(internalPanel.getBounds());
+            panelProveedores.setSize(internalPanel.getSize());
+            panelProveedores.setLocation(labelBack.getY() + 8, labelBack.getX() + 8);
+            Admin_user_edit.setVisible(false);
+            errorPhone.setVisible(false);
+        } catch (Exception e) {
+        }
     }
 
     @SuppressWarnings("unchecked")
@@ -262,6 +273,53 @@ public class Desk extends javax.swing.JPanel {
         jLabel98 = new javax.swing.JLabel();
         Client_Edit_Department = new javax.swing.JTextField();
         jLabel99 = new javax.swing.JLabel();
+        panelProveedores = new javax.swing.JPanel();
+        Provider_TabbedPane = new javax.swing.JTabbedPane();
+        Provider_Add_SP = new javax.swing.JScrollPane();
+        Provider_SP_AddPanel = new javax.swing.JPanel();
+        jLabel34 = new javax.swing.JLabel();
+        Provider_Add_Email = new javax.swing.JTextField();
+        jLabel113 = new javax.swing.JLabel();
+        Provider_Add_Name = new javax.swing.JTextField();
+        Provider_Add_Address = new javax.swing.JTextField();
+        Provider_Add_labelDone = new javax.swing.JLabel();
+        jLabel114 = new javax.swing.JLabel();
+        jLabel83 = new javax.swing.JLabel();
+        Provider_Add_RTN = new javax.swing.JFormattedTextField();
+        Client_Add_Label_Type3 = new javax.swing.JLabel();
+        jLabel115 = new javax.swing.JLabel();
+        Provider_Add_Phone = new javax.swing.JTextField();
+        Provider_List_SP = new javax.swing.JScrollPane();
+        Provider_SP_ListPanel = new javax.swing.JPanel();
+        Provider_List_Remove = new javax.swing.JLabel();
+        Provider_List_EditSelected = new javax.swing.JLabel();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        Provider_List_Table = new javax.swing.JTable();
+        jLabel70 = new javax.swing.JLabel();
+        Provider_Edit_SP = new javax.swing.JScrollPane();
+        Provider_SP_EditPanel = new javax.swing.JPanel();
+        jLabel41 = new javax.swing.JLabel();
+        Provider_Edit_labelSelect = new javax.swing.JLabel();
+        jLabel110 = new javax.swing.JLabel();
+        Provider_Edit_Email = new javax.swing.JTextField();
+        Client_Add_Label_Type2 = new javax.swing.JLabel();
+        Provider_Edit_RTN = new javax.swing.JFormattedTextField();
+        jLabel82 = new javax.swing.JLabel();
+        jLabel111 = new javax.swing.JLabel();
+        Provider_Edit_labelDone = new javax.swing.JLabel();
+        Provider_Edit_Address = new javax.swing.JTextField();
+        Provider_Edit_Name = new javax.swing.JTextField();
+        jLabel112 = new javax.swing.JLabel();
+        Provider_Edit_Phone = new javax.swing.JTextField();
+        Provider_Dialog_Select = new javax.swing.JDialog();
+        Provider_Dialog_Panel = new javax.swing.JPanel();
+        Provider_Select_labelBack = new javax.swing.JLabel();
+        jLabel71 = new javax.swing.JLabel();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        Provider_Dialog_Select_Table = new javax.swing.JTable();
+        Provider_Dialog_labelSelect = new javax.swing.JLabel();
+        FirstPlane = new javax.swing.JPanel();
+        labelBack = new javax.swing.JLabel();
         internalPanel = new javax.swing.JPanel();
         pCaja = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
@@ -284,8 +342,6 @@ public class Desk extends javax.swing.JPanel {
         pProveedores = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
-        FirstPlane = new javax.swing.JPanel();
-        labelBack = new javax.swing.JLabel();
 
         jLabel6.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
@@ -1464,7 +1520,7 @@ public class Desk extends javax.swing.JPanel {
             .addComponent(Product_TabbedPane, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 483, Short.MAX_VALUE)
         );
 
-        Client_Dialog_Select.setTitle("Seleccionar Producto");
+        Client_Dialog_Select.setTitle("Seleccionar Cliente");
         Client_Dialog_Select.setAlwaysOnTop(true);
         Client_Dialog_Select.setIconImage(getIconImage());
         Client_Dialog_Select.setModal(true);
@@ -2101,6 +2157,479 @@ public class Desk extends javax.swing.JPanel {
             .addComponent(Client_TabbedPane, javax.swing.GroupLayout.DEFAULT_SIZE, 486, Short.MAX_VALUE)
         );
 
+        Provider_TabbedPane.setForeground(new java.awt.Color(255, 255, 255));
+        Provider_TabbedPane.setTabLayoutPolicy(javax.swing.JTabbedPane.SCROLL_TAB_LAYOUT);
+        Provider_TabbedPane.setTabPlacement(javax.swing.JTabbedPane.LEFT);
+        Provider_TabbedPane.setToolTipText("");
+        Provider_TabbedPane.setAutoscrolls(true);
+        Provider_TabbedPane.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        Provider_TabbedPane.setDoubleBuffered(true);
+        Provider_TabbedPane.setFocusCycleRoot(true);
+        Provider_TabbedPane.setFocusTraversalPolicyProvider(true);
+        Provider_TabbedPane.setOpaque(true);
+        Provider_TabbedPane.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                Provider_TabbedPaneStateChanged(evt);
+            }
+        });
+
+        jLabel34.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
+        jLabel34.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel34.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel34.setText("Agregar Proveedor");
+
+        jLabel113.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel113.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel113.setText("Teléfono");
+
+        Provider_Add_labelDone.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICO/60px/icons8_Checkmark_60px.png"))); // NOI18N
+        Provider_Add_labelDone.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Provider_Add_labelDone.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Provider_Add_labelDoneMouseClicked(evt);
+            }
+        });
+
+        jLabel114.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel114.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel114.setText("Dirección");
+
+        jLabel83.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel83.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel83.setText("Nombre");
+
+        Provider_Add_RTN.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat(""))));
+
+        Client_Add_Label_Type3.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        Client_Add_Label_Type3.setForeground(new java.awt.Color(255, 255, 255));
+        Client_Add_Label_Type3.setText("RTN");
+
+        jLabel115.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel115.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel115.setText("Correo");
+
+        javax.swing.GroupLayout Provider_SP_AddPanelLayout = new javax.swing.GroupLayout(Provider_SP_AddPanel);
+        Provider_SP_AddPanel.setLayout(Provider_SP_AddPanelLayout);
+        Provider_SP_AddPanelLayout.setHorizontalGroup(
+            Provider_SP_AddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Provider_SP_AddPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel34, javax.swing.GroupLayout.PREFERRED_SIZE, 427, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(Provider_SP_AddPanelLayout.createSequentialGroup()
+                .addContainerGap(124, Short.MAX_VALUE)
+                .addGroup(Provider_SP_AddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Provider_Add_Name, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel83)
+                    .addGroup(Provider_SP_AddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(Client_Add_Label_Type3)
+                        .addComponent(Provider_Add_RTN, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(Provider_SP_AddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(Provider_Add_Email, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
+                        .addComponent(jLabel115)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 124, Short.MAX_VALUE)
+                .addGroup(Provider_SP_AddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Provider_Add_labelDone)
+                    .addGroup(Provider_SP_AddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(Provider_Add_Phone, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
+                        .addComponent(jLabel113))
+                    .addGroup(Provider_SP_AddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(Provider_Add_Address, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
+                        .addComponent(jLabel114)))
+                .addContainerGap(110, Short.MAX_VALUE))
+        );
+        Provider_SP_AddPanelLayout.setVerticalGroup(
+            Provider_SP_AddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Provider_SP_AddPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel34)
+                .addGap(26, 26, 26)
+                .addGroup(Provider_SP_AddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Provider_SP_AddPanelLayout.createSequentialGroup()
+                        .addComponent(jLabel83)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Provider_Add_Name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(Provider_SP_AddPanelLayout.createSequentialGroup()
+                        .addComponent(jLabel113)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Provider_Add_Phone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 79, Short.MAX_VALUE)
+                .addGroup(Provider_SP_AddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(Provider_SP_AddPanelLayout.createSequentialGroup()
+                        .addComponent(Client_Add_Label_Type3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Provider_Add_RTN))
+                    .addGroup(Provider_SP_AddPanelLayout.createSequentialGroup()
+                        .addComponent(jLabel114)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Provider_Add_Address, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, Short.MAX_VALUE)
+                .addGroup(Provider_SP_AddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Provider_SP_AddPanelLayout.createSequentialGroup()
+                        .addComponent(jLabel115)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Provider_Add_Email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Provider_Add_labelDone, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addContainerGap(129, Short.MAX_VALUE))
+        );
+
+        Provider_Add_SP.setViewportView(Provider_SP_AddPanel);
+
+        Provider_TabbedPane.addTab("Agregar", Provider_Add_SP);
+
+        Provider_List_Remove.setForeground(new java.awt.Color(255, 255, 255));
+        Provider_List_Remove.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICO/40px/icons8_Delete_40px.png"))); // NOI18N
+        Provider_List_Remove.setText("Eliminar");
+        Provider_List_Remove.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Provider_List_Remove.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Provider_List_RemoveMouseClicked(evt);
+            }
+        });
+
+        Provider_List_EditSelected.setForeground(new java.awt.Color(255, 255, 255));
+        Provider_List_EditSelected.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICO/40px/icons8_Edit_40px.png"))); // NOI18N
+        Provider_List_EditSelected.setText("Modificar");
+        Provider_List_EditSelected.setToolTipText("");
+        Provider_List_EditSelected.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Provider_List_EditSelected.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Provider_List_EditSelectedMouseClicked(evt);
+            }
+        });
+
+        jScrollPane8.setOpaque(false);
+
+        Provider_List_Table.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "RTN", "Nombre", "Correo", "Teléfono", "Dirección"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Provider_List_Table.setDebugGraphicsOptions(javax.swing.DebugGraphics.BUFFERED_OPTION);
+        Provider_List_Table.setDropMode(javax.swing.DropMode.INSERT_COLS);
+        Provider_List_Table.setEditingColumn(-1);
+        Provider_List_Table.setEditingRow(-1);
+        Provider_List_Table.setOpaque(false);
+        Provider_List_Table.setRowSelectionAllowed(false);
+        Provider_List_Table.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        Provider_List_Table.setUpdateSelectionOnSort(false);
+        Provider_List_Table.setVerifyInputWhenFocusTarget(false);
+        jScrollPane8.setViewportView(Provider_List_Table);
+
+        jLabel70.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
+        jLabel70.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel70.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel70.setText("Listado de Proveedores");
+
+        javax.swing.GroupLayout Provider_SP_ListPanelLayout = new javax.swing.GroupLayout(Provider_SP_ListPanel);
+        Provider_SP_ListPanel.setLayout(Provider_SP_ListPanelLayout);
+        Provider_SP_ListPanelLayout.setHorizontalGroup(
+            Provider_SP_ListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Provider_SP_ListPanelLayout.createSequentialGroup()
+                .addGroup(Provider_SP_ListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Provider_SP_ListPanelLayout.createSequentialGroup()
+                        .addGroup(Provider_SP_ListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(Provider_SP_ListPanelLayout.createSequentialGroup()
+                                .addContainerGap(126, Short.MAX_VALUE)
+                                .addComponent(Provider_List_Remove)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 126, Short.MAX_VALUE)
+                                .addComponent(Provider_List_EditSelected))
+                            .addGroup(Provider_SP_ListPanelLayout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(jLabel70)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 281, Short.MAX_VALUE))
+                    .addGroup(Provider_SP_ListPanelLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane8)))
+                .addContainerGap())
+        );
+        Provider_SP_ListPanelLayout.setVerticalGroup(
+            Provider_SP_ListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Provider_SP_ListPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel70)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 404, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(Provider_SP_ListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Provider_List_Remove)
+                    .addComponent(Provider_List_EditSelected))
+                .addGap(9, 9, 9))
+        );
+
+        Provider_List_SP.setViewportView(Provider_SP_ListPanel);
+
+        Provider_TabbedPane.addTab("Listado", Provider_List_SP);
+
+        Provider_SP_EditPanel.setToolTipText("");
+
+        jLabel41.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
+        jLabel41.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel41.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel41.setText("Editar Proveedor");
+
+        Provider_Edit_labelSelect.setForeground(new java.awt.Color(255, 255, 255));
+        Provider_Edit_labelSelect.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICO/40px/icons8_Natural_User_Interface_2_40px.png"))); // NOI18N
+        Provider_Edit_labelSelect.setText("Elegir proveedor");
+        Provider_Edit_labelSelect.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Provider_Edit_labelSelect.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Provider_Edit_labelSelectMouseClicked(evt);
+            }
+        });
+
+        jLabel110.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel110.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel110.setText("Correo");
+
+        Client_Add_Label_Type2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        Client_Add_Label_Type2.setForeground(new java.awt.Color(255, 255, 255));
+        Client_Add_Label_Type2.setText("RTN");
+
+        Provider_Edit_RTN.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("####-####-#####"))));
+
+        jLabel82.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel82.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel82.setText("Nombre");
+
+        jLabel111.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel111.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel111.setText("Dirección");
+
+        Provider_Edit_labelDone.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICO/60px/icons8_Checkmark_60px.png"))); // NOI18N
+        Provider_Edit_labelDone.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Provider_Edit_labelDone.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Provider_Edit_labelDoneMouseClicked(evt);
+            }
+        });
+
+        jLabel112.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel112.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel112.setText("Teléfono");
+
+        javax.swing.GroupLayout Provider_SP_EditPanelLayout = new javax.swing.GroupLayout(Provider_SP_EditPanel);
+        Provider_SP_EditPanel.setLayout(Provider_SP_EditPanelLayout);
+        Provider_SP_EditPanelLayout.setHorizontalGroup(
+            Provider_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Provider_SP_EditPanelLayout.createSequentialGroup()
+                .addGroup(Provider_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Provider_SP_EditPanelLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel41)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Provider_Edit_labelSelect))
+                    .addGroup(Provider_SP_EditPanelLayout.createSequentialGroup()
+                        .addContainerGap(88, Short.MAX_VALUE)
+                        .addGroup(Provider_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Provider_Edit_Name, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel82)
+                            .addGroup(Provider_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(Client_Add_Label_Type2)
+                                .addComponent(Provider_Edit_RTN, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(Provider_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(Provider_Edit_Email, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
+                                .addComponent(jLabel110)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 133, Short.MAX_VALUE)
+                        .addGroup(Provider_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Provider_Edit_labelDone)
+                            .addGroup(Provider_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(Provider_Edit_Phone, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
+                                .addComponent(jLabel112))
+                            .addGroup(Provider_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(Provider_Edit_Address, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
+                                .addComponent(jLabel111)))))
+                .addContainerGap(131, Short.MAX_VALUE))
+        );
+        Provider_SP_EditPanelLayout.setVerticalGroup(
+            Provider_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Provider_SP_EditPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(Provider_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel41)
+                    .addComponent(Provider_Edit_labelSelect))
+                .addGap(27, 27, 27)
+                .addGroup(Provider_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Provider_SP_EditPanelLayout.createSequentialGroup()
+                        .addComponent(jLabel82)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Provider_Edit_Name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(Provider_SP_EditPanelLayout.createSequentialGroup()
+                        .addComponent(jLabel112)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Provider_Edit_Phone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, Short.MAX_VALUE)
+                .addGroup(Provider_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(Provider_SP_EditPanelLayout.createSequentialGroup()
+                        .addComponent(Client_Add_Label_Type2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Provider_Edit_RTN))
+                    .addGroup(Provider_SP_EditPanelLayout.createSequentialGroup()
+                        .addComponent(jLabel111)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Provider_Edit_Address, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
+                .addGroup(Provider_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Provider_SP_EditPanelLayout.createSequentialGroup()
+                        .addComponent(jLabel110)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Provider_Edit_Email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Provider_Edit_labelDone, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addContainerGap(146, Short.MAX_VALUE))
+        );
+
+        Provider_Edit_SP.setViewportView(Provider_SP_EditPanel);
+
+        Provider_TabbedPane.addTab("Modificar", Provider_Edit_SP);
+
+        javax.swing.GroupLayout panelProveedoresLayout = new javax.swing.GroupLayout(panelProveedores);
+        panelProveedores.setLayout(panelProveedoresLayout);
+        panelProveedoresLayout.setHorizontalGroup(
+            panelProveedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Provider_TabbedPane, javax.swing.GroupLayout.Alignment.TRAILING)
+        );
+        panelProveedoresLayout.setVerticalGroup(
+            panelProveedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Provider_TabbedPane, javax.swing.GroupLayout.DEFAULT_SIZE, 504, Short.MAX_VALUE)
+        );
+
+        Provider_Dialog_Select.setTitle("Seleccionar Proveedor");
+        Provider_Dialog_Select.setAlwaysOnTop(true);
+        Provider_Dialog_Select.setIconImage(getIconImage());
+        Provider_Dialog_Select.setModal(true);
+        Provider_Dialog_Select.setModalExclusionType(java.awt.Dialog.ModalExclusionType.TOOLKIT_EXCLUDE);
+
+        Provider_Select_labelBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICO/40px/icons8_Back_40px_1.png"))); // NOI18N
+        Provider_Select_labelBack.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Provider_Select_labelBack.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Provider_Select_labelBackMouseClicked(evt);
+            }
+        });
+
+        jLabel71.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
+        jLabel71.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel71.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel71.setText("Listado de Proveedores");
+
+        jScrollPane6.setOpaque(false);
+
+        Provider_Dialog_Select_Table.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "RTN", "Nombre", "Correo", "Teléfono", "Dirección"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Provider_Dialog_Select_Table.setDebugGraphicsOptions(javax.swing.DebugGraphics.BUFFERED_OPTION);
+        Provider_Dialog_Select_Table.setDropMode(javax.swing.DropMode.INSERT_COLS);
+        Provider_Dialog_Select_Table.setEditingColumn(-1);
+        Provider_Dialog_Select_Table.setEditingRow(-1);
+        Provider_Dialog_Select_Table.setOpaque(false);
+        Provider_Dialog_Select_Table.setRowSelectionAllowed(false);
+        Provider_Dialog_Select_Table.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        Provider_Dialog_Select_Table.setUpdateSelectionOnSort(false);
+        Provider_Dialog_Select_Table.setVerifyInputWhenFocusTarget(false);
+        jScrollPane6.setViewportView(Provider_Dialog_Select_Table);
+
+        Provider_Dialog_labelSelect.setForeground(new java.awt.Color(255, 255, 255));
+        Provider_Dialog_labelSelect.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICO/40px/icons8_Natural_User_Interface_2_40px.png"))); // NOI18N
+        Provider_Dialog_labelSelect.setText("Elegir Proveedor");
+        Provider_Dialog_labelSelect.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Provider_Dialog_labelSelect.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Provider_Dialog_labelSelectMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout Provider_Dialog_PanelLayout = new javax.swing.GroupLayout(Provider_Dialog_Panel);
+        Provider_Dialog_Panel.setLayout(Provider_Dialog_PanelLayout);
+        Provider_Dialog_PanelLayout.setHorizontalGroup(
+            Provider_Dialog_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Provider_Dialog_PanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(Provider_Dialog_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 659, Short.MAX_VALUE)
+                    .addGroup(Provider_Dialog_PanelLayout.createSequentialGroup()
+                        .addComponent(Provider_Select_labelBack)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel71)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+            .addGroup(Provider_Dialog_PanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Provider_Dialog_labelSelect)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        Provider_Dialog_PanelLayout.setVerticalGroup(
+            Provider_Dialog_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Provider_Dialog_PanelLayout.createSequentialGroup()
+                .addGap(7, 7, 7)
+                .addGroup(Provider_Dialog_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Provider_Select_labelBack)
+                    .addComponent(jLabel71))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 301, Short.MAX_VALUE)
+                .addGap(7, 7, 7)
+                .addComponent(Provider_Dialog_labelSelect)
+                .addContainerGap())
+        );
+
+        javax.swing.GroupLayout Provider_Dialog_SelectLayout = new javax.swing.GroupLayout(Provider_Dialog_Select.getContentPane());
+        Provider_Dialog_Select.getContentPane().setLayout(Provider_Dialog_SelectLayout);
+        Provider_Dialog_SelectLayout.setHorizontalGroup(
+            Provider_Dialog_SelectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Provider_Dialog_SelectLayout.createSequentialGroup()
+                .addComponent(Provider_Dialog_Panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        Provider_Dialog_SelectLayout.setVerticalGroup(
+            Provider_Dialog_SelectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Provider_Dialog_Panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        labelBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICO/40px/icons8_Back_40px_1.png"))); // NOI18N
+        labelBack.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        labelBack.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                labelBackMouseClicked(evt);
+            }
+        });
+
         pCaja.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 pCajaMouseClicked(evt);
@@ -2339,6 +2868,12 @@ public class Desk extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        pProveedores.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pProveedoresMouseClicked(evt);
+            }
+        });
+
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICO/100px/icons8_Conference_100px.png"))); // NOI18N
         jLabel11.setVerticalAlignment(javax.swing.SwingConstants.TOP);
@@ -2382,20 +2917,20 @@ public class Desk extends javax.swing.JPanel {
         internalPanelLayout.setHorizontalGroup(
             internalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(internalPanelLayout.createSequentialGroup()
-                .addContainerGap(78, Short.MAX_VALUE)
+                .addContainerGap(106, Short.MAX_VALUE)
                 .addGroup(internalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(pCaja, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(pCV, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(pAjustes, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 106, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 134, Short.MAX_VALUE)
                 .addGroup(internalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(pEmpleados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(internalPanelLayout.createSequentialGroup()
                         .addComponent(pClientes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 80, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 108, Short.MAX_VALUE)
                         .addComponent(pProveedores, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(pProductos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(60, Short.MAX_VALUE))
+                .addContainerGap(92, Short.MAX_VALUE))
         );
         internalPanelLayout.setVerticalGroup(
             internalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2405,24 +2940,16 @@ public class Desk extends javax.swing.JPanel {
                     .addComponent(pClientes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(pCaja, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(pProveedores, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
                 .addGroup(internalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(pEmpleados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(pCV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
                 .addGroup(internalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(pAjustes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(pProductos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
-
-        labelBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICO/40px/icons8_Back_40px_1.png"))); // NOI18N
-        labelBack.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        labelBack.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                labelBackMouseClicked(evt);
-            }
-        });
 
         javax.swing.GroupLayout FirstPlaneLayout = new javax.swing.GroupLayout(FirstPlane);
         FirstPlane.setLayout(FirstPlaneLayout);
@@ -2431,14 +2958,24 @@ public class Desk extends javax.swing.JPanel {
             .addGroup(FirstPlaneLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(labelBack)
-                .addContainerGap(753, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(FirstPlaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(FirstPlaneLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(internalPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addContainerGap()))
         );
         FirstPlaneLayout.setVerticalGroup(
             FirstPlaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(FirstPlaneLayout.createSequentialGroup()
                 .addGap(6, 6, 6)
                 .addComponent(labelBack)
-                .addContainerGap(492, Short.MAX_VALUE))
+                .addContainerGap(510, Short.MAX_VALUE))
+            .addGroup(FirstPlaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(FirstPlaneLayout.createSequentialGroup()
+                    .addGap(26, 26, 26)
+                    .addComponent(internalPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGap(26, 26, 26)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -2592,6 +3129,7 @@ public class Desk extends javax.swing.JPanel {
         } else {
             if (workSheet.getPanelStatistics().isVisible() == false) {
                 panelCaja.setVisible(false);
+                panelProveedores.setVisible(false);
                 panelClientes.setVisible(false);
                 panelCV.setVisible(false);
                 panelAjustes.setVisible(false);
@@ -3076,6 +3614,125 @@ public class Desk extends javax.swing.JPanel {
         }
         Client_refreshTable();
     }//GEN-LAST:event_Client_List_labelChangeTypeMouseClicked
+
+    private void pProveedoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pProveedoresMouseClicked
+        if (property.isLogged()) {
+            this.buttonClicked = true;
+            workSheet.getPanelStatistics().setVisible(false);
+            workSheet.getAccount().setVisible(false);
+            workSheet.getPanelClose().setVisible(false);
+            workSheet.getStatusBar1().setInfo("Principal/Proveedores/");
+            labelBack.setVisible(true);
+            // Oculto el panel Principal
+            // Muestro panel interno (panelProveedores)
+            internalPanel.setVisible(false);
+            panelProveedores.setVisible(true);
+        }
+    }//GEN-LAST:event_pProveedoresMouseClicked
+
+    private void Provider_List_RemoveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Provider_List_RemoveMouseClicked
+        if (Provider_List_Table.getSelectedRow() > -1) {
+            property.getProviderList().remove(Provider_List_Table.getSelectedRow());
+            Provider_refreshTable();
+        }
+    }//GEN-LAST:event_Provider_List_RemoveMouseClicked
+
+    private void Provider_List_EditSelectedMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Provider_List_EditSelectedMouseClicked
+        if (Provider_List_Table.getSelectedRow() > -1) {
+            Provider_TabbedPane.setSelectedIndex(2);
+            Provider_SelectProvider(Provider_Selected_row = Provider_List_Table.getSelectedRow());
+            Provider_Edit_Name.setEnabled(true);
+            Provider_Edit_Email.setEnabled(true);
+            Provider_Edit_Phone.setEnabled(true);
+            Provider_Edit_Address.setEnabled(true);
+            Provider_Edit_RTN.setEnabled(true);
+        }
+    }//GEN-LAST:event_Provider_List_EditSelectedMouseClicked
+
+    private void Provider_Edit_labelSelectMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Provider_Edit_labelSelectMouseClicked
+        Provider_Dialog_Select.setLocationRelativeTo(null);
+        Provider_Dialog_Select.pack();
+        Provider_refreshTable();
+        Provider_Dialog_Select.setVisible(true);
+    }//GEN-LAST:event_Provider_Edit_labelSelectMouseClicked
+
+    private void Provider_TabbedPaneStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_Provider_TabbedPaneStateChanged
+        try {
+            switch (Provider_TabbedPane.getSelectedIndex()) {
+                case 0: {
+                    Provider_Add_refresh();
+                    break;
+                }
+                case 1: {
+                    Provider_refreshTable();
+                    break;
+                }
+                case 2: {
+                    Provider_Edit_refresh();
+                    Provider_Edit_Name.setEnabled(false);
+                    Provider_Edit_Email.setEnabled(false);
+                    Provider_Edit_Phone.setEnabled(false);
+                    Provider_Edit_Address.setEnabled(false);
+                    Provider_Edit_RTN.setEnabled(false);
+                    break;
+                }
+                default: {
+                    break;
+                }
+            }
+        } catch (Exception e) {
+        }
+    }//GEN-LAST:event_Provider_TabbedPaneStateChanged
+
+    private void Provider_Edit_labelDoneMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Provider_Edit_labelDoneMouseClicked
+        if (Provider_Edit_labelDone.isEnabled() && !Provider_Edit_Name.getText().isEmpty() && !Provider_Edit_Address.getText().isEmpty()
+                && !Provider_Edit_RTN.getText().isEmpty() && !Provider_Edit_Email.getText().isEmpty() && !Provider_Edit_Phone.getText().isEmpty()) {
+            try {
+                property.getProviderList().set(Provider_Selected_row, new Provider(
+                        Provider_Edit_RTN.getText(), Provider_Edit_Name.getText(),
+                        Provider_Edit_Address.getText(), Provider_Edit_Email.getText(), Provider_Edit_Phone.getText()
+                ));
+                Provider_Edit_Name.setEnabled(false);
+                Provider_Edit_Email.setEnabled(false);
+                Provider_Edit_Phone.setEnabled(false);
+                Provider_Edit_Address.setEnabled(false);
+                Provider_Edit_RTN.setEnabled(false);
+                Provider_Edit_refresh();
+            } catch (Exception e) {
+                //e.printStackTrace();
+            }
+        }
+    }//GEN-LAST:event_Provider_Edit_labelDoneMouseClicked
+
+    private void Provider_Add_labelDoneMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Provider_Add_labelDoneMouseClicked
+        if (!Provider_Add_Name.getText().isEmpty() && !Provider_Add_Address.getText().isEmpty()
+                && !Provider_Add_RTN.getText().isEmpty() && !Provider_Add_Email.getText().isEmpty() && !Provider_Add_Phone.getText().isEmpty()) {
+            try {
+                property.getProviderList().add(new Provider(Provider_Add_RTN.getText(), Provider_Add_Name.getText(),
+                        Provider_Add_Address.getText(), Provider_Add_Email.getText(), Provider_Add_Phone.getText()
+                ));
+                Provider_Add_refresh();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }//GEN-LAST:event_Provider_Add_labelDoneMouseClicked
+
+    private void Provider_Select_labelBackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Provider_Select_labelBackMouseClicked
+        Provider_Dialog_Select.dispose();
+    }//GEN-LAST:event_Provider_Select_labelBackMouseClicked
+
+    private void Provider_Dialog_labelSelectMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Provider_Dialog_labelSelectMouseClicked
+        if (Provider_Dialog_Select_Table.getSelectedRow() > -1) {
+            Provider_Dialog_Select.dispose();
+            Provider_SelectProvider(Provider_Selected_row = Provider_Dialog_Select_Table.getSelectedRow());
+            Provider_Edit_Name.setEnabled(true);
+            Provider_Edit_Email.setEnabled(true);
+            Provider_Edit_Phone.setEnabled(true);
+            Provider_Edit_Address.setEnabled(true);
+            Provider_Edit_RTN.setEnabled(true);
+        }
+    }//GEN-LAST:event_Provider_Dialog_labelSelectMouseClicked
     /**
      *
      * Establece ícono de ventana
@@ -3095,6 +3752,8 @@ public class Desk extends javax.swing.JPanel {
     private javax.swing.JTextField Client_Add_Email;
     private javax.swing.JFormattedTextField Client_Add_ID_RTN;
     private javax.swing.JLabel Client_Add_Label_Type;
+    private javax.swing.JLabel Client_Add_Label_Type2;
+    private javax.swing.JLabel Client_Add_Label_Type3;
     private javax.swing.JTextField Client_Add_Municipio;
     private javax.swing.JTextField Client_Add_Name;
     private javax.swing.JTextField Client_Add_Phone;
@@ -3178,6 +3837,34 @@ public class Desk extends javax.swing.JPanel {
     private javax.swing.JPanel Product_SP_ListPanel;
     private javax.swing.JLabel Product_Select_labelBack;
     private javax.swing.JTabbedPane Product_TabbedPane;
+    private javax.swing.JTextField Provider_Add_Address;
+    private javax.swing.JTextField Provider_Add_Email;
+    private javax.swing.JTextField Provider_Add_Name;
+    private javax.swing.JTextField Provider_Add_Phone;
+    private javax.swing.JFormattedTextField Provider_Add_RTN;
+    private javax.swing.JScrollPane Provider_Add_SP;
+    private javax.swing.JLabel Provider_Add_labelDone;
+    private javax.swing.JPanel Provider_Dialog_Panel;
+    private javax.swing.JDialog Provider_Dialog_Select;
+    private javax.swing.JTable Provider_Dialog_Select_Table;
+    private javax.swing.JLabel Provider_Dialog_labelSelect;
+    private javax.swing.JTextField Provider_Edit_Address;
+    private javax.swing.JTextField Provider_Edit_Email;
+    private javax.swing.JTextField Provider_Edit_Name;
+    private javax.swing.JTextField Provider_Edit_Phone;
+    private javax.swing.JFormattedTextField Provider_Edit_RTN;
+    private javax.swing.JScrollPane Provider_Edit_SP;
+    private javax.swing.JLabel Provider_Edit_labelDone;
+    private javax.swing.JLabel Provider_Edit_labelSelect;
+    private javax.swing.JLabel Provider_List_EditSelected;
+    private javax.swing.JLabel Provider_List_Remove;
+    private javax.swing.JScrollPane Provider_List_SP;
+    private javax.swing.JTable Provider_List_Table;
+    private javax.swing.JPanel Provider_SP_AddPanel;
+    private javax.swing.JPanel Provider_SP_EditPanel;
+    private javax.swing.JPanel Provider_SP_ListPanel;
+    private javax.swing.JLabel Provider_Select_labelBack;
+    private javax.swing.JTabbedPane Provider_TabbedPane;
     private javax.swing.JPanel User_SPAdministrar_panel;
     private javax.swing.JScrollPane User_SPAdminstrar;
     private javax.swing.JScrollPane User_SPGeneral;
@@ -3193,6 +3880,12 @@ public class Desk extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel110;
+    private javax.swing.JLabel jLabel111;
+    private javax.swing.JLabel jLabel112;
+    private javax.swing.JLabel jLabel113;
+    private javax.swing.JLabel jLabel114;
+    private javax.swing.JLabel jLabel115;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
@@ -3214,9 +3907,11 @@ public class Desk extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel47;
     private javax.swing.JLabel jLabel48;
     private javax.swing.JLabel jLabel49;
@@ -3243,11 +3938,15 @@ public class Desk extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel68;
     private javax.swing.JLabel jLabel69;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel70;
+    private javax.swing.JLabel jLabel71;
     private javax.swing.JLabel jLabel74;
     private javax.swing.JLabel jLabel75;
     private javax.swing.JLabel jLabel77;
     private javax.swing.JLabel jLabel78;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel82;
+    private javax.swing.JLabel jLabel83;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabel90;
     private javax.swing.JLabel jLabel91;
@@ -3265,7 +3964,9 @@ public class Desk extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JLabel labelBack;
     private javax.swing.JLabel labelCancel;
     private javax.swing.JLabel labelDone;
@@ -3286,6 +3987,7 @@ public class Desk extends javax.swing.JPanel {
     private javax.swing.JPanel panelClientes;
     private javax.swing.JPanel panelEmpleados;
     private javax.swing.JPanel panelProductos;
+    private javax.swing.JPanel panelProveedores;
     private javax.swing.JPanel panelStatistics;
     private javax.swing.JPanel panelUser;
     private javax.swing.JPasswordField password;
@@ -3315,6 +4017,10 @@ public class Desk extends javax.swing.JPanel {
      * Fila de ciente seleccionada para editar.
      */
     private int Client_Selected_row;
+    /**
+     * Fila de Proveedor seleccionada para editar.
+     */
+    private int Provider_Selected_row;
     /**
      * Tipo de Cliente.
      */
@@ -3362,6 +4068,7 @@ public class Desk extends javax.swing.JPanel {
             pClientes.setBackground(this.getBackground());
             pEmpleados.setBackground(this.getBackground());
             pProductos.setBackground(this.getBackground());
+            pProveedores.setBackground(this.getBackground());
             FirstPlane.setBackground(this.getBackground());
             panelCaja.setBackground(this.getBackground());
             panelClientes.setBackground(this.getBackground());
@@ -3396,6 +4103,15 @@ public class Desk extends javax.swing.JPanel {
             Client_Add_SP.setBackground(this.getBackground());
             Client_Dialog_Select.setBackground(this.getBackground());
             Client_Dialog_Panel.setBackground(this.getBackground());
+            Provider_SP_ListPanel.setBackground(this.getBackground());
+            Provider_SP_AddPanel.setBackground(this.getBackground());
+            Provider_SP_EditPanel.setBackground(this.getBackground());
+            Provider_TabbedPane.setBackground(this.getBackground());
+            Provider_List_SP.setBackground(this.getBackground());
+            Provider_Edit_SP.setBackground(this.getBackground());
+            Provider_Add_SP.setBackground(this.getBackground());
+            Provider_Dialog_Select.setBackground(this.getBackground());
+            Provider_Dialog_Panel.setBackground(this.getBackground());
 
         } catch (Exception e) {
         }
@@ -3591,6 +4307,38 @@ public class Desk extends javax.swing.JPanel {
         Client_Dialog_Select_Table.setModel(model);
     }
 
+    private void Provider_refreshTable() {
+        DefaultTableModel model = new javax.swing.table.DefaultTableModel(
+                new Object[][]{},
+                new String[]{
+                    "RTN", "Nombre", "Correo", "Teléfono", "Dirección"
+                }
+        ) {
+            Class[] types = new Class[]{
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean[]{
+                false, false, false, false, false
+            };
+
+            @Override
+            public Class getColumnClass(int columnIndex) {
+                return types[columnIndex];
+            }
+
+            @Override
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit[columnIndex];
+            }
+        };
+        property.getProviderList().forEach((p) -> {
+            model.addRow(new Object[]{p.getRtn_provider(), p.getName(), p.getEmail(), p.getCellphone(), p.getAddress()});
+
+        });
+        Provider_List_Table.setModel(model);
+        Provider_Dialog_Select_Table.setModel(model);
+    }
+
     private void Product_Add_refresh() {
         Product_Add_Name.setText("");
         Product_Add_Type.setText("");
@@ -3671,4 +4419,29 @@ public class Desk extends javax.swing.JPanel {
             Client_Edit_Type_Person.setSelected(true);
         }
     }
+
+    private void Provider_Add_refresh() {
+        Provider_Add_Name.setText("");
+        Provider_Add_Email.setText("");
+        Provider_Add_Phone.setText("");
+        Provider_Add_Address.setText("");
+        Provider_Add_RTN.setText("");
+    }
+
+    private void Provider_Edit_refresh() {
+        Provider_Edit_Name.setText("");
+        Provider_Edit_Email.setText("");
+        Provider_Edit_Phone.setText("");
+        Provider_Edit_Address.setText("");
+        Provider_Edit_RTN.setText("");
+    }
+
+    private void Provider_SelectProvider(int i) {
+        Provider_Edit_Name.setText(property.getProviderList().get(i).getName());
+        Provider_Edit_Email.setText(property.getProviderList().get(i).getEmail());
+        Provider_Edit_Phone.setText(property.getProviderList().get(i).getCellphone());
+        Provider_Edit_Address.setText(property.getProviderList().get(i).getAddress());
+        Provider_Edit_RTN.setText(property.getProviderList().get(i).getRtn_provider());
+    }
+
 }

@@ -2,6 +2,7 @@ package Resources;
 
 import Entities.Client;
 import Entities.Inventory;
+import Entities.Provider;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -53,6 +54,10 @@ public class Property implements Serializable {
      */
     private ArrayList<Client> clientList;
     /**
+     * Lista de proveedores. (Temporal -> BD)
+     */
+    private ArrayList<Provider> providerList;
+    /**
      * Lista de Usuario Administradores.
      */
     private ArrayList<Account> adminList;
@@ -69,7 +74,7 @@ public class Property implements Serializable {
      */
     private int lastProductId;
     /**
-     * Último Id de Producto añadido.
+     * Último Id de Cliente añadido.
      */
     private int lastNumClient;
 
@@ -81,7 +86,9 @@ public class Property implements Serializable {
         productList = new ArrayList();
         accountList = new ArrayList();
         clientList = new ArrayList();
+        clientList = new ArrayList();
         adminList = new ArrayList();
+        providerList = new ArrayList();
         accountList.add(account);
         lastProductId = 0;
         lastUserId = 0;
@@ -166,6 +173,14 @@ public class Property implements Serializable {
 
     public void setClientList(ArrayList<Client> clientList) {
         this.clientList = clientList;
+    }
+
+    public ArrayList<Provider> getProviderList() {
+        return providerList;
+    }
+
+    public void setProviderList(ArrayList<Provider> providerList) {
+        this.providerList = providerList;
     }
 
     @Override
