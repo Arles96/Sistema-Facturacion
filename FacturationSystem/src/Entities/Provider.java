@@ -5,13 +5,15 @@
  */
 package Entities;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
  *
  * @author Diego
  */
-public class Provider {
+public class Provider implements Serializable {
+
     private String rtn_provider;
     private String name;
     private String address;
@@ -109,9 +111,5 @@ public class Provider {
     public void setCellphone(String cellphone) {
         this.cellphone = cellphone;
     }
-    
-    
-    
-    
-    
+
 }

@@ -191,10 +191,18 @@ public class UserLogin extends javax.swing.JFrame {
 
     private void labelDoneMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelDoneMouseClicked
         if (!errorUser.isVisible() && !user.getText().isEmpty() && !password.getText().isEmpty()) {
-            property.setAccount(new Account(password.getText(), user.getText(), "email", null));
-            workSheet.getStatusBar1().refresh();
-            this.dispose();
-            workSheet.setVisible(true);
+            int index;
+            if ((index = property.containsAccount(user.getText())) > -1) {
+                if (property.getAccountList().get(index).getPassword().equals(password.getText())) {
+                    property.setAccount(property.getAccountList().get(index));
+                    property.setLogged(true);
+                    workSheet.getItemLogout().setEnabled(true);
+                    workSheet.getItemLogin().setEnabled(false);
+                    workSheet.getStatusBar1().refresh();
+                    this.dispose();
+                    workSheet.setVisible(true);
+                }
+            }
         }
     }//GEN-LAST:event_labelDoneMouseClicked
 
@@ -218,6 +226,7 @@ public class UserLogin extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      * @param properties
+     * @param work
      */
     public static void main(String args[], Property properties, WorkSheet work) {
         property = properties;
@@ -301,6 +310,14 @@ public class UserLogin extends javax.swing.JFrame {
 
     public void setProperty(Property property) {
         this.property = property;
+    }
+
+    public static WorkSheet getWorkSheet() {
+        return workSheet;
+    }
+
+    public static void setWorkSheet(WorkSheet workSheet) {
+        UserLogin.workSheet = workSheet;
     }
 
     private boolean Validate(String text) {

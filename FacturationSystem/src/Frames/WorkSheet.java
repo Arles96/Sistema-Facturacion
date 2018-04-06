@@ -9,6 +9,8 @@ import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.util.Arrays;
+import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 
 /**
@@ -30,9 +32,11 @@ public class WorkSheet extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         this.setBackground(new Color(88, 89, 83));
         itemLogout.setEnabled(false);
-        desk1.setProperty(property);
         statusBar1.setProperty(property);
+        desk1.setProperty(property);
         desk1.setLabelBackVisible(false);
+        desk1.Account_ResetFields();
+        closeSession();
     }
 
     @SuppressWarnings("unchecked")
@@ -41,9 +45,9 @@ public class WorkSheet extends javax.swing.JFrame {
 
         panelWall = new javax.swing.JPanel();
         desk1 = new WorkSheet_Panels.Desk();
-        account1 = new Common_Panels.Account();
+        account = new Common_Panels.Account();
         statusBar1 = new Common_Panels.StatusBar();
-        panelAccount = new javax.swing.JPanel();
+        panelClose = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         panelStatistics = new javax.swing.JPanel();
@@ -60,6 +64,11 @@ public class WorkSheet extends javax.swing.JFrame {
         setBackground(new java.awt.Color(0, 204, 204));
         setFocusTraversalPolicyProvider(true);
         setIconImage(getIconImage());
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
 
         panelWall.setFocusCycleRoot(true);
         panelWall.setFocusTraversalPolicyProvider(true);
@@ -72,13 +81,11 @@ public class WorkSheet extends javax.swing.JFrame {
             }
         });
 
-        account1.addMouseListener(new java.awt.event.MouseAdapter() {
+        account.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                account1MouseClicked(evt);
+                accountMouseClicked(evt);
             }
         });
-
-        statusBar1.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
 
         jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICO/40px/icons8_Toggle_Off_40px.png"))); // NOI18N
         jLabel15.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -101,27 +108,33 @@ public class WorkSheet extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout panelAccountLayout = new javax.swing.GroupLayout(panelAccount);
-        panelAccount.setLayout(panelAccountLayout);
-        panelAccountLayout.setHorizontalGroup(
-            panelAccountLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelAccountLayout.createSequentialGroup()
+        javax.swing.GroupLayout panelCloseLayout = new javax.swing.GroupLayout(panelClose);
+        panelClose.setLayout(panelCloseLayout);
+        panelCloseLayout.setHorizontalGroup(
+            panelCloseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelCloseLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(panelAccountLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelAccountLayout.createSequentialGroup()
+                .addGroup(panelCloseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelCloseLayout.createSequentialGroup()
                         .addGap(6, 6, 6)
                         .addComponent(jLabel6))
                     .addComponent(jLabel15))
                 .addContainerGap(30, Short.MAX_VALUE))
         );
-        panelAccountLayout.setVerticalGroup(
-            panelAccountLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelAccountLayout.createSequentialGroup()
+        panelCloseLayout.setVerticalGroup(
+            panelCloseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelCloseLayout.createSequentialGroup()
                 .addComponent(jLabel15)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel6)
                 .addContainerGap())
         );
+
+        panelStatistics.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                panelStatisticsMouseClicked(evt);
+            }
+        });
 
         jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICO/100px/icons8_Training_100px_1.png"))); // NOI18N
         jLabel17.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -140,18 +153,19 @@ public class WorkSheet extends javax.swing.JFrame {
             panelStatisticsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelStatisticsLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel17)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelStatisticsLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel8)
-                .addGap(20, 20, 20))
+                .addGroup(panelStatisticsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelStatisticsLayout.createSequentialGroup()
+                        .addComponent(jLabel17)
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelStatisticsLayout.createSequentialGroup()
+                        .addComponent(jLabel8)
+                        .addGap(20, 20, 20))))
         );
         panelStatisticsLayout.setVerticalGroup(
             panelStatisticsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelStatisticsLayout.createSequentialGroup()
                 .addComponent(jLabel17)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                .addGap(0, 0, 0)
                 .addComponent(jLabel8))
         );
 
@@ -162,16 +176,16 @@ public class WorkSheet extends javax.swing.JFrame {
             .addGroup(panelWallLayout.createSequentialGroup()
                 .addGap(0, 0, 0)
                 .addGroup(panelWallLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(statusBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(statusBar1, javax.swing.GroupLayout.DEFAULT_SIZE, 690, Short.MAX_VALUE)
                     .addGroup(panelWallLayout.createSequentialGroup()
-                        .addComponent(desk1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(desk1, javax.swing.GroupLayout.DEFAULT_SIZE, 566, Short.MAX_VALUE)
                         .addGroup(panelWallLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(panelWallLayout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(account1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(account, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(panelWallLayout.createSequentialGroup()
                                 .addGap(31, 31, 31)
-                                .addComponent(panelAccount, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(panelClose, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(panelWallLayout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(panelStatistics, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -183,11 +197,11 @@ public class WorkSheet extends javax.swing.JFrame {
                 .addGroup(panelWallLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelWallLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(account1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(account, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(panelStatistics, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(panelAccount, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(panelClose, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
                     .addComponent(desk1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addComponent(statusBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -251,6 +265,7 @@ public class WorkSheet extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void close() {
+        load.updateProperties();
         System.exit(0);
     }
 
@@ -267,16 +282,14 @@ public class WorkSheet extends javax.swing.JFrame {
     }//GEN-LAST:event_itemCloseActionPerformed
 
     private void newSession() {
+        for (int i = 0; i < property.getAccountList().size(); i++) {
+            System.out.println(property.getAccountList().get(i));
+        }
         try {
-            if (property.getAccount().isEnable() == false) {
-                System.out.println("1");
+            if (property.isLogged() == false) {
+                closeSession();
                 UserLogin.main(new String[]{""}, property, this);
                 this.setVisible(false);
-            }
-            property.getAccount().setEnable(true);
-            if (property.getAccount().isEnable()) {
-                itemLogout.setEnabled(true);
-                itemLogin.setEnabled(false);
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -287,16 +300,21 @@ public class WorkSheet extends javax.swing.JFrame {
         newSession();
     }//GEN-LAST:event_itemLoginActionPerformed
 
-    private void account1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_account1MouseClicked
-        newSession();
-    }//GEN-LAST:event_account1MouseClicked
+    private void accountMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_accountMouseClicked
+        if (property.isLogged() == false) {
+            newSession();
+        } else {
+            desk1.AccountMouseClicked();
+        }
+    }//GEN-LAST:event_accountMouseClicked
 
     private void closeSession() {
         property.setAccount(new Account());
+        property.setLogged(false);
         statusBar1.refresh();
         itemLogout.setEnabled(false);
         itemLogin.setEnabled(true);
-
+        desk1.logout();
     }
 
     private void itemLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemLogoutActionPerformed
@@ -309,11 +327,21 @@ public class WorkSheet extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_desk1PropertyChange
 
+    private void panelStatisticsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelStatisticsMouseClicked
+        desk1.StatisticsMouseClicked();
+    }//GEN-LAST:event_panelStatisticsMouseClicked
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        load.updateProperties();
+    }//GEN-LAST:event_formWindowClosing
+
     /**
      * @param args the command line arguments
      * @param newProperty
+     * @param load1
      */
-    public static void main(String args[], Property newProperty) {
+    public static void main(String args[], Property newProperty, Load load1) {
+        load = load1;
         property = newProperty;
         /* Set the Darcula look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -347,7 +375,7 @@ public class WorkSheet extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private Common_Panels.Account account1;
+    private Common_Panels.Account account;
     private WorkSheet_Panels.Desk desk1;
     private javax.swing.JMenuItem itemClose;
     private javax.swing.JMenuItem itemLogin;
@@ -359,7 +387,7 @@ public class WorkSheet extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JPanel panelAccount;
+    private javax.swing.JPanel panelClose;
     private javax.swing.JPanel panelStatistics;
     private javax.swing.JPanel panelWall;
     private Common_Panels.StatusBar statusBar1;
@@ -369,6 +397,16 @@ public class WorkSheet extends javax.swing.JFrame {
      * Propiedades generales de la interfaz gráfica.
      */
     private static Property property;
+
+    private static Load load;
+
+    public Load getLoad() {
+        return load;
+    }
+
+    public void setLoad(Load load) {
+        this.load = load;
+    }
 
     public JPanel getjPanel1() {
         return panelWall;
@@ -390,15 +428,45 @@ public class WorkSheet extends javax.swing.JFrame {
         this.panelStatistics = panelStatistics;
     }
 
-    
-    
+    public JPanel getPanelClose() {
+        return panelClose;
+    }
+
+    public void setPanelClose(JPanel panelClose) {
+        this.panelClose = panelClose;
+    }
+
+    public JMenuItem getItemLogin() {
+        return itemLogin;
+    }
+
+    public void setItemLogin(JMenuItem itemLogin) {
+        this.itemLogin = itemLogin;
+    }
+
+    public JMenuItem getItemLogout() {
+        return itemLogout;
+    }
+
+    public void setItemLogout(JMenuItem itemLogout) {
+        this.itemLogout = itemLogout;
+    }
+
+    public Common_Panels.Account getAccount() {
+        return account;
+    }
+
+    public void setAccount(Common_Panels.Account account) {
+        this.account = account;
+    }
+
     @Override
     public void setBackground(Color color) {
         super.setBackground(color); //To change body of generated methods, choose Tools | Templates.
         try {
             desk1.setBackground(this.getBackground());
             panelWall.setBackground(this.getBackground());
-            panelAccount.setBackground(this.getBackground());
+            panelClose.setBackground(this.getBackground());
             panelStatistics.setBackground(this.getBackground());
             statusBar1.setBackground(new Color(63, 168, 176));
             jMenuBar1.setBackground(new Color(216, 106, 107));

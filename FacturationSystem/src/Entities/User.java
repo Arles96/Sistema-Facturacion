@@ -1,30 +1,50 @@
 package Entities;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Dario
  */
-public class User {
-    private String id;
-    private String nombre;
-    private String password;
-    private String correo;
-    private String telefono;
+public class User implements Serializable {
+
+    protected String ID;
+    protected String name;
+    protected String password;
+    protected String email;
+    protected String phone;
+    protected int level;
+
+    public User() {
+    }
+
+    
+    public User(String id, String nombre, String password, String correo, String telefono) {
+        this.ID = id;
+        this.name = nombre;
+        this.password = password;
+        this.email = correo;
+        this.phone = telefono;
+    }
 
     public String getId() {
-        return id;
+        return ID;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public String getID() {
+        return ID;
     }
 
-    public String getNombre() {
-        return nombre;
+    public void setID(String ID) {
+        this.ID = ID;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getPassword() {
@@ -35,19 +55,33 @@ public class User {
         this.password = password;
     }
 
-    public String getCorreo() {
-        return correo;
+    public String getEmail() {
+        return email;
     }
 
-    public void setCorreo(String correo) {
-        this.correo = correo;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public String getTelefono() {
-        return telefono;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setTelefono(String telefono) {
-        this.telefono = telefono;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
+
+    public int getLevel() {
+        return level;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" + "ID=" + ID + ", name=" + name + ", password=" + password + ", email=" + email + ", phone=" + phone + ", level=" + level + '}';
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
+    }
+
 }

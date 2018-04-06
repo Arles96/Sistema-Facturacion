@@ -1,97 +1,99 @@
 package Resources;
 
-import java.awt.Image;
+import Entities.User;
 import java.io.Serializable;
+import java.util.Objects;
 
 /**
  * Objeto contenedor de los datos de acceso del usuario.
  *
  * @author CJ
  */
-public class Account implements Serializable {
-
-    /**
-     * Contraseña del usuario.
-     */
-    private String password;
-    /**
-     * Nombre del usuario.
-     */
-    private String user;
-    /**
-     * Correo electrónico del usuario.
-     */
-    private String email;
-    /**
-     * Imagen de perfil del usuario.
-     */
-    private Image picture;
-    /**
-     * Define si la cuenta está conectada en ese momento.
-     */
-    private boolean enable;
+public class Account extends User implements Serializable, Comparable<Object> {
 
     public Account() {
         this.password = "";
-        this.user = "";
+        this.name = "";
         this.email = "";
-        this.picture = null;
-        this.enable = false;
+        this.level = 0;
+        this.ID = "-1";
+        this.password = "";
     }
 
-    public Account(String password, String user, String email, Image picture) {
+    public Account(String password, int level, String user, String email, int ID, String phone) {
         this.password = password;
-        this.user = user;
+        this.level = level;
+        this.name = user;
         this.email = email;
-        this.picture = picture;
-        this.enable = false;
+        this.ID = ID + "";
+        this.phone = phone;
     }
 
-    // ACCESORES
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
+    public Account(String password, String user, String email, int level) {
         this.password = password;
-    }
-
-    public String getUser() {
-        return user;
-    }
-
-    public void setUser(String user) {
-        this.user = user;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
+        this.name = user;
         this.email = email;
-    }
-
-    public Image getPicture() {
-        return picture;
-    }
-
-    public void setPicture(Image picture) {
-        this.picture = picture;
-    }
-
-    public boolean isEnable() {
-        return enable;
-    }
-
-    public void setEnable(boolean enable) {
-        this.enable = enable;
+        this.level = level;
+        this.ID = "-1";
+        this.password = "";
     }
 
     @Override
     public String toString() {
-        return "Account{" + "password=" + password + ", user=" + user + ", email=" + email + ", picture=" + picture + ", enable=" + enable + '}';
+        return "Account{" + "user=" + name + ", ID=" + ID + ", password=" + password + ", level=" + level + ", email=" + email + ", phone=" + phone + '}';
     }
 
-    
+    public int getID_int() {
+        return Integer.parseInt(ID);
+    }
+
+    public void setID(int ID) {
+        this.ID = ID + "";
+    }
+
+    /**
+     *
+     * @param o
+     * @return
+     */
+    @Override
+    public boolean equals(Object o) {
+        if (o instanceof Account) {
+            if (((Account) o).getName().equals(this.name)) {
+                return true;
+            }
+        } else if (o instanceof String) {
+            if (o.equals(this.name)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 89 * hash + Objects.hashCode(this.name);
+        return hash;
+    }
+
+    /**
+     *
+     * @param t
+     * @return
+     */
+    @Override
+    public int compareTo(Object t) {
+        if (t instanceof Account) {
+            if (((Account) t).getName().equals(this.name)) {
+                return 0;
+            }
+        } else if (t instanceof String) {
+            if (t.equals(this.name)) {
+                return 0;
+            }
+        }
+        return 1;
+    }
+
 }

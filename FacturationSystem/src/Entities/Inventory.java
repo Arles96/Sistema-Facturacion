@@ -1,17 +1,15 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Entities;
+
+import java.io.Serializable;
 
 /**
  *
  * @author Dario
  */
-public class Inventory {
+public class Inventory implements Serializable {
+
     private int idProducto;
-    private String NombreProcto;
+    private String NombreProducto;
     private float impuesto;
     private float precioCaja;
     private float precioUnidad;
@@ -22,7 +20,33 @@ public class Inventory {
     private int cantidadUnidad;
     private String tipo;
 
-    
+    public Inventory() {
+    }
+
+    public Inventory(int idProducto, String NombreProcto, float impuesto, float precioCaja, float precioUnidad, float precioVentaCaja, float precioVentaUnidad, String fechaVencimiento, int cantidadCaja, int cantidadUnidad, String tipo) {
+        this.idProducto = idProducto;
+        this.NombreProducto = NombreProcto;
+        this.impuesto = impuesto;
+        this.precioCaja = precioCaja;
+        this.precioUnidad = precioUnidad;
+        this.precioVentaCaja = precioVentaCaja;
+        this.precioVentaUnidad = precioVentaUnidad;
+        this.fechaVencimiento = fechaVencimiento;
+        this.cantidadCaja = cantidadCaja;
+        this.cantidadUnidad = cantidadUnidad;
+        this.tipo = tipo;
+    }
+
+    public Inventory(int idProducto, String NombreProcto, float precioUnidad, float precioVentaUnidad, String fechaVencimiento, int cantidadUnidad, String tipo) {
+        this.idProducto = idProducto;
+        this.NombreProducto = NombreProcto;
+        this.precioUnidad = precioUnidad;
+        this.precioVentaUnidad = precioVentaUnidad;
+        this.fechaVencimiento = fechaVencimiento;
+        this.cantidadUnidad = cantidadUnidad;
+        this.tipo = tipo;
+    }
+
     public int getIdProducto() {
         return idProducto;
     }
@@ -31,12 +55,12 @@ public class Inventory {
         this.idProducto = idProducto;
     }
 
-    public String getNombreProcto() {
-        return NombreProcto;
+    public String getNombreProducto() {
+        return NombreProducto;
     }
 
-    public void setNombreProcto(String NombreProcto) {
-        this.NombreProcto = NombreProcto;
+    public void setNombreProducto(String NombreProducto) {
+        this.NombreProducto = NombreProducto;
     }
 
     public float getImpuesto() {
@@ -102,7 +126,7 @@ public class Inventory {
     public void setCantidadUnidad(int cantidadUnidad) {
         this.cantidadUnidad = cantidadUnidad;
     }
-    
+
     public String getTipo() {
         return tipo;
     }
