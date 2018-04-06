@@ -46,7 +46,7 @@ public class BinnacleModel extends Model {
 
     @Override
     public void delete(Object id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
     
 }

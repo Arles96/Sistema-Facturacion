@@ -17,14 +17,14 @@ public class UserModel extends Model {
         super.connect();
         User user = (User) entity;
         try {
-            PreparedStatement st = connect.prepareStatement("INSERT INTO usuario (id_usuario, nombre, contrasenia, correo, telefono) values(?, ?, ?, ?, ?)");
-            //PreparedStatement st = connect.prepareStatement("INSERT INTO usuario (id_usuario, nombre, contrasenia, correo, telefono, nivel) values(?, ?, ?, ?, ?, ?)");
+            //PreparedStatement st = connect.prepareStatement("INSERT INTO usuario (id_usuario, nombre, contrasenia, correo, telefono) values(?, ?, ?, ?, ?)");
+            PreparedStatement st = connect.prepareStatement("INSERT INTO usuario (id_usuario, nombre, contrasenia, correo, telefono, nivel) values(?, ?, ?, ?, ?, ?)");
             st.setString(1, user.getID());
             st.setString(2, user.getName());
             st.setString(3, user.getPassword());
             st.setString(4, user.getEmail());
             st.setString(5, user.getPhone());
-            //st.setString(6, user.getLevel());
+            st.setString(6, user.getLevel() + "");
             st.execute();
         } catch (Exception ex) {
         }

@@ -6,9 +6,11 @@ import Entities.Inventory;
 import Entities.Payment;
 import Entities.Provider;
 import Entities.Purchases;
+import Models.UserModel;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
 
 /**
  *
@@ -134,7 +136,7 @@ public class Property implements Serializable {
 
     public void setAccount(Account account) {
         this.account = account;
-    }
+    }    
 
     public ArrayList<Account> getAccountList() {
         return accountList;
@@ -158,6 +160,7 @@ public class Property implements Serializable {
 
     public void setLastUserId(int lastUserId) {
         this.lastUserId = lastUserId;
+
     }
 
     public ArrayList<Inventory> getProductList() {
