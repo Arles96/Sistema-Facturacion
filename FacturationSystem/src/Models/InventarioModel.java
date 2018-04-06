@@ -14,13 +14,11 @@ import java.util.LinkedList;
  */
 public class InventarioModel extends Model {
 
-    
-    
     @Override
     public void insert(Object entity) {
         super.connect();
-        Inventory inv = (Inventory)entity;
-        try{
+        Inventory inv = (Inventory) entity;
+        try {
             PreparedStatement st = connect.prepareStatement("INSERT INTO producto (id_producto, cantidadCaja, cantidadUnidad, fechaVencimiento, costoCaja, ventaCaja, ventaUnidad, tipo, impuesto, costoUnidad, nombreProducto) "
                     + "values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
             st.setString(1, "" + inv.getIdProducto());
@@ -34,9 +32,8 @@ public class InventarioModel extends Model {
             st.setString(9, "" + inv.getImpuesto());
             st.setString(10, "" + inv.getPrecioUnidad());
             st.setString(11, inv.getNombreProducto());
-            
             st.execute();
-        }catch(Exception ex){
+        } catch (Exception ex) {
         }
         super.close();
     }
@@ -44,8 +41,8 @@ public class InventarioModel extends Model {
     @Override
     public void update(Object entity) {
         super.connect();
-        Inventory inv = (Inventory)entity;
-        try{
+        Inventory inv = (Inventory) entity;
+        try {
             PreparedStatement st = connect.prepareStatement("UPDATE producto set cantidadCaja=?, cantidadUnidad=?, fechaVencimiento=?, costoCaja=?, ventaCaja=?, ventaUnidad=?, tipo=?, impuesto=?, costoUnidad=?, nombreProducto=? where id_producto=?");
             st.setString(1, "" + inv.getCantidadCaja());
             st.setString(2, "" + inv.getCantidadUnidad());
@@ -58,9 +55,9 @@ public class InventarioModel extends Model {
             st.setString(9, "" + inv.getPrecioUnidad());
             st.setString(10, inv.getNombreProducto());
             st.setString(11, "" + inv.getIdProducto());
-            
+
             st.execute();
-        }catch(Exception ex){
+        } catch (Exception ex) {
         }
         super.close();
     }
@@ -68,11 +65,11 @@ public class InventarioModel extends Model {
     @Override
     public void delete(Object id) {
         super.connect();
-        try{
+        try {
             PreparedStatement st = connect.prepareStatement("Delete from producto where id_producto=?");
-            st.setString(1, (String)id);
+            st.setString(1, (String) id);
             st.execute();
-        }catch(Exception ex){
+        } catch (Exception ex) {
         }
         super.close();
     }
@@ -80,10 +77,10 @@ public class InventarioModel extends Model {
     public ArrayList<Inventory> getView(){
         ArrayList<Inventory> view = new ArrayList();
         super.connect();
-        try{
+        try {
             Statement st = connect.createStatement();
             ResultSet rs = st.executeQuery("Select * from VW_PRODUCTO");
-            while(rs.next()){
+            while (rs.next()) {
                 int idProducto = rs.getInt("id_producto");
                 String NombreProducto = rs.getString("nombreProducto");
                 float impuesto = rs.getInt("impuesto");
@@ -94,13 +91,12 @@ public class InventarioModel extends Model {
                 String fechaVencimiento = rs.getString("fechaVencimiento");
                 int cantidadCaja = rs.getInt("cantidadCaja");
                 int cantidadUnidad = rs.getInt("cantidadUnidad");
-                String tipo = rs.getString("tipo"); 
-
-                view.add(new Inventory(idProducto, NombreProducto, impuesto, precioCaja
-                        , precioUnidad, precioVentaCaja, precioVentaUnidad, fechaVencimiento, cantidadCaja, cantidadUnidad, tipo));
+                String tipo = rs.getString("tipo");
+                view.add(new Inventory(idProducto, NombreProducto, impuesto, precioCaja,
+                         precioUnidad, precioVentaCaja, precioVentaUnidad, fechaVencimiento, cantidadCaja, cantidadUnidad, tipo));
             }
-            
-        }catch(Exception ex){
+
+        } catch (Exception ex) {
         }
         super.close();
         return view;
