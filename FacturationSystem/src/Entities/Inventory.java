@@ -1,14 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Entities;
+
+import java.io.Serializable;
 
 /**
  *
  * @author Dario
  */
+<<<<<<< HEAD
 public class Inventory {
     private int idProducto;
     private String NombreProducto;
@@ -25,6 +23,28 @@ public class Inventory {
     public Inventory(int idProducto, String NombreProducto, float impuesto, float precioCaja, float precioUnidad, float precioVentaCaja, float precioVentaUnidad, String fechaVencimiento, int cantidadCaja, int cantidadUnidad, String tipo) {
         this.idProducto = idProducto;
         this.NombreProducto = NombreProducto;
+=======
+public class Inventory implements Serializable {
+
+    protected int idProducto;
+    protected String NombreProducto;
+    protected float impuesto;
+    protected float precioCaja;
+    protected float precioUnidad;
+    protected float precioVentaCaja;
+    protected float precioVentaUnidad;
+    protected String fechaVencimiento;
+    protected int cantidadCaja;
+    protected int cantidadUnidad;
+    protected String tipo;
+
+    public Inventory() {
+    }
+
+    public Inventory(int idProducto, String NombreProcto, float impuesto, float precioCaja, float precioUnidad, float precioVentaCaja, float precioVentaUnidad, String fechaVencimiento, int cantidadCaja, int cantidadUnidad, String tipo) {
+        this.idProducto = idProducto;
+        this.NombreProducto = NombreProcto;
+>>>>>>> a3e660aa90923ce4f1e8bec6b1c72f1e5ae4250f
         this.impuesto = impuesto;
         this.precioCaja = precioCaja;
         this.precioUnidad = precioUnidad;
@@ -35,7 +55,21 @@ public class Inventory {
         this.cantidadUnidad = cantidadUnidad;
         this.tipo = tipo;
     }
+<<<<<<< HEAD
     
+=======
+
+    public Inventory(int idProducto, String NombreProcto, float precioUnidad, float precioVentaUnidad, String fechaVencimiento, int cantidadUnidad, String tipo) {
+        this.idProducto = idProducto;
+        this.NombreProducto = NombreProcto;
+        this.precioUnidad = precioUnidad;
+        this.precioVentaUnidad = precioVentaUnidad;
+        this.fechaVencimiento = fechaVencimiento;
+        this.cantidadUnidad = cantidadUnidad;
+        this.tipo = tipo;
+    }
+
+>>>>>>> a3e660aa90923ce4f1e8bec6b1c72f1e5ae4250f
     public int getIdProducto() {
         return idProducto;
     }
@@ -48,8 +82,13 @@ public class Inventory {
         return NombreProducto;
     }
 
+<<<<<<< HEAD
     public void setNombreProducto(String NombreProcto) {
         this.NombreProducto = NombreProcto;
+=======
+    public void setNombreProducto(String NombreProducto) {
+        this.NombreProducto = NombreProducto;
+>>>>>>> a3e660aa90923ce4f1e8bec6b1c72f1e5ae4250f
     }
 
     public float getImpuesto() {
@@ -115,7 +154,7 @@ public class Inventory {
     public void setCantidadUnidad(int cantidadUnidad) {
         this.cantidadUnidad = cantidadUnidad;
     }
-    
+
     public String getTipo() {
         return tipo;
     }

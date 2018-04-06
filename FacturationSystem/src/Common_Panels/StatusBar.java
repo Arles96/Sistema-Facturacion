@@ -46,7 +46,7 @@ public class StatusBar extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(56, 56, 56)
+                .addContainerGap(56, Short.MAX_VALUE)
                 .addComponent(labelDate, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
                 .addComponent(labelRunTime)
@@ -54,7 +54,7 @@ public class StatusBar extends javax.swing.JPanel {
                 .addComponent(labelUser)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 122, Short.MAX_VALUE)
                 .addComponent(labelInfo)
-                .addGap(117, 117, 117))
+                .addContainerGap(117, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -142,10 +142,10 @@ public class StatusBar extends javax.swing.JPanel {
     }
 
     private void setUser() {
-        labelUser.setText("Usuario: " + property.getAccount().getUser());
+        labelUser.setText("Usuario: " + property.getAccount().getName());
     }
 
-    private void setInfo(String info) {
+    public void setInfo(String info) {
         labelInfo.setText(info);
     }
 

@@ -1,16 +1,21 @@
 package Entities;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Dario
  */
-public class User {
-    private String id;
-    private String nombre;
-    private String password;
-    private String correo;
-    private String telefono;
+public class User implements Serializable {
 
+    protected String ID;
+    protected String name;
+    protected String password;
+    protected String email;
+    protected String phone;
+    protected int level;
+
+<<<<<<< HEAD
     public User(String id, String nombre, String password, String correo, String telefono) {
         this.id = id;
         this.nombre = nombre;
@@ -21,18 +26,22 @@ public class User {
     
     public String getId() {
         return id;
+=======
+    public String getID() {
+        return ID;
+>>>>>>> a3e660aa90923ce4f1e8bec6b1c72f1e5ae4250f
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setID(String ID) {
+        this.ID = ID;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getName() {
+        return name;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getPassword() {
@@ -43,24 +52,35 @@ public class User {
         this.password = password;
     }
 
-    public String getCorreo() {
-        return correo;
+    public String getEmail() {
+        return email;
     }
 
-    public void setCorreo(String correo) {
-        this.correo = correo;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public String getTelefono() {
-        return telefono;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setTelefono(String telefono) {
-        this.telefono = telefono;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
+    public int getLevel() {
+        return level;
+    }
+
+<<<<<<< HEAD
     @Override
     public String toString() {
         return "User{" + "id=" + id + ", nombre=" + nombre + ", password=" + password + ", correo=" + correo + ", telefono=" + telefono + '}';
     }
+=======
+    public void setLevel(int level) {
+        this.level = level;
+    }
+
+>>>>>>> a3e660aa90923ce4f1e8bec6b1c72f1e5ae4250f
 }

@@ -33,7 +33,7 @@ public class Load extends javax.swing.JFrame {
             loadProperties();
         } catch (Exception e) {
             System.out.println("ERROR_LOADPROPERTIES");
-            setProperties();
+            createProperties();
         }
         //System.out.println(property);
     }
@@ -270,14 +270,17 @@ public class Load extends javax.swing.JFrame {
     /**
      * Sobrescribe las propiedades generales.
      */
-    public void setProperties() {
+    public void createProperties() {
         try {
             ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(".properties.pty"));
-            property = new Property(Property.FIBER, new Account());
+            property = new Property(Property.FIBER, new Account("a", 1, "a", "email", 0, "91919191"));
+            property.setLastUserId(property.getLastUserId() + 1);
+            property.getAdminList().add(property.getAccount());
             property.logged = false;
             out.writeObject(property);
             out.close();
         } catch (Exception e) {
+            e.printStackTrace();
             System.out.println("ERROR_SETPROPERTIES");
         }
         System.out.println("LOAD: Set Properties");

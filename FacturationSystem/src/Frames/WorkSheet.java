@@ -9,6 +9,8 @@ import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.util.Arrays;
+import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 
 /**
@@ -30,9 +32,10 @@ public class WorkSheet extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         this.setBackground(new Color(88, 89, 83));
         itemLogout.setEnabled(false);
-        desk1.setProperty(property);
         statusBar1.setProperty(property);
+        desk1.setProperty(property);
         desk1.setLabelBackVisible(false);
+        desk1.Account_ResetFields();
         closeSession();
     }
 
@@ -61,6 +64,11 @@ public class WorkSheet extends javax.swing.JFrame {
         setBackground(new java.awt.Color(0, 204, 204));
         setFocusTraversalPolicyProvider(true);
         setIconImage(getIconImage());
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
 
         panelWall.setFocusCycleRoot(true);
         panelWall.setFocusTraversalPolicyProvider(true);
@@ -78,8 +86,6 @@ public class WorkSheet extends javax.swing.JFrame {
                 accountMouseClicked(evt);
             }
         });
-
-        statusBar1.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
 
         jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICO/40px/icons8_Toggle_Off_40px.png"))); // NOI18N
         jLabel15.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -124,6 +130,12 @@ public class WorkSheet extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        panelStatistics.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                panelStatisticsMouseClicked(evt);
+            }
+        });
+
         jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICO/100px/icons8_Training_100px_1.png"))); // NOI18N
         jLabel17.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel17.setDebugGraphicsOptions(javax.swing.DebugGraphics.BUFFERED_OPTION);
@@ -141,18 +153,19 @@ public class WorkSheet extends javax.swing.JFrame {
             panelStatisticsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelStatisticsLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel17)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelStatisticsLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel8)
-                .addGap(20, 20, 20))
+                .addGroup(panelStatisticsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelStatisticsLayout.createSequentialGroup()
+                        .addComponent(jLabel17)
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelStatisticsLayout.createSequentialGroup()
+                        .addComponent(jLabel8)
+                        .addGap(20, 20, 20))))
         );
         panelStatisticsLayout.setVerticalGroup(
             panelStatisticsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelStatisticsLayout.createSequentialGroup()
                 .addComponent(jLabel17)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                .addGap(0, 0, 0)
                 .addComponent(jLabel8))
         );
 
@@ -269,16 +282,14 @@ public class WorkSheet extends javax.swing.JFrame {
     }//GEN-LAST:event_itemCloseActionPerformed
 
     private void newSession() {
+        for (int i = 0; i < property.getAccountList().size(); i++) {
+            System.out.println(property.getAccountList().get(i));
+        }
         try {
-            if (property.getAccount().isEnable() == false) {
+            if (property.isLogged() == false) {
                 closeSession();
                 UserLogin.main(new String[]{""}, property, this);
                 this.setVisible(false);
-            }
-            property.getAccount().setEnable(true);
-            if (property.getAccount().isEnable()) {
-                itemLogout.setEnabled(true);
-                itemLogin.setEnabled(false);
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -290,11 +301,16 @@ public class WorkSheet extends javax.swing.JFrame {
     }//GEN-LAST:event_itemLoginActionPerformed
 
     private void accountMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_accountMouseClicked
-        newSession();
+        if (property.isLogged() == false) {
+            newSession();
+        } else {
+            desk1.AccountMouseClicked();
+        }
     }//GEN-LAST:event_accountMouseClicked
 
     private void closeSession() {
         property.setAccount(new Account());
+        property.setLogged(false);
         statusBar1.refresh();
         itemLogout.setEnabled(false);
         itemLogin.setEnabled(true);
@@ -310,6 +326,14 @@ public class WorkSheet extends javax.swing.JFrame {
             panelStatistics.setVisible(false);
         }
     }//GEN-LAST:event_desk1PropertyChange
+
+    private void panelStatisticsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelStatisticsMouseClicked
+        desk1.StatisticsMouseClicked();
+    }//GEN-LAST:event_panelStatisticsMouseClicked
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        load.updateProperties();
+    }//GEN-LAST:event_formWindowClosing
 
     /**
      * @param args the command line arguments
@@ -410,6 +434,22 @@ public class WorkSheet extends javax.swing.JFrame {
 
     public void setPanelClose(JPanel panelClose) {
         this.panelClose = panelClose;
+    }
+
+    public JMenuItem getItemLogin() {
+        return itemLogin;
+    }
+
+    public void setItemLogin(JMenuItem itemLogin) {
+        this.itemLogin = itemLogin;
+    }
+
+    public JMenuItem getItemLogout() {
+        return itemLogout;
+    }
+
+    public void setItemLogout(JMenuItem itemLogout) {
+        this.itemLogout = itemLogout;
     }
 
     public Common_Panels.Account getAccount() {

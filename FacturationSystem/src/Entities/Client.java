@@ -1,10 +1,13 @@
 package Entities;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Dario
  */
-public class Client {
+public class Client implements Serializable {
+
     private int numClient;
     private String nombre;
     private String correo;
@@ -13,9 +16,12 @@ public class Client {
     private String municipio;
     private String ciudad;
 
+<<<<<<< HEAD
     public Client() {
     }
     
+=======
+>>>>>>> a3e660aa90923ce4f1e8bec6b1c72f1e5ae4250f
     public Client(int numClient, String nombre, String correo, String telefono, String departamento, String municipio, String ciudad) {
         this.numClient = numClient;
         this.nombre = nombre;
@@ -25,7 +31,11 @@ public class Client {
         this.municipio = municipio;
         this.ciudad = ciudad;
     }
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> a3e660aa90923ce4f1e8bec6b1c72f1e5ae4250f
     public int getNumClient() {
         return numClient;
     }
@@ -56,7 +66,7 @@ public class Client {
 
     public void setTelefono(String telefono) {
         this.telefono = telefono;
-    }       
+    }
 
     public String getDepartamento() {
         return departamento;
@@ -81,6 +91,5 @@ public class Client {
     public void setCiudad(String ciudad) {
         this.ciudad = ciudad;
     }
-    
-    
+
 }

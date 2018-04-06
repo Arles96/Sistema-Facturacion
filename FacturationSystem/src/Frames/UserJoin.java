@@ -8,6 +8,7 @@ import java.awt.Toolkit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
+import jdk.nashorn.internal.ir.ContinueNode;
 
 /**
  *
@@ -32,6 +33,7 @@ public class UserJoin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        panelWall = new javax.swing.JPanel();
         labelBack = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -48,7 +50,20 @@ public class UserJoin extends javax.swing.JFrame {
         email = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         errorEmail = new javax.swing.JLabel();
-        panelWall = new javax.swing.JPanel();
+        buttomAdministrator = new javax.swing.JRadioButton();
+
+        panelWall.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+
+        javax.swing.GroupLayout panelWallLayout = new javax.swing.GroupLayout(panelWall);
+        panelWall.setLayout(panelWallLayout);
+        panelWallLayout.setHorizontalGroup(
+            panelWallLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 560, Short.MAX_VALUE)
+        );
+        panelWallLayout.setVerticalGroup(
+            panelWallLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 460, Short.MAX_VALUE)
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setTitle("Inicio de Sesión");
@@ -113,7 +128,7 @@ public class UserJoin extends javax.swing.JFrame {
                 labelDoneMouseClicked(evt);
             }
         });
-        getContentPane().add(labelDone, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 350, -1, -1));
+        getContentPane().add(labelDone, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 340, -1, -1));
 
         passwordR.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -145,20 +160,14 @@ public class UserJoin extends javax.swing.JFrame {
         errorEmail.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICO/40px/icons8_Delete_Row_40px.png"))); // NOI18N
         getContentPane().add(errorEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 300, -1, -1));
 
-        panelWall.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-
-        javax.swing.GroupLayout panelWallLayout = new javax.swing.GroupLayout(panelWall);
-        panelWall.setLayout(panelWallLayout);
-        panelWallLayout.setHorizontalGroup(
-            panelWallLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 560, Short.MAX_VALUE)
-        );
-        panelWallLayout.setVerticalGroup(
-            panelWallLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-
-        getContentPane().add(panelWall, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 560, -1));
+        buttomAdministrator.setForeground(new java.awt.Color(51, 51, 51));
+        buttomAdministrator.setText("Administrador");
+        buttomAdministrator.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttomAdministratorActionPerformed(evt);
+            }
+        });
+        getContentPane().add(buttomAdministrator, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 350, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -173,12 +182,20 @@ public class UserJoin extends javax.swing.JFrame {
         if (!errorUser.isVisible() && !errorPasswordR.isVisible() && !errorEmail.isVisible()
                 && !user.getText().isEmpty() && !password.getText().isEmpty() && !passwordR.getText().isEmpty() && !email.getText().isEmpty()) {
             this.setAlwaysOnTop(false);
-
-            if (property.contains(user.getText()) > -1) {
+            if (property.containsAccount(user.getText()) > -1) {
                 JOptionPane.showMessageDialog(null, "Usuario ya existente", "Colición", 0);
                 errorUser.setVisible(true);
-            } else if (property.ADMIN.equals(JOptionPane.showInputDialog(null, "Código de Administrador", "Confirmar", 1) + "")) {
-                property.getAccountList().add(new Account(password.getText(), user.getText(), email.getText(), null));
+            } else if (property.CREATE_KEY.equals(JOptionPane.showInputDialog(null, "Código de Administrador", "Confirmar", 1) + "")) {
+                int level = 0;
+                if (buttomAdministrator.isSelected() == true) {
+                    level = 1;
+                }
+                property.getAccountList().add(new Account(password.getText(), level, user.getText(), email.getText(), property.getLastUserId(), ""));
+                property.setLastUserId(property.getLastUserId() + 1);
+                if (level == 1) {
+                    property.getAdminList().add(property.getAccountList().get(property.getAccountList().size() - 1));
+                }
+                this.setAlwaysOnTop(true);
                 this.dispose();
                 userLogin.setVisible(true);
             }
@@ -211,6 +228,15 @@ public class UserJoin extends javax.swing.JFrame {
 
         }
     }//GEN-LAST:event_emailKeyReleased
+
+    private void buttomAdministratorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttomAdministratorActionPerformed
+        this.setAlwaysOnTop(false);
+        if (property.adminKey(JOptionPane.showInputDialog(null, "Contraseña de Administrador", "Autenticar", 1) + "") == -1) {
+            buttomAdministrator.setSelected(false);
+            JOptionPane.showMessageDialog(null, "Contraseña de Administrador inválida", "Error de autenticación", 0);
+            this.setAlwaysOnTop(true);
+        }
+    }//GEN-LAST:event_buttomAdministratorActionPerformed
 
     /**
      * @param args the command line arguments
@@ -255,6 +281,7 @@ public class UserJoin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JRadioButton buttomAdministrator;
     private javax.swing.JTextField email;
     private javax.swing.JLabel errorEmail;
     private javax.swing.JLabel errorPasswordR;
