@@ -1,6 +1,7 @@
 package Models;
 
 import Entities.User;
+import Resources.Account;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -65,8 +66,8 @@ public class UserModel extends Model {
         super.close();
     }
 
-    public ArrayList<User> getView() {
-        ArrayList<User> view = new ArrayList();
+    public ArrayList<Account> getView() {
+        ArrayList<Account> view = new ArrayList();
         super.connect();
         try {
             Statement st = connect.createStatement();
@@ -78,7 +79,7 @@ public class UserModel extends Model {
                 String correo = rs.getString("correo");
                 String telefono = rs.getString("telefono");
 
-                view.add(new User(id, nombre, password, correo, telefono));
+                view.add(new Account(password, 0, nombre, correo, Integer.parseInt(id), telefono));
             }
 
         } catch (Exception ex) {

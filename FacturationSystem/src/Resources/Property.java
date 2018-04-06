@@ -6,7 +6,13 @@ import Entities.Inventory;
 import Entities.Payment;
 import Entities.Provider;
 import Entities.Purchases;
+import Models.*;
+import Models.DailySales_Model;
+import Models.InventarioModel;
+import Models.Provider_Model;
+import Models.Purchases_Model;
 import Models.UserModel;
+import Models.ClientModel;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -136,9 +142,11 @@ public class Property implements Serializable {
 
     public void setAccount(Account account) {
         this.account = account;
-    }    
+    }
 
     public ArrayList<Account> getAccountList() {
+        UserModel m = new UserModel();
+        accountList = m.getView();
         return accountList;
     }
 
@@ -164,6 +172,8 @@ public class Property implements Serializable {
     }
 
     public ArrayList<Inventory> getProductList() {
+        InventarioModel m = new InventarioModel();
+        productList = m.getView();
         return productList;
     }
 
@@ -188,6 +198,8 @@ public class Property implements Serializable {
     }
 
     public ArrayList<Client> getClientList() {
+        ClientModel m = new ClientModel();
+        clientList = m.getView();
         return clientList;
     }
 
@@ -196,6 +208,8 @@ public class Property implements Serializable {
     }
 
     public ArrayList<Provider> getProviderList() {
+        Provider_Model m = new Provider_Model();
+        providerList = m.getView();
         return providerList;
     }
 
@@ -204,6 +218,8 @@ public class Property implements Serializable {
     }
 
     public ArrayList<Purchases> getPurchaseList() {
+        Purchases_Model m = new Purchases_Model();
+        productList = m.getView();
         return PurchaseList;
     }
 
@@ -212,6 +228,8 @@ public class Property implements Serializable {
     }
 
     public ArrayList<DailySales> getSellList() {
+        DailySales_Model m = new DailySales_Model();
+        SellList = m.getView();
         return SellList;
     }
 
@@ -220,6 +238,8 @@ public class Property implements Serializable {
     }
 
     public ArrayList<Payment> getPayList() {
+        Payment_Model m = new Payment_Model();
+        PayList = m.getView();
         return PayList;
     }
 
