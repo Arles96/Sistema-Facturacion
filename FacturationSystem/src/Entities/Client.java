@@ -16,6 +16,12 @@ public class Client implements Serializable {
     private String municipio;
     private String ciudad;
 
+<<<<<<< HEAD
+    public Client() {
+    }
+    
+=======
+>>>>>>> a3e660aa90923ce4f1e8bec6b1c72f1e5ae4250f
     public Client(int numClient, String nombre, String correo, String telefono, String departamento, String municipio, String ciudad) {
         this.numClient = numClient;
         this.nombre = nombre;
@@ -25,7 +31,11 @@ public class Client implements Serializable {
         this.municipio = municipio;
         this.ciudad = ciudad;
     }
+<<<<<<< HEAD
+    
+=======
 
+>>>>>>> a3e660aa90923ce4f1e8bec6b1c72f1e5ae4250f
     public int getNumClient() {
         return numClient;
     }

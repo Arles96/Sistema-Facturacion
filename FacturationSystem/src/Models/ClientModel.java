@@ -3,7 +3,11 @@ package Models;
 import Entities.Client;
 import Entities.PersonaJuridica;
 import Entities.PersonaNatural;
+import Entities.User;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.LinkedList;
 
 /**
  *
@@ -98,4 +102,65 @@ public class ClientModel extends Model{
         super.close();
     }
     
+    public LinkedList getView(){
+        LinkedList<Client> view = new LinkedList();
+        super.connect();
+        try{
+            Statement st = connect.createStatement();
+            ResultSet rs = st.executeQuery("Select * from VW_CLIENTE");
+            while(rs.next()){
+                int numClient = rs.getInt("num_cliente");
+                String nombre = rs.getString("nombre");
+                String correo = rs.getString("correo");
+                String telefono = rs.getString("telefono");
+                String departamento = rs.getString("departamento");
+                String municipio = rs.getString("municipio");
+                String ciudad = rs.getString("ciudad");
+
+                view.add(new Client(numClient, nombre, correo, telefono, departamento, municipio, ciudad));
+            }
+            
+        }catch(Exception ex){
+        }
+        super.close();
+        return view;
+    }
+    
+    public LinkedList getViewJuridica(){
+        LinkedList<PersonaJuridica> view = new LinkedList();
+        super.connect();
+        try{
+            Statement st = connect.createStatement();
+            ResultSet rs = st.executeQuery("Select * from VW_PERSONAJURIDICA");
+            while(rs.next()){
+                int numCliente = rs.getInt("num_cliente");
+                String rtn = rs.getString("rtn");
+                
+                view.add(new PersonaJuridica(numCliente, rtn));
+            }
+            
+        }catch(Exception ex){
+        }
+        super.close();
+        return view;
+    }
+    
+    public LinkedList getViewNatural(){
+        LinkedList<PersonaNatural> view = new LinkedList();
+        super.connect();
+        try{
+            Statement st = connect.createStatement();
+            ResultSet rs = st.executeQuery("Select * from VW_PERSONANATURAL");
+            while(rs.next()){
+                int numCliente = rs.getInt("num_cliente");
+                String rtn = rs.getString("rtn");
+                
+                view.add(new PersonaNatural(numCliente, rtn));
+            }
+            
+        }catch(Exception ex){
+        }
+        super.close();
+        return view;
+    }
 }

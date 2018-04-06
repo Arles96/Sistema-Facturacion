@@ -3,6 +3,9 @@ package Models;
 import Entities.Inventory;
 import Entities.User;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.LinkedList;
 
 /**
  *
@@ -71,5 +74,34 @@ public class InventarioModel extends Model {
         }catch(Exception ex){
         }
         super.close();
+    }
+    
+    public LinkedList getView(){
+        LinkedList<Inventory> view = new LinkedList();
+        super.connect();
+        try{
+            Statement st = connect.createStatement();
+            ResultSet rs = st.executeQuery("Select * from VW_PRODUCTO");
+            while(rs.next()){
+                int idProducto = rs.getInt("id_producto");
+                String NombreProducto = rs.getString("nombreProducto");
+                float impuesto = rs.getInt("impuesto");
+                float precioCaja = rs.getFloat("costoCaja");
+                float precioUnidad = rs.getFloat("costoUnidad");
+                float precioVentaCaja = rs.getFloat("ventaCaja");
+                float precioVentaUnidad = rs.getFloat("ventaUnidad");
+                String fechaVencimiento = rs.getString("fechaVencimiento");
+                int cantidadCaja = rs.getInt("cantidadCaja");
+                int cantidadUnidad = rs.getInt("cantidadUnidad");
+                String tipo = rs.getString("tipo"); 
+
+                view.add(new Inventory(idProducto, NombreProducto, impuesto, precioCaja
+                        , precioUnidad, precioVentaCaja, precioVentaUnidad, fechaVencimiento, cantidadCaja, cantidadUnidad, tipo));
+            }
+            
+        }catch(Exception ex){
+        }
+        super.close();
+        return view;
     }
 }
