@@ -91,7 +91,6 @@ public class InventarioModel extends Model {
                 int cantidadCaja = rs.getInt("cantidadCaja");
                 int cantidadUnidad = rs.getInt("cantidadUnidad");
                 String tipo = rs.getString("tipo");
-
                 view.add(new Inventory(idProducto, NombreProducto, impuesto, precioCaja,
                          precioUnidad, precioVentaCaja, precioVentaUnidad, fechaVencimiento, cantidadCaja, cantidadUnidad, tipo));
             }

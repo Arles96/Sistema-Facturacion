@@ -63,4 +63,7 @@ public class DailySales_Model extends Model {
         }
         super.close();
     }
+    
+    
+    
 }
