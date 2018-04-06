@@ -208,7 +208,6 @@ public class Desk extends javax.swing.JPanel {
         Client_Dialog_labelSelect = new javax.swing.JLabel();
         Client_Add_Type_Group = new javax.swing.ButtonGroup();
         Client_Edit_Type_Group = new javax.swing.ButtonGroup();
-        FirstPlane = new javax.swing.JPanel();
         panelClientes = new javax.swing.JPanel();
         Client_TabbedPane = new javax.swing.JTabbedPane();
         Client_Add_SP = new javax.swing.JScrollPane();
@@ -244,7 +243,7 @@ public class Desk extends javax.swing.JPanel {
         Client_Edit_SP = new javax.swing.JScrollPane();
         Client_SP_EditPanel = new javax.swing.JPanel();
         jLabel40 = new javax.swing.JLabel();
-        Product_Edit_labelSelect1 = new javax.swing.JLabel();
+        Client_Edit_labelSelect = new javax.swing.JLabel();
         Client_Edit_Municipio = new javax.swing.JTextField();
         jLabel75 = new javax.swing.JLabel();
         jLabel95 = new javax.swing.JLabel();
@@ -263,7 +262,6 @@ public class Desk extends javax.swing.JPanel {
         jLabel98 = new javax.swing.JLabel();
         Client_Edit_Department = new javax.swing.JTextField();
         jLabel99 = new javax.swing.JLabel();
-        labelBack = new javax.swing.JLabel();
         internalPanel = new javax.swing.JPanel();
         pCaja = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
@@ -283,6 +281,11 @@ public class Desk extends javax.swing.JPanel {
         pProductos = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
+        pProveedores = new javax.swing.JPanel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        FirstPlane = new javax.swing.JPanel();
+        labelBack = new javax.swing.JLabel();
 
         jLabel6.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
@@ -1475,6 +1478,7 @@ public class Desk extends javax.swing.JPanel {
             }
         });
 
+        Client_Dialog_labelChangeType.setForeground(new java.awt.Color(255, 255, 255));
         Client_Dialog_labelChangeType.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICO/40px/icons8_Handle_With_Care_40px.png"))); // NOI18N
         Client_Dialog_labelChangeType.setText("Cambiar tipo de Cliente");
         Client_Dialog_labelChangeType.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -1529,6 +1533,7 @@ public class Desk extends javax.swing.JPanel {
         Client_Dialog_Label_Type.setForeground(new java.awt.Color(255, 255, 255));
         Client_Dialog_Label_Type.setText("Tipo: Persona");
 
+        Client_Dialog_labelSelect.setForeground(new java.awt.Color(255, 255, 255));
         Client_Dialog_labelSelect.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICO/40px/icons8_Natural_User_Interface_2_40px.png"))); // NOI18N
         Client_Dialog_labelSelect.setText("Elegir cliente");
         Client_Dialog_labelSelect.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -1691,8 +1696,7 @@ public class Desk extends javax.swing.JPanel {
                         .addComponent(jLabel77)
                         .addGroup(Client_SP_AddPanelLayout.createSequentialGroup()
                             .addGap(3, 3, 3)
-                            .addComponent(Client_Add_Label_Type)
-                            .addGap(153, 153, 153))
+                            .addComponent(Client_Add_Label_Type))
                         .addComponent(Client_Add_ID_RTN, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(Client_SP_AddPanelLayout.createSequentialGroup()
                         .addGap(3, 3, 3)
@@ -1906,11 +1910,11 @@ public class Desk extends javax.swing.JPanel {
         jLabel40.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel40.setText("Editar Cliente");
 
-        Product_Edit_labelSelect1.setForeground(new java.awt.Color(255, 255, 255));
-        Product_Edit_labelSelect1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICO/40px/icons8_Natural_User_Interface_2_40px.png"))); // NOI18N
-        Product_Edit_labelSelect1.setText("Elegir cliente");
-        Product_Edit_labelSelect1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Product_Edit_labelSelect1.addMouseListener(new java.awt.event.MouseAdapter() {
+        Client_Edit_labelSelect.setForeground(new java.awt.Color(255, 255, 255));
+        Client_Edit_labelSelect.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICO/40px/icons8_Natural_User_Interface_2_40px.png"))); // NOI18N
+        Client_Edit_labelSelect.setText("Elegir cliente");
+        Client_Edit_labelSelect.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Client_Edit_labelSelect.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Product_Edit_labelSelect1MouseClicked(evt);
             }
@@ -1930,7 +1934,6 @@ public class Desk extends javax.swing.JPanel {
 
         Client_Edit_Type_Group.add(Client_Edit_Type_Person);
         Client_Edit_Type_Person.setForeground(new java.awt.Color(255, 255, 255));
-        Client_Edit_Type_Person.setSelected(true);
         Client_Edit_Type_Person.setText("Persona");
         Client_Edit_Type_Person.setOpaque(false);
         Client_Edit_Type_Person.addActionListener(new java.awt.event.ActionListener() {
@@ -1985,7 +1988,7 @@ public class Desk extends javax.swing.JPanel {
             Client_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Client_SP_EditPanelLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Product_Edit_labelSelect1)
+                .addComponent(Client_Edit_labelSelect)
                 .addGap(45, 45, 45))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Client_SP_EditPanelLayout.createSequentialGroup()
                 .addContainerGap(64, Short.MAX_VALUE)
@@ -2033,7 +2036,7 @@ public class Desk extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(Client_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel40)
-                    .addComponent(Product_Edit_labelSelect1))
+                    .addComponent(Client_Edit_labelSelect))
                 .addGap(30, 30, 30)
                 .addGroup(Client_SP_EditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(Client_SP_EditPanelLayout.createSequentialGroup()
@@ -2097,14 +2100,6 @@ public class Desk extends javax.swing.JPanel {
             panelClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(Client_TabbedPane, javax.swing.GroupLayout.DEFAULT_SIZE, 486, Short.MAX_VALUE)
         );
-
-        labelBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICO/40px/icons8_Back_40px_1.png"))); // NOI18N
-        labelBack.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        labelBack.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                labelBackMouseClicked(evt);
-            }
-        });
 
         pCaja.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -2244,7 +2239,7 @@ public class Desk extends javax.swing.JPanel {
         pEmpleados.setLayout(pEmpleadosLayout);
         pEmpleadosLayout.setHorizontalGroup(
             pEmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 112, Short.MAX_VALUE)
+            .addGap(0, 124, Short.MAX_VALUE)
             .addGroup(pEmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(pEmpleadosLayout.createSequentialGroup()
                     .addContainerGap()
@@ -2257,7 +2252,7 @@ public class Desk extends javax.swing.JPanel {
         );
         pEmpleadosLayout.setVerticalGroup(
             pEmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 134, Short.MAX_VALUE)
+            .addGap(0, 146, Short.MAX_VALUE)
             .addGroup(pEmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(pEmpleadosLayout.createSequentialGroup()
                     .addContainerGap()
@@ -2344,22 +2339,63 @@ public class Desk extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICO/100px/icons8_Conference_100px.png"))); // NOI18N
+        jLabel11.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jLabel11.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel11.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel16.setText("Proveedores");
+        jLabel16.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        javax.swing.GroupLayout pProveedoresLayout = new javax.swing.GroupLayout(pProveedores);
+        pProveedores.setLayout(pProveedoresLayout);
+        pProveedoresLayout.setHorizontalGroup(
+            pProveedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 112, Short.MAX_VALUE)
+            .addGroup(pProveedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pProveedoresLayout.createSequentialGroup()
+                    .addGroup(pProveedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(pProveedoresLayout.createSequentialGroup()
+                            .addContainerGap()
+                            .addComponent(jLabel11))
+                        .addGroup(pProveedoresLayout.createSequentialGroup()
+                            .addGap(21, 21, 21)
+                            .addComponent(jLabel16)))
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+        pProveedoresLayout.setVerticalGroup(
+            pProveedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 134, Short.MAX_VALUE)
+            .addGroup(pProveedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pProveedoresLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jLabel11)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(jLabel16)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+
         javax.swing.GroupLayout internalPanelLayout = new javax.swing.GroupLayout(internalPanel);
         internalPanel.setLayout(internalPanelLayout);
         internalPanelLayout.setHorizontalGroup(
             internalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(internalPanelLayout.createSequentialGroup()
-                .addContainerGap(109, Short.MAX_VALUE)
+                .addContainerGap(78, Short.MAX_VALUE)
                 .addGroup(internalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(pCaja, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(pCV, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(pAjustes, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 239, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 106, Short.MAX_VALUE)
                 .addGroup(internalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(pEmpleados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(pClientes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(internalPanelLayout.createSequentialGroup()
+                        .addComponent(pClientes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 80, Short.MAX_VALUE)
+                        .addComponent(pProveedores, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(pProductos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(208, Short.MAX_VALUE))
+                .addContainerGap(60, Short.MAX_VALUE))
         );
         internalPanelLayout.setVerticalGroup(
             internalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2367,17 +2403,26 @@ public class Desk extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(internalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(pClientes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(pCaja, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
+                    .addComponent(pCaja, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pProveedores, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
                 .addGroup(internalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(pEmpleados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(pCV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
                 .addGroup(internalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(pAjustes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(pProductos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        labelBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICO/40px/icons8_Back_40px_1.png"))); // NOI18N
+        labelBack.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        labelBack.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                labelBackMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout FirstPlaneLayout = new javax.swing.GroupLayout(FirstPlane);
         FirstPlane.setLayout(FirstPlaneLayout);
@@ -2387,25 +2432,13 @@ public class Desk extends javax.swing.JPanel {
                 .addContainerGap()
                 .addComponent(labelBack)
                 .addContainerGap(753, Short.MAX_VALUE))
-            .addComponent(panelClientes, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(FirstPlaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(FirstPlaneLayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(internalPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addContainerGap()))
         );
         FirstPlaneLayout.setVerticalGroup(
             FirstPlaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(FirstPlaneLayout.createSequentialGroup()
                 .addGap(6, 6, 6)
                 .addComponent(labelBack)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(panelClientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(FirstPlaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(FirstPlaneLayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(internalPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addContainerGap()))
+                .addContainerGap(492, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -3089,6 +3122,7 @@ public class Desk extends javax.swing.JPanel {
     private javax.swing.ButtonGroup Client_Edit_Type_Group;
     private javax.swing.JRadioButton Client_Edit_Type_Person;
     private javax.swing.JLabel Client_Edit_labelDone;
+    private javax.swing.JLabel Client_Edit_labelSelect;
     private javax.swing.JLabel Client_List_EditSelected;
     private javax.swing.JLabel Client_List_Label_Type;
     private javax.swing.JLabel Client_List_Remove;
@@ -3131,7 +3165,6 @@ public class Desk extends javax.swing.JPanel {
     private javax.swing.JFormattedTextField Product_Edit_impu;
     private javax.swing.JLabel Product_Edit_labelDone;
     private javax.swing.JLabel Product_Edit_labelSelect;
-    private javax.swing.JLabel Product_Edit_labelSelect1;
     private javax.swing.JFormattedTextField Product_Edit_priceBox;
     private javax.swing.JFormattedTextField Product_Edit_priceBoxSell;
     private javax.swing.JFormattedTextField Product_Edit_priceU;
@@ -3159,10 +3192,12 @@ public class Desk extends javax.swing.JPanel {
     private javax.swing.JPanel internalPanel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
@@ -3244,6 +3279,7 @@ public class Desk extends javax.swing.JPanel {
     private javax.swing.JPanel pClientes;
     private javax.swing.JPanel pEmpleados;
     private javax.swing.JPanel pProductos;
+    private javax.swing.JPanel pProveedores;
     private javax.swing.JPanel panelAjustes;
     private javax.swing.JPanel panelCV;
     private javax.swing.JPanel panelCaja;
